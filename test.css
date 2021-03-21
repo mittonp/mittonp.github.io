@@ -2,8 +2,14 @@
     position:relative;
 }
 
+.dataviz-layer .rte{
+    position: relative;
+}
+
 .layer{
     position:absolute;
+    width:100px;
+    height: 100px;
 }
 
 .layer-1{
