@@ -8,38 +8,38 @@
 
 .layer{
     position:fixed;
-    width:100px;
-    height: 100px;
+    width:100%;
+    height: 100%;
 }
 
 .layer-1{
-    background-color: aliceblue;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax0.png)
 }
 
 .layer-2{
-    background-color:aqua;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax1.png)
 }
 
 .layer-3{
-    background-color: red;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax2.png)
 }
 
 .layer-4{
-    background-color: green;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax3.png)
 }
 
 .layer-5{
-    background-color: navy;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax4.png)
 }
 .layer-6{
-    background-color: blue;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax5.png)
 }
 .layer-7{
-    background-color: brown;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax6.png)
 }
 .layer-8{
-    background-color: orange;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax7.png)
 }
 .layer-9{
-    background-color: fuchsia;
+    background:url(http://www.firewatchgame.com/images/parallax/parallax8.png)
 }
