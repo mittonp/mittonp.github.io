@@ -1,3 +1,39 @@
-.sk-au-landing-page .feature__text{
+.dataviz-layer{
+    position:relative;
+}
+
+.layer{
+    position:absolute;
+}
+
+.layer-1{
+    background-color: aliceblue;
+}
+
+.layer-2{
+    background-color:aqua;
+}
+
+.layer-3{
     background-color: red;
+}
+
+.layer-4{
+    background-color: green;
+}
+
+.layer-5{
+    background-color: navy;
+}
+.layer-6{
+    background-color: blue;
+}
+.layer-7{
+    background-color: brown;
+}
+.layer-8{
+    background-color: orange;
+}
+.layer-9{
+    background-color: fuchsia;
 }
