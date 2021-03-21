@@ -10,36 +10,37 @@
     position:fixed;
     width:100%;
     height: 100%;
+    background-size: contain;
 }
 
 .layer-1{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax0.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax0.png)
 }
 
 .layer-2{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax1.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax1.png)
 }
 
 .layer-3{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax2.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax2.png)
 }
 
 .layer-4{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax3.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax3.png)
 }
 
 .layer-5{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax4.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax4.png)
 }
 .layer-6{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax5.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax5.png)
 }
 .layer-7{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax6.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax6.png)
 }
 .layer-8{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax7.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax7.png)
 }
 .layer-9{
-    background:url(http://www.firewatchgame.com/images/parallax/parallax8.png)
+    background-image:url(http://www.firewatchgame.com/images/parallax/parallax8.png)
 }
