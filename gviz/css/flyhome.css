@@ -1,0 +1,51 @@
+.scene{
+    width:100%;
+    height:100%;
+    position: relative;
+    background: #080437;
+}
+
+.building-layer-1{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background:url(/gviz/layers/building-layer-1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom:0;
+    background-position: bottom;
+}
+
+.building-layer-2{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background:url(/gviz/layers/building-layer-2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom:0;
+    background-position: bottom;
+}
+
+.building-layer-3{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background:url(/gviz/layers/building-layer-3.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom:0;
+    background-position: bottom;
+}
+
+.home-scene{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background:url(/gviz/layers/homescene.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom:0;
+    background-position: bottom;
+
+}
