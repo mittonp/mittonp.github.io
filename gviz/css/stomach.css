@@ -1,0 +1,50 @@
+.stomach{
+      
+    background-image: url(https://raw.githubusercontent.com/mittonp/dataviznf/master/stomach.svg);
+    width: 180px;
+    height: 468px;
+    position:fixed;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.food-particles{
+    position: relative;
+    background-image: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/food particles.svg");
+    width: 10%;
+    height: 10%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.reflux{
+    position: absolute;
+    background-image: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/reflux.svg");
+    width: 35%;
+    height: 35%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.goodgut{
+    background-image:url("https://raw.githubusercontent.com/mittonp/dataviznf/master/goodgut.svg");
+    width:55%;
+    height: 501px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top:80%;
+    left:35%;
+}
+.badgut{
+    background-image:url("https://raw.githubusercontent.com/mittonp/dataviznf/master/badgut.svg");
+    width:55%;
+    height: 701px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top:70%;
+    left:35%;
+}
