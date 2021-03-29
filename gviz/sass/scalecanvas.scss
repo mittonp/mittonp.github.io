@@ -1,0 +1,303 @@
+.wholepage {
+    background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+  }
+  .scene-container {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    transform: translateX(-50%) scale(1.5);
+    left: 50%; 
+    transform-origin: top;
+  
+    @media (min-width: 600px) {
+      //transform: translateX(-50%) scale(0.3);
+    }
+  
+    @media (min-width: 800px) {
+      //transform: translateX(-50%) scale(0.4);
+    }
+  
+    @media (min-width: 1000px) {
+      transform: translateX(-50%) scale(0.5);
+    }
+  
+    @media (min-width: 1400px) {
+      transform: translateX(-50%) scale(0.7);
+    }
+  
+    @media (min-width: 1920px) {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  
+  .element1 {
+    width: 100px;
+    height: 200px;
+    background: red;
+  }
+
+
+
+  .thought-bubble{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .thought-bubble--spaghetti {
+    background-image: url("/gviz/layers/bubble-spaghetti.svg");
+  }
+  
+  .thought-bubble--mint-choco {
+    background-image: url("/gviz/layers/bubble-mint-choco.svg");
+  }
+
+  .thought-bubble--cheese-burger {
+    background-image: url("/gviz/layers/bubble-cheese-burger.svg");
+  }
+
+  .thought-bubble--pizza {
+    background-image: url("/gviz/layers/bubble-pizza.svg");
+  }
+  .thought-bubble--pink-lemonade {
+    background-image: url("/gviz/layers/bubble-pink-lemonade.svg");
+  }
+  .thought-bubble--chilly-tacos {
+    background-image: url("/gviz/layers/bubble-chilly-tacos.svg");
+  }
+  .thought-bubble--garlic-bread {
+    background-image: url("/gviz/layers/bubble-garlic-bread.svg");
+  }
+
+  
+  html {
+    scroll-behaviour: smooth;
+  }
+  
+  .neonsign {
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/neonsign.svg");
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+
+  .globe{
+    position:relative;
+    width:485px;
+    margin: auto;
+    height:485px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/gviz/layers/globe.svg);
+  }
+  
+  .radiating-circle{
+    position:absolute;
+    width:50px;
+    height: 50px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url(/gviz/layers/radiating-circle.svg);
+  }
+
+  .scene1 {
+    background: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/scene.svg");
+    width: 1920px;
+    height: 1080px;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+  }
+  
+  .scene2 {
+    width: 100%;
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/scene2.svg");
+    width: 100%;
+    position: absolute;
+  }
+  
+  .scene {
+    width: 100%;
+    background: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/background.svg");
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .person {
+    position: fixed;
+    /* animation-name: slide; */
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .person--mirror {
+    transform: scalex(-1);
+  }
+  
+  .head {
+    position: relative;
+    left: 10px;
+    top: 30px;
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/head.svg");
+    /* animation-name: nod; */
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: bottom left;
+  }
+  
+  .float-rotate {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: float-rotate;
+  }
+  
+  .float-skew {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-name: float-skew;
+  }
+  
+  .torso {
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/torso.svg");
+    animation-name: breathe;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    transform-origin: bottom left;
+    position: relative;
+    left: -4px;
+  }
+  
+  .arm {
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/arm.svg");
+    position: absolute;
+    top: 154px;
+    left: 52px;
+    animation-name: movearm;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: center left;
+  }
+  
+  .legs {
+    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/legs.svg");
+  }
+  
+  @keyframes nod {
+    0% {
+      transform: rotate(0);
+    }
+  
+    25% {
+      transform: rotate(10deg);
+    }
+  
+    75% {
+      transform: rotate(-10deg);
+    }
+  
+    99% {
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      left: 0%;
+    }
+  
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes breathe {
+    0% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(1.03, 1);
+    }
+    75% {
+      transform: scale(1, 1);
+    }
+  }
+  
+  @keyframes movearm {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+  
+    75% {
+      transform: rotate(-10deg);
+    }
+  
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes float-rotate {
+    0% {
+      transform: rotate(0);
+    }
+    10% {
+      transform: rotate(5deg);
+    }
+    20% {
+      transform: rotate(0);
+    }
+    30% {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  @keyframes float-skew {
+    0% {
+      transform: rotateX(0) rotate(0);
+    }
+    10% {
+      transform: rotateX(15deg) rotate(5deg);
+    }
+    20% {
+      transform: rotateX(0) rotate(0);
+    }
+    30% {
+      transform: rotateX(-15deg) rotate(-5deg);
+    }
+  }
+  
+  .copy{
+    background-color: rgba(8, 5, 62, 0.95);
+    position: fixed;
+    color:white;
+    padding:100px;
+    width:627px;
+    font-family: sans-serif;
+    h2{
+      font-size: 32px;
+    }
+    p{
+      font-size: 22px;
+    }
+  }
