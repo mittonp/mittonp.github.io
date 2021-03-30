@@ -32,69 +32,72 @@
     var chart = am4core.create("chartdiv", am4plugins_forceDirected.ForceDirectedTree);
     var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
     
+      var level1Value = 600;
+      var level2Value = 500;
+
     chart.data = [
       {
         name: "Beard Maintenance",
-        value:600,
+        value:level1Value,
         children: [
           {
             name: "How do I maintain my beard?",
-            value:500,
+            value:level2Value,
             children: [
-              { name: "Does brushing beard stimulate growth", value: 500 },
-              { name: "Can you over brush your beard?", value: 500 },
-              { name: "Should you comb your wet or dry?", value: 500 }
+              { name: "Does brushing beard stimulate growth", value: level2Value },
+              { name: "Can you over brush your beard?", value: level2Value },
+              { name: "Should you comb your wet or dry?", value: level2Value }
             ]
           },
           {
             name: "How can I thicken my beard?",
-            value: 500,
+            value: level2Value,
             collapsed:true,
             children: [
-              { name: "Does trimming your beard help it grow?", value: 800 },
-              { name: "Does drinking water help grow beard?", value: 800 },
-              { name: "Does vaseline help with beard growth?", value: 800 }
+              { name: "Does trimming your beard help it grow?", value: level2Value },
+              { name: "Does drinking water help grow beard?", value: level2Value },
+              { name: "Does vaseline help with beard growth?", value: level2Value }
             ]
           },
           {
             name: "How do I shape my beard?",
-            value:500,
+            value:level2Value,
             children: [
-              { name: "How can I shape my beard at home?", value: 800 },
-              { name: "How do I shape my jawline beard?", value: 800 },
-              { name: "What your beard says about you?", value: 800 }
+              { name: "How can I shape my beard at home?", value: level2Value },
+              { name: "How do I shape my jawline beard?", value: level2Value },
+              { name: "What your beard says about you?", value: level2Value }
             ]
           },
           {
             name: "What are the stages of growing a beard?",
-            value:450,
+            value:level2Value,
             children: [
-              { name: "Where should a beard end?", value: 800 },
-              { name: "How long does the awkward beard stage last?", value: 800 },
-              { name: "Should your mustache be shorter than your beard?", value: 800 }
+              { name: "Where should a beard end?", value: level2Value },
+              { name: "How long does the awkward beard stage last?", value: level2Value },
+              { name: "Should your mustache be shorter than your beard?", value: level2Value }
             ]
           },
           {
             name: "Can I wash my beard with just water?",
-            value:500,
+            value:level2Value,
             children: [
-              { name: "How often should beard be washed?", value: 800 },
-              { name: "Does Face Wash damage beard?", value: 800 },
-              { name: "Is salt water good for your beard?", value: 800 }
+              { name: "How often should beard be washed?", value: level2Value },
+              { name: "Does Face Wash damage beard?", value: level2Value },
+              { name: "Is salt water good for your beard?", value: level2Value }
             ]
           }
     
         ]
       },
       {
-        name: "Male Waxing",
-        value:1000,
+        name: "Male Grooming",
+        value:level1Value,
         children: [
           {
             name: "How do I maintain my beard?",
             children: [
-              { name: "Does brushing beard stimulate growth", value: 500 },
-              { name: "Can you over brush your beard?", value: 500 }
+              { name: "Does brushing beard stimulate growth", value: level2Value },
+              { name: "Can you over brush your beard?", value: level2Value }
             ]
           },
           {
@@ -155,27 +158,27 @@
       },
       {
           name: "Goatee Beard Styles",
-          value:1000
+          value:level1Value
       },
       {
-          name: "Male Grooming",
-          value:1000
+          name: "Male Waxing",
+          value:level1Value
       },
       {
           name: "Hipster Beard",
-          value:1000
+          value:level1Value
       },
       {
           name: "Beard Grooming",
-          value:1000
+          value:level1Value
       },
       {
           name: "Beard Jewellery",
-          value:1000
+          value:level1Value
       },
       {
           name: "Facial Hair Growth",
-          value:1000
+          value:level1Value
       }
     ];
     
