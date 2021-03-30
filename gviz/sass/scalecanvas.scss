@@ -82,23 +82,62 @@
   }
   
   .neonsign {
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/neonsign.svg");
-    max-width: 500px;
-    width: 100%;
+    width: 610px;
+    height: 465px;
     margin: auto;
-    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/gviz/layers/neonsign.svg);
+    
+    left:50%;
+  }
+
+  .stat1{
+    width:686px;
+    height: 376px;
+    background-size: contain;
+    background-image: url(/gviz/layers/stat1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .stat2{
+    width:686px;
+    height: 660px;
+    background-size: contain;
+    background-image: url(/gviz/layers/stat2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .stat3{
+    width:686px;
+    height: 847px;
+    background-size: contain;
+    background-image: url(/gviz/layers/stat3.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .globe{
-    position:relative;
+    
     width:485px;
     margin: auto;
     height:485px;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(/gviz/layers/globe.svg);
+    
+
   }
   
+
+  .center-element{
+    position:absolute;
+    transform: translate(-50%, -50%);
+    left:50%;
+    top:50%;
+  }
   .radiating-circle{
     position:absolute;
     width:50px;
@@ -106,6 +145,9 @@
     background-size:contain;
     background-repeat: no-repeat;
     background-image: url(/gviz/layers/radiating-circle.svg);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
   }
 
   .scene1 {
@@ -162,6 +204,8 @@
     animation-timing-function: linear;
     animation-name: float-rotate;
   }
+
+
   
   .float-skew {
     animation-duration: 8s;
@@ -237,6 +281,16 @@
     }
     75% {
       transform: scale(1, 1);
+    }
+  }
+
+  @keyframes pulse {
+    0%{
+      transform: scale(1);
+    }
+
+    50%{
+      transform: scale(2);
     }
   }
   
