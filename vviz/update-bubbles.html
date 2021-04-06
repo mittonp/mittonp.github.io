@@ -4,11 +4,18 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
 
 <head>
     <style>
+        @font-face {
+            font-family: Gotham Medium;
+            src: url(/fonts/GothamMedium.ttf);
+        }
+
         body {
             margin: 0;
-            font-family: "Helvetica", sans-serif;
+            font-family: "Gotham Medium";
+            font-size: 15px;
+            line-height: 16px;
 
-            
+
 
         }
 
@@ -16,46 +23,105 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
             text-anchor: middle;
             fill: #fff;
         }
-        .scroll-position{
-          position: fixed;
+
+        .scroll-position {
+            position: fixed;
         }
 
-        .background{
-          position: fixed;
-          height:100vh;
-          width:100vw;
-          background: linear-gradient(180deg, #050614 0%, #041D59 100%);
+        .background {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(180deg, #050614 0%, #041D59 100%);
+        }
+
+        .tooltip{
+            position: fixed;
+            opacity: 0;
+            background: rgba(0,0,0,0.5);
+            border-radius: 4px;
+            padding:10px;
+            color:white;
+        }
+
+        circle:hover{
+            stroke:white;
+        }
+
+        circle{
+            filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <div class="background">
-    <div class="scroll-position" data-0="background:white" data-2320="background:white">
-      2004
+    <div class="background">
+        <div class="scroll-position" data-0="background:white" data-2320="background:white">
+            2004
+        </div>
     </div>
-  </div>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://unpkg.com/jeezy@1.11.2/lib/jeezy.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
 
     <script>
         var alphabet = [];
-        $.getJSON("/vviz/data.json", function(json){
-          alphabet=json;
-          redraw(randomizeData());
+        $.getJSON("/vviz/data.json", function (json) {
+            alphabet = json;
+            redraw(randomizeData());
         })
 
         var year = 2004;
 
         var width = window.innerWidth, height = window.innerHeight;
 
-        var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).style("position","fixed");
+        var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).style("position", "fixed");
+        var linGrad = svg.append("linearGradient").attr("id","grad1").attr("x1","0%").attr("x2","0%").attr("y1", "0%").attr("y2","100%");
+        linGrad.append("stop").attr("offset","0%").style("stop-color", "#ed00a6").style("stop-opacity","1");
+        linGrad.append("stop").attr("offset","100%").style("stop-color", "#d6006d").style("stop-opacity","1");
+
+        linGrad = svg.append("linearGradient").attr("id","grad2").attr("x1","0%").attr("x2","0%").attr("y1", "0%").attr("y2","100%");
+        linGrad.append("stop").attr("offset","0%").style("stop-color", "#bb0ce7").style("stop-opacity","1");
+        linGrad.append("stop").attr("offset","100%").style("stop-color", "#8505cb").style("stop-opacity","1");
+
+        linGrad = svg.append("linearGradient").attr("id","grad3").attr("x1","0%").attr("x2","0%").attr("y1", "0%").attr("y2","100%");
+        linGrad.append("stop").attr("offset","0%").style("stop-color", "#0ac7fc").style("stop-opacity","1");
+        linGrad.append("stop").attr("offset","100%").style("stop-color", "#049ff8").style("stop-opacity","1");
+
+        linGrad = svg.append("linearGradient").attr("id","grad4").attr("x1","0%").attr("x2","0%").attr("y1", "0%").attr("y2","100%");
+        linGrad.append("stop").attr("offset","0%").style("stop-color", "#22ead1").style("stop-opacity","1");
+        linGrad.append("stop").attr("offset","100%").style("stop-color", "#0fd0a5").style("stop-opacity","1");
+
+        var tooltip = d3.select("body")
+            .append("div").attr("class","tooltip");
+
+        var showTooltip = function (d) {
+            console.log("Show tooltip", d.data.name);
+            tooltip
+                .transition()
+                .duration(200)
+            tooltip
+                .style("opacity", 1)
+                .html(d.data.name)
+                .style("left", (d3.mouse(this)[0] + 30) + "px")
+                .style("top", (d3.mouse(this)[1] + 30) + "px")
+        }
+        var moveTooltip = function (d) {
+            tooltip
+                .style("left", (d3.mouse(this)[0]) + "px")
+                .style("top", (d3.mouse(this)[1] - 35) + "px")
+        }
+        var hideTooltip = function (d) {
+            tooltip
+                .transition()
+                .duration(200)
+                .style("opacity", 0)
+        }
 
         var pack = d3.pack()
             .size([width, height])
-            .padding(1.5);
+            .padding(25);
 
 
         function redraw(classes) {
@@ -88,7 +154,7 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
             //UPDATE
             circle
                 .transition(t)
-                .attr("r", function (d) { return d.r })
+                .attr("r", function (d) { return d.r + 2 })
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; })
 
@@ -96,45 +162,51 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
                 .transition(t)
                 .attr("x", function (d) { return d.x; })
                 .attr("y", function (d) { return d.y; })
-                .style("display", function(d) {if (d.r<50){console.log("UPDATE", d); return "none";}});
+                .style("display", function (d) { if (d.r < 50) { return "none"; } });
 
             //ENTER
             circle.enter().append("circle")
                 .attr("r", 1e-6)
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; })
-                .style("fill", function(d){return d.data.color})
+                .style("fill", function (d) { return d.data.color })
+                //.style("fill", "url(#grad2)" )
+                .on("mouseover", showTooltip)
+                .on("mousemove", moveTooltip)
+                .on("mouseleave", hideTooltip)
                 .transition(t)
-                .attr("r", function (d) { return d.r })
-                .attr("cclass",function(d) {return d.data.size});
+                .attr("r", function (d) { return d.r + 2 });
 
             text.enter().append("text")
                 .attr("x", function (d) { return d.x; })
                 .attr("y", function (d) { return d.y; })
                 .text(function (d) { return d.data.name; })
                 .transition(t)
-                .style("display", function(d) {if (d.r<50){console.log("ENTER", d); return "none";}});
+                .style("display", function (d) { if (d.r < 50) { return "none"; } });
         }
 
         function randomizeData() {
-            
-            
-            var d1 = alphabet.sort((a,b) => (b[year] - a[year])).slice(0,40);
+
+
+            var d1 = alphabet.sort((a, b) => (b[year] - a[year]))
+            .slice(0, 40)
+            ;
             var d2 = [];
 
             d1.forEach(function (d) {
-                var ccolor = "#0495f8";
-                if (d.Category == "Grooming") {ccolor = "#8505cb"};
-                if (d.Category == "Beard") {ccolor = "#d6006d"};
+                var ccolor = "url(#grad1)";
+                if (d.Category == "Grooming") { ccolor = "url(#grad2)" };
+                if (d.Category == "Beard") { ccolor = "url(#grad3)" };
+                if (d.Category == "Hair removal") { ccolor = "url(#grad4)" };
                 d2.push({ name: d.Keyword, size: d[year], color: ccolor })
             });
             return d2;
-            
+
         }
 
     </script>
     <script>
-        var s = skrollr.init({ smoothScrolling: false, smoothScrollingDuration: 1500  });
+        var s = skrollr.init({ smoothScrolling: false, smoothScrollingDuration: 1500 });
 
 
         function debounce(method, delay) {
@@ -144,9 +216,9 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
             }, delay);
         }
 
-        function handleScroll(){
+        function handleScroll() {
             console.log("Scrolling");
-            year = Math.round($(window).scrollTop()/145 + 2004);
+            year = Math.round($(window).scrollTop() / 145 + 2004);
             $('.scroll-position').text(year);
             console.log($(window).scrollTop());
             redraw(randomizeData());
