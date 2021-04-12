@@ -26,6 +26,8 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
 
         .scroll-position {
             position: fixed;
+            bottom:0;
+            right:0;
         }
 
         .background {
@@ -51,6 +53,28 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
         circle{
             filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
         }
+
+        .year-lines{
+        display: flex;
+        height: 100vh;
+        position: fixed;
+        top:0;
+        left:0;
+    }
+
+    .year-line{
+        margin-right: 7%;
+        border-left: 2px solid blue;
+        color:lightblue;
+    }
+
+    .year-indicator{
+        position: absolute;
+        left:0%;
+        width:80px;
+        border-bottom: 3px solid white;
+        height: 15px;
+    }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -60,16 +84,38 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
         <div class="scroll-position" data-0="background:white" data-2320="background:white">
             2004
         </div>
+        <div class="year-lines">
+            <div class="year-line">2004</div>
+            <div class="year-line">2005</div>
+            <div class="year-line">2006</div>
+            <div class="year-line">2007</div>
+            <div class="year-line">2008</div>
+            <div class="year-line">2009</div>
+            <div class="year-line">2010</div>
+            <div class="year-line">2011</div>
+            <div class="year-line">2012</div>
+            <div class="year-line">2013</div>
+            <div class="year-line">2014</div>
+            <div class="year-line">2015</div>
+            <div class="year-line">2016</div>
+            <div class="year-line">2017</div>
+            <div class="year-line">2018</div>
+            <div class="year-line">2019</div>
+            <div class="year-line">2020</div>
+            <div class="year-indicator" data-0="left:0%" data-2320="left:200%"></div>
+
+        </div>
     </div>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://unpkg.com/jeezy@1.11.2/lib/jeezy.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
+    <script src='/vviz/main.js'></script>
 
     <script>
         var alphabet = [];
         $.getJSON("/vviz/data.json", function (json) {
             alphabet = json;
-            redraw(randomizeData());
+            redraw(getYearData(alphabet, 2004));
         })
 
         var year = 2004;
@@ -108,11 +154,13 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
                 .style("top", (d3.mouse(this)[1] + 30) + "px")
         }
         var moveTooltip = function (d) {
+            console.log("Move tooltip", d.data.name);
             tooltip
                 .style("left", (d3.mouse(this)[0]) + "px")
                 .style("top", (d3.mouse(this)[1] - 35) + "px")
         }
         var hideTooltip = function (d) {
+            console.log("Hide tooltip", d.data.name);
             tooltip
                 .transition()
                 .duration(200)
@@ -166,14 +214,13 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
 
             //ENTER
             circle.enter().append("circle")
+            .on("mouseover", showTooltip)
+                .on("mousemove", moveTooltip)
+                .on("mouseleave", hideTooltip)
                 .attr("r", 1e-6)
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; })
                 .style("fill", function (d) { return d.data.color })
-                //.style("fill", "url(#grad2)" )
-                .on("mouseover", showTooltip)
-                .on("mousemove", moveTooltip)
-                .on("mouseleave", hideTooltip)
                 .transition(t)
                 .attr("r", function (d) { return d.r + 2 });
 
@@ -185,24 +232,6 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
                 .style("display", function (d) { if (d.r < 50) { return "none"; } });
         }
 
-        function randomizeData() {
-
-
-            var d1 = alphabet.sort((a, b) => (b[year] - a[year]))
-            .slice(0, 40)
-            ;
-            var d2 = [];
-
-            d1.forEach(function (d) {
-                var ccolor = "url(#grad1)";
-                if (d.Category == "Grooming") { ccolor = "url(#grad2)" };
-                if (d.Category == "Beard") { ccolor = "url(#grad3)" };
-                if (d.Category == "Hair removal") { ccolor = "url(#grad4)" };
-                d2.push({ name: d.Keyword, size: d[year], color: ccolor })
-            });
-            return d2;
-
-        }
 
     </script>
     <script>
@@ -221,7 +250,7 @@ https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
             year = Math.round($(window).scrollTop() / 145 + 2004);
             $('.scroll-position').text(year);
             console.log($(window).scrollTop());
-            redraw(randomizeData());
+            redraw(getYearData(alphabet, year));
         }
 
         window.onscroll = function (e) {
