@@ -20,7 +20,7 @@ function getYearData(alphabet, year) {
 
 
 var alphabet = [];
-$.getJSON("/vviz/data.json", function (json) {
+$.getJSON("https://mittonp.github.io/vviz/data.json", function (json) {
     alphabet = json;
     redraw(getYearData(alphabet, 2004));
 })
