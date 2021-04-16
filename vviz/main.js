@@ -1,3 +1,6 @@
+window.addEventListener("load", function(){
+
+
 function getYearData(alphabet, year) {
 
 
@@ -158,3 +161,4 @@ function handleScroll() {
 window.onscroll = function (e) {
     debounce(handleScroll, 100);
 };
+});
