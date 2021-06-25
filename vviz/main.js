@@ -29,7 +29,7 @@ var year = 2004;
 
 var width = window.innerWidth, height = window.innerHeight;
 
-var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).style("position", "fixed");
+var svg = d3.select(".bubbles").append("svg").attr("width", width).attr("height", height).style("position", "fixed");
 var linGrad = svg.append("linearGradient").attr("id","grad1").attr("x1","0%").attr("x2","0%").attr("y1", "0%").attr("y2","100%");
 linGrad.append("stop").attr("offset","0%").style("stop-color", "#ed00a6").style("stop-opacity","1");
 linGrad.append("stop").attr("offset","100%").style("stop-color", "#d6006d").style("stop-opacity","1");
