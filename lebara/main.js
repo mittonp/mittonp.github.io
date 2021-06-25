@@ -73,7 +73,7 @@ tooltipTemplate =
   "<div class='price-wrap'><h3>{bestPlanPrice}</h3></div>" +
   "       </div>" +
   "<div class='btn-wrap'>" +
-  "       <button type='submit' class='btn btn-primary buynow'>Buy SIM</button>" +
+  "       <a href='buy'><button class='btn btn-primary buynow'>Buy SIM</button></a>" +
   "       </div>" +
   "       </div>" +
   "       </div>" +
