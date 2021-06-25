@@ -1,5 +1,6 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 a {
@@ -12,17 +13,13 @@ a {
   margin: auto;
   margin-top: 20px;
   border: 1px solid #e1e1e1;
-}
-
-@media (min-width: 1200px) {
-  #chartdiv {
+  @media (min-width: 1200px) {
     width: 1121px;
     height: 538px;
   }
-}
-
-#chartdiv div {
-  overflow: visible !important;
+  div {
+    overflow: visible !important;
+  }
 }
 
 .am-tooltip {
@@ -33,18 +30,13 @@ a {
 
 .country-name {
   height: 30px;
-  background: -webkit-gradient(linear, left top, right top, from(#2b4cfb), to(#f73a9d));
   background: linear-gradient(90deg, #2b4cfb, #f73a9d);
   border-radius: 5px;
   color: white;
   font-size: 16px;
   font-weight: 600;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding-left: 12px;
 }
 
@@ -60,4 +52,3 @@ a {
   font-size: 13px;
   line-height: 16px;
 }
-/*# sourceMappingURL=style.css.map */
