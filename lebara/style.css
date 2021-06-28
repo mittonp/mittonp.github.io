@@ -8,7 +8,6 @@ a {
 
 #chartdiv {
   width: 343px;
-  height: 208px;
   margin: auto;
   margin-top: 20px;
   border: 1px solid #e1e1e1;
@@ -27,10 +26,57 @@ a {
 
 .am-tooltip {
   color: black;
-  width: 297px;
+  font-family: "Montserrat", sans-serif;
+  width: 298px;
+  z-index: -10;
+  opacity: 0.9;
 }
 
-.country-name {
+.am-tooltip__plan {
+  padding: 14px;
+  z-index: 0;
+  background: white;
+  border-radius: 18px;
+}
+
+.am-tooltip__plan::before {
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, right bottom, left top, from(#264efe), to(#ff0683));
+  background: linear-gradient(to top left, #264efe, #ff0683);
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.am-tooltip__plan-wrapper {
+  position: relative;
+  padding: 2px;
+  margin: 0 21px 22px 21px;
+}
+
+.am-tooltip .best-plan__heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.am-tooltip .best-plan__name {
+  font-size: 14px;
+}
+
+.am-tooltip .best-plan__minutes {
+  font-size: 11px;
+}
+
+.am-tooltip .best-plan__price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.am-tooltip .country-name {
   height: 30px;
   background: -webkit-gradient(linear, left top, right top, from(#2b4cfb), to(#f73a9d));
   background: linear-gradient(90deg, #2b4cfb, #f73a9d);
@@ -45,18 +91,67 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 12px;
+  margin: 26px;
 }
 
-.text {
+.am-tooltip .text {
   white-space: normal;
   font-size: 13px;
   font-family: "Montserrat";
   font-weight: 400;
-  margin: 30px;
+  margin: 30px 37px;
 }
 
-.text p {
+.am-tooltip .text p {
   font-size: 13px;
   line-height: 16px;
+}
+
+.visual-heading {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  background-color: #e7f8ff;
+}
+
+.visual-heading__text {
+  margin: auto;
+  max-width: 1188px;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.visual-text {
+  max-width: 1030px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+
+.visual-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.visual-subtext {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #7dd2f1;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 54px;
+  padding: 17px 28px;
+}
+
+.buynow {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

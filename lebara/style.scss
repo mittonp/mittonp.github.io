@@ -9,7 +9,7 @@ a {
 
 #chartdiv {
   width: 343px;
-  height: 208px;
+  //height: 208px;
   margin: auto;
   margin-top: 20px;
   border: 1px solid #e1e1e1;
@@ -24,31 +24,134 @@ a {
 
 .am-tooltip {
   color: black;
-  width: 297px;
-  //height: 377px;
+  font-family: "Montserrat", sans-serif;
+  width: 298px;
+  z-index: -10;
+  //padding: 26px;
+  //border-radius: 20px;
+  //background-color: white;
+  opacity: 0.9;
+  //box-shadow: 3px 6px 46px rgba(0, 0, 0, 0.3);
+  @media (min-width: 1200px) {
+  }
+
+  &__plan {
+    padding: 14px;
+    z-index: 0;
+    background: white;
+    border-radius: 18px;
+    //border: 2px solid transparent;
+    //margin: 2px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: linear-gradient(to top left, #264efe, #ff0683);
+      border-radius: 20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -2;
+    }
+  }
+
+  &__plan-wrapper {
+    position: relative;
+    padding: 2px;
+    //width: 258px;
+    margin: 0 21px 22px 21px;
+  }
+
+  .best-plan {
+    &__heading {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    &__name {
+      font-size: 14px;
+    }
+
+    &__minutes {
+      font-size: 11px;
+    }
+
+    &__price {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .country-name {
+    height: 30px;
+    background: linear-gradient(90deg, #2b4cfb, #f73a9d);
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    margin: 26px;
+  }
+
+  .text {
+    white-space: normal;
+    font-size: 13px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    margin: 30px 37px;
+    p {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
 }
 
-.country-name {
-  height: 30px;
-  background: linear-gradient(90deg, #2b4cfb, #f73a9d);
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  padding-left: 12px;
+.visual-heading {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+
+  background-color: #e7f8ff;
+  &__text {
+    margin: auto;
+    max-width: 1188px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
-.text {
-  white-space: normal;
-  font-size: 13px;
-  font-family: "Montserrat";
+.visual-text {
+  max-width: 1030px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
   font-weight: 400;
-  margin: 30px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.text p {
-  font-size: 13px;
-  line-height: 16px;
+.visual-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.visual-subtext {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #7dd2f1;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 54px;
+  padding: 17px 28px;
+}
+
+.buynow {
+  margin-top: 20px;
 }
