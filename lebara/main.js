@@ -53,6 +53,12 @@ chart.chartContainer.wheelable = false;
 
 chart.chartContainer.layout = "vertical";
 
+if (!wideScreen) {
+  chart.homeZoomLevel = 2;
+}
+
+//chart.showTooltipOn = "hit";
+
 // Create map polygon series
 var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
@@ -130,6 +136,7 @@ if (!wideScreen) {
 
   info.tooltip.events.on("hit", function (ev) {
     console.log(ev);
+    ev.target.hide();
   });
 
   info.tooltip.pointerOrientation = "up";
@@ -159,6 +166,8 @@ shadow.dy = 6;
 shadow.blur = 46;
 shadow.color = am4core.color("#000");
 polygonSeries.tooltip.label.padding(0, 0, 0, 0);
+polygonTemplate.showTooltipOn = "hit";
+polygonTemplate.cursorOptions.overStyle = am4core.MouseCursorStyle.pointer;
 
 // Create hover state and set alternative fill color
 var hs = polygonTemplate.states.create("hover");

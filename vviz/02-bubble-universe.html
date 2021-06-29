@@ -1,46 +1,52 @@
 <!-- Reference:
 https://bl.ocks.org/HarryStevens/54d01f118bc8d1f2c4ccd98235f33848 -->
 <html>
+  <head>
+    <link rel="stylesheet" href="/vviz/css/update-bubbles.css" />
+  </head>
 
-<head>
-<link rel="stylesheet" href="/vviz/css/update-bubbles.css">
-    
-</head>
-
-<body>
+  <body>
     <div class="background">
-        <div class="scroll-position" data-0="background:white" data-2320="background:white">
-            2004
-        </div>
-        <div class="year-lines">
-            <div class="year-line">2004</div>
-            <div class="year-line">2005</div>
-            <div class="year-line">2006</div>
-            <div class="year-line">2007</div>
-            <div class="year-line">2008</div> 
-            <div class="year-line">2009</div> 
-            <div class="year-line">2010</div>
-            <div class="year-line">2011</div>
-            <div class="year-line">2012</div>
-            <div class="year-line">2013</div>
-            <div class="year-line">2014</div>
-            <div class="year-line">2015</div>
-            <div class="year-line">2016</div>
-            <div class="year-line">2017</div>
-            <div class="year-line">2018</div>
-            <div class="year-line">2019</div>
-            <div class="year-line">2020</div>
-            <div class="year-indicator" data-0="left:0%" data-2320="left:200%"></div>
-
-        </div>
+      <div
+        class="scroll-position"
+        data-0="background:white"
+        data-2320="background:white"
+      >
+        2004
+      </div>
+      <div class="year-lines">
+        <div class="year-line">2004</div>
+        <div class="year-line">2005</div>
+        <div class="year-line">2006</div>
+        <div class="year-line">2007</div>
+        <div class="year-line">2008</div>
+        <div class="year-line">2009</div>
+        <div class="year-line">2010</div>
+        <div class="year-line">2011</div>
+        <div class="year-line">2012</div>
+        <div class="year-line">2013</div>
+        <div class="year-line">2014</div>
+        <div class="year-line">2015</div>
+        <div class="year-line">2016</div>
+        <div class="year-line">2017</div>
+        <div class="year-line">2018</div>
+        <div class="year-line">2019</div>
+        <div class="year-line">2020</div>
+        <div
+          class="year-indicator"
+          data-0="left:0%"
+          data-2320="left:200%"
+        ></div>
+      </div>
+    </div>
+    <div class="bubbles" style="height: 100%"></div>
+    <div class="heading">
+      What men were searching in <span id="year">2004</span>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://unpkg.com/jeezy@1.11.2/lib/jeezy.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
-    <script src='/vviz/main.js'></script>
-
-
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script src="/vviz/bubble-universe.js"></script>
+  </body>
 </html>
