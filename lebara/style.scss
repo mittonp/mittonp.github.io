@@ -111,16 +111,21 @@ a {
 .visual-heading {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 32px;
 
   background-color: #e7f8ff;
   &__text {
+    color: rgb(31, 35, 71);
     margin: auto;
     max-width: 1188px;
     text-align: center;
     font-weight: 600;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 15px;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 23px;
+    @media (min-width: 1024px) {
+      font-size: 32px;
+    }
   }
 }
 
@@ -129,27 +134,47 @@ a {
   margin: auto;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  padding: 0 15px;
+  color: rgb(31, 35, 71);
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
 }
 
 .visual-subheading {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  color: rgb(31, 35, 71);
+  @media (min-width: 1024px) {
+    font-size: 24px;
+  }
 }
 
 .visual-subtext {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+  border-radius: 5px;
   background-color: #7dd2f1;
   max-width: 1200px;
   margin: auto;
-  margin-top: 54px;
-  padding: 17px 28px;
+  margin-top: 24px;
+  padding: 17px 10px;
+  color: rgb(31, 35, 71);
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: unset;
+    @media (min-width: 1024px) {
+      font-size: 18px;
+    }
+  }
+  @media (min-width: 1024px) {
+    margin-top: 54px;
+  }
 }
 
 .buynow {
