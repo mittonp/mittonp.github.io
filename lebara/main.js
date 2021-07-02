@@ -13,7 +13,6 @@ container.height = am4core.percent(100);
 var chart = container.createChild(am4maps.MapChart);
 chart.width = am4core.percent(100);
 chart.height = am4core.percent(100);
-//chart.height = 205;
 chart.zoomControl = new am4maps.ZoomControl();
 chart.zoomControl.align = "right";
 chart.zoomControl.valign = "bottom";
@@ -37,10 +36,6 @@ chart.zoomControl.plusButton.background.stroke = am4core.color("#c4c4c4");
 
 chart.zoomControl.minusButton.fontWeight = "bold";
 chart.zoomControl.plusButton.fontWeight = "bold";
-// var ttcontainer = am4core.create("mobiletooltip", am4core.Container);
-// ttcontainer.layout = "vertical";
-// ttcontainer.width = am4core.percent(100);
-// ttcontainer.height = am4core.percent(50);
 
 // Set map definition
 chart.geodata = am4geodata_worldLow;
@@ -51,18 +46,18 @@ chart.projection = new am4maps.projections.Miller();
 // Disable scroll zoom
 chart.chartContainer.wheelable = false;
 
+//Set chart layout
 chart.chartContainer.layout = "vertical";
 
+//Set initial zoom level on mobile
 if (!wideScreen) {
   chart.homeZoomLevel = 2;
 }
 
-//chart.showTooltipOn = "hit";
-
 // Create map polygon series
 var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
-// Exclude Antartica
+// Exclude Antartica & Australia
 polygonSeries.exclude = ["AQ", "AU"];
 
 //Set min/max fill color for each area
@@ -71,21 +66,26 @@ polygonSeries.heatRules.push({
   target: polygonSeries.mapPolygons.template,
   min: chart.colors.getIndex(1).brighten(1),
   max: chart.colors.getIndex(1).brighten(-0.3),
-  logarithmic: true,
 });
 
 // Make map load polygon data (state shapes and names) from GeoJSON
 polygonSeries.useGeodata = true;
 
-// Set heatmap values for each state
-var herpdata = [];
-$.getJSON("country-data.json", function (data) {
-  polygonSeries.data = data;
+//Get data from CSV
+$.ajax({
+  url: "country-data.csv",
+  async: false,
+  success: function (csvd) {
+    data = $.csv.toObjects(csvd);
+    polygonSeries.data = data;
+  },
+  dataType: "text",
 });
 
 // Make map load polygon (like country names) data from GeoJSON
 polygonSeries.useGeodata = true;
 
+//Set up a template for displaying country data
 tooltipTemplate = `
 <div class='am-tooltip'>
   <div class='country-name'>{name}</div>
@@ -107,6 +107,8 @@ tooltipTemplate = `
 // Configure series
 polygonSeries.calculatePercent = true;
 var polygonTemplate = polygonSeries.mapPolygons.template;
+
+//On desktop, display popups over map
 if (wideScreen) {
   polygonTemplate.tooltipHTML = tooltipTemplate;
 }
@@ -114,11 +116,11 @@ if (wideScreen) {
 polygonTemplate.nonScalingStroke = true;
 polygonTemplate.strokeWidth = 0.5;
 
+//On mobile, display popups under map
 if (!wideScreen) {
   //Create a child container for static multi value tool tip (for mobile)
   var info = container.createChild(am4core.Label);
   info.align = "center";
-  //info.width = am4core.percent(100);
   info.tooltip.label.interactionsEnabled = true;
   info.tooltip.getFillFromObject = false;
   info.tooltip.background.fill = am4core.color("#ffffff");
