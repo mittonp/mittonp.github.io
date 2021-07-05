@@ -1,0 +1,88 @@
+@font-face {
+  font-family: Gotham Medium;
+  src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: "Gotham Medium";
+  font-size: 15px;
+  line-height: 16px;
+}
+
+text {
+  text-anchor: middle;
+  fill: #fff;
+}
+
+.scroll-position {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+}
+
+.tooltip {
+  position: fixed;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+}
+
+circle:hover {
+  stroke: white;
+}
+
+circle {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+}
+
+.year-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.year-line {
+  margin-right: 7%;
+  border-left: 2px solid blue;
+  color: lightblue;
+}
+
+.year-indicator {
+  position: absolute;
+  left: 0%;
+  width: 80px;
+  border-bottom: 3px solid white;
+  height: 15px;
+}
+
+.heading {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 38px;
+    width: 300px;
+    line-height: 46px;
+  }
+}
+/*# sourceMappingURL=02-bubble-universe.css.map */

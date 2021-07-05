@@ -238,7 +238,9 @@ window.addEventListener("load", function () {
 
   function handleScroll() {
     console.log("Scrolling");
-    year = Math.round($(window).scrollTop() / 145 + 2004);
+    var top = skrollr.init().getScrollTop();
+    //year = Math.round($(window).scrollTop() / 145 + 2004);
+    year = Math.round(top / 145 + 2004);
     $(".scroll-position").text(year);
     $("#year").text(year);
     console.log($(window).scrollTop());
@@ -248,4 +250,8 @@ window.addEventListener("load", function () {
   window.onscroll = function (e) {
     debounce(handleScroll, 100);
   };
+
+  $(document.body).on("touchmove", function (e) {
+    debounce(handleScroll, 100);
+  });
 });

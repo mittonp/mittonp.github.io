@@ -72,4 +72,9 @@ circle {
   top: 100px;
   left: 100px;
   color: white;
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    width: 300px;
+    line-height: 46px;
+  }
 }

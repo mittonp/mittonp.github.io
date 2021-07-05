@@ -1,0 +1,165 @@
+@font-face {
+  font-family: Gotham Book;
+  src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
+}
+
+@font-face {
+  font-family: Gotham Light;
+  src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
+}
+
+@font-face {
+  font-family: Gotham Bold;
+  src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  background-attachment: fixed;
+  color: white;
+  font-family: Gotham Light, sans-serif;
+}
+
+.areagraph {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/vviz/areagraph.svg");
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: bottom;
+  opacity: 0.3;
+}
+
+.heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.heading h1 {
+  font-family: Gotham Bold, sans-serif;
+  font-size: 38px;
+  margin-left: 20px;
+}
+
+@media (min-width: 1024px) {
+  .heading h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-left: 135px;
+  }
+}
+
+.overlay {
+  height: 100vh;
+  position: fixed;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 20px;
+  top: 0;
+}
+
+@media (min-width: 1024px) {
+  .overlay {
+    font-size: 22px;
+    width: 788px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.overlay-content {
+  font-weight: 200;
+  font-family: Gotham Light;
+  line-height: 34px;
+}
+
+.year-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .year-lines {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.year-line {
+  border-left: 2px solid rgba(40, 177, 232, 0.4);
+  color: #e95a49;
+  font-family: Gotham Bold;
+  font-size: 14px;
+}
+
+.canvas {
+  position: fixed;
+  height: 100vh;
+}
+
+.year-label {
+  display: none;
+  position: absolute;
+}
+
+.year-label--mobile {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .year-label--even {
+    display: block;
+  }
+}
+
+.progress-indicator {
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+}
+
+@media (min-width: 1024px) {
+  .progress-indicator {
+    display: block;
+  }
+}
+
+.progress-indicator__bullet {
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 13px;
+  border-radius: 100%;
+}
+
+.progress-indicator__bullet--active {
+  background: #e95a49;
+}
+/*# sourceMappingURL=01-landing.css.map */
