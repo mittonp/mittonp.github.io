@@ -24,7 +24,7 @@ am4core.ready(function () {
       name: "Beard Maintenance",
       value: level1Value,
       category: "Beards",
-      color: "#ffff00",
+      color: "#2b8bf8",
       children: [
         {
           name: "How do I maintain my beard?",
@@ -110,6 +110,7 @@ am4core.ready(function () {
     {
       name: "Male Grooming",
       value: level1Value,
+      color: "#D6006D",
       category: "Grooming",
       children: [
         {
@@ -180,6 +181,7 @@ am4core.ready(function () {
       name: "Goatee Beard Styles",
       category: "Beards",
       value: level1Value,
+      color: "#2b8bf8",
       children: [
         {
           name: "Is a goatee attractive?",
@@ -218,6 +220,8 @@ am4core.ready(function () {
     {
       name: "Male Waxing",
       category: "Hair Removal",
+      //color: "linear-gradient(180deg, #FFC718 0%, #E58100 100%)",
+      color: "#E58100",
       value: level1Value,
       children: [
         {
@@ -273,6 +277,7 @@ am4core.ready(function () {
     {
       name: "Hipster Beard",
       category: "Beards",
+      color: "#2b8bf8",
       value: level1Value,
       children: [
         {
@@ -329,6 +334,7 @@ am4core.ready(function () {
     {
       name: "Beard Grooming",
       category: "Grooming",
+      color: "#D6006D",
       value: level1Value,
       children: [
         {
@@ -386,6 +392,7 @@ am4core.ready(function () {
     {
       name: "Beard Jewellery",
       value: level1Value,
+      color: "#2b8bf8",
       category: "Beards",
       children: [
         {
@@ -418,6 +425,7 @@ am4core.ready(function () {
     {
       name: "Facial Hair Growth",
       category: "Beards",
+      color: "#2b8bf8",
       value: level1Value,
       children: [
         {
@@ -484,11 +492,12 @@ am4core.ready(function () {
   gradient.addColor(am4core.color("blue"));
 
   fillModifier = new am4core.LinearGradientModifier();
-  fillModifier.opacities = [0, 0.5, 1];
+  fillModifier.opacities = [0.6, 0.9, 1];
   fillModifier.offsets = [0, 0.5, 1];
   fillModifier.gradient = gradient;
   fillModifier.gradient.rotation = 90;
   networkSeries.nodes.template.fillModifier = fillModifier;
+  networkSeries.nodes.template.fill = gradient;
 
   networkSeries.maxRadius = 80;
   networkSeries.minRadius = 65;
@@ -503,13 +512,11 @@ am4core.ready(function () {
 
   networkSeries.nodes.template.expandAll = false;
 
+  networkSeries.nodes.template.strokeWidth = 0;
+
   networkSeries.fontSize = 20;
 
   networkSeries.links.template.strokeWidth = 1;
-
-  var hoverState = networkSeries.nodes.template.states.create("hover");
-  hoverState.properties.strokeWidth = 3;
-  hoverState.properties.strokeOpacity = 1;
 
   networkSeries.nodes.template.events.on("over", function (event) {
     event.target.dataItem.childLinks.each(function (link) {

@@ -1,0 +1,299 @@
+@font-face {
+  font-family: Gotham Book;
+  src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
+}
+
+@font-face {
+  font-family: Gotham Light;
+  src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
+}
+
+@font-face {
+  font-family: Gotham Bold;
+  src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
+}
+
+@font-face {
+  font-family: Gotham Medium;
+  src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
+}
+.progress-indicator {
+  //display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+
+  &__bullet {
+    width: 15px;
+    height: 15px;
+    background: rgba($color: #e95a49, $alpha: 0.3);
+    margin-bottom: 13px;
+    border-radius: 100%;
+    &--active {
+      background: rgba($color: #e95a49, $alpha: 1);
+    }
+  }
+}
+
+body {
+  font-family: Gotham Light, sans-serif;
+}
+
+.section-canvas {
+  height: 100vh;
+  width: 100%;
+}
+
+#bubble-universe-canvas {
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+
+  .tooltip {
+    position: fixed;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+  }
+
+  circle:hover {
+    stroke: white;
+  }
+
+  circle {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+  }
+
+  text {
+    text-anchor: middle;
+    fill: #fff;
+    margin: 0;
+    font-family: "Gotham Medium";
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
+
+#force-directed-map-canvas {
+  background: radial-gradient(circle, #ffffff 0%, #d3e1eb 100%);
+}
+
+#landing-canvas {
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  position: fixed;
+  height: 100vh;
+  color: white;
+  width: 100%;
+
+  .areagraph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/vviz/areagraph.svg");
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position-x: left;
+    background-position-y: bottom;
+    opacity: 0.3;
+  }
+}
+
+.year-lines {
+  display: flex;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100%;
+  @media (min-width: 1024px) {
+  }
+}
+
+.year-line {
+  border-left: 2px solid rgba(40, 177, 232, 0.4);
+  color: #e95a49;
+  font-family: Gotham Bold;
+  font-size: 14px;
+  width: 6.25%;
+}
+
+.year-line-indicator-container {
+  position: absolute;
+  @media (min-width: 1440px) {
+    width: 1366px;
+  }
+}
+.year-line-indicator {
+  position: absolute;
+  width: 37px;
+  height: 3px;
+  background: #e95a49;
+  top: 20px;
+  left: 0;
+}
+
+.year-label {
+  display: none;
+  &--mobile {
+    display: block;
+  }
+  @media (min-width: 1024px) {
+    &--even {
+      display: block;
+    }
+  }
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+
+  color: white;
+  width: 100%;
+  height: 100%;
+
+  &--alt {
+    color: #002e5d;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 100px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Gotham Book";
+    @media (min-width: 1024px) {
+      font-size: 22px;
+      line-height: 34px;
+    }
+  }
+
+  h1 {
+    font-family: Gotham Bold, sans-serif;
+    font-size: 38px;
+    margin: 0;
+
+    @media (min-width: 1024px) {
+      font-size: 70px;
+      text-transform: uppercase;
+    }
+  }
+
+  h2 {
+    font-size: 38px;
+    line-height: 46px;
+    font-family: "Gotham Bold", sans-serif;
+    margin: 0;
+    @media (min-width: 1024px) {
+      font-size: 38px;
+      line-height: 46px;
+      width: 300px;
+    }
+  }
+
+  &__scroll-icon {
+    text-align: center;
+  }
+
+  &__centered {
+    @media (min-width: 1024px) {
+      position: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      width: 788px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      justify-content: center;
+    }
+  }
+}
+
+.section-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#chartdiv {
+  width: 100vw;
+  /* height:550px; */
+  height: 100vh;
+  position: fixed;
+}
+
+.section-canvas-container {
+  width: 1440px;
+  position: relative;
+  margin: auto;
+  height: 100%;
+}
+
+.section-graph-stretch {
+  position: absolute;
+  height: 100%;
+}
+
+.force-map-instructions {
+  display: flex;
+  width: 238px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  &__text {
+    width: 154px;
+    font-size: 18px;
+    font-family: "GothamBook", sans-serif;
+  }
+}
+
+.legend {
+  display: flex;
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.legend-item {
+  display: flex;
+  margin-right: 14px;
+
+  &__text {
+    font-size: 14px;
+    font-family: "GothamBook", sans-serif;
+  }
+  &__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    margin-right: 5px;
+    &--beards {
+      background: #2b8bf8;
+    }
+    &--grooming {
+      background: #d6006d;
+    }
+    &--hair-removal {
+      background: #e58100;
+    }
+    &--shaving {
+      background: #0542d8;
+    }
+  }
+}

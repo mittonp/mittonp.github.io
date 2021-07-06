@@ -4,7 +4,9 @@ window.addEventListener("load", function () {
     var d2 = [];
 
     d1.forEach(function (d) {
-      var ccolor = "url(#grad1)";
+      if (d.Category == "Shave") {
+        ccolor = "url(#grad1)";
+      }
       if (d.Category == "Grooming") {
         ccolor = "url(#grad2)";
       }
@@ -46,12 +48,12 @@ window.addEventListener("load", function () {
   linGrad
     .append("stop")
     .attr("offset", "0%")
-    .style("stop-color", "#ed00a6")
+    .style("stop-color", "#0542d8")
     .style("stop-opacity", "1");
   linGrad
     .append("stop")
     .attr("offset", "100%")
-    .style("stop-color", "#d6006d")
+    .style("stop-color", "#3d06b4")
     .style("stop-opacity", "1");
 
   linGrad = svg
@@ -64,12 +66,12 @@ window.addEventListener("load", function () {
   linGrad
     .append("stop")
     .attr("offset", "0%")
-    .style("stop-color", "#bb0ce7")
+    .style("stop-color", "#ff59ae")
     .style("stop-opacity", "1");
   linGrad
     .append("stop")
     .attr("offset", "100%")
-    .style("stop-color", "#8505cb")
+    .style("stop-color", "#d6006d")
     .style("stop-opacity", "1");
 
   linGrad = svg
@@ -82,12 +84,12 @@ window.addEventListener("load", function () {
   linGrad
     .append("stop")
     .attr("offset", "0%")
-    .style("stop-color", "#0ac7fc")
+    .style("stop-color", "#12d0e1")
     .style("stop-opacity", "1");
   linGrad
     .append("stop")
     .attr("offset", "100%")
-    .style("stop-color", "#049ff8")
+    .style("stop-color", "#2b8bf8")
     .style("stop-opacity", "1");
 
   linGrad = svg
@@ -100,15 +102,18 @@ window.addEventListener("load", function () {
   linGrad
     .append("stop")
     .attr("offset", "0%")
-    .style("stop-color", "#22ead1")
+    .style("stop-color", "#ffc718")
     .style("stop-opacity", "1");
   linGrad
     .append("stop")
     .attr("offset", "100%")
-    .style("stop-color", "#0fd0a5")
+    .style("stop-color", "#e58100")
     .style("stop-opacity", "1");
 
-  var tooltip = d3.select("body").append("div").attr("class", "tooltip");
+  var tooltip = d3
+    .select("#bubble-universe-canvas")
+    .append("div")
+    .attr("class", "tooltip");
 
   var showTooltip = function (d) {
     console.log("Show tooltip", d.data.name);
@@ -117,7 +122,8 @@ window.addEventListener("load", function () {
       .style("opacity", 1)
       .html(d.data.name + " " + d.data.size)
       .style("left", d3.mouse(this)[0] + 30 + "px")
-      .style("top", d3.mouse(this)[1] + 30 + "px");
+      .style("top", d3.mouse(this)[1] + 30 + "px")
+      .style("display", "block");
   };
   var moveTooltip = function (d) {
     console.log("Move tooltip", d.data.name);
@@ -127,7 +133,8 @@ window.addEventListener("load", function () {
   };
   var hideTooltip = function (d) {
     console.log("Hide tooltip", d.data.name);
-    tooltip.transition().duration(200).style("opacity", 0);
+    //tooltip.transition().duration(200).style("opacity", 0);
+    tooltip.style("display", none);
   };
 
   var pack = d3.pack().size([width, height]).padding(25);
@@ -207,6 +214,9 @@ window.addEventListener("load", function () {
     text
       .enter()
       .append("text")
+      .on("mouseover", showTooltip)
+      .on("mousemove", moveTooltip)
+      .on("mouseleave", hideTooltip)
       .attr("x", function (d) {
         return d.x;
       })
