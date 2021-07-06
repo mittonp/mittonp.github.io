@@ -134,6 +134,7 @@ body {
   font-family: Gotham Bold;
   font-size: 14px;
   width: 6.25%;
+  padding-top: 15px;
 }
 
 .year-line-indicator-container {
@@ -151,7 +152,7 @@ body {
   width: 37px;
   height: 3px;
   background: #e95a49;
-  top: 20px;
+  top: 35px;
   left: 0;
 }
 
@@ -234,6 +235,7 @@ body {
 
 @media (min-width: 1024px) {
   .overlay-text__centered {
+    margin-top: 200px;
     position: fixed;
     height: 100vh;
     display: -webkit-box;
