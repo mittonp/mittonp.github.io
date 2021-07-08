@@ -49,6 +49,21 @@ body {
 .section-canvas {
   height: 100vh;
   width: 100%;
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bubbles {
+  height: 100%;
+  width: 150vw;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #bubble-universe-canvas {
@@ -57,6 +72,12 @@ body {
   position: fixed;
   height: 100vh;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  #bubble-universe-canvas .year-line {
+    border: unset;
+  }
 }
 
 #bubble-universe-canvas .tooltip {
@@ -103,13 +124,15 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/vviz/areagraph.svg");
-  top: 0;
+  background-image: url("/vviz/areagraph.png");
+  bottom: 0;
   left: 0;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   background-position-x: left;
   background-position-y: bottom;
-  opacity: 0.3;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
 }
 
 .year-lines {
@@ -139,6 +162,7 @@ body {
 
 .year-line-indicator-container {
   position: absolute;
+  width: calc(100% - 20px);
 }
 
 @media (min-width: 1440px) {
@@ -176,6 +200,11 @@ body {
   color: white;
   width: 100%;
   height: 100%;
+  padding-top: 80px;
+  margin-left: -10px;
+  padding-right: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .overlay-text--alt {
@@ -185,6 +214,8 @@ body {
 @media (min-width: 1024px) {
   .overlay-text {
     margin-top: 100px;
+    margin-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -215,8 +246,8 @@ body {
 }
 
 .overlay-text h2 {
-  font-size: 38px;
-  line-height: 46px;
+  font-size: 22px;
+  line-height: 26px;
   font-family: "Gotham Bold", sans-serif;
   margin: 0;
 }
@@ -258,24 +289,26 @@ body {
   }
 }
 
-.section-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 #chartdiv {
-  width: 100vw;
-  /* height:550px; */
+  width: 120vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .section-canvas-container {
-  width: 1440px;
   position: relative;
   margin: auto;
   height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .section-canvas-container {
+    width: 1440px;
+  }
 }
 
 .section-graph-stretch {
@@ -284,13 +317,19 @@ body {
 }
 
 .force-map-instructions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 238px;
   position: absolute;
   right: 0;
   top: 0;
+}
+
+@media (min-width: 1024px) {
+  .force-map-instructions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .force-map-instructions__text {
@@ -304,10 +343,24 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: 130px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  bottom: 15px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  width: 240px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .legend {
+    top: 20px;
+    position: relative;
+  }
 }
 
 .legend-item {
@@ -343,5 +396,9 @@ body {
 
 .legend-item__dot--shaving {
   background: #0542d8;
+}
+
+#year {
+  color: #e95a49;
 }
 /*# sourceMappingURL=index.css.map */

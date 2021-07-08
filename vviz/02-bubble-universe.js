@@ -29,8 +29,14 @@ window.addEventListener("load", function () {
 
   var year = 2004;
 
-  var width = window.innerWidth,
-    height = window.innerHeight;
+  // var width = window.innerWidth,
+  //   height = window.innerHeight;
+
+  // var width = 1000,
+  //   height = 800;
+
+  var width = $(".bubbles").first().width(),
+    height = $(".bubbles").first().height();
 
   var svg = d3
     .select(".bubbles")
@@ -250,9 +256,8 @@ window.addEventListener("load", function () {
     console.log("Scrolling");
     var top = skrollr.init().getScrollTop();
     //year = Math.round($(window).scrollTop() / 145 + 2004);
-    year = Math.round(top / 145 + 2004);
-    $(".scroll-position").text(year);
-    $("#year").text(year);
+    year = Math.round(top / 145 + 2004).toString();
+    $("#year").text(year.substring(2, 4));
     console.log($(window).scrollTop());
     redraw(getYearData(alphabet, year));
   }
