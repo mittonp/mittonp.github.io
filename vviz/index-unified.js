@@ -1,7 +1,4 @@
-var s = skrollr.init({
-  smoothScrolling: true,
-  smoothScrollingDuration: 1500,
-});
+var s = skrollr.init();
 
 $(".progress-indicator__bullet").click(function (e) {
   var target = e.target.attributes["data-target"].nodeValue;
