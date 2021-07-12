@@ -1,4 +1,4 @@
-var s = skrollr.init();
+var skrollrInstance = skrollr.init();
 
 $(".progress-indicator__bullet").click(function (e) {
   var target = e.target.attributes["data-target"].nodeValue;
@@ -10,7 +10,7 @@ $(".progress-indicator__bullet").click(function (e) {
   var progressIndicators = $(".progress-indicator__bullet");
   progressIndicators.removeClass("progress-indicator__bullet--active");
   $(e.target).addClass("progress-indicator__bullet--active");
-  s.setScrollTop(0);
+  skrollrInstance.setScrollTop(0);
   console.log(target);
 });
 
