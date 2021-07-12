@@ -2,6 +2,18 @@
   display: none;
 }
 
+.sk-segment-footer {
+  display: none;
+}
+
+.sk-page-header {
+  display: none;
+}
+
+.sk-social-page-sharing {
+  display: none;
+}
+
 @font-face {
   font-family: Gotham Book;
   src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
