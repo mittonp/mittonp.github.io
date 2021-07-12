@@ -13,7 +13,8 @@ $(".progress-indicator__bullet").click(function (e) {
   var progressIndicators = $(".progress-indicator__bullet");
   progressIndicators.removeClass("progress-indicator__bullet--active");
   $(e.target).addClass("progress-indicator__bullet--active");
-  s.setScrollTop(0);
+  var ss = skrollr.init();
+  ss.setScrollTop(0);
   console.log(target);
 });
 
