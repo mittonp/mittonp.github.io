@@ -32,11 +32,11 @@ window.addEventListener("load", function () {
   // var width = window.innerWidth,
   //   height = window.innerHeight;
 
-  // var width = 1000,
-  //   height = 800;
+  var width = 1000,
+    height = 800;
 
-  var width = $(".bubbles").first().width(),
-    height = $(".bubbles").first().height();
+  // var width = $(".bubbles").first().width(),
+  //   height = $(".bubbles").first().height();
 
   var svg = d3
     .select(".bubbles")
@@ -239,11 +239,6 @@ window.addEventListener("load", function () {
         }
       });
   }
-
-  var s = skrollr.init({
-    smoothScrolling: false,
-    smoothScrollingDuration: 1500,
-  });
 
   function debounce(method, delay) {
     clearTimeout(method._tId);
