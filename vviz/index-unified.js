@@ -4,7 +4,7 @@ var s = skrollr.init({
 });
 
 $(".progress-indicator__bullet").click(function (e) {
-  var target = e.target.attributes["target"].nodeValue;
+  var target = e.target.attributes["data-target"].nodeValue;
   var element = $(target);
   var sections = $(".section-canvas");
   sections.hide();
