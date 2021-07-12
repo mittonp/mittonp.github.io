@@ -1,3 +1,7 @@
+.sk-segment-top {
+  display: none;
+}
+
 @font-face {
   font-family: Gotham Book;
   src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
