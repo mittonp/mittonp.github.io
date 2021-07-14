@@ -60,7 +60,3 @@ window.addEventListener("wheel", (e) => {
   handleScrollMain(e);
   //setSection("#landing-canvas");
 });
-
-$(document.body).on("touchmove", function (e) {
-  debounce(handleScrollMain, 100);
-});

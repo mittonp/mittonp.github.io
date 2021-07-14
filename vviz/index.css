@@ -183,6 +183,8 @@ body {
 }
 
 .year-line-indicator {
+  z-index: 100;
+  pointer-events: none;
   position: absolute;
   width: 37px;
   height: 3px;
@@ -192,6 +194,9 @@ body {
 }
 
 .year-label {
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
   display: none;
 }
 
@@ -206,6 +211,8 @@ body {
 }
 
 .overlay-text {
+  z-index: 100;
+  pointer-events: none;
   position: absolute;
   top: 0;
   color: white;
@@ -216,10 +223,6 @@ body {
   padding-right: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.overlay-text--alt {
-  color: #002e5d;
 }
 
 @media (min-width: 1024px) {
@@ -261,6 +264,7 @@ body {
   line-height: 26px;
   font-family: "Gotham Bold", sans-serif;
   margin: 0;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 @media (min-width: 1024px) {
@@ -269,6 +273,14 @@ body {
     line-height: 46px;
     width: 300px;
   }
+}
+
+.overlay-text--alt {
+  color: #002e5d;
+}
+
+.overlay-text--alt h2 {
+  text-shadow: none;
 }
 
 .overlay-text__scroll-icon {

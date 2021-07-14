@@ -31,7 +31,10 @@ var bubbleInit = function () {
   var sumu;
   var t = d3.transition().duration(750);
   var currentData;
-  var size = d3.scaleLinear().domain([0, 200000]).range([3, 300]);
+  var size = d3
+    .scaleSqrt()
+    .domain([0, 200000])
+    .range([3, window.innerHeight / 3.6]);
   var graph;
   var redraw;
   function getYearData(alphabet, year) {
@@ -149,14 +152,14 @@ var bubbleInit = function () {
       "forceX",
       d3
         .forceX()
-        .strength(0.1)
+        .strength(0.05)
         .x(width * 0.5)
     )
     .force(
       "forceY",
       d3
         .forceY()
-        .strength(0.1)
+        .strength(0.05)
         .y(height * 0.5)
     )
     .force(
