@@ -1,4 +1,4 @@
-window.onload = function () {
+var initSummary = function () {
   scrollSpy("#summary-nav", {
     sectionClass: ".summary-item",
     menuActiveTarget: ".summary-nav__item",

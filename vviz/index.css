@@ -465,9 +465,11 @@ body {
 
 @media (min-width: 1024px) {
   .summary-text {
-    width: 600px;
+    width: 800px;
     font-size: 18px;
     line-height: 24px;
+    height: auto;
+    overflow: unset;
   }
 }
 
@@ -626,10 +628,31 @@ body {
           box-sizing: border-box;
 }
 
+@media (min-width: 1024px) {
+  .summary-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .summary-item__content {
   width: 220px;
   position: absolute;
   right: 50px;
+}
+
+@media (min-width: 1024px) {
+  .summary-item__content {
+    position: unset;
+    right: unset;
+  }
 }
 
 .summary-item__anchor {

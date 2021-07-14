@@ -380,9 +380,11 @@ body {
   overflow: scroll;
   margin-top: 8px;
   @media (min-width: 1024px) {
-    width: 600px;
+    width: 800px;
     font-size: 18px;
     line-height: 24px;
+    height: auto;
+    overflow: unset;
   }
 }
 
@@ -503,10 +505,20 @@ body {
   padding-top: 20px;
   box-sizing: border-box;
 
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__content {
     width: 220px;
     position: absolute;
     right: 50px;
+    @media (min-width: 1024px) {
+      position: unset;
+      right: unset;
+    }
   }
   &__anchor {
     position: relative;
