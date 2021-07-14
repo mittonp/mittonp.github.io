@@ -522,10 +522,12 @@ body {
   box-sizing: border-box;
 
   &__stats {
-    position: absolute;
-    right: -230px;
-    top: 0;
-    text-align: left;
+    @media (min-width: 1024px) {
+      position: absolute;
+      right: -230px;
+      top: 0;
+      text-align: left;
+    }
   }
 
   @media (min-width: 1024px) {

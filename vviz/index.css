@@ -647,11 +647,13 @@ body {
           box-sizing: border-box;
 }
 
-.summary-item__stats {
-  position: absolute;
-  right: -230px;
-  top: 0;
-  text-align: left;
+@media (min-width: 1024px) {
+  .summary-item__stats {
+    position: absolute;
+    right: -230px;
+    top: 0;
+    text-align: left;
+  }
 }
 
 @media (min-width: 1024px) {
