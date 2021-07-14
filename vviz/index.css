@@ -75,18 +75,13 @@ body {
 
 .bubbles {
   height: 100%;
-  width: 150vw;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 #bubble-universe-canvas {
   background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -131,7 +126,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
   position: fixed;
-  height: 100vh;
+  height: 100%;
   color: white;
   width: 100%;
 }
@@ -646,5 +641,14 @@ body {
   .summary-item__anchor {
     top: -273px;
   }
+}
+
+.bubbles {
+  width: 100%;
+  position: absolute;
+}
+
+.bubbles svg {
+  overflow: visible;
 }
 /*# sourceMappingURL=index.css.map */

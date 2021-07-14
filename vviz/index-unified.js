@@ -19,4 +19,4 @@ $(".progress-indicator__bullet").click(function (e) {
 });
 
 $(".section-canvas").hide();
-$($(".section-canvas").get(3)).show();
+$($(".section-canvas").get(1)).show();
