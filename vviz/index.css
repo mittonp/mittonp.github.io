@@ -627,6 +627,13 @@ body {
   line-height: 34px;
 }
 
+@media (min-width: 1024px) {
+  .search-volume {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
 .search-legend {
   font-family: "Gotham Medium", sans-serif;
   font-size: 15px;
@@ -638,6 +645,13 @@ body {
   padding-top: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.summary-item__stats {
+  position: absolute;
+  right: -230px;
+  top: 0;
+  text-align: left;
 }
 
 @media (min-width: 1024px) {
@@ -662,7 +676,7 @@ body {
 
 @media (min-width: 1024px) {
   .summary-item__content {
-    position: unset;
+    position: relative;
     right: unset;
   }
 }
