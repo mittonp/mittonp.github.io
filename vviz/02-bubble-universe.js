@@ -1,5 +1,4 @@
-var bubbleInit = function () {
-  var skrollrInstance = skrollr.init();
+var bubbleInit = function (skrollrInstance) {
   var tooltip = d3
     .select("#bubble-universe-canvas")
     .append("div")
@@ -294,8 +293,7 @@ var bubbleInit = function () {
 
   function handleScroll() {
     console.log("Scrolling");
-    var top = skrollr.init().getScrollTop();
-    //year = Math.round($(window).scrollTop() / 145 + 2004);
+    var top = skrollrInstance.getScrollTop();
     year = Math.round(top / 145 + 2004).toString();
     $("#year").text(year.substring(2, 4));
     console.log($(window).scrollTop());

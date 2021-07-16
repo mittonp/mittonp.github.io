@@ -2,6 +2,10 @@ var sections = $(".section-canvas");
 var detachedSections = sections.detach();
 var scrollY = window.scrollY;
 var scrollYCount = 0;
+var skrollrInstance = skrollr.init();
+skrollrInstance.on("render", function (d) {
+  console.log(d);
+});
 
 var currentSection = "#landing-canvas";
 //var currentSection = "#bubble-universe-canvas";
@@ -19,15 +23,13 @@ var setSection = function (target) {
     ".progress-indicator__bullet[data-target='" + target + "']"
   )[0];
   $(bullet).addClass("progress-indicator__bullet--active");
-
-  skrollr.init().destroy();
-
+  skrollrInstance.setScrollTop(0, true);
+  skrollrInstance.refresh();
   if (target == "#bubble-universe-canvas") {
-    bubbleInit();
+    bubbleInit(skrollrInstance);
   }
 
   if (target == "#landing-canvas") {
-    skrollr.init();
   }
 
   if (target == "#force-directed-map-canvas") {
@@ -41,7 +43,9 @@ var setSection = function (target) {
 
 var nextSection = function () {
   console.log("Go to next section after " + currentSection);
-  var nextSectionName = "#" + $(currentSection).next()[0].id;
+  var nextSectionName = $(".progress-indicator__bullet--active")
+    .next()
+    .attr("data-target");
   setSection(nextSectionName);
 };
 
@@ -50,13 +54,20 @@ $(".progress-indicator__bullet").click(function (e) {
   setSection(target);
 });
 
-setSection(currentSection);
-
-function handleScrollMain(e) {
-  console.log(e.pageY);
-}
-
-window.addEventListener("wheel", (e) => {
-  handleScrollMain(e);
-  //setSection("#landing-canvas");
+$("#scroll-button").click(function (e) {
+  var maxScrollTop = skrollr.init().getMaxScrollTop();
+  var scrollTop = skrollr.init().getScrollTop();
+  skrollr.init().setScrollTop(scrollTop + 200);
+  if (scrollTop > maxScrollTop) {
+    $("#scroll-button").hide();
+    $("#next-button").show();
+  }
 });
+
+$("#next-button").click(function (e) {
+  $("#scroll-button").show();
+  $("#next-button").hide();
+  nextSection();
+});
+
+setSection(currentSection);

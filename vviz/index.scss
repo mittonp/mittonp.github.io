@@ -154,7 +154,7 @@ body {
   position: absolute;
   width: calc(100% - 20px);
   @media (min-width: 1440px) {
-    width: 1366px;
+    width: calc(100% - 148px);
   }
 }
 .year-line-indicator {
@@ -244,10 +244,6 @@ body {
     }
   }
 
-  &__scroll-icon {
-    text-align: center;
-  }
-
   &__centered {
     @media (min-width: 1024px) {
       margin-top: 200px;
@@ -287,6 +283,7 @@ body {
 .section-graph-stretch {
   position: absolute;
   height: 100%;
+  width: 100%;
 }
 
 .force-map-instructions {
@@ -560,4 +557,10 @@ body {
   svg {
     overflow: visible;
   }
+}
+
+.scroll-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
 }

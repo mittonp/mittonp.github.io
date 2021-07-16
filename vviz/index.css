@@ -178,7 +178,7 @@ body {
 
 @media (min-width: 1440px) {
   .year-line-indicator-container {
-    width: 1366px;
+    width: calc(100% - 148px);
   }
 }
 
@@ -283,10 +283,6 @@ body {
   text-shadow: none;
 }
 
-.overlay-text__scroll-icon {
-  text-align: center;
-}
-
 @media (min-width: 1024px) {
   .overlay-text__centered {
     margin-top: 200px;
@@ -337,6 +333,7 @@ body {
 .section-graph-stretch {
   position: absolute;
   height: 100%;
+  width: 100%;
 }
 
 .force-map-instructions {
@@ -701,5 +698,11 @@ body {
 
 .bubbles svg {
   overflow: visible;
+}
+
+.scroll-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
 }
 /*# sourceMappingURL=index.css.map */
