@@ -26,7 +26,8 @@ var setSection = function (target) {
   skrollrInstance.setScrollTop(0, true);
   skrollrInstance.refresh();
   if (target == "#bubble-universe-canvas") {
-    bubbleInit(skrollrInstance);
+    skrollrInstance.destroy();
+    bubbleInit(null);
   }
 
   if (target == "#landing-canvas") {
@@ -55,13 +56,13 @@ $(".progress-indicator__bullet").click(function (e) {
 });
 
 $("#scroll-button").click(function (e) {
-  var maxScrollTop = skrollr.init().getMaxScrollTop();
-  var scrollTop = skrollr.init().getScrollTop();
-  skrollr.init().setScrollTop(scrollTop + 200);
-  if (scrollTop > maxScrollTop) {
-    $("#scroll-button").hide();
-    $("#next-button").show();
-  }
+  // var maxScrollTop = skrollr.init().getMaxScrollTop();
+  // var scrollTop = skrollr.init().getScrollTop();
+  // skrollr.init().setScrollTop(scrollTop + 200);
+  // if (scrollTop > maxScrollTop) {
+  //   $("#scroll-button").hide();
+  //   $("#next-button").show();
+  // }
 });
 
 $("#next-button").click(function (e) {

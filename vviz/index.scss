@@ -57,6 +57,8 @@ body {
 
 .bubbles {
   height: 100%;
+  top: 0;
+  left: 0;
   //width: 150vw;
   //position: absolute;
   //left: 50%;
@@ -81,6 +83,7 @@ body {
     border-radius: 4px;
     padding: 10px;
     color: white;
+    pointer-events: none;
   }
 
   circle:hover {
@@ -98,6 +101,7 @@ body {
     font-family: "Gotham Medium";
     font-size: 15px;
     line-height: 16px;
+    pointer-events: none;
   }
 }
 
@@ -142,7 +146,7 @@ body {
 }
 
 .year-line {
-  border-left: 2px solid rgba(40, 177, 232, 0.4);
+  border-left: 1px solid rgba(40, 177, 232, 0.4);
   color: #e95a49;
   font-family: Gotham Bold;
   font-size: 14px;
@@ -197,7 +201,6 @@ body {
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
-    margin-top: 100px;
     margin-left: 0;
     padding-right: 0;
   }
@@ -309,12 +312,12 @@ body {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
+  width: 250px;
   justify-content: center;
   margin: auto;
   @media (min-width: 1024px) {
-    top: 20px;
-    position: relative;
+    width: 100%;
+    bottom: 30px;
   }
 }
 
@@ -342,6 +345,16 @@ body {
     }
     &--shaving {
       background: #0542d8;
+    }
+  }
+}
+
+.as-updated {
+  .legend {
+    width: 240px;
+    @media (min-width: 1024px) {
+      top: 20px;
+      position: relative;
     }
   }
 }
@@ -418,7 +431,7 @@ body {
     justify-content: center;
     color: white;
     text-decoration: none;
-    font-family: "Gotham Medium", sans-serif;
+    // font-family: "Gotham Medium", sans-serif;
     font-size: 18px;
 
     &.active {
@@ -561,6 +574,8 @@ body {
 
 .scroll-controls {
   position: fixed;
-  left: 50%;
+  //left: 50%;
   bottom: 10%;
+  width: 100%;
+  text-align: center;
 }

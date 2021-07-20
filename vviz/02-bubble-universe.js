@@ -1,34 +1,43 @@
 var bubbleInit = function (skrollrInstance) {
+  $("body").height(3000);
+  var t;
+  var simulation;
+
   var tooltip = d3
     .select("#bubble-universe-canvas")
     .append("div")
     .attr("class", "tooltip");
 
   var showTooltip = function (d) {
+    var radius = size(d.size);
     console.log("Show tooltip", d.name);
     tooltip.transition().duration(200);
     tooltip
       .style("opacity", 1)
       .html(d.name + " " + d.size)
-      .style("left", d3.mouse(this)[0] + 30 + "px")
-      .style("top", d3.mouse(this)[1] + 30 + "px")
+      // .style("left", d3.mouse(this)[0] + 30 + "px")
+      // .style("top", d3.mouse(this)[1] + 30 + "px")
+      .style("left", d.x + radius + "px")
+      .style("top", d.y + 30 + "px")
       .style("display", "block");
   };
   var moveTooltip = function (d) {
     console.log("Move tooltip", d.name);
-    tooltip
-      .style("left", d3.mouse(this)[0] + "px")
-      .style("top", d3.mouse(this)[1] - 35 + "px");
+    // tooltip
+    //   .style("left", d3.mouse(this)[0] + "px")
+    //   .style("top", d3.mouse(this)[1] - 35 + "px");
   };
   var hideTooltip = function (d) {
     console.log("Hide tooltip", d.name);
-    //tooltip.transition().duration(200).style("opacity", 0);
     tooltip.style("display", "none");
   };
 
   var node;
   var sumu;
-  var t = d3.transition().duration(750);
+  t = d3.transition().duration(750);
+  t.on("end", function () {
+    simulation.restart();
+  });
   var currentData;
   var size = d3
     .scaleSqrt()
@@ -62,8 +71,8 @@ var bubbleInit = function (skrollrInstance) {
     sizeDivisor = 100,
     nodePadding = 2.5;
 
-  width = $(".section-canvas-container").first().width();
-  height = $(".section-canvas-container").first().height();
+  width = $(".bubbles").first().width();
+  height = $(".bubbles").first().height();
 
   d3.selectAll("svg").remove();
 
@@ -145,20 +154,20 @@ var bubbleInit = function (skrollrInstance) {
     .style("stop-color", "#e58100")
     .style("stop-opacity", "1");
 
-  var simulation = d3
+  simulation = d3
     .forceSimulation()
     .force(
       "forceX",
       d3
         .forceX()
-        .strength(0.05)
+        .strength(80 / width)
         .x(width * 0.5)
     )
     .force(
       "forceY",
       d3
         .forceY()
-        .strength(0.05)
+        .strength(80 / height)
         .y(height * 0.5)
     )
     .force(
@@ -189,13 +198,17 @@ var bubbleInit = function (skrollrInstance) {
             .iterations(1)
         )
         .on("tick", function (d) {
-          node
-            .attr("cx", function (d) {
+          textNode
+            .attr("x", function (d) {
               return d.x;
             })
-            .attr("cy", function (d) {
+            .attr("y", function (d) {
               return d.y;
-            })
+            });
+
+          textNode
+            .select("circle")
+
             .attr("r", function (d) {
               return size(d.size);
             });
@@ -205,66 +218,85 @@ var bubbleInit = function (skrollrInstance) {
     sumu();
 
     redraw = function (year) {
+      simulation.stop();
       currentData = getYearData(data, year);
       for (let index = 0; index < currentData.length; index++) {
         graph[index].size = currentData[index].size;
       }
-      sumu();
+
+      svg.selectAll("svg.textnode").style("display", function (d) {
+        if (d.size == 1) return "none";
+        return "block";
+      });
+
+      svg
+        .selectAll("svg.textnode")
+        .select("text")
+        .text(function (d) {
+          return d.name;
+        })
+        .style("display", function (d) {
+          return d.size > 2000 ? "block" : "none";
+        })
+        .call(wrap, function (d) {
+          return size(d.size);
+        });
+
+      svg
+        .selectAll("circle")
+        .transition(t)
+        .attr("r", function (d) {
+          return size(d.size);
+        })
+        .on("end", function () {
+          simulation.restart();
+          sumu();
+        });
     };
 
-    node = svg
+    textNode = svg
       .append("g")
       .attr("class", "node")
-      .selectAll("g")
+      .selectAll("svg")
       .data(graph)
       .enter()
-      .append("g")
-      .attr("x", function (d) {
-        return d.x;
+      .append("svg")
+      .attr("x", function () {
+        width / 2;
       })
-      .attr("y", function (d) {
-        return d.y;
+      .attr("y", function () {
+        height / 2;
       })
-      .append("circle")
-      .attr("r", function (d) {
-        return size(d.size);
-      })
-      .attr("fill", function (d) {
-        return d.color;
-      })
-      .attr("cx", function (d) {
-        return d.x;
-      })
-      .attr("cy", function (d) {
-        return d.y;
-      })
+      .attr("class", "textnode")
+
+      .on("mouseover", showTooltip)
+      .on("mousemove", moveTooltip)
+      .on("mouseleave", hideTooltip)
       .call(
         d3
           .drag()
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended)
-      )
-      .on("mouseover", showTooltip)
-      .on("mousemove", moveTooltip)
-      .on("mouseleave", hideTooltip);
+      );
 
-    svg
-      .select("g")
-      .selectAll("g")
-      .attr("x", function (d) {
-        return d.x;
-      })
-      .attr("y", function (d) {
-        return d.y;
-      });
-
-    var circle = svg
-      .selectAll("circle")
-      .transition(t)
+    textNode
+      .append("circle")
       .attr("r", function (d) {
         return size(d.size);
+      })
+      .attr("fill", function (d) {
+        return d.color;
       });
+
+    textNode
+      .append("text")
+      .text(function (d) {
+        return d.name;
+      })
+      .attr("text-anchor", "middle");
+
+    redraw(2004);
   });
 
   function dragstarted(d) {
@@ -307,4 +339,80 @@ var bubbleInit = function (skrollrInstance) {
   $(document.body).on("touchmove", function (e) {
     debounce(handleScroll, 100);
   });
+
+  function wrap(texat, width) {
+    texat.each(function () {
+      var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        tspan = text
+          .text(null)
+          .attr("text-anchor", "middle")
+          .append("tspan")
+          .attr("text-anchor", "middle")
+          .attr("x", 0);
+
+      var diameter = size(text.data()[0].size) * 2;
+      text.attr("dy", 0);
+      width = diameter - diameter * 0.24;
+      height = diameter - diameter * 0.5;
+      var prevLength = 0;
+      var oneLine = true;
+      while ((word = words.pop())) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          lineNumber++;
+          oneLine = false;
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text
+            .append("tspan")
+            .attr("dy", 15)
+            .attr("x", 0)
+            .attr("text-anchor", "middle")
+            .text(word);
+        }
+
+        prevLength = tspan.node().getComputedTextLength();
+        //See if it's still too long
+        if (tspan.node().getComputedTextLength() > width) {
+          //It's still too long, hide the whole thing
+          text.style("display", "none");
+        }
+      }
+      if (text.node().getBBox().height > height) {
+        text.style("display", "none");
+      }
+
+      if (lineNumber > 1) {
+        text.attr("dy", -0.5 + "em");
+      }
+
+      if (oneLine) {
+        //Only one line. We must split it if its more than one word
+        words = text.text().split(/\s+/);
+        if (words.length > 1) {
+          //Yep, more than one word. Split it
+          tspan = text
+            .text(null)
+            .attr("text-anchor", "middle")
+            .append("tspan")
+            .attr("text-anchor", "middle")
+            .attr("x", 0)
+            .text(words.slice(0, words.length / 2).join(" "));
+          text
+            .append("tspan")
+            .attr("text-anchor", "middle")
+            .attr("x", 0)
+            .attr("dy", 15)
+            .text(words.slice(words.length / 2, words.length).join(" "));
+        }
+      }
+    });
+  }
 };

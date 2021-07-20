@@ -75,6 +75,8 @@ body {
 
 .bubbles {
   height: 100%;
+  top: 0;
+  left: 0;
 }
 
 #bubble-universe-canvas {
@@ -98,6 +100,7 @@ body {
   border-radius: 4px;
   padding: 10px;
   color: white;
+  pointer-events: none;
 }
 
 #bubble-universe-canvas circle:hover {
@@ -116,6 +119,7 @@ body {
   font-family: "Gotham Medium";
   font-size: 15px;
   line-height: 16px;
+  pointer-events: none;
 }
 
 #force-directed-map-canvas {
@@ -163,7 +167,7 @@ body {
 }
 
 .year-line {
-  border-left: 2px solid rgba(40, 177, 232, 0.4);
+  border-left: 1px solid rgba(40, 177, 232, 0.4);
   color: #e95a49;
   font-family: Gotham Bold;
   font-size: 14px;
@@ -227,7 +231,6 @@ body {
 
 @media (min-width: 1024px) {
   .overlay-text {
-    margin-top: 100px;
     margin-left: 0;
     padding-right: 0;
   }
@@ -369,7 +372,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 240px;
+  width: 250px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -378,8 +381,8 @@ body {
 
 @media (min-width: 1024px) {
   .legend {
-    top: 20px;
-    position: relative;
+    width: 100%;
+    bottom: 30px;
   }
 }
 
@@ -416,6 +419,17 @@ body {
 
 .legend-item__dot--shaving {
   background: #0542d8;
+}
+
+.as-updated .legend {
+  width: 240px;
+}
+
+@media (min-width: 1024px) {
+  .as-updated .legend {
+    top: 20px;
+    position: relative;
+  }
 }
 
 #year {
@@ -517,7 +531,6 @@ body {
           justify-content: center;
   color: white;
   text-decoration: none;
-  font-family: "Gotham Medium", sans-serif;
   font-size: 18px;
 }
 
@@ -702,7 +715,8 @@ body {
 
 .scroll-controls {
   position: fixed;
-  left: 50%;
   bottom: 10%;
+  width: 100%;
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
