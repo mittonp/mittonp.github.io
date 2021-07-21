@@ -665,6 +665,10 @@ body {
   overflow-y: scroll;
 }
 
+#summary-canvas::-webkit-scrollbar {
+  display: none;
+}
+
 .search-term {
   font-family: "Gotham Bold", sans-serif;
   font-size: 30px;

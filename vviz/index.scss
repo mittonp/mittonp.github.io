@@ -523,6 +523,9 @@ body {
 
 #summary-canvas {
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .search-term {
