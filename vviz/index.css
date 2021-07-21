@@ -762,6 +762,7 @@ body {
   bottom: 10%;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .next-section {
@@ -781,15 +782,17 @@ body {
 }
 
 .next-section__button {
-  font-family: "Gotham Medium", sans-serif;
+  cursor: pointer;
+  font-family: "Gotham Bold", sans-serif;
   font-size: 15px;
   padding: 15px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: rgba(255, 255, 255, 0.8);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e95a49), to(#f2b53c));
+  background: linear-gradient(#e95a49, #f2b53c);
   border-radius: 30px;
-  color: black;
+  color: #002e5d;
 }
 
 .hide-mobile {

@@ -605,6 +605,7 @@ body {
   bottom: 10%;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .next-section {
@@ -616,13 +617,14 @@ body {
   justify-content: center;
   bottom: 100px;
   &__button {
-    font-family: "Gotham Medium", sans-serif;
+    cursor: pointer;
+    font-family: "Gotham Bold", sans-serif;
     font-size: 15px;
     padding: 15px 30px;
     display: flex;
-    background: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(#e95a49, #f2b53c);
     border-radius: 30px;
-    color: black;
+    color: #002e5d;
   }
 }
 
