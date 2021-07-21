@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: Gotham Book;
-  src: url(https://mittonp.github.io/fonts/GothamMedium.otf);
+  src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
 }
 
 @font-face {
@@ -59,7 +59,7 @@
 }
 
 body {
-  font-family: Gotham Light, sans-serif;
+  font-family: "Gotham Light", sans-serif;
 }
 
 .section-canvas {
@@ -116,7 +116,7 @@ body {
   text-anchor: middle;
   fill: #fff;
   margin: 0;
-  font-family: "Gotham Medium";
+  font-family: "Gotham Medium", sans-serif;
   font-size: 15px;
   line-height: 16px;
   pointer-events: none;
@@ -168,7 +168,7 @@ body {
 .year-line {
   border-left: 1px solid rgba(40, 177, 232, 0.4);
   color: #e95a49;
-  font-family: Gotham Bold;
+  font-family: "Gotham Bold", sans-serif;
   font-size: 14px;
   width: 6.25%;
   padding-top: 15px;
@@ -236,7 +236,7 @@ body {
 .overlay-text p {
   font-size: 18px;
   line-height: 24px;
-  font-family: "Gotham Book";
+  font-family: "Gotham Book" sans-serif;
 }
 
 @media (min-width: 1024px) {
@@ -247,7 +247,7 @@ body {
 }
 
 .overlay-text h1 {
-  font-family: Gotham Bold, sans-serif;
+  font-family: "Gotham Bold", sans-serif;
   font-size: 38px;
   margin: 0;
   max-width: 600px;
@@ -379,7 +379,7 @@ body {
   color: black;
   width: 154px;
   font-size: 18px;
-  font-family: "GothamBook", sans-serif;
+  font-family: "Gotham Book", sans-serif;
 }
 
 .legend {
@@ -416,7 +416,7 @@ body {
 
 .legend-item__text {
   font-size: 14px;
-  font-family: "GothamBook", sans-serif;
+  font-family: "Gotham Book", sans-serif;
 }
 
 .legend-item__dot {
@@ -571,6 +571,7 @@ body {
           justify-content: center;
   color: white;
   text-decoration: none;
+  font-family: "Gotham Medium", sans-serif;
   font-size: 18px;
 }
 
