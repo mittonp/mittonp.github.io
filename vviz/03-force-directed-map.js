@@ -1,6 +1,7 @@
-var initForce = function () {
+var initForce = function (controls) {
+  $(".next-section__button").off();
+  $(".next-section__button").click(controls.nextSection);
   var myTemplate;
-  var thisthing;
   am4core.ready(function () {
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -10,99 +11,76 @@ var initForce = function () {
       "chartdiv",
       am4plugins_forceDirected.ForceDirectedTree
     );
-
     var networkSeries = chart.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
     );
 
-    thisthing = networkSeries;
-
-    var level1Value = 600;
-    var level2Value = 500;
-
     chart.data = [
       {
         name: "Beard Maintenance",
-        value: level1Value,
         category: "Beards",
         color: "#2b8bf8",
         children: [
           {
             name: "How do I maintain my beard?",
-            value: level2Value,
             children: [
               {
                 name: "Does brushing beard stimulate growth",
-                value: level2Value,
               },
-              { name: "Can you over brush your beard?", value: level2Value },
+              { name: "Can you over brush your beard?" },
               {
                 name: "Should you comb your wet or dry?",
-                value: level2Value,
               },
             ],
           },
           {
             name: "How can I thicken my beard?",
-            value: level2Value,
             collapsed: true,
             children: [
               {
                 name: "Does trimming your beard help it grow?",
-                value: level2Value,
               },
               {
                 name: "Does drinking water help grow beard?",
-                value: level2Value,
               },
               {
                 name: "Does vaseline help with beard growth?",
-                value: level2Value,
               },
             ],
           },
           {
             name: "How do I shape my beard?",
-            value: level2Value,
             children: [
               {
                 name: "How can I shape my beard at home?",
-                value: level2Value,
               },
               {
                 name: "How do I shape my jawline beard?",
-                value: level2Value,
               },
-              { name: "What your beard says about you?", value: level2Value },
+              { name: "What your beard says about you?" },
             ],
           },
           {
             name: "What are the stages of growing a beard?",
-            value: level2Value,
             children: [
-              { name: "Where should a beard end?", value: level2Value },
+              { name: "Where should a beard end?" },
               {
                 name: "How long does the awkward beard stage last?",
-                value: level2Value,
               },
               {
                 name: "Should your mustache be shorter than your beard?",
-                value: level2Value,
               },
             ],
           },
           {
             name: "Can I wash my beard with just water?",
-            value: level2Value,
             children: [
               {
                 name: "How often should beard be washed?",
-                value: level2Value,
               },
-              { name: "Does Face Wash damage beard?", value: level2Value },
+              { name: "Does Face Wash damage beard?" },
               {
                 name: "Is salt water good for your beard?",
-                value: level2Value,
               },
             ],
           },
@@ -110,7 +88,6 @@ var initForce = function () {
       },
       {
         name: "Male Grooming",
-        value: level1Value,
         color: "#D6006D",
         category: "Grooming",
         children: [
@@ -119,21 +96,19 @@ var initForce = function () {
             children: [
               {
                 name: "How do you describe a well groomed person?",
-                value: level2Value,
               },
               {
                 name: "How do you always be well groomed?",
-                value: level2Value,
               },
-              { name: "What is another word for neat?", value: level2Value },
+              { name: "What is another word for neat?" },
             ],
           },
           {
             name: "How common is manscaping?",
             children: [
-              { name: "Should males shave their armpits?", value: 135 },
-              { name: "How often should guys shave their pubes?", value: 98 },
-              { name: "What age should you start manscaping?", value: 98 },
+              { name: "Should males shave their armpits?" },
+              { name: "How often should guys shave their pubes?" },
+              { name: "What age should you start manscaping?" },
             ],
           },
           {
@@ -142,38 +117,19 @@ var initForce = function () {
               { name: "Is it wrong for a man to shave his legs?" },
               {
                 name: "Is it acceptable for men to shave their legs?",
-                value: 148,
               },
-              { name: "How do guys get rid of leg hair", value: 26 },
+              { name: "How do guys get rid of leg hair" },
             ],
           },
           {
             name: "Should I shave pubic hair for wedding night?",
             children: [
-              { name: "Do models shave down there?", value: 415 },
+              { name: "Do models shave down there?" },
               {
                 name: "How do you get rid of pubic hair without shaving or waxing?",
-                value: 148,
               },
-              { name: "How short should a man trim his pubes?", value: 89 },
-              { name: "How do you groom your balls?", value: 89 },
-            ],
-          },
-          {
-            name: "Fifth",
-            children: [
-              {
-                name: "E1",
-                children: [
-                  { name: "EE1", value: 33 },
-                  { name: "EE2", value: 40 },
-                  { name: "EE3", value: 89 },
-                ],
-              },
-              {
-                name: "E2",
-                value: 148,
-              },
+              { name: "How short should a man trim his pubes?" },
+              { name: "How do you groom your balls?" },
             ],
           },
         ],
@@ -181,7 +137,6 @@ var initForce = function () {
       {
         name: "Goatee Beard Styles",
         category: "Beards",
-        value: level1Value,
         color: "#2b8bf8",
         children: [
           {
@@ -221,18 +176,15 @@ var initForce = function () {
       {
         name: "Male Waxing",
         category: "Hair Removal",
-        //color: "linear-gradient(180deg, #FFC718 0%, #E58100 100%)",
         color: "#E58100",
-        value: level1Value,
         children: [
           {
             name: "Should a man get waxed",
             children: [
-              { name: "Does waxing hurt for guys?", value: 100 },
-              { name: "What is the most painful thing to wax", value: 100 },
+              { name: "Does waxing hurt for guys?" },
+              { name: "What is the most painful thing to wax" },
               {
                 name: "Is it weird for a guy to get a Brazilian wax?",
-                value: 100,
               },
             ],
           },
@@ -241,36 +193,34 @@ var initForce = function () {
             children: [
               {
                 name: "Is it better to shave or wax your balls?",
-                value: 100,
               },
               {
                 name: "Does shaving your balls make look bigger",
-                value: 100,
               },
-              { name: "Do guys get hard when getting waxed?", value: 100 },
+              { name: "Do guys get hard when getting waxed?" },
             ],
           },
           {
             name: "Can you wax yourself at home?",
             children: [
-              { name: "Is it cheaper to wax yourself?", value: 100 },
-              { name: "Can I wax my own back?", value: 100 },
+              { name: "Is it cheaper to wax yourself?" },
+              { name: "Can I wax my own back?" },
             ],
           },
           {
             name: "How long does male chest waxing last?",
             children: [
-              { name: "What does chest hair say about a man?", value: 100 },
-              { name: "Does waxing men's chest hurt?", value: 100 },
-              { name: "Do men get their chest waxed?", value: 100 },
+              { name: "What does chest hair say about a man?" },
+              { name: "Does waxing men's chest hurt?" },
+              { name: "Do men get their chest waxed?" },
             ],
           },
           {
             name: "What is Hollywood or Brazilian wax?",
             children: [
-              { name: "What is a Parisian wax?", value: 100 },
-              { name: "What is a Californian wax?", value: 100 },
-              { name: "What is intimate waxing?", value: 100 },
+              { name: "What is a Parisian wax?" },
+              { name: "What is a Californian wax?" },
+              { name: "What is intimate waxing?" },
             ],
           },
         ],
@@ -279,7 +229,6 @@ var initForce = function () {
         name: "Hipster Beard",
         category: "Beards",
         color: "#2b8bf8",
-        value: level1Value,
         children: [
           {
             name: "Are beards hipster?",
@@ -336,7 +285,6 @@ var initForce = function () {
         name: "Beard Grooming",
         category: "Grooming",
         color: "#D6006D",
-        value: level1Value,
         children: [
           {
             name: "Why does my beard look like pubes?",
@@ -392,7 +340,6 @@ var initForce = function () {
       },
       {
         name: "Beard Jewellery",
-        value: level1Value,
         color: "#2b8bf8",
         category: "Beards",
         children: [
@@ -427,7 +374,6 @@ var initForce = function () {
         name: "Facial Hair Growth",
         category: "Beards",
         color: "#2b8bf8",
-        value: level1Value,
         children: [
           {
             name: "What foods cause facial hair growth?",
@@ -475,13 +421,11 @@ var initForce = function () {
       },
     ];
 
-    networkSeries.dataFields.value = "value";
     networkSeries.dataFields.name = "name";
 
     networkSeries.dataFields.children = "children";
-    networkSeries.dataFields.collapsed = "collapsed";
     networkSeries.dataFields.color = "color";
-    networkSeries.nodes.template.tooltipText = "{name}";
+
     networkSeries.nodes.template.fillOpacity = 1;
 
     myTemplate = networkSeries.nodes.template;
@@ -500,8 +444,8 @@ var initForce = function () {
     networkSeries.nodes.template.fillModifier = fillModifier;
     networkSeries.nodes.template.fill = gradient;
 
-    networkSeries.maxRadius = 80;
-    networkSeries.minRadius = 65;
+    networkSeries.maxRadius = 90;
+    networkSeries.minRadius = 80;
 
     networkSeries.maxLevels = 1;
 

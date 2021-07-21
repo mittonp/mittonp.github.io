@@ -26,15 +26,15 @@ var setSection = function (target) {
   skrollrInstance.setScrollTop(0, true);
   skrollrInstance.refresh();
   if (target == "#bubble-universe-canvas") {
-    skrollrInstance.destroy();
-    bubbleInit(null);
+    bubbleInit(controls);
   }
 
   if (target == "#landing-canvas") {
+    landingInit(controls);
   }
 
   if (target == "#force-directed-map-canvas") {
-    initForce();
+    initForce(controls);
   }
 
   if (target == "#summary-canvas") {
@@ -43,32 +43,20 @@ var setSection = function (target) {
 };
 
 var nextSection = function () {
-  console.log("Go to next section after " + currentSection);
   var nextSectionName = $(".progress-indicator__bullet--active")
     .next()
     .attr("data-target");
   setSection(nextSectionName);
 };
 
+var controls = {
+  nextSection: nextSection,
+  skrollrInstance: skrollrInstance,
+};
+
 $(".progress-indicator__bullet").click(function (e) {
   var target = e.target.attributes["data-target"].nodeValue;
   setSection(target);
-});
-
-$("#scroll-button").click(function (e) {
-  // var maxScrollTop = skrollr.init().getMaxScrollTop();
-  // var scrollTop = skrollr.init().getScrollTop();
-  // skrollr.init().setScrollTop(scrollTop + 200);
-  // if (scrollTop > maxScrollTop) {
-  //   $("#scroll-button").hide();
-  //   $("#next-button").show();
-  // }
-});
-
-$("#next-button").click(function (e) {
-  $("#scroll-button").show();
-  $("#next-button").hide();
-  nextSection();
 });
 
 setSection(currentSection);

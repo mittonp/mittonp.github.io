@@ -1,5 +1,23 @@
-var bubbleInit = function (skrollrInstance) {
-  $("body").height(3000);
+var bubbleInit = function (controls) {
+  var width = $(".bubbles").first().width();
+  var height = $(".bubbles").first().height();
+  var currentYear = 2004;
+  var scrollHeight = 2320;
+  $(".next-section__button").off();
+  $(".next-section__button").click(controls.nextSection);
+
+  $("#scroll-button").off();
+  $("#scroll-button").click(function (e) {
+    //go to next year
+    if (currentYear < 2020) {
+      currentYear++;
+      controls.skrollrInstance.setScrollTop(
+        (scrollHeight / 16) * (currentYear - 2004)
+      );
+    } else {
+      controls.skrollrInstance.setScrollTop(scrollHeight + 200);
+    }
+  });
   var t;
   var simulation;
 
@@ -42,7 +60,7 @@ var bubbleInit = function (skrollrInstance) {
   var size = d3
     .scaleSqrt()
     .domain([0, 200000])
-    .range([3, window.innerHeight / 3.6]);
+    .range([3, Math.sqrt(height * width) / 4]);
   var graph;
   var redraw;
   function getYearData(alphabet, year) {
@@ -66,13 +84,7 @@ var bubbleInit = function (skrollrInstance) {
     });
     return d2;
   }
-  var width = window.innerWidth,
-    height = window.innerHeight,
-    sizeDivisor = 100,
-    nodePadding = 2.5;
-
-  width = $(".bubbles").first().width();
-  height = $(".bubbles").first().height();
+  var nodePadding = 2.5;
 
   d3.selectAll("svg").remove();
 
@@ -169,15 +181,15 @@ var bubbleInit = function (skrollrInstance) {
         .forceY()
         .strength(80 / height)
         .y(height * 0.5)
-    )
-    .force(
-      "center",
-      d3
-        .forceCenter()
-        .x(width * 0.5)
-        .y(height * 0.5)
-    )
-    .force("charge", d3.forceManyBody().strength(-15));
+    );
+  // .force(
+  //   "center",
+  //   d3
+  //     .forceCenter()
+  //     .x(width * 0.5)
+  //     .y(height * 0.5)
+  // );
+  // .force("charge", d3.forceManyBody().strength(-15));
 
   d3.json("data.json", function (data) {
     // sort the nodes so that the bigger ones are at the back
@@ -261,11 +273,19 @@ var bubbleInit = function (skrollrInstance) {
       .data(graph)
       .enter()
       .append("svg")
-      .attr("x", function () {
-        width / 2;
+      .attr("x", function (d) {
+        d.x = width / 2;
+        if (width >= height) {
+          d.x = Math.random() * width;
+        }
+        return d.x;
       })
-      .attr("y", function () {
-        height / 2;
+      .attr("y", function (d) {
+        d.y = height / 2;
+        if (width < height) {
+          d.y = Math.random() * width;
+        }
+        return d.y;
       })
       .attr("class", "textnode")
 
@@ -324,21 +344,15 @@ var bubbleInit = function (skrollrInstance) {
   }
 
   function handleScroll() {
-    console.log("Scrolling");
-    var top = skrollrInstance.getScrollTop();
-    year = Math.round(top / 145 + 2004).toString();
-    $("#year").text(year.substring(2, 4));
-    console.log($(window).scrollTop());
-    redraw(year);
+    var top = controls.skrollrInstance.getScrollTop();
+    currentYear = Math.round(top / 145 + 2004).toString();
+    if (currentYear > 2020) {
+      currentYear = 2020;
+    }
+
+    $("#year").text(currentYear.substring(2, 4));
+    redraw(currentYear);
   }
-
-  window.onscroll = function (e) {
-    debounce(handleScroll, 100);
-  };
-
-  $(document.body).on("touchmove", function (e) {
-    debounce(handleScroll, 100);
-  });
 
   function wrap(texat, width) {
     texat.each(function () {
@@ -415,4 +429,7 @@ var bubbleInit = function (skrollrInstance) {
       }
     });
   }
+  controls.skrollrInstance.on("beforerender", function (e) {
+    debounce(handleScroll, 100);
+  });
 };

@@ -74,7 +74,7 @@
           </div>
           <div class="section-canvas-container">
             <div class="overlay-text">
-              <h1>The<br />Rise of<br />Manscaping</h1>
+              <h1>The Rise of Manscaping</h1>
               <div class="overlay-text__centered">
                 <p>
                   Think back to 2004. A simpler time before social media, when
@@ -87,7 +87,20 @@
               </div>
             </div>
           </div>
+          <div class="scroll-controls">
+            <div id="scroll-button" data-2320="opacity:1" data-2520="opacity:0">
+              <img src="/vviz/icons/scroll.svg" alt="" />
+            </div>
+          </div>
+          <div
+            class="next-section"
+            data-2320="bottom:-200px"
+            data-2520="bottom:100px"
+          >
+            <div class="next-section__button">See keyword trend</div>
+          </div>
         </div>
+
         <div id="bubble-universe-canvas" class="section-canvas">
           <div class="section-graph-stretch">
             <div class="year-lines">
@@ -174,6 +187,20 @@
             </div>
           </div>
           <div class="bubbles"></div>
+          <div class="scroll-controls">
+            <div id="scroll-button" data-2320="opacity:1" data-2520="opacity:0">
+              <img src="/vviz/icons/scroll.svg" alt="" />
+            </div>
+          </div>
+          <div
+            class="next-section"
+            data-2320="bottom:-200px"
+            data-2520="bottom:100px"
+          >
+            <div class="next-section__button">
+              See what men also searched for
+            </div>
+          </div>
         </div>
         <div id="force-directed-map-canvas" class="section-canvas">
           <div class="section-canvas-container">
@@ -206,6 +233,9 @@
             </div>
 
             <div id="chartdiv"></div>
+          </div>
+          <div class="next-section">
+            <div class="next-section__button">See summary</div>
           </div>
         </div>
         <div id="summary-canvas" class="section-canvas">
@@ -363,14 +393,7 @@
           </div>
         </div>
       </div>
-      <div class="scroll-controls">
-        <div id="scroll-button">
-          <img src="/vviz/icons/scroll.svg" alt="" />
-        </div>
-        <div id="next-button" style="display: none">
-          <img src="/vviz/icons/next.svg" alt="" />
-        </div>
-      </div>
+
       <div class="progress-indicator">
         <div
           class="progress-indicator__bullet"
@@ -390,7 +413,6 @@
         ></div>
       </div>
     </div>
-    <div id="skrollr-body"></div>
   </body>
   <script src="/vviz/libs/jquery.min.js"></script>
   <script src="/vviz/libs/skrollr.min.js"></script>
@@ -401,6 +423,7 @@
   <script src="/vviz/libs/charts.js"></script>
   <script src="/vviz/libs/forceDirected.js"></script>
   <script src="/vviz/libs/animated.js"></script>
+  <script src="/vviz/01-landing.js"></script>
   <script src="/vviz/02-bubble-universe.js"></script>
   <script src="/vviz/03-force-directed-map.js"></script>
   <script src="https://kimyvgy.github.io/simple-scrollspy/demo/dist/simple-scrollspy.min.js"></script>
