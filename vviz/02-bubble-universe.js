@@ -1,8 +1,18 @@
 var bubbleInit = function (controls) {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   var width = $(".bubbles").first().width();
   var height = $(".bubbles").first().height();
   var currentYear = 2004;
   var scrollHeight = 2320;
+
+  $(".section-canvas").off();
+  $(".instructions").show();
+  $(".section-canvas").click(function () {
+    $(".instructions").hide();
+  });
+
   $(".next-section__button").off();
   $(".next-section__button").click(controls.nextSection);
 
@@ -32,12 +42,16 @@ var bubbleInit = function (controls) {
     tooltip.transition().duration(200);
     tooltip
       .style("opacity", 1)
-      .html(d.name + " " + d.size)
-      // .style("left", d3.mouse(this)[0] + 30 + "px")
-      // .style("top", d3.mouse(this)[1] + 30 + "px")
-      .style("left", d.x + radius + "px")
-      .style("top", d.y + 30 + "px")
+      .html(d.name + "<br/>" + numberWithCommas(d.size) + " searches")
+      .style("top", d.y + "px")
       .style("display", "block");
+
+    tooltip.style("left", function () {
+      if (d.x > width / 2) {
+        return d.x - tooltip.nodes()[0].getClientRects()[0].width + "px";
+      }
+      return d.x + "px";
+    });
   };
   var moveTooltip = function (d) {
     console.log("Move tooltip", d.name);
@@ -283,7 +297,7 @@ var bubbleInit = function (controls) {
       .attr("y", function (d) {
         d.y = height / 2;
         if (width < height) {
-          d.y = Math.random() * width;
+          d.y = Math.random() * height;
         }
         return d.y;
       })

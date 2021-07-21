@@ -1,6 +1,12 @@
 var initForce = function (controls) {
   $(".next-section__button").off();
   $(".next-section__button").click(controls.nextSection);
+
+  $(".section-canvas").off();
+  $(".instructions").show();
+  $(".section-canvas").click(function () {
+    $(".instructions").hide();
+  });
   var myTemplate;
   am4core.ready(function () {
     // Themes begin
