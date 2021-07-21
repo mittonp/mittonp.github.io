@@ -15,11 +15,6 @@
 }
 
 @font-face {
-  font-family: Gotham Book;
-  src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
-}
-
-@font-face {
   font-family: Gotham Light;
   src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
 }
@@ -27,11 +22,6 @@
 @font-face {
   font-family: Gotham Bold;
   src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
-}
-
-@font-face {
-  font-family: Gotham Medium;
-  src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
 }
 
 .progress-indicator {
