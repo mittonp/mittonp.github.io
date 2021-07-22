@@ -29,7 +29,17 @@ var bubbleInit = function (controls) {
     }
   });
 
+  function setYear(year) {
+    currentYear = year;
+    controls.skrollrInstance.setScrollTop(
+      (scrollHeight / 16) * (currentYear - 2004)
+    );
+  }
+
   $(".year-label").off();
+  $(".year-label").click(function (e) {
+    setYear(e.target.innerText);
+  });
   var t;
   var simulation;
 

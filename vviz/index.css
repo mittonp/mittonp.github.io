@@ -198,7 +198,7 @@ body {
 .year-label {
   position: relative;
   z-index: 100;
-  pointer-events: none;
+  cursor: pointer;
   display: none;
 }
 
