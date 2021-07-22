@@ -14,6 +14,10 @@
   display: none;
 }
 
+.main-header {
+  display: none;
+}
+
 @font-face {
   font-family: Gotham Light;
   src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
