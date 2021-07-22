@@ -205,7 +205,7 @@ var bubbleInit = function (controls) {
   // );
   // .force("charge", d3.forceManyBody().strength(-15));
 
-  d3.json("data.json", function (data) {
+  d3.json("https://mittonp.github.io/vviz/data.json", function (data) {
     // sort the nodes so that the bigger ones are at the back
     graph = getYearData(data, 2004);
 
