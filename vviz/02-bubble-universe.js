@@ -28,6 +28,8 @@ var bubbleInit = function (controls) {
       controls.skrollrInstance.setScrollTop(scrollHeight + 200);
     }
   });
+
+  $(".year-label").off();
   var t;
   var simulation;
 
@@ -67,9 +69,6 @@ var bubbleInit = function (controls) {
   var node;
   var sumu;
   t = d3.transition().duration(750);
-  t.on("end", function () {
-    simulation.restart();
-  });
   var currentData;
   var size = d3
     .scaleSqrt()
@@ -78,7 +77,8 @@ var bubbleInit = function (controls) {
   var graph;
   var redraw;
   function getYearData(alphabet, year) {
-    var d1 = alphabet.sort((a, b) => b[year] - a[year]).slice(0, 40);
+    var d1 = alphabet.sort((a, b) => b[year] - a[year]);
+    //.slice(0, 20);
     var d2 = [];
 
     d1.forEach(function (d) {
@@ -196,17 +196,8 @@ var bubbleInit = function (controls) {
         .strength(80 / height)
         .y(height * 0.5)
     );
-  // .force(
-  //   "center",
-  //   d3
-  //     .forceCenter()
-  //     .x(width * 0.5)
-  //     .y(height * 0.5)
-  // );
-  // .force("charge", d3.forceManyBody().strength(-15));
 
   d3.json("https://mittonp.github.io/vviz/data.json", function (data) {
-    // sort the nodes so that the bigger ones are at the back
     graph = getYearData(data, 2004);
 
     //update the simulation based on the data
@@ -244,7 +235,6 @@ var bubbleInit = function (controls) {
     sumu();
 
     redraw = function (year) {
-      simulation.stop();
       currentData = getYearData(data, year);
       for (let index = 0; index < currentData.length; index++) {
         graph[index].size = currentData[index].size;
@@ -444,6 +434,10 @@ var bubbleInit = function (controls) {
     });
   }
   controls.skrollrInstance.on("beforerender", function (e) {
+    simulation.stop();
     debounce(handleScroll, 100);
+  });
+  controls.skrollrInstance.on("afterrender", function (e) {
+    simulation.restart();
   });
 };

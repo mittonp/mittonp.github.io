@@ -769,6 +769,11 @@ body {
   cursor: pointer;
 }
 
+.scroll-controls img {
+  width: auto;
+  display: inline;
+}
+
 .next-section {
   position: fixed;
   width: 100%;

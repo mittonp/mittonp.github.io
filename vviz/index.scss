@@ -607,6 +607,10 @@ body {
   width: 100%;
   text-align: center;
   cursor: pointer;
+  img {
+    width: auto;
+    display: inline;
+  }
 }
 
 .next-section {
