@@ -28,6 +28,11 @@
   src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
 }
 
+.top-canvas img {
+  width: auto;
+  display: inline;
+}
+
 .progress-indicator {
   position: fixed;
   top: 40px;
@@ -767,11 +772,6 @@ body {
   width: 100%;
   text-align: center;
   cursor: pointer;
-}
-
-.scroll-controls img {
-  width: auto;
-  display: inline;
 }
 
 .next-section {

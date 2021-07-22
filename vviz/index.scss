@@ -20,6 +20,13 @@
 //   font-family: Gotham Medium;
 //   src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
 // }
+
+.top-canvas {
+  img {
+    width: auto;
+    display: inline;
+  }
+}
 .progress-indicator {
   //display: none;
   position: fixed;
@@ -607,10 +614,6 @@ body {
   width: 100%;
   text-align: center;
   cursor: pointer;
-  img {
-    width: auto;
-    display: inline;
-  }
 }
 
 .next-section {
