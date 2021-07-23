@@ -307,7 +307,7 @@ body {
 .overlay-text p {
   font-size: 18px;
   line-height: 24px;
-  font-family: "Gotham Book" sans-serif;
+  font-family: "Gotham Book", sans-serif;
 }
 
 @media (min-width: 1024px) {
