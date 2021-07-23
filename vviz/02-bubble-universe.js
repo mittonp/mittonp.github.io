@@ -80,8 +80,13 @@ var bubbleInit = function (controls) {
     .range([3, Math.sqrt(height * width) / 4]);
   var graph;
   function getYearData(alphabet, year) {
-    var d1 = alphabet.sort((a, b) => b[year] - a[year]);
-    d1 = d1.slice(0, 20);
+    var d1 = alphabet.sort((a, b) => b[2020] - a[2020]);
+    if (width > 1024) {
+      d1 = d1.slice(0, 40);
+    } else {
+      d1 = d1.slice(0, 20);
+    }
+
     var d2 = [];
 
     d1.forEach(function (d) {
