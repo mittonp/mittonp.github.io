@@ -52,12 +52,7 @@ var bubbleInit = function (controls) {
   });
 
   var t;
-
-  var tooltip = d3
-    .select("#bubble-universe-canvas")
-    .append("div")
-    .attr("class", "tooltip");
-
+  var tooltip = d3.select(".tooltip");
   var showTooltip = function (d) {
     tooltip.transition().duration(200);
     tooltip

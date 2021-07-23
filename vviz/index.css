@@ -19,6 +19,11 @@
 }
 
 @font-face {
+  font-family: Gotham Book;
+  src: url(https://mittonp.github.io/fonts/GothamBook.ttf);
+}
+
+@font-face {
   font-family: Gotham Light;
   src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
 }
@@ -26,6 +31,11 @@
 @font-face {
   font-family: Gotham Bold;
   src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
+}
+
+@font-face {
+  font-family: Gotham Medium;
+  src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
 }
 
 .hide-mobile {
@@ -600,7 +610,7 @@ body {
 .summary-nav {
   position: fixed;
   left: 6px;
-  top: 220px;
+  bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -724,6 +734,13 @@ body {
   max-height: 300px;
 }
 
+@media (min-width: 1024px) {
+  .summary-items img {
+    max-width: 405px;
+    max-height: 450px;
+  }
+}
+
 #summary-canvas {
   overflow-y: scroll;
 }
@@ -789,7 +806,7 @@ body {
   .summary-item__stats {
     position: absolute;
     right: -230px;
-    top: 0;
+    top: 140px;
     text-align: left;
   }
 }
