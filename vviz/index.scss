@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: Gotham Medium;
-  src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
+  src: url(https://mittonp.github.io/fonts/GothamMedium.otf);
 }
 
 .hide-mobile {
@@ -366,6 +366,7 @@ body {
     color: black;
     width: 154px;
     font-size: 18px;
+    line-height: 1em;
     font-family: "Gotham Book", sans-serif;
   }
 }
