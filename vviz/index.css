@@ -355,6 +355,10 @@ body {
   text-shadow: none;
 }
 
+.overlay-text__centered p {
+  font-family: "Gotham Book", sans-serif;
+}
+
 @media (min-width: 1024px) {
   .overlay-text__centered {
     position: fixed;

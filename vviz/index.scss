@@ -296,6 +296,9 @@ body {
   }
 
   &__centered {
+    p {
+      font-family: "Gotham Book", sans-serif;
+    }
     @media (min-width: 1024px) {
       position: fixed;
       height: 100vh;
