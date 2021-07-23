@@ -87,18 +87,20 @@ polygonSeries.useGeodata = true;
 
 //Set up a template for displaying country data
 tooltipTemplate = `
-<div class='am-tooltip'>
+<div class='am-tooltip nodata{madeFromGeoData}'>
   <div class='country-name'>{name}</div>
   <div class='text'>{text}</div>
   <div class='am-tooltip__plan-wrapper'>
   <div class='am-tooltip__plan'>
-    <div class='best-plan__heading'>Best Plan</div>
-    <p><strong class="best-plan__name">{bestPlan}</strong> <span class="best-plan__minutes">{bestPlanMinutes}</span>
-    </p>
+    <div class='best-plan__heading nodata-hide'>Best Plan</div>
+    <div class='view-rates nodata-show'><strong>View rates to {name}</strong></div>
     <div class='price-wrap'>
       <div class="best-plan__price">{bestPlanPrice}</div>
     </div>
-    <a href='buy'><button class='btn btn-primary buynow'>Buy SIM</button></a>
+    <div class="best-plan__name nodata-hide">{bestPlan}</div>
+    <div class="best-plan__name nodata-hide">Unlimited calls to {name}</div>
+    <a class="nodata-hide" href='buy'><button class='btn btn-primary buynow'>Buy SIM</button></a>
+    <a class="nodata-show" href='https://www.lebara.com.au/mobile-plans/rates/'><button class='btn btn-primary buynow'>View rates</button></a>
   </div>
   </div>
 </div>

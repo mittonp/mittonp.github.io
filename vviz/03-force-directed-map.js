@@ -1,6 +1,9 @@
 var initForce = function (controls) {
-  $(".next-section__button").off();
-  $(".next-section__button").click(controls.nextSection);
+  $(".section-navigation__button--next").off();
+  $(".section-navigation__button--next").click(controls.nextSection);
+
+  $(".section-navigation__button--previous").off();
+  $(".section-navigation__button--previous").click(controls.previousSection);
 
   $(".section-canvas").off();
   $(".instructions").show();

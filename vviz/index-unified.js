@@ -1,15 +1,9 @@
 $(document).ready(function () {
   var sections = $(".section-canvas");
   var detachedSections = sections.detach();
-  var scrollY = window.scrollY;
-  var scrollYCount = 0;
   var skrollrInstance = skrollr.init();
-  skrollrInstance.on("render", function (d) {
-    console.log(d);
-  });
 
   var currentSection = "#landing-canvas";
-  //var currentSection = "#bubble-universe-canvas";
 
   var setSection = function (target) {
     currentSection = target;
@@ -24,6 +18,8 @@ $(document).ready(function () {
       ".progress-indicator__bullet[data-target='" + target + "']"
     )[0];
     $(bullet).addClass("progress-indicator__bullet--active");
+    skrollrInstance.off("beforerender");
+    skrollrInstance.off("afterrender");
     skrollrInstance.setScrollTop(0, true);
     skrollrInstance.refresh();
     if (target == "#bubble-universe-canvas") {
@@ -39,7 +35,7 @@ $(document).ready(function () {
     }
 
     if (target == "#summary-canvas") {
-      initSummary();
+      initSummary(controls);
     }
   };
 
@@ -50,9 +46,17 @@ $(document).ready(function () {
     setSection(nextSectionName);
   };
 
+  var previousSection = function () {
+    var previousSectionName = $(".progress-indicator__bullet--active")
+      .prev()
+      .attr("data-target");
+    setSection(previousSectionName);
+  };
+
   var controls = {
     nextSection: nextSection,
     skrollrInstance: skrollrInstance,
+    previousSection: previousSection,
   };
 
   $(".progress-indicator__bullet").click(function (e) {

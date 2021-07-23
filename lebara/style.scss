@@ -27,11 +27,21 @@ a {
   font-family: "Montserrat", sans-serif;
   width: 298px;
   z-index: -10;
-  //padding: 26px;
-  //border-radius: 20px;
-  //background-color: white;
   opacity: 0.9;
-  //box-shadow: 3px 6px 46px rgba(0, 0, 0, 0.3);
+
+  .nodata-show {
+    display: none;
+  }
+
+  &.nodatatrue {
+    .nodata-hide {
+      display: none;
+    }
+    .nodata-show {
+      display: block;
+    }
+  }
+
   @media (min-width: 1200px) {
   }
 
@@ -71,6 +81,7 @@ a {
 
     &__name {
       font-size: 14px;
+      font-weight: 600;
     }
 
     &__minutes {

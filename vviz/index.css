@@ -28,12 +28,29 @@
   src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
 }
 
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
 .top-canvas img {
   width: auto;
   display: inline;
 }
 
 .progress-indicator {
+  display: none;
   position: fixed;
   top: 40px;
   right: 40px;
@@ -166,49 +183,94 @@ body {
 
 .year-line {
   border-left: 1px solid rgba(40, 177, 232, 0.4);
+  width: 6.25%;
+}
+
+.year-line .year-label {
   color: #e95a49;
+  padding-top: 15px;
   font-family: "Gotham Bold", sans-serif;
   font-size: 14px;
-  width: 6.25%;
-  padding-top: 15px;
-}
-
-.year-line-indicator-container {
-  position: absolute;
-  width: calc(100% - 20px);
-}
-
-@media (min-width: 1440px) {
-  .year-line-indicator-container {
-    width: calc(100% - 148px);
-  }
-}
-
-.year-line-indicator {
+  opacity: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   z-index: 100;
-  pointer-events: none;
-  position: absolute;
-  width: 37px;
-  height: 3px;
-  background: #e95a49;
-  top: 35px;
-  left: 0;
-}
-
-.year-label {
   position: relative;
-  z-index: 100;
-  cursor: pointer;
-  display: none;
 }
 
-.year-label--mobile {
-  display: block;
+.year-line .year-label--mobile {
+  opacity: 1;
 }
 
 @media (min-width: 1024px) {
-  .year-label--even {
-    display: block;
+  .year-line .year-label--even {
+    opacity: 1;
+  }
+}
+
+.year-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .year-buttons {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.year-button {
+  padding-top: 15px;
+  font-family: "Gotham Bold", sans-serif;
+  font-size: 14px;
+  color: #e95a49;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0;
+  width: 5%;
+  overflow: visible;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+.year-button__text {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px;
+  -webkit-transition: background 2s, color 2s;
+  transition: background 2s, color 2s;
+  border-radius: 4px;
+}
+
+.year-button:nth-of-type(4n + 1) {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .year-button {
+    opacity: 1;
+  }
+}
+
+.year-button.active {
+  opacity: 1;
+  z-index: 110;
+}
+
+.year-button.active .year-button__text {
+  color: black;
+  background: #e95a49;
+}
+
+@media (min-width: 1024px) {
+  .year-button--even {
+    opacity: 1;
   }
 }
 
@@ -774,8 +836,9 @@ body {
   cursor: pointer;
 }
 
-.next-section {
+.section-navigation {
   position: fixed;
+  z-index: 100;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -790,7 +853,7 @@ body {
   bottom: 100px;
 }
 
-.next-section__button {
+.section-navigation__button {
   cursor: pointer;
   font-family: "Gotham Bold", sans-serif;
   font-size: 15px;
@@ -802,21 +865,5 @@ body {
   background: linear-gradient(#e95a49, #f2b53c);
   border-radius: 30px;
   color: #002e5d;
-}
-
-.hide-mobile {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .hide-mobile {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hide-desktop {
-    display: none;
-  }
 }
 /*# sourceMappingURL=index.css.map */

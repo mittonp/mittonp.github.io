@@ -20,6 +20,18 @@
 //   font-family: Gotham Medium;
 //   src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
 // }
+.hide-mobile {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
 
 .top-canvas {
   img {
@@ -28,7 +40,7 @@
   }
 }
 .progress-indicator {
-  //display: none;
+  display: none;
   position: fixed;
   top: 40px;
   right: 40px;
@@ -148,49 +160,77 @@ body {
   box-sizing: border-box;
   justify-content: space-between;
   width: 100%;
-  @media (min-width: 1024px) {
-  }
 }
 
 .year-line {
   border-left: 1px solid rgba(40, 177, 232, 0.4);
-  color: #e95a49;
-  font-family: "Gotham Bold", sans-serif;
-  font-size: 14px;
   width: 6.25%;
-  padding-top: 15px;
-}
+  .year-label {
+    color: #e95a49;
+    padding-top: 15px;
+    font-family: "Gotham Bold", sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    width: fit-content;
+    z-index: 100;
+    position: relative;
+    &--mobile {
+      opacity: 1;
+    }
 
-.year-line-indicator-container {
-  position: absolute;
-  width: calc(100% - 20px);
-  @media (min-width: 1440px) {
-    width: calc(100% - 148px);
+    @media (min-width: 1024px) {
+      &--even {
+        opacity: 1;
+      }
+    }
   }
 }
-.year-line-indicator {
-  z-index: 100;
-  pointer-events: none;
-  position: absolute;
-  width: 37px;
-  height: 3px;
-  background: #e95a49;
-  top: 35px;
-  left: 0;
+
+.year-buttons {
+  display: flex;
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+  }
 }
 
-.year-label {
+.year-button {
+  padding-top: 15px;
+  font-family: "Gotham Bold", sans-serif;
+  font-size: 14px;
+  color: #e95a49;
   position: relative;
   z-index: 100;
-  //pointer-events: none;
   cursor: pointer;
-  display: none;
-  &--mobile {
-    display: block;
+  opacity: 0;
+  width: 5%;
+  overflow: visible;
+  transition: opacity 2s;
+
+  &__text {
+    width: fit-content;
+    padding: 4px;
+    transition: background 2s, color 2s;
+    border-radius: 4px;
+  }
+
+  &:nth-of-type(4n + 1) {
+    opacity: 1;
+  }
+
+  @media (min-width: 1024px) {
+    opacity: 1;
+  }
+  &.active {
+    opacity: 1;
+    z-index: 110;
+    .year-button__text {
+      color: black;
+      background: #e95a49;
+    }
   }
   @media (min-width: 1024px) {
     &--even {
-      display: block;
+      opacity: 1;
     }
   }
 }
@@ -617,8 +657,9 @@ body {
   cursor: pointer;
 }
 
-.next-section {
+.section-navigation {
   position: fixed;
+  z-index: 100;
   width: 100%;
   display: flex;
   align-items: center;
@@ -634,18 +675,5 @@ body {
     background: linear-gradient(#e95a49, #f2b53c);
     border-radius: 30px;
     color: #002e5d;
-  }
-}
-
-.hide-mobile {
-  display: none;
-  @media (min-width: 1024px) {
-    display: block;
-  }
-}
-
-.hide-desktop {
-  @media (min-width: 1024px) {
-    display: none;
   }
 }

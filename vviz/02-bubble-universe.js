@@ -1,4 +1,6 @@
+var simulation;
 var bubbleInit = function (controls) {
+  $(".section-navigation__button--previous").hide();
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -13,8 +15,11 @@ var bubbleInit = function (controls) {
     $(".instructions").hide();
   });
 
-  $(".next-section__button").off();
-  $(".next-section__button").click(controls.nextSection);
+  $(".section-navigation__button--next").off();
+  $(".section-navigation__button--next").click(controls.nextSection);
+
+  $(".section-navigation__button--previous").off();
+  $(".section-navigation__button--previous").click(controls.previousSection);
 
   $("#scroll-button").off();
   $("#scroll-button").click(function (e) {
@@ -30,18 +35,27 @@ var bubbleInit = function (controls) {
   });
 
   function setYear(year) {
+    if (year > 2004) {
+      $(".section-navigation__button--previous").show();
+    }
     currentYear = year;
+    $(".year-button").removeClass("active");
+    $(".year-button .year-button__text:contains('" + year + "')")
+      .parent()
+      .addClass("active");
+    $(".year-label").removeClass("active");
+    $(".year-label:contains('" + year + "')").addClass("active");
+  }
+
+  $(".year-button").off();
+  $(".year-button").click(function (e) {
+    setYear(e.target.innerText);
     controls.skrollrInstance.setScrollTop(
       (scrollHeight / 16) * (currentYear - 2004)
     );
-  }
-
-  $(".year-label").off();
-  $(".year-label").click(function (e) {
-    setYear(e.target.innerText);
   });
+
   var t;
-  var simulation;
 
   var tooltip = d3
     .select("#bubble-universe-canvas")
@@ -50,7 +64,6 @@ var bubbleInit = function (controls) {
 
   var showTooltip = function (d) {
     var radius = size(d.size);
-    console.log("Show tooltip", d.name);
     tooltip.transition().duration(200);
     tooltip
       .style("opacity", 1)
@@ -65,19 +78,11 @@ var bubbleInit = function (controls) {
       return d.x + "px";
     });
   };
-  var moveTooltip = function (d) {
-    console.log("Move tooltip", d.name);
-    // tooltip
-    //   .style("left", d3.mouse(this)[0] + "px")
-    //   .style("top", d3.mouse(this)[1] - 35 + "px");
-  };
+
   var hideTooltip = function (d) {
-    console.log("Hide tooltip", d.name);
     tooltip.style("display", "none");
   };
 
-  var node;
-  var sumu;
   t = d3.transition().duration(750);
   var currentData;
   var size = d3
@@ -85,10 +90,9 @@ var bubbleInit = function (controls) {
     .domain([0, 200000])
     .range([3, Math.sqrt(height * width) / 4]);
   var graph;
-  var redraw;
   function getYearData(alphabet, year) {
     var d1 = alphabet.sort((a, b) => b[year] - a[year]);
-    //.slice(0, 20);
+    d1 = d1.slice(0, 20);
     var d2 = [];
 
     d1.forEach(function (d) {
@@ -205,46 +209,22 @@ var bubbleInit = function (controls) {
         .forceY()
         .strength(80 / height)
         .y(height * 0.5)
+    )
+
+    .force(
+      "collide",
+      d3
+        .forceCollide()
+        .strength(0.5)
+        .radius(function (d) {
+          return size(d.size) + nodePadding;
+        })
+        .iterations(1)
     );
 
   d3.json("https://mittonp.github.io/vviz/data.json", function (data) {
-    graph = getYearData(data, 2004);
-
-    //update the simulation based on the data
-    sumu = function () {
-      simulation
-        .nodes(graph)
-        .force(
-          "collide",
-          d3
-            .forceCollide()
-            .strength(0.5)
-            .radius(function (d) {
-              return size(d.size) + nodePadding;
-            })
-            .iterations(1)
-        )
-        .on("tick", function (d) {
-          textNode
-            .attr("x", function (d) {
-              return d.x;
-            })
-            .attr("y", function (d) {
-              return d.y;
-            });
-
-          textNode
-            .select("circle")
-
-            .attr("r", function (d) {
-              return size(d.size);
-            });
-        });
-    };
-
-    sumu();
-
-    redraw = function (year) {
+    function redraw(year) {
+      setYear(year);
       currentData = getYearData(data, year);
       for (let index = 0; index < currentData.length; index++) {
         graph[index].size = currentData[index].size;
@@ -269,22 +249,34 @@ var bubbleInit = function (controls) {
         });
 
       svg
-        .selectAll("circle")
-        .transition(t)
+        .selectAll("svg.textnode")
+        .select("circle")
+        .transition()
+        .duration(500)
         .attr("r", function (d) {
           return size(d.size);
-        })
-        .on("end", function () {
-          simulation.restart();
-          sumu();
         });
-    };
+      simulation.nodes(graph).on("tick", function (d) {
+        textNodeSvg
+          .attr("x", function (d) {
+            return d.x;
+          })
+          .attr("y", function (d) {
+            return d.y;
+          });
+      });
+      simulation.alphaTarget(0.03).restart();
+    }
+
+    graph = getYearData(data, 2004);
 
     textNode = svg
       .append("g")
       .attr("class", "node")
       .selectAll("svg")
-      .data(graph)
+      .data(graph);
+
+    textNodeSvg = textNode
       .enter()
       .append("svg")
       .attr("x", function (d) {
@@ -304,7 +296,6 @@ var bubbleInit = function (controls) {
       .attr("class", "textnode")
 
       .on("mouseover", showTooltip)
-      .on("mousemove", moveTooltip)
       .on("mouseleave", hideTooltip)
       .call(
         d3
@@ -314,7 +305,7 @@ var bubbleInit = function (controls) {
           .on("end", dragended)
       );
 
-    textNode
+    textNodeSvg
       .append("circle")
       .attr("r", function (d) {
         return size(d.size);
@@ -323,131 +314,121 @@ var bubbleInit = function (controls) {
         return d.color;
       });
 
-    textNode
+    textNodeSvg
       .append("text")
       .text(function (d) {
         return d.name;
       })
       .attr("text-anchor", "middle");
 
-    redraw(2004);
-  });
-
-  function dragstarted(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.03).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-  }
-
-  function dragended(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.03);
-    d.fx = null;
-    d.fy = null;
-  }
-
-  function debounce(method, delay) {
-    clearTimeout(method._tId);
-    method._tId = setTimeout(function () {
-      method();
-    }, delay);
-  }
-
-  function handleScroll() {
-    var top = controls.skrollrInstance.getScrollTop();
-    currentYear = Math.round(top / 145 + 2004).toString();
-    if (currentYear > 2020) {
-      currentYear = 2020;
+    function dragstarted(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.03).restart();
+      d.fx = d.x;
+      d.fy = d.y;
     }
 
-    $("#year").text(currentYear.substring(2, 4));
-    redraw(currentYear);
-  }
+    function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    }
 
-  function wrap(texat, width) {
-    texat.each(function () {
-      var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1, // ems
-        tspan = text
-          .text(null)
-          .attr("text-anchor", "middle")
-          .append("tspan")
-          .attr("text-anchor", "middle")
-          .attr("x", 0);
+    function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.03);
+      d.fx = null;
+      d.fy = null;
+    }
 
-      var diameter = size(text.data()[0].size) * 2;
-      text.attr("dy", 0);
-      width = diameter - diameter * 0.24;
-      height = diameter - diameter * 0.5;
-      var prevLength = 0;
-      var oneLine = true;
-      while ((word = words.pop())) {
-        line.push(word);
-        tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > width) {
-          lineNumber++;
-          oneLine = false;
-          line.pop();
-          tspan.text(line.join(" "));
-          line = [word];
-          tspan = text
-            .append("tspan")
-            .attr("dy", 15)
-            .attr("x", 0)
-            .attr("text-anchor", "middle")
-            .text(word);
-        }
-
-        prevLength = tspan.node().getComputedTextLength();
-        //See if it's still too long
-        if (tspan.node().getComputedTextLength() > width) {
-          //It's still too long, hide the whole thing
-          text.style("display", "none");
-        }
+    function handleScroll() {
+      var top = controls.skrollrInstance.getScrollTop();
+      currentYear = Math.round(top / 145 + 2004).toString();
+      if (currentYear > 2020) {
+        currentYear = "2020";
       }
-      if (text.node().getBBox().height > height) {
-        text.style("display", "none");
+      try {
+        $("#year").text(currentYear.substring(2, 4));
+      } catch (error) {
+        console.log(error);
       }
 
-      if (lineNumber > 1) {
-        text.attr("dy", -0.5 + "em");
-      }
+      redraw(currentYear);
+    }
 
-      if (oneLine) {
-        //Only one line. We must split it if its more than one word
-        words = text.text().split(/\s+/);
-        if (words.length > 1) {
-          //Yep, more than one word. Split it
+    function wrap(texat, width) {
+      texat.each(function () {
+        var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
           tspan = text
             .text(null)
             .attr("text-anchor", "middle")
             .append("tspan")
             .attr("text-anchor", "middle")
-            .attr("x", 0)
-            .text(words.slice(0, words.length / 2).join(" "));
-          text
-            .append("tspan")
-            .attr("text-anchor", "middle")
-            .attr("x", 0)
-            .attr("dy", 15)
-            .text(words.slice(words.length / 2, words.length).join(" "));
+            .attr("x", 0);
+
+        var diameter = size(text.data()[0].size) * 2;
+        text.attr("dy", 0);
+        width = diameter - diameter * 0.24;
+        height = diameter - diameter * 0.5;
+        var oneLine = true;
+        while ((word = words.pop())) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            lineNumber++;
+            oneLine = false;
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text
+              .append("tspan")
+              .attr("dy", 15)
+              .attr("x", 0)
+              .attr("text-anchor", "middle")
+              .text(word);
+          }
+
+          prevLength = tspan.node().getComputedTextLength();
+          //See if it's still too long
+          if (tspan.node().getComputedTextLength() > width) {
+            //It's still too long, hide the whole thing
+            text.style("display", "none");
+          }
         }
-      }
+        if (text.node().getBBox().height > height) {
+          text.style("display", "none");
+        }
+
+        if (lineNumber > 1) {
+          text.attr("dy", -0.5 + "em");
+        }
+
+        if (oneLine) {
+          //Only one line. We must split it if its more than one word
+          words = text.text().split(/\s+/);
+          if (words.length > 1) {
+            //Yep, more than one word. Split it
+            tspan = text
+              .text(null)
+              .attr("text-anchor", "middle")
+              .append("tspan")
+              .attr("text-anchor", "middle")
+              .attr("x", 0)
+              .text(words.slice(0, words.length / 2).join(" "));
+            text
+              .append("tspan")
+              .attr("text-anchor", "middle")
+              .attr("x", 0)
+              .attr("dy", 15)
+              .text(words.slice(words.length / 2, words.length).join(" "));
+          }
+        }
+      });
+    }
+    controls.skrollrInstance.on("beforerender", function (e) {
+      handleScroll();
     });
-  }
-  controls.skrollrInstance.on("beforerender", function (e) {
-    simulation.stop();
-    debounce(handleScroll, 100);
-  });
-  controls.skrollrInstance.on("afterrender", function (e) {
-    simulation.restart();
+    redraw(2004);
   });
 };
