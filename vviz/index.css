@@ -709,8 +709,10 @@ body {
 }
 
 .summary-items {
-  position: absolute;
+  position: fixed;
+  height: 100%;
   width: 100vw;
+  overflow: scroll;
   left: 0;
   top: 213px;
   color: white;
@@ -735,6 +737,13 @@ body {
   font-size: 30px;
   line-height: 30px;
   margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+  .search-term {
+    font-size: 38px;
+    line-height: 46px;
+  }
 }
 
 .search-volume {
@@ -772,6 +781,10 @@ body {
           align-items: center;
 }
 
+.summary-item:last-of-type {
+  margin-bottom: 213px;
+}
+
 @media (min-width: 1024px) {
   .summary-item__stats {
     position: absolute;
@@ -804,6 +817,7 @@ body {
   .summary-item__content {
     position: relative;
     right: unset;
+    width: 360px;
   }
 }
 

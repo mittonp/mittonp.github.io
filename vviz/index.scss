@@ -20,6 +20,7 @@
 //   font-family: Gotham Medium;
 //   src: url(https://mittonp.github.io/fonts/GothamMedium.ttf);
 // }
+
 .hide-mobile {
   display: none;
   @media (min-width: 1024px) {
@@ -558,8 +559,10 @@ body {
 }
 
 .summary-items {
-  position: absolute;
+  position: fixed;
+  height: 100%;
   width: 100vw;
+  overflow: scroll;
   left: 0;
   top: 213px;
   color: white;
@@ -582,6 +585,10 @@ body {
   font-size: 30px;
   line-height: 30px;
   margin-bottom: 10px;
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    line-height: 46px;
+  }
 }
 
 .search-volume {
@@ -608,6 +615,10 @@ body {
   justify-content: center;
   align-items: center;
 
+  &:last-of-type {
+    margin-bottom: 213px;
+  }
+
   &__stats {
     @media (min-width: 1024px) {
       position: absolute;
@@ -629,6 +640,7 @@ body {
     @media (min-width: 1024px) {
       position: relative;
       right: unset;
+      width: 360px;
     }
   }
   &__anchor {

@@ -1,6 +1,5 @@
 var simulation;
 var bubbleInit = function (controls) {
-  $(".section-navigation__button--previous").hide();
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -35,9 +34,6 @@ var bubbleInit = function (controls) {
   });
 
   function setYear(year) {
-    if (year > 2004) {
-      $(".section-navigation__button--previous").show();
-    }
     currentYear = year;
     $(".year-button").removeClass("active");
     $(".year-button .year-button__text:contains('" + year + "')")
@@ -63,13 +59,11 @@ var bubbleInit = function (controls) {
     .attr("class", "tooltip");
 
   var showTooltip = function (d) {
-    var radius = size(d.size);
     tooltip.transition().duration(200);
     tooltip
       .style("opacity", 1)
       .html(d.name + "<br/>" + numberWithCommas(d.size) + " searches")
-      .style("top", d.y + "px")
-      .style("display", "block");
+      .style("top", d.y + "px");
 
     tooltip.style("left", function () {
       if (d.x > width / 2) {
@@ -80,7 +74,7 @@ var bubbleInit = function (controls) {
   };
 
   var hideTooltip = function (d) {
-    tooltip.style("display", "none");
+    tooltip.style("opacity", 0);
   };
 
   t = d3.transition().duration(750);
@@ -296,7 +290,7 @@ var bubbleInit = function (controls) {
       .attr("class", "textnode")
 
       .on("mouseover", showTooltip)
-      .on("mouseleave", hideTooltip)
+      .on("mouseout", hideTooltip)
       .call(
         d3
           .drag()
