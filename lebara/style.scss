@@ -82,6 +82,9 @@ a {
     &__name {
       font-size: 14px;
       font-weight: 600;
+      &:last-of-type {
+        margin-bottom: 15px;
+      }
     }
 
     &__minutes {

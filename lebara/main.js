@@ -97,9 +97,9 @@ tooltipTemplate = `
     <div class='price-wrap'>
       <div class="best-plan__price">{bestPlanPrice}</div>
     </div>
-    <div class="best-plan__name nodata-hide">{bestPlan}</div>
-    <div class="best-plan__name nodata-hide">Unlimited calls to {name}</div>
-    <a class="nodata-hide" href='buy'><button class='btn btn-primary buynow'>Buy SIM</button></a>
+    <div class="best-plan__name nodata-hide">{bestPlanData}</div>
+    <div class="best-plan__name nodata-hide">{bestPlanMinutes} calls to {name}</div>
+    <a class="nodata-hide" href='{bestPlanLink}'><button class='btn btn-primary buynow'>Buy SIM</button></a>
     <a class="nodata-show" href='https://www.lebara.com.au/mobile-plans/rates/'><button class='btn btn-primary buynow'>View rates</button></a>
   </div>
   </div>
