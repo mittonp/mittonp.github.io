@@ -1,6 +1,5 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 a {
@@ -51,19 +50,12 @@ a {
   z-index: 0;
   background: white;
   border-radius: 18px;
-  white-space: normal;
 }
 
 .am-tooltip__plan::before {
   content: "";
   position: absolute;
-  background: -webkit-gradient(
-    linear,
-    right bottom,
-    left top,
-    from(#264efe),
-    to(#ff0683)
-  );
+  background: -webkit-gradient(linear, right bottom, left top, from(#264efe), to(#ff0683));
   background: linear-gradient(to top left, #264efe, #ff0683);
   border-radius: 20px;
   top: 0;
@@ -104,13 +96,7 @@ a {
 
 .am-tooltip .country-name {
   height: 30px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#2b4cfb),
-    to(#f73a9d)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#2b4cfb), to(#f73a9d));
   background: linear-gradient(90deg, #2b4cfb, #f73a9d);
   border-radius: 5px;
   color: white;
@@ -120,8 +106,8 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 12px;
   margin: 26px;
 }
