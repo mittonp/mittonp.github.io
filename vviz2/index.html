@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="top-canvas">
+      <div id="section-container">
+        <div
+          class="section-canvas"
+          id="landing-canvas"
+          w3-include-html="01-landing.html"
+        ></div>
+        <div
+          class="section-canvas"
+          id="bubble-universe-canvas"
+          w3-include-html="02-bubble-universe.html"
+        ></div>
+        <div
+          class="section-canvas"
+          id="force-directed-map-canvas"
+          w3-include-html="03-force-directed-map.html"
+        ></div>
+        <div
+          class="section-canvas"
+          id="summary-canvas"
+          w3-include-html="04-summary.html"
+        ></div>
+      </div>
+
+      <div class="progress-indicator">
+        <div
+          class="progress-indicator__bullet progress-indicator__bullet--active"
+          data-target="#landing-canvas"
+        ></div>
+        <div
+          class="progress-indicator__bullet"
+          data-target="#bubble-universe-canvas"
+        ></div>
+        <div
+          class="progress-indicator__bullet"
+          data-target="#force-directed-map-canvas"
+        ></div>
+        <div
+          class="progress-indicator__bullet"
+          data-target="#summary-canvas"
+        ></div>
+      </div>
+    </div>
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) {
+                  elmnt.innerHTML = this.responseText;
+                }
+                if (this.status == 404) {
+                  elmnt.innerHTML = "Page not found.";
+                }
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+      includeHTML();
+    </script>
+  </body>
+  <script src="/vviz2/libs/jquery.min.js"></script>
+  <script src="/vviz2/libs/skrollr.min.js"></script>
+  <script src="/vviz2/libs/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="/vviz2/libs/jeezy.min.js"></script>
+  <script src="/vviz2/libs/core.js"></script>
+  <script src="/vviz2/libs/charts.js"></script>
+  <script src="/vviz2/libs/forceDirected.js"></script>
+  <script src="/vviz2/libs/animated.js"></script>
+  <script src="/vviz2/01-landing.js"></script>
+  <script src="/vviz2/02-bubble-universe.js"></script>
+  <script src="/vviz2/03-force-directed-map.js"></script>
+  <script src="https://kimyvgy.github.io/simple-scrollspy/demo/dist/simple-scrollspy.min.js"></script>
+  <script src="/vviz2/04-summary.js"></script>
+  <script src="https://projects.lukehaas.me/scrollify/script/jquery.scrollify.js"></script>
+  <script src="main.js"></script>
+</html>
