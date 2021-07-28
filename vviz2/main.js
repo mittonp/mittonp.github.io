@@ -20,15 +20,14 @@ $(document).ready(function () {
       if (!b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").removeClass("fixed");
       }
+      $(".summary-nav__item").removeClass("active");
+      var target = $(b[a])[0].id;
+      var targetNavItem = $('*[data-target="' + target + '"]');
+      targetNavItem.addClass("active");
     },
     after: function (a, b) {
       if (b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").addClass("fixed");
-
-        $(".summary-nav__item").removeClass("active");
-        var target = $(b[a])[0].id;
-        var targetNavItem = $('*[data-target="' + target + '"]');
-        targetNavItem.addClass("active");
       }
     },
   });
