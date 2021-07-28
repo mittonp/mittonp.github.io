@@ -453,10 +453,10 @@ body {
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
+  justify-content: center;
 
   @media (min-width: 1024px) {
-    font-size: 38px;
-    width: 50%;
+    font-size: 60px;
   }
 }
 .summary-top {

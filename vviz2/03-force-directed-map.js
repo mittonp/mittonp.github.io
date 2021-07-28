@@ -481,6 +481,8 @@ var initForce = function () {
 
     networkSeries.links.template.strokeWidth = 1;
 
+    networkSeries.simplifiedProcessing = true;
+
     networkSeries.nodes.template.events.on("over", function (event) {
       // $.scrollify.disable();
       event.target.dataItem.childLinks.each(function (link) {
@@ -490,6 +492,15 @@ var initForce = function () {
         event.target.dataItem.parentLink.isHover = true;
       }
     });
+
+    // networkSeries.events.on("dataitemsvalidated", function (event) {
+    //   event.target.children.values.forEach((node) => {
+    //     if ((node._className = "ForceDirectedTreeNode")) {
+    //       node.isActive = true;
+    //       node.isActive = false;
+    //     }
+    //   });
+    // });
 
     networkSeries.nodes.template.events.on("out", function (event) {
       // $.scrollify.enable();
