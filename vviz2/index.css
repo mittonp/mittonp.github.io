@@ -927,4 +927,23 @@ body {
 .fixed {
   position: fixed;
 }
+
+.year-arrow {
+  z-index: 100;
+  color: #e95a49;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+  cursor: pointer;
+}
+
+.year-arrow--forward {
+  right: 20px;
+}
+
+.year-arrow--back {
+  left: 20px;
+}
 /*# sourceMappingURL=index.css.map */

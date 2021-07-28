@@ -719,3 +719,19 @@ body {
 .fixed {
   position: fixed;
 }
+
+.year-arrow {
+  z-index: 100;
+  color: #e95a49;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  cursor: pointer;
+  &--forward {
+    right: 20px;
+  }
+  &--back {
+    left: 20px;
+  }
+}

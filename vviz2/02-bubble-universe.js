@@ -196,6 +196,18 @@ var bubbleInit = function () {
     $(".year-button").click(function (e) {
       redraw(e.target.innerText);
     });
+
+    $(".year-arrow--forward").click(function (e) {
+      if (currentYear < 2020) {
+        redraw(currentYear + 1);
+      }
+    });
+
+    $(".year-arrow--back").click(function (e) {
+      if (currentYear > 2004) {
+        redraw(currentYear - 1);
+      }
+    });
     function redraw(year) {
       setYear(year);
       currentData = getYearData(data, year);
