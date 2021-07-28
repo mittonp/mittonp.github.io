@@ -129,14 +129,58 @@ body {
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: bottom;
-
     transform-origin: bottom left;
+    transition: transform 1s;
+  }
+  &.scroll-0 {
+    .section-graph-stretch {
+      width: 300%;
+    }
+    .areagraph {
+      transform: scale(3, 3);
+    }
+    .y-axis {
+      height: 240%;
+    }
+  }
+  &.scroll-1 {
+    .section-graph-stretch {
+      width: 250%;
+    }
+    .areagraph {
+      transform: scale(2.5, 2.5);
+    }
+    .y-axis {
+      height: 200%;
+    }
+  }
+  &.scroll-2 {
+    .section-graph-stretch {
+      width: 200%;
+    }
+    .areagraph {
+      transform: scale(2, 2);
+    }
+    .y-axis {
+      height: 100%;
+    }
+  }
+  &.scroll-3 {
+    .section-graph-stretch {
+      width: 100%;
+    }
+    .areagraph {
+      transform: scale(1, 1);
+    }
+    .y-axis {
+      height: 70%;
+    }
   }
 }
 
 .year-lines {
   display: flex;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -279,10 +323,10 @@ body {
 }
 
 #chartdiv {
-  height: 100vh;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 #summary-canvas {
@@ -304,6 +348,7 @@ body {
   height: 100%;
   width: 100%;
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  transition: width 1s;
 }
 
 .instructions {
@@ -400,15 +445,14 @@ body {
 }
 
 .main-text {
-  height: 100vh;
   position: relative;
   color: white;
   display: flex;
   align-items: center;
   margin: auto;
-  &:last-of-type {
-    pointer-events: none;
-  }
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
 
   @media (min-width: 1024px) {
     font-size: 38px;
@@ -417,6 +461,7 @@ body {
 }
 .summary-top {
   height: 213px;
+  position: absolute;
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
   left: 0;
   top: 0;
@@ -426,7 +471,6 @@ body {
   width: 100%;
   @media (min-width: 1024px) {
     height: 253px;
-    display: flex;
   }
   &__text {
     display: flex;
@@ -471,7 +515,7 @@ body {
 
 .summary-nav {
   left: 6px;
-  top: 10px;
+  bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -591,10 +635,11 @@ body {
 }
 
 .summary-item {
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 213px;
+  box-sizing: border-box;
 
   &__stats {
     @media (min-width: 1024px) {
@@ -641,12 +686,14 @@ body {
 }
 
 .y-axis {
-  right: 144px;
+  position: fixed;
+  right: 20px;
   bottom: 107px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  transition: height 1s;
   &__tag {
     font-family: "Gotham Bold", sans-serif;
     font-size: 14px;

@@ -138,13 +138,69 @@ body {
   background-position-y: bottom;
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+#landing-canvas.scroll-0 .section-graph-stretch {
+  width: 300%;
+}
+
+#landing-canvas.scroll-0 .areagraph {
+  -webkit-transform: scale(3, 3);
+          transform: scale(3, 3);
+}
+
+#landing-canvas.scroll-0 .y-axis {
+  height: 240%;
+}
+
+#landing-canvas.scroll-1 .section-graph-stretch {
+  width: 250%;
+}
+
+#landing-canvas.scroll-1 .areagraph {
+  -webkit-transform: scale(2.5, 2.5);
+          transform: scale(2.5, 2.5);
+}
+
+#landing-canvas.scroll-1 .y-axis {
+  height: 200%;
+}
+
+#landing-canvas.scroll-2 .section-graph-stretch {
+  width: 200%;
+}
+
+#landing-canvas.scroll-2 .areagraph {
+  -webkit-transform: scale(2, 2);
+          transform: scale(2, 2);
+}
+
+#landing-canvas.scroll-2 .y-axis {
+  height: 100%;
+}
+
+#landing-canvas.scroll-3 .section-graph-stretch {
+  width: 100%;
+}
+
+#landing-canvas.scroll-3 .areagraph {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+#landing-canvas.scroll-3 .y-axis {
+  height: 70%;
 }
 
 .year-lines {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -321,11 +377,10 @@ body {
 }
 
 #chartdiv {
-  height: 100vh;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 #summary-canvas {
@@ -358,6 +413,8 @@ body {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  -webkit-transition: width 1s;
+  transition: width 1s;
 }
 
 .instructions {
@@ -483,7 +540,6 @@ body {
 }
 
 .main-text {
-  height: 100vh;
   position: relative;
   color: white;
   display: -webkit-box;
@@ -493,10 +549,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-}
-
-.main-text:last-of-type {
-  pointer-events: none;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1024px) {
@@ -508,6 +563,7 @@ body {
 
 .summary-top {
   height: 213px;
+  position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(#050614), to(#041d59));
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
   left: 0;
@@ -522,9 +578,6 @@ body {
 @media (min-width: 1024px) {
   .summary-top {
     height: 253px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
@@ -587,7 +640,7 @@ body {
 
 .summary-nav {
   left: 6px;
-  top: 10px;
+  bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -753,7 +806,6 @@ body {
 }
 
 .summary-item {
-  height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -763,6 +815,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 213px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
@@ -825,7 +880,8 @@ body {
 }
 
 .y-axis {
-  right: 144px;
+  position: fixed;
+  right: 20px;
   bottom: 107px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -840,6 +896,8 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-transition: height 1s;
+  transition: height 1s;
 }
 
 .y-axis__tag {
