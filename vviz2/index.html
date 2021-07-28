@@ -11,48 +11,44 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="top-canvas">
-      <div id="section-container">
-        <div
-          class="section-canvas"
-          id="landing-canvas"
-          w3-include-html="01-landing.html"
-        ></div>
-        <div
-          class="section-canvas"
-          id="bubble-universe-canvas"
-          w3-include-html="02-bubble-universe.html"
-        ></div>
-        <div
-          class="section-canvas"
-          id="force-directed-map-canvas"
-          w3-include-html="03-force-directed-map.html"
-        ></div>
-        <div
-          class="section-canvas"
-          id="summary-canvas"
-          w3-include-html="04-summary.html"
-        ></div>
-      </div>
+    <div
+      class="section-canvas"
+      id="landing-canvas"
+      w3-include-html="01-landing.html"
+    ></div>
+    <div
+      class="section-canvas"
+      id="bubble-universe-canvas"
+      w3-include-html="02-bubble-universe.html"
+    ></div>
+    <div
+      class="section-canvas"
+      id="force-directed-map-canvas"
+      w3-include-html="03-force-directed-map.html"
+    ></div>
+    <div
+      class="section-canvas"
+      id="summary-canvas"
+      w3-include-html="04-summary.html"
+    ></div>
 
-      <div class="progress-indicator">
-        <div
-          class="progress-indicator__bullet progress-indicator__bullet--active"
-          data-target="#landing-canvas"
-        ></div>
-        <div
-          class="progress-indicator__bullet"
-          data-target="#bubble-universe-canvas"
-        ></div>
-        <div
-          class="progress-indicator__bullet"
-          data-target="#force-directed-map-canvas"
-        ></div>
-        <div
-          class="progress-indicator__bullet"
-          data-target="#summary-canvas"
-        ></div>
-      </div>
+    <div class="progress-indicator">
+      <div
+        class="progress-indicator__bullet progress-indicator__bullet--active"
+        data-target="#landing-canvas"
+      ></div>
+      <div
+        class="progress-indicator__bullet"
+        data-target="#bubble-universe-canvas"
+      ></div>
+      <div
+        class="progress-indicator__bullet"
+        data-target="#force-directed-map-canvas"
+      ></div>
+      <div
+        class="progress-indicator__bullet"
+        data-target="#summary-canvas"
+      ></div>
     </div>
     <script>
       function includeHTML() {

@@ -76,6 +76,7 @@ body {
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 
   .year-line {
     @media (max-width: 1024px) {
@@ -277,24 +278,6 @@ body {
   }
 }
 
-.main-text {
-  position: relative;
-  color: white;
-
-  height: 100vh;
-  display: flex;
-  align-items: center;
-
-  margin: auto;
-  @media (min-width: 1024px) {
-    font-size: 38px;
-    width: 50%;
-  }
-}
-
-.fixed {
-  position: fixed;
-}
 #chartdiv {
   height: 100vh;
   position: relative;
@@ -302,6 +285,11 @@ body {
   transform: translateX(-50%);
 }
 
+#summary-canvas {
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+}
 .section-canvas-container {
   position: relative;
   margin: auto;
@@ -411,6 +399,22 @@ body {
   color: #e95a49;
 }
 
+.main-text {
+  height: 100vh;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  &:last-of-type {
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    width: 50%;
+  }
+}
 .summary-top {
   height: 213px;
   background: linear-gradient(180deg, #050614 0%, #041d59 100%);
@@ -454,7 +458,7 @@ body {
   line-height: 24px;
   font-weight: 300;
   height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
   margin-top: 8px;
   @media (min-width: 1024px) {
     width: 800px;
@@ -467,10 +471,11 @@ body {
 
 .summary-nav {
   left: 6px;
-  bottom: 10px;
+  top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 
   z-index: 10;
   &__item {
@@ -541,13 +546,13 @@ body {
 }
 
 .summary-items {
-  height: 100%;
-  width: 100vw;
-  overflow: scroll;
   left: 0;
-  top: 213px;
+  overflow-y: scroll;
   color: white;
   text-align: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   img {
     max-width: 250px;
     max-height: 300px;
@@ -555,13 +560,6 @@ body {
       max-width: 405px;
       max-height: 450px;
     }
-  }
-}
-
-#summary-canvas {
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    display: none;
   }
 }
 
@@ -593,16 +591,10 @@ body {
 }
 
 .summary-item {
-  height: calc(100vh - 213px);
-  padding-top: 20px;
-  box-sizing: border-box;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &:last-of-type {
-    margin-bottom: 213px;
-  }
 
   &__stats {
     @media (min-width: 1024px) {
@@ -675,4 +667,8 @@ body {
       top: -4px;
     }
   }
+}
+
+.fixed {
+  position: fixed;
 }

@@ -1,10 +1,8 @@
-var initSummary = function (controls) {
-  $(".section-navigation__button--previous").off();
-  $(".section-navigation__button--previous").click(controls.previousSection);
+var initSummary = function () {
   scrollSpy("#summary-nav", {
     sectionClass: ".summary-item",
     menuActiveTarget: ".summary-nav__item",
-    offset: 100,
+    // offset: 213,
     scrollContainer: ".summary-items",
   });
 };

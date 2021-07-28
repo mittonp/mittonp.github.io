@@ -467,6 +467,7 @@ var initForce = function () {
     networkSeries.links.template.strokeWidth = 1;
 
     networkSeries.nodes.template.events.on("over", function (event) {
+      $.scrollify.disable();
       event.target.dataItem.childLinks.each(function (link) {
         link.isHover = true;
       });
@@ -476,6 +477,7 @@ var initForce = function () {
     });
 
     networkSeries.nodes.template.events.on("out", function (event) {
+      $.scrollify.enable();
       event.target.dataItem.childLinks.each(function (link) {
         link.isHover = false;
       });
