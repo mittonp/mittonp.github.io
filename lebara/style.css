@@ -31,6 +31,7 @@ a {
   width: 298px;
   z-index: -10;
   opacity: 0.9;
+  white-space: normal;
 }
 
 .am-tooltip .nodata-show {
@@ -95,7 +96,7 @@ a {
 }
 
 .am-tooltip .country-name {
-  height: 30px;
+  min-height: 30px;
   background: -webkit-gradient(linear, left top, right top, from(#2b4cfb), to(#f73a9d));
   background: linear-gradient(90deg, #2b4cfb, #f73a9d);
   border-radius: 5px;

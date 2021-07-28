@@ -28,6 +28,7 @@ a {
   width: 298px;
   z-index: -10;
   opacity: 0.9;
+  white-space: normal;
 
   .nodata-show {
     display: none;
@@ -97,7 +98,7 @@ a {
     }
   }
   .country-name {
-    height: 30px;
+    min-height: 30px;
     background: linear-gradient(90deg, #2b4cfb, #f73a9d);
     border-radius: 5px;
     color: white;
