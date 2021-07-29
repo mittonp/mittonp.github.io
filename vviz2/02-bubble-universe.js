@@ -9,7 +9,6 @@ var bubbleInit = function () {
   var scrollHeight = 2320;
 
   $(".section-canvas").off();
-  $(".instructions").show();
   $(".section-canvas").click(function () {
     $(".instructions").hide();
   });

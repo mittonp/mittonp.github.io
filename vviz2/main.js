@@ -3,7 +3,7 @@ $(document).ready(function () {
   $.scrollify({
     section: ".scroll-section",
     updateHash: false,
-    // standardScrollElements: ".main-text",
+    //standardScrollElements: ".summary-text",
     before: function (a, b, c) {
       $("#landing-canvas").removeClass("scroll-0");
       $("#landing-canvas").removeClass("scroll-1");
