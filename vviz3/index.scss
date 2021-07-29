@@ -1,0 +1,737 @@
+@font-face {
+  font-family: Gotham Book;
+  src: url(https://mittonp.github.io/fonts/GothamBook.otf);
+}
+
+@font-face {
+  font-family: Gotham Light;
+  src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
+}
+
+@font-face {
+  font-family: Gotham Bold;
+  src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
+}
+
+@font-face {
+  font-family: Gotham Medium;
+  src: url(https://mittonp.github.io/fonts/GothamMedium.otf);
+}
+
+.hide-mobile {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.top-canvas {
+  img {
+    width: auto;
+    display: inline;
+  }
+}
+.progress-indicator {
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+
+  &__bullet {
+    width: 15px;
+    height: 15px;
+    background: rgba($color: #e95a49, $alpha: 0.3);
+    margin-bottom: 13px;
+    border-radius: 100%;
+    &--active {
+      background: rgba($color: #e95a49, $alpha: 1);
+    }
+  }
+}
+
+body {
+  font-family: "Gotham Light", sans-serif;
+  margin: 0;
+}
+
+.section-canvas {
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+#bubble-universe-canvas {
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .year-line {
+    @media (max-width: 1024px) {
+      border: unset;
+    }
+  }
+
+  .tooltip {
+    position: fixed;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+    pointer-events: none;
+  }
+
+  circle:hover {
+    stroke: white;
+  }
+
+  circle {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+  }
+
+  text {
+    text-anchor: middle;
+    fill: #fff;
+    margin: 0;
+    font-family: "Gotham Medium", sans-serif;
+    font-size: 15px;
+    line-height: 16px;
+    pointer-events: none;
+  }
+}
+
+#force-directed-map-canvas {
+  background: radial-gradient(circle, #ffffff 0%, #d3e1eb 100%);
+}
+
+#landing-canvas {
+  .areagraph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/vviz/areagraph.png");
+    bottom: 0;
+    left: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    transform-origin: bottom left;
+    transition: transform 1s;
+  }
+  &.scroll-0 {
+    .section-graph-stretch {
+      width: 300%;
+    }
+    .areagraph {
+      transform: scale(3, 3);
+    }
+    .y-axis {
+      height: 240%;
+    }
+  }
+  &.scroll-1 {
+    .section-graph-stretch {
+      width: 250%;
+    }
+    .areagraph {
+      transform: scale(2.5, 2.5);
+    }
+    .y-axis {
+      height: 200%;
+    }
+  }
+  &.scroll-2 {
+    .section-graph-stretch {
+      width: 200%;
+    }
+    .areagraph {
+      transform: scale(2, 2);
+    }
+    .y-axis {
+      height: 100%;
+    }
+  }
+  &.scroll-3 {
+    .section-graph-stretch {
+      width: 100%;
+    }
+    .areagraph {
+      transform: scale(1, 1);
+    }
+    .y-axis {
+      height: 70%;
+    }
+  }
+}
+
+.year-lines {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.year-line {
+  border-left: 1px solid rgba(40, 177, 232, 0.4);
+  width: 6.25%;
+  .year-label {
+    color: #e95a49;
+    padding-top: 15px;
+    font-family: "Gotham Bold", sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    width: fit-content;
+    z-index: 100;
+    position: relative;
+    &--mobile {
+      opacity: 1;
+    }
+
+    @media (min-width: 1024px) {
+      &--even {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.year-buttons {
+  display: flex;
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+  }
+}
+
+.year-button {
+  padding-top: 15px;
+  font-family: "Gotham Bold", sans-serif;
+  font-size: 14px;
+  color: #e95a49;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0;
+  width: 5%;
+  overflow: visible;
+  transition: opacity 2s;
+
+  &__text {
+    width: fit-content;
+    padding: 4px;
+    transition: background 2s, color 2s;
+    border-radius: 4px;
+  }
+
+  &:nth-of-type(4n + 1) {
+    opacity: 1;
+  }
+
+  @media (min-width: 1024px) {
+    opacity: 1;
+  }
+  &.active {
+    opacity: 1;
+    z-index: 110;
+    .year-button__text {
+      color: black;
+      background: #e95a49;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--even {
+      opacity: 1;
+    }
+  }
+}
+
+.overlay-text {
+  z-index: 100;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Gotham Book", sans-serif;
+    @media (min-width: 1024px) {
+      font-size: 22px;
+      line-height: 34px;
+    }
+  }
+
+  h1 {
+    font-family: "Gotham Bold", sans-serif;
+    font-size: 38px;
+    margin: 0;
+    max-width: 600px;
+
+    @media (min-width: 1024px) {
+      font-size: 70px;
+      text-transform: uppercase;
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 26px;
+    font-family: "Gotham Bold", sans-serif;
+    margin: 0;
+    text-shadow: 2px 2px 2px #000000;
+
+    @media (min-width: 1024px) {
+      font-size: 38px;
+      line-height: 46px;
+      width: 300px;
+    }
+  }
+
+  &--alt {
+    color: #002e5d;
+    h2 {
+      text-shadow: none;
+    }
+  }
+}
+
+#chartdiv {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+#summary-canvas {
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+}
+.section-canvas-container {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
+}
+
+.section-graph-stretch {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  transition: width 1s;
+}
+
+.instructions {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    right: 0;
+    left: unset;
+    top: 80px;
+    width: auto;
+    height: auto;
+  }
+
+  &__content {
+    display: flex;
+    width: 238px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 4px;
+    justify-content: space-around;
+  }
+  &__text {
+    color: black;
+    width: 154px;
+    font-size: 18px;
+    line-height: 1em;
+    font-family: "Gotham Book", sans-serif;
+  }
+}
+
+.legend {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  justify-content: center;
+  margin: auto;
+  @media (min-width: 1024px) {
+    width: 100%;
+    bottom: 30px;
+  }
+}
+
+.legend-item {
+  display: flex;
+  margin-right: 14px;
+
+  &__text {
+    font-size: 14px;
+    font-family: "Gotham Book", sans-serif;
+  }
+  &__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    margin-right: 5px;
+    &--beards {
+      background: #2b8bf8;
+    }
+    &--grooming {
+      background: #d6006d;
+    }
+    &--hair-removal {
+      background: #e58100;
+    }
+    &--shaving {
+      background: #0542d8;
+    }
+  }
+}
+
+.as-updated {
+  .legend {
+    width: 240px;
+    @media (min-width: 1024px) {
+      top: 20px;
+      position: relative;
+    }
+  }
+}
+
+#year {
+  color: #e95a49;
+}
+
+.main-text {
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
+}
+.summary-top {
+  height: 213px;
+  position: absolute;
+  background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+  left: 0;
+  top: 0;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  z-index: 10;
+  width: 100%;
+  @media (min-width: 1024px) {
+    height: 253px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+}
+
+.summary-heading {
+  color: white;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: "Gotham Bold", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    line-height: 46px;
+    width: 300px;
+  }
+}
+
+.summary-text {
+  color: white;
+  font-family: "Gotham Book", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
+  height: 100px;
+  overflow-y: scroll;
+  margin-top: 8px;
+  @media (min-width: 1024px) {
+    width: 800px;
+    font-size: 18px;
+    line-height: 24px;
+    height: auto;
+    overflow: unset;
+  }
+}
+
+.summary-nav {
+  left: 6px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+
+  z-index: 10;
+  &__item {
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-family: "Gotham Medium", sans-serif;
+    font-size: 18px;
+
+    &.active {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 36px;
+      font-family: "Gotham Bold", sans-serif;
+      @media (min-width: 1024px) {
+        width: 130px;
+        height: 130px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.section {
+  &1 {
+    background: linear-gradient(180deg, #12d0e1 0%, #2b8bf8 100%);
+  }
+  &2 {
+    background: linear-gradient(180deg, #ffc718 0%, #e58100 100%);
+  }
+  &3 {
+    background: linear-gradient(180deg, #ff59ae 0%, #d6006d 100%);
+  }
+  &4 {
+    background: linear-gradient(180deg, #0542d8 0%, #3d06b4 100%);
+  }
+  &5 {
+    background: linear-gradient(180deg, #12d0e1 0%, #2b8bf8 100%);
+  }
+  &6 {
+    background: linear-gradient(180deg, #ffc718 0%, #e58100 100%);
+  }
+  &7 {
+    background: linear-gradient(180deg, #ff59ae 0%, #d6006d 100%);
+  }
+  &8 {
+    background: linear-gradient(180deg, #0542d8 0%, #3d06b4 100%);
+  }
+  &9 {
+    background: linear-gradient(180deg, #12d0e1 0%, #2b8bf8 100%);
+  }
+  &10 {
+    background: linear-gradient(180deg, #ffc718 0%, #e58100 100%);
+  }
+}
+
+.summary-items {
+  left: 0;
+  overflow-y: scroll;
+  color: white;
+  text-align: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  img {
+    max-width: 250px;
+    max-height: 300px;
+    @media (min-width: 1024px) {
+      max-width: 405px;
+      max-height: 450px;
+    }
+  }
+}
+
+.search-term {
+  font-family: "Gotham Bold", sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.search-volume {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+  @media (min-width: 1024px) {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.search-legend {
+  font-family: "Gotham Medium", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 213px;
+  box-sizing: border-box;
+
+  &__stats {
+    @media (min-width: 1024px) {
+      position: absolute;
+      right: -230px;
+      top: 140px;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    width: 250px;
+    position: relative;
+    @media (min-width: 1024px) {
+      position: relative;
+      right: unset;
+      width: 360px;
+    }
+  }
+  &__anchor {
+    position: relative;
+    top: -233px;
+    @media (min-width: 1024px) {
+      top: -273px;
+    }
+  }
+}
+
+.bubbles {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  svg {
+    overflow: visible;
+  }
+}
+
+.y-axis {
+  position: fixed;
+  right: 20px;
+  bottom: 107px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  transition: height 1s;
+  &__tag {
+    font-family: "Gotham Bold", sans-serif;
+    font-size: 14px;
+    color: #e95a49;
+    background: rgba($color: black, $alpha: 0.5);
+    border-radius: 4px;
+    padding: 2px 5px;
+    display: inline;
+    &:after {
+      display: inline-block;
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e95a49;
+      position: relative;
+      left: 13px;
+      top: -4px;
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.year-arrow {
+  z-index: 100;
+  color: #e95a49;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  cursor: pointer;
+  &--forward {
+    right: 20px;
+  }
+  &--back {
+    left: 20px;
+  }
+}
