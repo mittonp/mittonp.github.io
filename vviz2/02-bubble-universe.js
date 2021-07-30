@@ -55,7 +55,7 @@ var bubbleInit = function () {
     .range([3, Math.sqrt(height * width) / 4]);
   var graph;
   function getYearData(alphabet, year) {
-    var d1 = alphabet.sort((a, b) => b[2020] - a[2020]);
+    var d1 = alphabet.sort((a, b) => b["Sum"] - a["Sum"]);
     if (width > 1024) {
       d1 = d1.slice(0, 40);
     } else {
@@ -191,7 +191,7 @@ var bubbleInit = function () {
         .iterations(1)
     );
 
-  d3.json("https://mittonp.github.io/vviz/data.json", function (data) {
+  d3.json("/vviz2/data.json", function (data) {
     $(".year-button").click(function (e) {
       redraw(e.target.innerText);
     });
