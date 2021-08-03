@@ -1,6 +1,5 @@
 var initForce = function () {
   $(".section-canvas").off();
-  $(".instructions").show();
   $(".section-canvas").click(function () {
     $(".instructions").hide();
   });
@@ -483,8 +482,8 @@ var initForce = function () {
 
     networkSeries.simplifiedProcessing = true;
 
+    //networkSeries.centerStrength = 2;
     networkSeries.nodes.template.events.on("over", function (event) {
-      // $.scrollify.disable();
       event.target.dataItem.childLinks.each(function (link) {
         link.isHover = true;
       });

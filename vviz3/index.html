@@ -9,6 +9,7 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
+    <link href="/vviz3/fontawesome/css/all.css" rel="stylesheet" />
   </head>
   <body>
     <div class="section-canvas scroll-0" id="landing-canvas">
@@ -80,30 +81,49 @@
         <div class="y-axis__tag">1M</div>
         <div class="y-axis__tag">500k</div>
       </div>
-      <div class="main-text scroll-section">The Rise of Manscaping</div>
 
-      <div class="main-text scroll-section">
-        Think back to 2004. A simpler time before social media, when men had
-        hair and didn’t care.
-      </div>
-
-      <div class="main-text scroll-section">
-        Since Daniel Craig burst from the ocean sporting a hairless body in
-        2006’s Casino Royale, interest has boomed in the world of male grooming
-      </div>
-
-      <div class="main-text scroll-section">
-        <span>
-          Global Google searches for terms like 'Manscaping' increasing by over
-          <strong>9000</strong>%.</span
+      <div class="section-canvas-container">
+        <div
+          class="main-text scroll-section"
+          data-page="page1"
+          data-section-name="page1"
         >
+          The Rise of Manscaping
+        </div>
+
+        <div class="main-text scroll-section" data-page="page1">
+          Think back to 2004. A simpler time before social media, when men had
+          hair and didn’t care.
+        </div>
+
+        <div class="main-text scroll-section" data-page="page1">
+          Since Daniel Craig burst from the ocean sporting a hairless body in
+          2006’s Casino Royale, interest has boomed in the world of male
+          grooming
+        </div>
+
+        <div class="main-text scroll-section" data-page="page1">
+          <span>
+            Global Google searches for terms like 'Manscaping' increasing by
+            over
+            <strong>9000</strong>%.</span
+          >
+        </div>
       </div>
     </div>
 
-    <div class="section-canvas scroll-section" id="bubble-universe-canvas">
+    <div
+      class="section-canvas scroll-section"
+      data-page="page2"
+      id="bubble-universe-canvas"
+      data-section-name="page2"
+    >
       <div class="section-canvas-container">
         <div class="overlay-text">
-          <h2>What men were searching in 20<span id="year">04</span></h2>
+          <h2>Explore what men were searching</h2>
+          <h2 style="display: none">
+            What men were searching in 20<span id="year">04</span>
+          </h2>
           <div class="legend">
             <div class="legend-item">
               <div class="legend-item__dot legend-item__dot--beards"></div>
@@ -127,7 +147,7 @@
           <div class="instructions">
             <div class="instructions__content">
               <img
-                src="https://mittonp.github.io/vviz/icons/click-see.svg"
+                src="https://mittonp.github.io/vviz3/icons/click-see.svg"
                 alt=""
               />
               <div class="instructions__text hide-mobile">
@@ -199,7 +219,12 @@
 
       <div class="tooltip"></div>
     </div>
-    <div class="section-canvas scroll-section" id="force-directed-map-canvas">
+    <div
+      class="section-canvas scroll-section"
+      data-page="page3"
+      id="force-directed-map-canvas"
+      data-section-name="page3"
+    >
       <div class="section-canvas-container">
         <div class="overlay-text overlay-text--alt">
           <h2 class="what-also-search">
@@ -208,7 +233,7 @@
           <div class="instructions">
             <div class="instructions__content">
               <img
-                src="https://mittonp.github.io/vviz/icons/click-see.svg"
+                src="https://mittonp.github.io/vviz3/icons/click-see.svg"
                 alt=""
               />
               <div class="instructions__text hide-mobile">
@@ -241,41 +266,44 @@
     </div>
     <div class="section-canvas" id="summary-canvas">
       <div class="summary-top">
-        <div class="section-canvas-container">
-          <div class="summary-top__text">
-            <h2 class="summary-heading">Top 10 search topics from 2020</h2>
-            <div class="summary-text">
-              If we asked you back in 2004 to guess the top 10 trending search
-              topics for male grooming we bet you wouldn't have predicted the
-              hipster subculture would bring back the beard as a style icon. And
-              it seems guys are still keen on growing, styling and maintaining
-              their facial hair with terms like 'patchy beard', 'beard growth'
-              and 'short beard styles' all making an appearance in the top 10
-              this year. As more grooming options designed for men hit the
-              market, who knows what the next big trend in mail grooming will be
-              - but it will be exciting to find out!
-            </div>
-          </div>
+        <div class="summary-top__text">
+          <h2 class="summary-heading">Top 10 search topics - 2020</h2>
         </div>
       </div>
       <div class="summary-nav" id="summary-nav">
-        <a class="summary-nav__item" data-target="section1">10</a>
-        <a class="summary-nav__item" data-target="section2">9</a>
-        <a class="summary-nav__item" data-target="section3">8</a>
-        <a class="summary-nav__item" data-target="section4">7</a>
-        <a class="summary-nav__item" data-target="section5">6</a>
-        <a class="summary-nav__item" data-target="section6">5</a>
-        <a class="summary-nav__item" data-target="section7">4</a>
-        <a class="summary-nav__item" data-target="section8">3</a>
-        <a class="summary-nav__item" data-target="section9">2</a>
-        <a class="summary-nav__item" data-target="section10">1</a>
+        <a class="summary-nav__item" data-target="summary01">10</a>
+        <a class="summary-nav__item" data-target="summary02">9</a>
+        <a class="summary-nav__item" data-target="summary03">8</a>
+        <a class="summary-nav__item" data-target="summary04">7</a>
+        <a class="summary-nav__item" data-target="summary05">6</a>
+        <a class="summary-nav__item" data-target="summary06">5</a>
+        <a class="summary-nav__item" data-target="summary07">4</a>
+        <a
+          class="summary-nav__item summary-nav__item--runnerup"
+          data-target="summary08"
+          >3</a
+        >
+        <a
+          class="summary-nav__item summary-nav__item--runnerup"
+          data-target="summary09"
+          >2</a
+        >
+        <a
+          class="summary-nav__item summary-nav__item--winner"
+          data-target="summary10"
+          >1</a
+        >
       </div>
 
       <div class="summary-items">
-        <div class="summary-item scroll-section section1" id="section1">
+        <div
+          class="summary-item scroll-section beards"
+          data-page="page4"
+          data-section-name="summary01"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary01.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary01.svg"
               alt=""
             />
             <div class="search-term">Hair Removal Cream for Men</div>
@@ -286,10 +314,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section2" id="section2">
+        <div
+          class="summary-item scroll-section hair-removal"
+          data-page="page4"
+          data-section-name="summary02"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary02.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary02.svg"
               alt=""
             />
             <div class="search-term">How to get rid of razor bumps</div>
@@ -300,10 +332,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section3" id="section3">
+        <div
+          class="summary-item scroll-section grooming"
+          data-page="page4"
+          data-section-name="summary03"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary03.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary03.svg"
               alt=""
             />
             <div class="search-term">Mens Trimmer</div>
@@ -314,10 +350,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section section4" id="section4">
+        <div
+          class="summary-item scroll-section shaving"
+          data-page="page4"
+          data-section-name="summary04"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary04.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary04.svg"
               alt=""
             />
             <div class="search-term">Beard Growth</div>
@@ -328,10 +368,15 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section5" id="section5">
+        <div
+          class="summary-item scroll-section beards"
+          data-page="page4"
+          data-section-name="summary05"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary05.svg"
+              class="img-summary-05"
+              src="https://mittonp.github.io/vviz3/icons/summary05.svg"
               alt=""
             />
             <div class="search-term">Short Beard Styles</div>
@@ -342,10 +387,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section6" id="section6">
+        <div
+          class="summary-item scroll-section hair-removal"
+          data-page="page4"
+          data-section-name="summary06"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary06.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary06.svg"
               alt=""
             />
             <div class="search-term">Waxing for Men</div>
@@ -356,10 +405,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section7" id="section7">
+        <div
+          class="summary-item scroll-section grooming"
+          data-page="page4"
+          data-section-name="summary07"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary07.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary07.svg"
               alt=""
             />
             <div class="search-term">Patchy Beard</div>
@@ -370,10 +423,14 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section8" id="section8">
+        <div
+          class="summary-item scroll-section shaving"
+          data-page="page4"
+          data-section-name="summary08"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary08.svg"
+              src="https://mittonp.github.io/vviz3/icons/summary08.svg"
               alt=""
             />
             <div class="search-term">Shaving for Men</div>
@@ -384,10 +441,15 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section9" id="section9">
+        <div
+          class="summary-item scroll-section beards"
+          data-page="page4"
+          data-section-name="summary09"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary09.svg"
+              class="img-summary-09"
+              src="https://mittonp.github.io/vviz3/icons/summary09.svg"
               alt=""
             />
             <div class="search-term">Beard Styles</div>
@@ -398,10 +460,15 @@
           </div>
         </div>
 
-        <div class="summary-item scroll-section section10" id="section10">
+        <div
+          class="summary-item scroll-section hair-removal"
+          data-page="page4"
+          data-section-name="summary10"
+        >
           <div class="summary-item__content">
             <img
-              src="https://mittonp.github.io/vviz/icons/summary10.svg"
+              class="img-summary-10"
+              src="https://mittonp.github.io/vviz3/icons/summary10.svg"
               alt=""
             />
             <div class="search-term">Manscaping</div>
@@ -414,46 +481,74 @@
       </div>
     </div>
 
-    <div
-      class="scroll-section"
-      style="background: blue; color: white; position: relative"
-    >
-      THE END!
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div>
+        If we asked you back in 2004 to guess the top 10 trending search topics
+        for male grooming we bet you wouldn't have predicted the hipster
+        subculture would bring back the beard as a style icon. And it seems guys
+        are still keen on growing, styling and maintaining their facial hair
+        with terms like 'patchy beard', 'beard growth' and 'short beard styles'
+        all making an appearance in the top 10 this year. As more grooming
+        options designed for men hit the market, who knows what the next big
+        trend in mail grooming will be - but it will be exciting to find out!
+      </div>
+      <!-- <div class="main-text">
+        Share now - along with your prediction on the #1 2021 male hair trend
+        for the chance to win a years supply of Veet for Men
+      </div> -->
+      <div class="social-media-buttons">
+        <div class="social-media-button social-media-button--facebook">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="social-media-button social-media-button--instagram">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="social-media-button social-media-button--pinterest">
+          <i class="fab fa-pinterest"></i>
+        </div>
+        <div class="social-media-button social-media-button--twitter">
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+      <div class="fineprint">Data Sources: Google Trends, Also Asked</div>
     </div>
 
     <div class="progress-indicator">
       <div
         class="progress-indicator__bullet progress-indicator__bullet--active"
-        data-target="#landing-canvas"
+        data-target="page1"
+        data-page-target="page1"
       ></div>
       <div
         class="progress-indicator__bullet"
-        data-target="#bubble-universe-canvas"
+        data-page-target="page2"
+        data-target="page2"
       ></div>
       <div
         class="progress-indicator__bullet"
-        data-target="#force-directed-map-canvas"
+        data-page-target="page3"
+        data-target="page3"
       ></div>
       <div
         class="progress-indicator__bullet"
-        data-target="#summary-canvas"
+        data-page-target="page4"
+        data-target="summary01"
       ></div>
     </div>
   </body>
-  <script src="/vviz2/libs/jquery.min.js"></script>
-  <script src="/vviz2/libs/skrollr.min.js"></script>
-  <script src="/vviz2/libs/d3.v4.min.js"></script>
+  <script src="/vviz3/libs/jquery.min.js"></script>
+  <script src="/vviz3/libs/skrollr.min.js"></script>
+  <script src="/vviz3/libs/d3.v4.min.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-  <script src="/vviz2/libs/jeezy.min.js"></script>
-  <script src="/vviz2/libs/core.js"></script>
-  <script src="/vviz2/libs/charts.js"></script>
-  <script src="/vviz2/libs/forceDirected.js"></script>
-  <script src="/vviz2/libs/animated.js"></script>
-  <script src="/vviz2/01-landing.js"></script>
-  <script src="/vviz2/02-bubble-universe.js"></script>
-  <script src="/vviz2/03-force-directed-map.js"></script>
+  <script src="/vviz3/libs/jeezy.min.js"></script>
+  <script src="/vviz3/libs/core.js"></script>
+  <script src="/vviz3/libs/charts.js"></script>
+  <script src="/vviz3/libs/forceDirected.js"></script>
+  <script src="/vviz3/libs/animated.js"></script>
+  <script src="/vviz3/02-bubble-universe.js"></script>
+  <script src="/vviz3/03-force-directed-map.js"></script>
   <script src="https://projects.lukehaas.me/scrollify/script/jquery.scrollify.js"></script>
-  <script src="/vviz2/libs/jquery.waypoints.min.js"></script>
-  <script src="/vviz2/libs/jquery.counterup.min.js"></script>
+  <script src="/vviz3/libs/jquery.waypoints.min.js"></script>
+  <script src="/vviz3/libs/jquery.counterup.min.js"></script>
   <script src="main.js"></script>
 </html>
