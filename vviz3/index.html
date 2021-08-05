@@ -13,75 +13,7 @@
   </head>
   <body>
     <div class="section-canvas scroll-0" id="landing-canvas">
-      <div
-        class="section-graph-stretch"
-        style="position: fixed"
-        data-1="width:300%"
-        data-300="width:100%"
-      >
-        <div
-          class="areagraph"
-          data-1="transform:scale(3,3)"
-          data-300="transform:scale(1,1)"
-        ></div>
-        <div class="year-lines">
-          <div class="year-line">
-            <div class="year-label year-label--mobile year-label--even">
-              2004
-            </div>
-          </div>
-          <div class="year-line"><div class="year-label">2005</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--even">2006</div>
-          </div>
-          <div class="year-line"><div class="year-label">2007</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--mobile year-label--even">
-              2008
-            </div>
-          </div>
-          <div class="year-line"><div class="year-label">2009</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--even">2010</div>
-          </div>
-          <div class="year-line"><div class="year-label">2011</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--mobile year-label--even">
-              2012
-            </div>
-          </div>
-          <div class="year-line"><div class="year-label">2013</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--even">2014</div>
-          </div>
-          <div class="year-line"><div class="year-label">2015</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--mobile year-label--even">
-              2016
-            </div>
-          </div>
-          <div class="year-line"><div class="year-label">2017</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--even">2018</div>
-          </div>
-          <div class="year-line"><div class="year-label">2019</div></div>
-          <div class="year-line">
-            <div class="year-label year-label--mobile year-label--even">
-              2020
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="y-axis" data-1="height:240%" data-300="height:70%">
-        <div class="y-axis__tag">3.5M</div>
-        <div class="y-axis__tag">3M</div>
-        <div class="y-axis__tag">2.5M</div>
-        <div class="y-axis__tag">2M</div>
-        <div class="y-axis__tag">1.5M</div>
-        <div class="y-axis__tag">1M</div>
-        <div class="y-axis__tag">500k</div>
-      </div>
-
+      <div id="my_dataviz"></div>
       <div class="section-canvas-container">
         <div
           class="main-text scroll-section"
@@ -120,10 +52,8 @@
     >
       <div class="section-canvas-container">
         <div class="overlay-text">
-          <h2>Explore what men were searching</h2>
-          <h2 style="display: none">
-            What men were searching in 20<span id="year">04</span>
-          </h2>
+          <h2 style="display: none">Explore what men were searching</h2>
+          <h2>What men were searching in 20<span id="year">04</span></h2>
           <div class="legend">
             <div class="legend-item">
               <div class="legend-item__dot legend-item__dot--beards"></div>
@@ -142,20 +72,6 @@
             <div class="legend-item">
               <div class="legend-item__dot legend-item__dot--shaving"></div>
               <div class="legend-item__text">Shaving</div>
-            </div>
-          </div>
-          <div class="instructions">
-            <div class="instructions__content">
-              <img
-                src="https://mittonp.github.io/vviz3/icons/click-see.svg"
-                alt=""
-              />
-              <div class="instructions__text hide-mobile">
-                Hover to see the number of Australian searches each year
-              </div>
-              <div class="instructions__text hide-desktop">
-                Tap to see the number of Australian searches each year
-              </div>
             </div>
           </div>
         </div>
@@ -212,6 +128,18 @@
             <div class="year-button__text">2020</div>
           </div>
         </div>
+        <div class="instructions" id="instructions--bubble">
+          <div class="instructions__content">
+            <img src="/vviz3/icons/click-see.svg" alt="" class="hide-mobile" />
+            <img src="/vviz3/icons/hover-see.svg" alt="" class="hide-desktop" />
+            <div class="instructions__text hide-mobile">
+              Click to see the number of Australian searches each year
+            </div>
+            <div class="instructions__text hide-desktop">
+              Tap to see the number of Australian searches each year
+            </div>
+          </div>
+        </div>
       </div>
       <div class="year-arrow year-arrow--forward">></div>
       <div class="year-arrow year-arrow--back"><</div>
@@ -227,23 +155,7 @@
     >
       <div class="section-canvas-container">
         <div class="overlay-text overlay-text--alt">
-          <h2 class="what-also-search">
-            Click to see what else<br />Australians searched for
-          </h2>
-          <div class="instructions">
-            <div class="instructions__content">
-              <img
-                src="https://mittonp.github.io/vviz3/icons/click-see.svg"
-                alt=""
-              />
-              <div class="instructions__text hide-mobile">
-                Click to see what else Australians searched for
-              </div>
-              <div class="instructions__text hide-desktop">
-                Tap to see what else Australians searched for
-              </div>
-            </div>
-          </div>
+          <h2 class="what-also-search">What men are also searching for</h2>
           <div class="legend">
             <div class="legend-item">
               <div class="legend-item__dot legend-item__dot--beards"></div>
@@ -261,6 +173,18 @@
             </div>
           </div>
         </div>
+        <div class="instructions" id="instructions--force">
+          <div class="instructions__content">
+            <img src="/vviz3/icons/click-see.svg" alt="" class="hide-mobile" />
+            <img src="/vviz3/icons/hover-see.svg" alt="" class="hide-desktop" />
+            <div class="instructions__text hide-mobile">
+              Click to see what else Australians searched for
+            </div>
+            <div class="instructions__text hide-desktop">
+              Tap to see what else Australians searched for
+            </div>
+          </div>
+        </div>
       </div>
       <div id="chartdiv"></div>
     </div>
@@ -271,190 +195,70 @@
         </div>
       </div>
       <div class="summary-nav" id="summary-nav">
-        <a class="summary-nav__item" data-target="summary01">10</a>
-        <a class="summary-nav__item" data-target="summary02">9</a>
-        <a class="summary-nav__item" data-target="summary03">8</a>
-        <a class="summary-nav__item" data-target="summary04">7</a>
-        <a class="summary-nav__item" data-target="summary05">6</a>
-        <a class="summary-nav__item" data-target="summary06">5</a>
-        <a class="summary-nav__item" data-target="summary07">4</a>
+        <a class="summary-nav__item" data-target="summary10">10</a>
+        <a class="summary-nav__item" data-target="summary09">9</a>
+        <a class="summary-nav__item" data-target="summary08">8</a>
+        <a class="summary-nav__item" data-target="summary07">7</a>
+        <a class="summary-nav__item" data-target="summary06">6</a>
+        <a class="summary-nav__item" data-target="summary05">5</a>
+        <a class="summary-nav__item" data-target="summary04">4</a>
         <a
           class="summary-nav__item summary-nav__item--runnerup"
-          data-target="summary08"
+          data-target="summary03"
           >3</a
         >
         <a
           class="summary-nav__item summary-nav__item--runnerup"
-          data-target="summary09"
+          data-target="summary02"
           >2</a
         >
         <a
           class="summary-nav__item summary-nav__item--winner"
-          data-target="summary10"
+          data-target="summary01"
           >1</a
         >
       </div>
 
       <div class="summary-items">
         <div
-          class="summary-item scroll-section beards"
-          data-page="page4"
-          data-section-name="summary01"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary01.svg"
-              alt=""
-            />
-            <div class="search-term">Hair Removal Cream for Men</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">17,490</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="summary-item scroll-section hair-removal"
-          data-page="page4"
-          data-section-name="summary02"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary02.svg"
-              alt=""
-            />
-            <div class="search-term">How to get rid of razor bumps</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">20,650</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="summary-item scroll-section grooming"
-          data-page="page4"
-          data-section-name="summary03"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary03.svg"
-              alt=""
-            />
-            <div class="search-term">Mens Trimmer</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">21,000</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
           class="summary-item scroll-section shaving"
           data-page="page4"
-          data-section-name="summary04"
+          data-section-name="summary10"
         >
           <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary04.svg"
-              alt=""
-            />
+            <img src="/vviz3/icons/beardgrowth.svg" alt="" />
             <div class="search-term">Beard Growth</div>
             <div class="summary-item__stats">
-              <div class="search-volume">22,090</div>
+              <div class="search-volume">18,520</div>
               <div class="search-legend">Google Searches, 2020</div>
             </div>
           </div>
         </div>
-
-        <div
-          class="summary-item scroll-section beards"
-          data-page="page4"
-          data-section-name="summary05"
-        >
-          <div class="summary-item__content">
-            <img
-              class="img-summary-05"
-              src="https://mittonp.github.io/vviz3/icons/summary05.svg"
-              alt=""
-            />
-            <div class="search-term">Short Beard Styles</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">22,200</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="summary-item scroll-section hair-removal"
-          data-page="page4"
-          data-section-name="summary06"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary06.svg"
-              alt=""
-            />
-            <div class="search-term">Waxing for Men</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">29,900</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="summary-item scroll-section grooming"
-          data-page="page4"
-          data-section-name="summary07"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary07.svg"
-              alt=""
-            />
-            <div class="search-term">Patchy Beard</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">46,100</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="summary-item scroll-section shaving"
-          data-page="page4"
-          data-section-name="summary08"
-        >
-          <div class="summary-item__content">
-            <img
-              src="https://mittonp.github.io/vviz3/icons/summary08.svg"
-              alt=""
-            />
-            <div class="search-term">Shaving for Men</div>
-            <div class="summary-item__stats">
-              <div class="search-volume">57,800</div>
-              <div class="search-legend">Google Searches, 2020</div>
-            </div>
-          </div>
-        </div>
-
         <div
           class="summary-item scroll-section beards"
           data-page="page4"
           data-section-name="summary09"
         >
           <div class="summary-item__content">
-            <img
-              class="img-summary-09"
-              src="https://mittonp.github.io/vviz3/icons/summary09.svg"
-              alt=""
-            />
-            <div class="search-term">Beard Styles</div>
+            <img src="/vviz3/icons/hairremovalcream.svg" alt="" />
+            <div class="search-term">Hair Removal Cream for Men</div>
             <div class="summary-item__stats">
-              <div class="search-volume">213,100</div>
+              <div class="search-volume">19,520</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="summary-item scroll-section grooming"
+          data-page="page4"
+          data-section-name="summary08"
+        >
+          <div class="summary-item__content">
+            <img src="/vviz3/icons/amish.svg" alt="" />
+            <div class="search-term">Amish Beard</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">19,930</div>
               <div class="search-legend">Google Searches, 2020</div>
             </div>
           </div>
@@ -463,17 +267,116 @@
         <div
           class="summary-item scroll-section hair-removal"
           data-page="page4"
-          data-section-name="summary10"
+          data-section-name="summary07"
+        >
+          <div class="summary-item__content">
+            <img src="/vviz3/icons/razorbumps.svg" alt="" />
+            <div class="search-term">How to get rid of razor bumps</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">22,540</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="summary-item scroll-section beards"
+          data-page="page4"
+          data-section-name="summary06"
         >
           <div class="summary-item__content">
             <img
+              class="img-summary-05"
+              src="/vviz3/icons/shortbeardstyles.svg"
+              alt=""
+            />
+            <div class="search-term">Short Beard Styles</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">25,200</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="summary-item scroll-section hair-removal"
+          data-page="page4"
+          data-section-name="summary05"
+        >
+          <div class="summary-item__content">
+            <img src="/vviz3/icons/goatee.svg" alt="" />
+            <div class="search-term">Goatee Beard</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">38,300</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="summary-item scroll-section grooming"
+          data-page="page4"
+          data-section-name="summary04"
+        >
+          <div class="summary-item__content">
+            <img src="/vviz3/icons/patchybeard.svg" alt="" />
+            <div class="search-term">Patchy Beard</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">45,400</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="summary-item scroll-section shaving"
+          data-page="page4"
+          data-section-name="summary03"
+        >
+          <div class="summary-item__content">
+            <img src="/vviz3/icons/shavingformen.svg" alt="" />
+            <div class="search-term">Shaving for Men</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">55,200</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="summary-item scroll-section beards"
+          data-page="page4"
+          data-section-name="summary02"
+        >
+          <div class="summary-item__content">
+            <img
+              class="img-summary-09"
+              src="/vviz3/icons/beardstyles.svg"
+              alt=""
+            />
+            <div class="search-term">Beard Styles</div>
+            <div class="summary-item__stats">
+              <div class="search-volume">91,000</div>
+              <div class="search-legend">Google Searches, 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="summary-item scroll-section hair-removal"
+          data-page="page4"
+          data-section-name="summary01"
+        >
+          <div class="scroll-button">
+            <img src="/vviz3/icons/scroll-dark.svg" alt="" />
+          </div>
+          <div class="summary-item__content">
+            <img
               class="img-summary-10"
-              src="https://mittonp.github.io/vviz3/icons/summary10.svg"
+              src="/vviz3/icons/manscaping.svg"
               alt=""
             />
             <div class="search-term">Manscaping</div>
             <div class="summary-item__stats">
-              <div class="search-volume">222,300</div>
+              <div class="search-volume">1,563,600</div>
               <div class="search-legend">Google Searches, 2020</div>
             </div>
           </div>
@@ -482,20 +385,39 @@
     </div>
 
     <div class="scroll-section call-to-action" data-page="page4">
-      <div>
-        If we asked you back in 2004 to guess the top 10 trending search topics
-        for male grooming we bet you wouldn't have predicted the hipster
-        subculture would bring back the beard as a style icon. And it seems guys
-        are still keen on growing, styling and maintaining their facial hair
-        with terms like 'patchy beard', 'beard growth' and 'short beard styles'
-        all making an appearance in the top 10 this year. As more grooming
-        options designed for men hit the market, who knows what the next big
-        trend in mail grooming will be - but it will be exciting to find out!
+      <div class="main-text">The Top 10 Growth Trends</div>
+    </div>
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div class="main-text">
+        If we asked you back in 2004 to guess which male grooming trends would
+        grow the most by 2020 - what would you have said?
       </div>
-      <!-- <div class="main-text">
-        Share now - along with your prediction on the #1 2021 male hair trend
-        for the chance to win a years supply of Veet for Men
-      </div> -->
+    </div>
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div class="main-text">
+        We bet you'd never have predicted the hipster subculture would bring
+        back the beard as a style icon.
+      </div>
+    </div>
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div class="main-text">
+        And it seems guys are still keen on growing, styling and maintaining
+        their facial hair with 6 of the top 10 searches falling within the beard
+        category.
+      </div>
+    </div>
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div class="main-text">
+        As more grooming options designed for men hit the market, who knows what
+        the next big trend in male grooming will be – but it will be exciting to
+        find out!
+      </div>
+    </div>
+    <div class="scroll-section call-to-action" data-page="page4">
+      <div class="main-text">
+        Share your 2021 predications with us and follow the movement.
+      </div>
+
       <div class="social-media-buttons">
         <div class="social-media-button social-media-button--facebook">
           <i class="fab fa-facebook-f"></i>
@@ -532,7 +454,7 @@
       <div
         class="progress-indicator__bullet"
         data-page-target="page4"
-        data-target="summary01"
+        data-target="summary10"
       ></div>
     </div>
   </body>
@@ -545,6 +467,7 @@
   <script src="/vviz3/libs/charts.js"></script>
   <script src="/vviz3/libs/forceDirected.js"></script>
   <script src="/vviz3/libs/animated.js"></script>
+  <script src="/vviz3/01-landing.js"></script>
   <script src="/vviz3/02-bubble-universe.js"></script>
   <script src="/vviz3/03-force-directed-map.js"></script>
   <script src="https://projects.lukehaas.me/scrollify/script/jquery.scrollify.js"></script>

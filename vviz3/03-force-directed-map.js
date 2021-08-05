@@ -1,7 +1,6 @@
 var initForce = function () {
-  $(".section-canvas").off();
-  $(".section-canvas").click(function () {
-    $(".instructions").hide();
+  $("#instructions--force").click(function () {
+    $("#instructions--force").hide();
   });
 
   var el = document.getElementsByClassName("section-canvas");

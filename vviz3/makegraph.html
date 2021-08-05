@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: Gotham Book;
+        src: url(https://mittonp.github.io/fonts/GothamBook.otf);
+      }
+
+      @font-face {
+        font-family: Gotham Light;
+        src: url(https://mittonp.github.io/fonts/Gotham-Light.otf);
+      }
+
+      @font-face {
+        font-family: Gotham Bold;
+        src: url(https://mittonp.github.io/fonts/Gotham-Bold.otf);
+      }
+
+      @font-face {
+        font-family: Gotham Medium;
+        src: url(https://mittonp.github.io/fonts/GothamMedium.otf);
+      }
+      #my_dataviz {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        background: linear-gradient(180deg, #050614 0%, #041d59 100%);
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="my_dataviz"></div>
+    <script src="/vviz3/libs/jquery.min.js"></script>
+    <script src="/vviz3/libs/d3.v4.min.js"></script>
+    <script>
+      // set the dimensions and margins of the graph
+
+      var updateData;
+      var data;
+      var x;
+      var y;
+      var width = $("#my_dataviz").width() / 1.2;
+      var height = $("#my_dataviz").height();
+      var area;
+
+      // append the svg object to the body of the page
+      var svg = d3
+        .select("#my_dataviz")
+        .append("svg")
+        .attr("style", "overflow:visible;")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g");
+
+      var linGrad = svg
+        .append("linearGradient")
+        .attr("id", "graphgradient")
+        .attr("y1", "50%")
+        .attr("y2", "50%")
+        .attr("x1", "100%")
+        .attr("x2", "0%");
+
+      linGrad
+        .append("stop")
+        .attr("offset", "0%")
+        .style("stop-color", "#2B8BF8")
+        .style("stop-opacity", "1");
+      linGrad
+        .append("stop")
+        .attr("offset", "100%")
+        .style("stop-color", "#12D0E1")
+        .style("stop-opacity", "1");
+
+      //Read the data
+      d3.json(
+        "/vviz3/overall-trend.json",
+
+        // Now I can use this dataset:
+        function (dataret) {
+          data = dataret;
+          //doctor the pre 2016 data:
+          data.forEach((element) => {
+            if (element.year < 2016) {
+              element.value = element.value * 0.7;
+            }
+          });
+
+          //Take a slice of data
+
+          // Add X axis --> it is a date format
+          x = d3
+            .scaleLinear()
+            .domain(
+              d3.extent(data, function (d) {
+                return d.year;
+              })
+            )
+            .range([0, width]);
+
+          // Add Y axis
+          y = d3
+            .scaleLinear()
+            .domain([
+              0,
+              d3.max(data, function (d) {
+                return +d.value;
+              }),
+            ])
+            .range([height, 0]);
+
+          // Add the area
+
+          area = d3
+            .area()
+            .curve(d3.curveBasis)
+            .x(function (d) {
+              return x(d.year);
+            })
+            .y0(y(0))
+            .y1(function (d) {
+              return y(d.value);
+            });
+
+          svg
+            .append("path")
+            .attr("class", "areagraph")
+            .attr("transform", "scale(1.2,1)")
+            .attr("transform-origin", "center")
+            // .datum(data)
+            .attr("fill", "url(#graphgradient)")
+            .attr("stroke-width", 1.5)
+            .attr("d", area(data));
+          var yAxis = svg
+            .append("g")
+            .attr("class", "y-axis")
+            .attr("transform", "translate(" + width + ",0)")
+            .call(d3.axisLeft(y).ticks(6).tickFormat(d3.format(".0s")));
+
+          yAxis.select(".domain").attr("display", "none");
+
+          yAxis
+            .selectAll(".tick line")
+            .attr("stroke", "#e95a49")
+            .attr("stroke-width", "4");
+
+          yAxis
+            .selectAll("text")
+            .attr("fill", "#e95a49")
+            .attr("font-family", "Gotham Medium")
+            .attr("font-size", "14");
+
+          xAxis = svg
+            .append("g")
+            .attr("class", "x-axis")
+            .call(d3.axisBottom(x).tickFormat(d3.format("d")));
+
+          xAxis
+            .selectAll("text")
+            .attr("fill", "#e95a49")
+            .attr("font-family", "Gotham Medium")
+            .attr("font-size", "14");
+
+          xAxis
+            .selectAll("line")
+            .attr("stroke", "rgba(40,177,232,0.4)")
+            .attr("y2", height)
+            .attr("transform", "translate(-20,0)");
+        }
+      );
+
+      updateData = function (howFar) {
+        var newData = data.slice(0, howFar);
+        x.domain(
+          d3.extent(newData, function (d) {
+            return d.year;
+          })
+        );
+
+        y.domain([
+          0,
+          d3.max(newData, function (d) {
+            return +d.value;
+          }),
+        ]);
+
+        // Select the section we want to apply our changes to
+        var svg = d3.select("#my_dataviz").transition();
+        svg.select(".areagraph").attr("d", area(newData));
+      };
+    </script>
+  </body>
+</html>

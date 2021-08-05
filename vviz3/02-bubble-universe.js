@@ -8,9 +8,8 @@ var bubbleInit = function () {
   var currentYear = 2004;
   var scrollHeight = 2320;
 
-  $(".section-canvas").off();
-  $(".section-canvas").click(function () {
-    $(".instructions").hide();
+  $("#instructions--bubble").click(function () {
+    $("#instructions--bubble").hide();
   });
 
   function setYear(year) {
@@ -51,7 +50,7 @@ var bubbleInit = function () {
   var currentData;
   var size = d3
     .scaleSqrt()
-    .domain([0, 200000])
+    .domain([0, 1563600])
     .range([3, Math.sqrt(height * width) / 4]);
   var graph;
   function getYearData(alphabet, year) {
@@ -83,7 +82,7 @@ var bubbleInit = function () {
   }
   var nodePadding = 2.5;
 
-  d3.selectAll("svg").remove();
+  //d3.selectAll("svg").remove();
 
   var svg = d3
     .select(".bubbles")
@@ -187,27 +186,27 @@ var bubbleInit = function () {
         .strength(0.5)
         .radius(function (d) {
           sizeFactor = 1;
-          if (currentYear < 2016) sizeFactor = 0.7;
+          //if (currentYear < 2016) sizeFactor = 0.7;
           return size(d.size) * sizeFactor + nodePadding;
         })
         .iterations(1)
     );
 
   d3.json("/vviz3/data.json", function (data) {
-    data.forEach((d) => {
-      for (let index = 2004; index < 2020; index++) {
-        const element = d[index];
-        if (d[index] < 2) {
-          if (index == 2004) {
-            d[index] = d[index + 1] / 2;
-          } else {
-            d[index] = (d[index - 1] + d[index + 1]) / 2;
-          }
+    // data.forEach((d) => {
+    //   for (let index = 2004; index < 2020; index++) {
+    //     const element = d[index];
+    //     if (d[index] < 2) {
+    //       if (index == 2004) {
+    //         d[index] = d[index + 1] / 2;
+    //       } else {
+    //         d[index] = (d[index - 1] + d[index + 1]) / 2;
+    //       }
 
-          d.Keyword = d.Keyword + "*";
-        }
-      }
-    });
+    //       d.Keyword = d.Keyword + "*";
+    //     }
+    //   }
+    // });
     $(".year-button").click(function (e) {
       redraw(parseInt(e.target.innerText));
     });
@@ -246,7 +245,7 @@ var bubbleInit = function () {
         })
         .call(wrap, function (d) {
           sizeFactor = 1;
-          if (currentYear < 2016) sizeFactor = 0.7;
+          //if (currentYear < 2016) sizeFactor = 0.7;
           return size(d.size) * sizeFactor;
         });
 
@@ -257,7 +256,7 @@ var bubbleInit = function () {
         .duration(500)
         .attr("r", function (d) {
           sizeFactor = 1;
-          if (currentYear < 2016) sizeFactor = 0.7;
+          //if (currentYear < 2016) sizeFactor = 0.7;
           return size(d.size) * sizeFactor;
         });
       simulation.nodes(graph).on("tick", function (d) {
@@ -313,7 +312,7 @@ var bubbleInit = function () {
       .append("circle")
       .attr("r", function (d) {
         sizeFactor = 1;
-        if (currentYear < 2016) sizeFactor = 0.7;
+        //if (currentYear < 2016) sizeFactor = 0.7;
         return size(d.size) * sizeFactor;
       })
       .attr("fill", function (d) {
@@ -359,7 +358,7 @@ var bubbleInit = function () {
             .attr("x", 0);
 
         sizeFactor = 1;
-        if (currentYear < 2016) sizeFactor = 0.7;
+        //if (currentYear < 2016) sizeFactor = 0.7;
         var diameter = size(text.data()[0].size) * sizeFactor * 2;
         text.attr("dy", 0);
         width = diameter - diameter * 0.24;

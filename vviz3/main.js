@@ -1,5 +1,7 @@
 var scrolling = false;
+var currentSlide = 0;
 $(document).ready(function () {
+  updateData(Math.pow(2, 1) + 3);
   $(".summary-nav__item, .progress-indicator__bullet").click(function (e) {
     var target = e.target.getAttribute("data-target");
     $.scrollify.move("#" + target);
@@ -11,14 +13,12 @@ $(document).ready(function () {
     updateHash: false,
     sectionName: "section-name",
     before: function (a, b, c) {
-      $("#landing-canvas").removeClass("scroll-0");
-      $("#landing-canvas").removeClass("scroll-1");
-      $("#landing-canvas").removeClass("scroll-2");
-      $("#landing-canvas").removeClass("scroll-3");
-      $("#landing-canvas").addClass("scroll-" + a);
-
       if (!b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").removeClass("fixed");
+      }
+      if (a >= 0 && a <= 3) {
+        var duration = a < currentSlide ? 0 : 740;
+        updateData(Math.pow(2, a + 1) + 3, duration);
       }
 
       //Nav bullets
@@ -35,6 +35,7 @@ $(document).ready(function () {
       targetNavItem.addClass("progress-indicator__bullet--active");
     },
     after: function (a, b) {
+      currentSlide = a;
       if (b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").addClass("fixed");
       }
