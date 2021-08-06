@@ -1,7 +1,6 @@
 var scrolling = false;
 var currentSlide = 0;
 $(document).ready(function () {
-  updateData(Math.pow(2, 1) + 3);
   $(".summary-nav__item, .progress-indicator__bullet").click(function (e) {
     var target = e.target.getAttribute("data-target");
     $.scrollify.move("#" + target);
@@ -47,6 +46,6 @@ $(document).ready(function () {
 
   bubbleInit();
   initForce();
-
   $(".search-volume").counterUp();
+  updateData(Math.pow(2, 1) + 3);
 });
