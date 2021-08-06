@@ -80,6 +80,7 @@ d3.json(
     //   }
     // });
     updateData(Math.pow(2, 1) + 3);
+    updateData(Math.pow(2, 1) + 3);
   }
 );
 
