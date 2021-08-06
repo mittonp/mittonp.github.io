@@ -656,16 +656,37 @@ body {
   max-height: 255px;
 }
 
+.summary-items img.img-summary--beardgrowth {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.summary-items img.img-summary--razorbumps {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .summary-items img.img-summary-05 {
-  margin-bottom: -30%;
+  margin-bottom: -20%;
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
 }
 
 .summary-items img.img-summary-09 {
-  margin-right: -30%;
+  margin-right: -35%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 .summary-items img.img-summary-10 {
-  margin-bottom: -15%;
+  margin-bottom: -10%;
+  margin-left: -8%;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
 }
 
 @media (min-width: 1024px) {

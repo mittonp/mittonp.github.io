@@ -524,15 +524,29 @@ body {
     max-width: 250px;
     max-height: 255px;
 
+    &.img-summary--beardgrowth {
+      transform: scale(1.15);
+      transform-origin: bottom;
+    }
+
+    &.img-summary--razorbumps {
+      transform: scale(1.05);
+    }
+
     &.img-summary-05 {
-      margin-bottom: -30%;
+      margin-bottom: -20%;
+      transform: scale(1.35);
     }
     &.img-summary-09 {
-      margin-right: -30%;
+      margin-right: -35%;
+      transform: scale(1.2);
+      transform-origin: bottom;
     }
 
     &.img-summary-10 {
-      margin-bottom: -15%;
+      margin-bottom: -10%;
+      margin-left: -8%;
+      transform: scale(1.6);
     }
     @media (min-width: 1024px) {
       max-width: 400px;

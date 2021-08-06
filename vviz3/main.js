@@ -44,7 +44,14 @@ $(document).ready(function () {
     },
   });
 
+  landingInit();
   bubbleInit();
   initForce();
+
   $(".search-volume").counterUp();
+  $(window).resize(function () {
+    landingInit();
+    bubbleInit();
+    initForce();
+  });
 });

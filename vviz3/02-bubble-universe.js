@@ -82,11 +82,12 @@ var bubbleInit = function () {
   }
   var nodePadding = 2.5;
 
-  //d3.selectAll("svg").remove();
+  d3.selectAll(".bubbles-svg").remove();
 
   var svg = d3
     .select(".bubbles")
     .append("svg")
+    .attr("class", "bubbles-svg")
     .attr("width", width)
     .attr("height", height);
 
