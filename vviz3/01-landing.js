@@ -79,6 +79,7 @@ d3.json(
     //     element.value = element.value * 0.7;
     //   }
     // });
+    updateData(Math.pow(2, 1) + 3);
   }
 );
 

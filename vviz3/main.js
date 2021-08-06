@@ -47,5 +47,4 @@ $(document).ready(function () {
   bubbleInit();
   initForce();
   $(".search-volume").counterUp();
-  updateData(Math.pow(2, 1) + 3);
 });
