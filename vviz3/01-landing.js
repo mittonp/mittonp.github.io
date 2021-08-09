@@ -1,4 +1,9 @@
 var updateData;
+var area;
+var areagraph;
+var x;
+var y;
+
 function landingInit() {
   var data;
   var width = $("#my_dataviz").width() / 1.2;
@@ -16,7 +21,7 @@ function landingInit() {
     .attr("height", height)
     .append("g");
 
-  var areagraph = lsvg
+  areagraph = lsvg
     .append("path")
     .attr("class", "areagraph")
     .attr("transform", "scale(1.2,1)")
@@ -37,7 +42,7 @@ function landingInit() {
   x = d3.scaleLinear().range([0, width]);
   y = d3.scaleLinear().range([height, 0]);
 
-  var area = d3
+  area = d3
     .area()
     .curve(d3.curveBasis)
     .x(function (d) {
@@ -73,7 +78,7 @@ function landingInit() {
 
   //Read the data
   d3.json(
-    "/vviz3/overall-trend.json",
+    "/vviz3/manscaping-trend.json",
 
     // Now I can use this dataset:
     function (dataret) {
@@ -85,26 +90,24 @@ function landingInit() {
       //   }
       // });
       updateData(Math.pow(2, 1) + 3);
-      updateData(Math.pow(2, 1) + 3);
     }
   );
 
   updateData = function (howFar, transition) {
-    var newData = data.slice(0, howFar);
+    var subData = data.slice(0, howFar);
+    transition = 750;
+    howFar = 2002 + howFar;
+    if (howFar > 2020) howFar = 2020;
+    var newData = data;
     if (howFar > data.length) {
       newData = data;
     }
 
-    x.domain(
-      d3.extent(newData, function (d) {
-        return d.year;
-      })
-    );
+    x.domain([2004, howFar]);
 
     y.domain([
       0,
-      d3.max(newData, function (d) {
-        if (d.value < 1000000) return 1000000;
+      d3.max(subData, function (d) {
         return +d.value;
       }),
     ]);
@@ -137,18 +140,5 @@ function landingInit() {
       .attr("stroke", "rgba(40,177,232,0.4)")
       .attr("y2", height)
       .attr("transform", "translate(-25,-30)");
-
-    x.domain(
-      d3.extent(newData, function (d) {
-        return d.year;
-      })
-    );
-
-    y.domain([
-      0,
-      d3.max(newData, function (d) {
-        return +d.value;
-      }),
-    ]);
   };
 }

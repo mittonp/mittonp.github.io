@@ -504,6 +504,10 @@ body {
             flex-direction: row;
     width: 1440px;
     margin: auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -636,7 +640,7 @@ body {
 }
 
 .scroll-button {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
 }
 
@@ -692,7 +696,7 @@ body {
 @media (min-width: 1024px) {
   .summary-items img {
     max-width: 400px;
-    max-height: 450px;
+    max-height: 400px;
   }
 }
 
