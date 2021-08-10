@@ -14,6 +14,7 @@ $(document).ready(function () {
     before: function (a, b, c) {
       if (!b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").removeClass("fixed");
+        $(".scroll-button").removeClass("bg-dark");
       }
       if (a >= 0 && a <= 3) {
         var duration = a < currentSlide ? 0 : 740;
@@ -37,6 +38,7 @@ $(document).ready(function () {
       currentSlide = a;
       if (b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").addClass("fixed");
+        $(".scroll-button").addClass("bg-dark");
       }
       if (!b[a].hasClass("summary-item")) {
         $(".summary-top, .summary-nav").removeClass("fixed");

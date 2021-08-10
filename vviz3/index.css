@@ -928,4 +928,16 @@ body {
 .domain {
   display: none;
 }
+
+.scroll-icon--light {
+  display: none;
+}
+
+.bg-dark .scroll-icon--light {
+  display: block;
+}
+
+.bg-dark .scroll-icon--dark {
+  display: none;
+}
 /*# sourceMappingURL=index.css.map */

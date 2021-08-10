@@ -728,3 +728,17 @@ body {
 .domain {
   display: none;
 }
+
+.scroll-icon--light {
+  display: none;
+}
+
+.bg-dark {
+  .scroll-icon--light {
+    display: block;
+  }
+
+  .scroll-icon--dark {
+    display: none;
+  }
+}
