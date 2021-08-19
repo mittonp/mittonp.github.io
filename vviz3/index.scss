@@ -256,7 +256,7 @@ body {
   box-sizing: border-box;
 
   @media (min-width: 1440px) {
-    width: 1440px;
+    width: 1300px;
   }
 }
 
@@ -377,7 +377,10 @@ body {
   //padding-right: 30px;
 
   @media (min-width: 1024px) {
-    font-size: 60px;
+    font-size: 52px;
+    margin: auto;
+    //margin-left: 75px;
+    line-height: 1.3em;
     max-width: unset;
   }
 }

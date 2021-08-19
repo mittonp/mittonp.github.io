@@ -118,12 +118,12 @@ function landingInit() {
 
     yAxisElement
       .selectAll(".tick line")
-      .attr("stroke", "#e95a49")
+      .attr("stroke", "#ffffff")
       .attr("stroke-width", "4");
 
     yAxisElement
       .selectAll("text")
-      .attr("fill", "#e95a49")
+      .attr("fill", "#ffffff")
       .attr("font-family", "Gotham Medium")
       .attr("font-size", "14");
 

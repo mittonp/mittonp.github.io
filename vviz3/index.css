@@ -298,7 +298,7 @@ body {
 
 @media (min-width: 1440px) {
   .section-canvas-container {
-    width: 1440px;
+    width: 1300px;
   }
 }
 
@@ -454,7 +454,9 @@ body {
 
 @media (min-width: 1024px) {
   .main-text {
-    font-size: 60px;
+    font-size: 52px;
+    margin: auto;
+    line-height: 1.3em;
     max-width: unset;
   }
 }
