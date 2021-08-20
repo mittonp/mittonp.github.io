@@ -695,7 +695,7 @@ body {
           transform: scale(1.6);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   .summary-items img {
     max-width: 400px;
     max-height: 400px;
@@ -886,6 +886,7 @@ body {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
   }
 }
 
