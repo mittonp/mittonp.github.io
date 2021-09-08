@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investing Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sg-cal-wrap">            
+    <div class="input-group row" id="step1" >
+        <div class="sub-header">
+            <h2 class="text-center">Rethink Investing Financial Calculator</h2>
+            <p class="text-center">Fill out the fields with your budget data to get a full breakdown of your growth potential.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Purchase Price</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="purchase-price"  name="purchase-price" class="input currency" value="7850000">
+                    </span>                            
+                </div>
+  
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Deposit %</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="deposit-percentage"  name="deposit-percentage" class="input percent " value="30">
+                    </span>                            
+                </div>
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Total Loan</label>
+                    </div>
+                    <span class="col2">
+                        <label id="total-loan">549999</label>
+                    </span>                            
+                </div>
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Deposit</label>
+                    </div>
+                    <span class="col2">
+                        <label id="deposit">549999</label>
+                    </span>                            
+                </div>
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Stamp Duty</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="stamp-duty"  name="stamp-duty" class="input currency" value="392500">
+                    </span>                            
+                </div>
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Valuation Cost</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="valuation-cost"  name="valuation-cost" class="input currency" value="7000">
+                    </span>                            
+                </div>
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Solicitor Cost</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="solicitor-cost"  name="solicitor-cost" class="input currency" value="6000">
+                    </span>                            
+                </div>
+                <!--
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Deposit Total</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="d5"  name="d5">
+                    </span>                            
+                </div>
+  
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Loan Amount</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="d6"  name="d6">
+                    </span>                            
+                </div>
+  
+
+  
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Total Acquisition Costs</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="d10"  name="d10">
+                    </span>                            
+                </div> -->
+  
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Other Purchasing Costs</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="other-purchasing-costs"  name="other-purchasing-costs" class="input currency" value="164065">
+                    </span>                            
+                </div>
+
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Total Cash Required</label>
+                    </div>
+                    <span class="col2">
+                        <label id="total-cash-required">2924565</label>
+                    </span>                            
+                </div>
+  
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Loan Interest Rate %</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="d11"  name="d11" class="input percent" value="4">
+                    </span>                            
+                </div>
+                <!--
+                <div class="input-field">
+                    <div class="col2">
+                        <label>Net Rent</label>
+                    </div>
+                    <span class="col2">
+                        <input type="text" id="d12"  name="d12">
+                    </span>                            
+                </div>
+                -->
+  
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-field">
+                <div class="col2">
+                    <label>First year Net Income</label>
+                </div>
+                <span class="col2">                            
+                    <select id="g3" name="g3">
+                      <option class="yield-option" value="5%">5%</option>
+                      <option class="yield-option" value="5.5%">5.5%</option>
+                      <option class="yield-option" value="6%">6%</option>
+                      <option class="yield-option" value="6.5%">6.5%</option>
+                      <option class="yield-option" value="7%">7%</option>
+                      <option class="yield-option" value="7.5%">7.5%</option>
+                      <option class="yield-option" value="8%">8%</option>
+                      <option class="yield-option" value="8.5%">8.5%</option>
+                      <option class="yield-option" value="9%">9%</option>
+                    </select>
+                </span>                            
+            </div>
+  
+            <div class="input-field">
+                <div class="col2">
+                    <label>Rental Increases %</label>
+                </div>
+                <span class="col2">
+                    <input type="text" id="g4"  name="g4" class="input percent" value="3">
+                </span>                            
+            </div>
+  
+            <div style="display: none;" class="input-field">
+                <div class="col2">
+                    <label>Expected Depreciation</label>
+                </div>
+                <span class="col2">
+                    <input type="text" id="g5"  name="g5" class="input currency" value="5000">
+                </span>                            
+            </div>
+  
+            <div class="input-field">
+                <div class="col2">
+                    <label>Year 1 Expected Outgoings</label>
+                </div>
+                <span class="col2">
+                    <input type="text" id="d16"  name="d16" class="input currency" value="0">
+                </span>                            
+            </div>
+  
+            <div class="input-field">
+                <div class="col2">
+                    <label>Year 1 Miscellaneous Expenses</label>
+                </div>
+                <span class="col2">
+                    <input type="text" id="d17"  name="d17" class="input currency" value="0">
+                </span>                            
+            </div>
+  
+        </div>
+        <div class="col-12 button-wrapper">
+            <div>
+                <button id="btn-calculator" class="btn-cal">Get Your 10 Year Forecast ></button>
+            </div>
+        </div>
+    </div>
+    <div id="step2">
+        <div class="sub-header">
+            <h2 class="text-center">Rethink Investing Financial Calculator</h2>
+            <p class="text-center">See how your investment performs over a 10 year period.</p>
+        </div>
+        <div class="mobile_clicker">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+        <div class="show_tables">
+        </div>
+        <div class="mobile_clicker">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+  
+        <div style="width: 100%;" class="graph-wrapper">                    
+            <canvas id="canvas-1">
+        </div>
+        
+        <div class="button-wrapper"><button class="btn-previous" id="btn-next">Start Over</button></div>
+    </div>
+    
+   
+  </div>  
+  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"></script>
+  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4"></script>
+  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4"></script>
+  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/selectmenu.min.js?ver=1.11.4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
+
+
+
+
