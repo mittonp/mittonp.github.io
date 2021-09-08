@@ -193,7 +193,7 @@ var bubbleInit = function () {
         .iterations(1)
     );
 
-  d3.json("/vviz3/data.json", function (data) {
+  d3.json("https://mittonp.github.io/vviz3/data.json", function (data) {
     // data.forEach((d) => {
     //   for (let index = 2004; index < 2020; index++) {
     //     const element = d[index];
