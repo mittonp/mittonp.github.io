@@ -18,6 +18,10 @@
   src: url(https://mittonp.github.io/fonts/GothamMedium.otf);
 }
 
+header.main-header {
+  display: none;
+}
+
 .hide-mobile {
   display: none;
 }
