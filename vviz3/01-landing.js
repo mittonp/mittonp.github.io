@@ -78,7 +78,7 @@ function landingInit() {
 
   //Read the data
   d3.json(
-    "/vviz3/manscaping-trend.json",
+    "https://mittonp.github.io/vviz3/manscaping-trend.json",
 
     // Now I can use this dataset:
     function (dataret) {
