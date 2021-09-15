@@ -281,7 +281,6 @@ jQuery(document).ready(function () {
 
       config.data.datasets[0].data = [];
       config.data.datasets[1].data = [];
-      config.data.datasets[2].data = [];
       for (var i = 1; i <= MAX_YEARS; i++) {
         var rval = data["R4"][i];
         if (rval < 0) rval = 0;
@@ -290,9 +289,7 @@ jQuery(document).ready(function () {
         if (rval < 0) rval = 0;
         config.data.datasets[1].data.push(rval.toFixed(2));
 
-        rval = data["R2"][i];
-        if (rval < 0) rval = 0;
-        config.data.datasets[2].data.push(rval.toFixed(2));
+
       }
 
       if (!window.myLine) {
@@ -389,14 +386,7 @@ jQuery(document).ready(function () {
           data: [],
           fill: false,
         },
-        {
-          label: "Cash income",
-          backgroundColor: "#aa8800",
-          borderColor: "#997700",
-          data: [],
-          fill: false,
-          yAxisID: 1,
-        },
+
       ],
     },
     options: {
@@ -468,24 +458,7 @@ jQuery(document).ready(function () {
               },
             },
           },
-          {
-            id: 1,
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "Yield Amount ($ AUD)",
-              fontColor: "#aa8800",
-            },
-            ticks: {
-              autoSkip: false,
-              fontColor: "#aa8800",
-              fontSize: 12,
-              beginAtZero: true,
-              callback: function (label, index, labels) {
-                return "$" + formatMoney(label, 0);
-              },
-            },
-          },
+          
         ],
       },
     },
