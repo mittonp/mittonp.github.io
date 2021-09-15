@@ -699,7 +699,7 @@ body {
           transform: scale(1.6);
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .summary-items img {
     max-width: 400px;
     max-height: 400px;
