@@ -5,7 +5,76 @@ var x;
 var y;
 
 function landingInit() {
-  var data;
+  var data = [
+    {
+      year: 2004,
+      value: 1
+    },
+    {
+      year: 2005,
+      value: 0
+    },
+    {
+      year: 2006,
+      value: 174400
+    },
+    {
+      year: 2007,
+      value: 117300
+    },
+    {
+      year: 2008,
+      value: 107800
+    },
+    {
+      year: 2009,
+      value: 608900
+    },
+    {
+      year: 2010,
+      value: 726300
+    },
+    {
+      year: 2011,
+      value: 837200
+    },
+    {
+      year: 2012,
+      value: 1094100
+    },
+    {
+      year: 2013,
+      value: 1068700
+    },
+    {
+      year: 2014,
+      value: 1100500
+    },
+    {
+      year: 2015,
+      value: 1554000
+    },
+    {
+      year: 2016,
+      value: 796200
+    },
+    {
+      year: 2017,
+      value: 716600
+    },
+    {
+      year: 2018,
+      value: 948300
+    },
+    {
+      year: 2019,
+      value: 967000
+    },
+    {
+      year: 2020,
+      value: 1563600
+    }
+  ];
   var width = $("#my_dataviz").width() / 1.2;
   var height = $("#my_dataviz").height();
 
@@ -76,22 +145,7 @@ function landingInit() {
     .style("stop-color", "#12D0E1")
     .style("stop-opacity", "1");
 
-  //Read the data
-  d3.json(
-    "https://mittonp.github.io/vviz3/manscaping-trend.json",
 
-    // Now I can use this dataset:
-    function (dataret) {
-      data = dataret;
-      //doctor the pre 2016 data:
-      // data.forEach((element) => {
-      //   if (element.year < 2016) {
-      //     element.value = element.value * 0.7;
-      //   }
-      // });
-      updateData(Math.pow(2, 1) + 3);
-    }
-  );
 
   updateData = function (howFar, transition) {
     var subData = data.slice(0, howFar);
@@ -141,4 +195,6 @@ function landingInit() {
       .attr("y2", height)
       .attr("transform", "translate(-25,-30)");
   };
+
+  updateData(Math.pow(2, 1) + 3);
 }

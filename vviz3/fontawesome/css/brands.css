@@ -7,8 +7,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-brands-400.eot");
-  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+  src: url("http://veet-au-prod-env.eu-west-1.elasticbeanstalk.com/media/1001/fa-brands-400.eot");
+  src: url("http://veet-au-prod-env.eu-west-1.elasticbeanstalk.com/media/1001/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("http://veet-au-prod-env.eu-west-1.elasticbeanstalk.com/media/1004/fa-brands-400.woff2") format("woff2"), url("http://veet-au-prod-env.eu-west-1.elasticbeanstalk.com/media/1003/fa-brands-400.woff") format("woff"), url("http://veet-au-prod-env.eu-west-1.elasticbeanstalk.com/media/1002/fa-brands-400.ttf") format("truetype"); }
 
 .fab {
   font-family: 'Font Awesome 5 Brands';
