@@ -720,7 +720,9 @@ body {
 
 .social-media-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom:30px;
+  gap:20px;
   @media (min-width: 1024px) {
     width: 200px;
     margin-left: auto;
@@ -731,7 +733,10 @@ body {
 
 .fineprint {
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
+  @media (min-width:1024px){
+    bottom: 20px;
+  }
 }
 
 .social-media-button {
@@ -744,6 +749,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  a{
+    color:#002c5d;
+  }
 }
 
 #my_dataviz {
