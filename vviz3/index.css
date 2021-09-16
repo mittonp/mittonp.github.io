@@ -652,6 +652,17 @@ body {
 .scroll-button {
   position: fixed;
   bottom: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.scroll-button img {
+  width: auto;
 }
 
 .summary-items {

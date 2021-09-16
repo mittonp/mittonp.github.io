@@ -523,6 +523,12 @@ body {
 .scroll-button {
   position: fixed;
   bottom: 50px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  img{
+    width:auto;
+  }
 }
 .summary-items {
   left: 0;
