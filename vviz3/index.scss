@@ -302,6 +302,9 @@ body {
     padding: 15px;
     border-radius: 4px;
     justify-content: space-around;
+    img{
+      width: auto;
+    }
   }
   &__text {
     color: black;

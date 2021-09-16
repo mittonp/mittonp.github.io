@@ -360,6 +360,10 @@ body {
       justify-content: space-around;
 }
 
+.instructions__content img {
+  width: auto;
+}
+
 .instructions__text {
   color: black;
   width: 154px;
