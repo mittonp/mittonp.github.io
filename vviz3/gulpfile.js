@@ -22,3 +22,7 @@ gulp.task('js', function () {
 gulp.task('jslibs:watch', function () {
     gulp.watch('libs/*.js', gulp.series('jslibs'));
  });
+
+ gulp.task('js:watch', function () {
+   gulp.watch('js/*.js', gulp.series('js'));
+});

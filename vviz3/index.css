@@ -902,6 +902,19 @@ body {
   padding-right: 20px;
 }
 
+@media (max-width: 1024px) {
+  .call-to-action .section-canvas-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .call-to-action .main-text {
+    max-width: none;
+  }
+}
+
 .social-media-buttons {
   display: -webkit-box;
   display: -ms-flexbox;

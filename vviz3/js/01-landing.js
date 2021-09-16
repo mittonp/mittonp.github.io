@@ -105,7 +105,7 @@ function landingInit() {
   yAxisElement = lsvg
     .append("g")
     .attr("class", "y-axis")
-    .attr("transform", "translate(" + width + ",0)")
+    .attr("transform", "translate(" + width * 1.05 + ",0)")
     .attr("height", height / 1.1);
 
   x = d3.scaleLinear().range([0, width]);

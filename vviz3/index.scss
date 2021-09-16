@@ -705,6 +705,17 @@ body {
   flex-direction: column;
   padding-left: 20px;
   padding-right: 20px;
+  .section-canvas-container{
+    @media(max-width:1024px){
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .main-text{
+    @media(max-width:1024px){
+      max-width: none;
+    }
+  }
 }
 
 .social-media-buttons {
