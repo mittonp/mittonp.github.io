@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="scene" data-1="transform:scale(1)" data-2000="transform:scale(3)">
+    <div class="person"
+         data-1="left:0%; transform:scale(1); opacity:1; top:10px"
+         data-500="left:20%"
+         data-2000="top:-800px"
+         >
+        <div class="head"></div>
+        <div class="torso"></div>
+        <div class="arm"></div>
+        <div class="legs"></div>
+    </div>
+  <div class="person person--mirror"
+         data-1="right:10%; opacity:1"
+       data-500="right:20%"
+       data-1200="opacity:0">
+        <div class="head"></div>
+        <div class="torso"></div>
+        <div class="arm"></div>
+        <div class="legs"></div>
+    </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
+<script>
+    var s = skrollr.init();
+</script>
