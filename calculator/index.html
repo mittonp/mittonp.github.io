@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investing Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lumeniastyle.css">
 </head>
 <body>
   <div class="sg-cal-wrap">            
@@ -24,31 +25,48 @@
                         <input type="text" id="purchase-price"  name="purchase-price" class="input currency" value="7850000">
                     </span>                            
                 </div>
-  
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Deposit %</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="deposit-percentage"  name="deposit-percentage" class="input percent " value="30">
-                    </span>                            
-                </div>
+
                 <div class="input-field">
                     <div class="col2">
                         <label>Total Loan</label>
                     </div>
-                    <span class="col2">
-                        <label id="total-loan">549999</label>
+                    <span class="col2">                            
+                        <select class="select-menu" id="total-loan" name="total-loan">
+                          <option class="yield-option" value="0%">0%</option>
+                          <option class="yield-option" value="5%">5%</option>
+                          <option class="yield-option" value="10%">10%</option>
+                          <option class="yield-option" value="15%">15%</option>
+                          <option class="yield-option" value="20%">20%</option>
+                          <option class="yield-option" value="25%">25%</option>
+                          <option class="yield-option" value="30%">30%</option>
+                          <option class="yield-option" value="35%">35%</option>
+                          <option class="yield-option" value="40%">40%</option>
+                          <option class="yield-option" value="45%">45%</option>
+                          <option class="yield-option" value="50%">50%</option>
+                          <option class="yield-option" value="55%">55%</option>
+                          <option class="yield-option" value="60%">60%</option>
+                          <option selected class="yield-option" value="65%">65%</option>
+                          <option class="yield-option" value="70%">70%</option>
+                          <option class="yield-option" value="75%">75%</option>
+                          <option class="yield-option" value="80%">80%</option>
+                          <option class="yield-option" value="85%">85%</option>
+                          <option class="yield-option" value="90%">90%</option>
+                          <option class="yield-option" value="95%">95%</option>
+                          <option class="yield-option" value="100%">100%</option>
+                          <option class="yield-option" value="105%">105%</option>
+                        </select>
                     </span>                            
                 </div>
+  
                 <div class="input-field">
                     <div class="col2">
-                        <label>Deposit</label>
+                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Purchase Price minus Total Loan">Deposit</label>
                     </div>
                     <span class="col2">
                         <label id="deposit">549999</label>
                     </span>                            
                 </div>
+
                 <div class="input-field">
                     <div class="col2">
                         <label>Stamp Duty</label>
@@ -62,7 +80,7 @@
                         <label>Valuation Cost</label>
                     </div>
                     <span class="col2">
-                        <input type="text" id="valuation-cost"  name="valuation-cost" class="input currency" value="7000">
+                        <input type="text" id="valuation-cost"  name="valuation-cost" class="input currency" value="0">
                     </span>                            
                 </div>
                 <div class="input-field">
@@ -70,45 +88,18 @@
                         <label>Solicitor Cost</label>
                     </div>
                     <span class="col2">
-                        <input type="text" id="solicitor-cost"  name="solicitor-cost" class="input currency" value="6000">
+                        <input type="text" id="solicitor-cost"  name="solicitor-cost" class="input currency" value="0">
                     </span>                            
                 </div>
-                <!--
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Deposit Total</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="d5"  name="d5">
-                    </span>                            
-                </div>
+            
   
                 <div class="input-field">
                     <div class="col2">
-                        <label>Loan Amount</label>
+                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Any additional costs associated with buying the property.
+                        ">Other Purchasing Costs</label>
                     </div>
                     <span class="col2">
-                        <input type="text" id="d6"  name="d6">
-                    </span>                            
-                </div>
-  
-
-  
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Total Acquisition Costs</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="d10"  name="d10">
-                    </span>                            
-                </div> -->
-  
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Other Purchasing Costs</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="other-purchasing-costs"  name="other-purchasing-costs" class="input currency" value="164065">
+                        <input type="text" id="other-purchasing-costs"  name="other-purchasing-costs" class="input currency" value="0">
                     </span>                            
                 </div>
 
@@ -121,44 +112,18 @@
                     </span>                            
                 </div>
   
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Loan Interest Rate %</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="d11"  name="d11" class="input percent" value="4">
-                    </span>                            
-                </div>
-                <!--
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Net Rent</label>
-                    </div>
-                    <span class="col2">
-                        <input type="text" id="d12"  name="d12">
-                    </span>                            
-                </div>
-                -->
+
   
             </div>
         </div>
         <div class="col-md-6">
             <div class="input-field">
                 <div class="col2">
-                    <label>First year Net Income</label>
+                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Rent after outgoing expenses
+                    ">Year 1 Net Rental Income</label>
                 </div>
                 <span class="col2">                            
-                    <select id="g3" name="g3">
-                      <option class="yield-option" value="5%">5%</option>
-                      <option class="yield-option" value="5.5%">5.5%</option>
-                      <option class="yield-option" value="6%">6%</option>
-                      <option class="yield-option" value="6.5%">6.5%</option>
-                      <option class="yield-option" value="7%">7%</option>
-                      <option class="yield-option" value="7.5%">7.5%</option>
-                      <option class="yield-option" value="8%">8%</option>
-                      <option class="yield-option" value="8.5%">8.5%</option>
-                      <option class="yield-option" value="9%">9%</option>
-                    </select>
+                    <input type="text" id="net-rental-income"  name="net-rental-income" class="input currency" value="514000">
                 </span>                            
             </div>
   
@@ -167,34 +132,46 @@
                     <label>Rental Increases %</label>
                 </div>
                 <span class="col2">
-                    <input type="text" id="g4"  name="g4" class="input percent" value="3">
-                </span>                            
-            </div>
-  
-            <div style="display: none;" class="input-field">
-                <div class="col2">
-                    <label>Expected Depreciation</label>
-                </div>
-                <span class="col2">
-                    <input type="text" id="g5"  name="g5" class="input currency" value="5000">
+                    <input type="text" id="rental-increases"  name="rental-increases" class="input percent" value="3">
                 </span>                            
             </div>
   
             <div class="input-field">
                 <div class="col2">
-                    <label>Year 1 Expected Outgoings</label>
+                    <label>Term of ownership (years)</label>
                 </div>
                 <span class="col2">
-                    <input type="text" id="d16"  name="d16" class="input currency" value="0">
+                    <input type="text" id="term-of-ownership"  name="term-of-ownership" class="input" value="10">
                 </span>                            
             </div>
-  
+
             <div class="input-field">
                 <div class="col2">
-                    <label>Year 1 Miscellaneous Expenses</label>
+                    <label>Loan Interest Rate %</label>
                 </div>
                 <span class="col2">
-                    <input type="text" id="d17"  name="d17" class="input currency" value="0">
+                    <input type="text" id="loan-interest-rate"  name="loan-interest-rate" class="input percent" value="3">
+                </span>                            
+            </div>
+
+            <div class="input-field">
+                <div class="col2">
+                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Will you be using rental profits to offset loan repayments?
+                    ">Debt reduction</label>
+                </div>
+                <span class="col2">
+                    <input type="checkbox" id="debt-reduction"  name="debt-reduction" class="input">
+                </span>                            
+            </div>
+
+            <div class="input-field">
+                <div class="col2">
+                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="0% = all of your profits will be used for debt reduction.
+
+                    ">% of Profit NOT used for debt reduction</label>
+                </div>
+                <span class="col2">
+                    <input type="text" id="profit-not-for-debt-reduction"  name="profit-not-for-debt-reduction" class="input percent" value="0">
                 </span>                            
             </div>
   
@@ -234,13 +211,13 @@
     
    
   </div>  
-  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
-  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"></script>
-  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4"></script>
-  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4"></script>
-  <script src="https://www.rethinkinvesting.com.au/wp-includes/js/jquery/ui/selectmenu.min.js?ver=1.11.4"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="js/jquery.js?ver=1.12.4-wp"></script>
+  <script src="js/jquery/ui/core.min.js?ver=1.11.4"></script>
+  <script src="js/jquery/ui/widget.min.js?ver=1.11.4"></script>
+  <script src="js/jquery/ui/menu.min.js?ver=1.11.4"></script>
+  <script src="js/jquery/ui/selectmenu.min.js?ver=1.11.4"></script>
+  <script src="js/ajax/libs/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

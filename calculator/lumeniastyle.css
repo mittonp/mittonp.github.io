@@ -1,0 +1,10 @@
+.tooltip{
+    border:1px solid grey;
+    border-radius: 5px;
+    padding:10px;
+    background-color: lightblue;
+}
+
+.hastooltip{
+    text-decoration: underline;
+}
