@@ -56,4 +56,5 @@ $(document).ready(function () {
     bubbleInit();
     initForce();
   });
+  $(".splash-screen").hide();
 });
