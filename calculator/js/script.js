@@ -1,6 +1,21 @@
 const columnsPerSmall = 3;
 const columnsPerMedium = 5;
 const columnsPerLarge = 10;
+model = {
+  purchasePrice: 7850000,
+  totalLoan: 5102500,
+  stampDuty: 392500,
+  valuationCost: 0,
+  solicitorCost: 0,
+  otherPurchasingCosts: 0,
+  netRentalIncome: 514000,
+  rentalIncreases: 3,
+  termOfOwnership: "10",
+  loanInterestRate: 3,
+  debtReduction: false,
+  profitNotForDebtReduction: 0
+}
+
 
 jQuery(function () {
   jQuery('[data-toggle="tooltip"]').tooltip()
@@ -113,6 +128,21 @@ function updateFields() {
   debtReduction = jQuery("#debt-reduction").prop('checked');
   profitNotForDebtReduction = getMoney(jQuery("#profit-not-for-debt-reduction").val(), false);
 
+  model = {
+    purchasePrice: purchasePrice,
+    totalLoan: totalLoan,
+    stampDuty: stampDuty,
+    valuationCost: valuationCost,
+    solicitorCost: solicitorCost,
+    otherPurchasingCosts: otherPurchasingCosts,
+    netRentalIncome: netRentalIncome,
+    rentalIncreases: rentalIncreases,
+    termOfOwnership: termOfOwnership,
+    loanInterestRate: loanInterestRate,
+    debtReduction: debtReduction,
+    profitNotForDebtReduction: profitNotForDebtReduction
+  }
+
   windowWidth = jQuery(window).width();
 
   columns = columnsPerSmall;
@@ -176,12 +206,11 @@ function updateFields() {
 }
 
 jQuery(document).ready(function () {
+  //Hydrate the form from the model
+  jQuery("#purchase-price").val(model.purchasePrice);
+
   //Prepare the form
-
-  jQuery("#g3").selectmenu();
-
   var yieldOptions = jQuery(".yield-option");
-
   purchasePrice = getMoney(jQuery("#purchase-price").val());
   yieldOptions.map(function (a, b) {
     item = jQuery(b);
@@ -194,7 +223,13 @@ jQuery(document).ready(function () {
   jQuery(".select-menu").on("selectmenuchange", function (event, ui) { updateFields(); })
   jQuery(".input").on("change", function (e) { updateFields(); })
 
+
+
   updateFields();
+
+  jQuery("#btn-share").on("click", function () {
+    console.log(model);
+  })
 
 
   var data = [];
