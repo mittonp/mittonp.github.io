@@ -1,3 +1,7 @@
+const columnsPerSmall = 3;
+const columnsPerMedium = 5;
+const columnsPerLarge = 10;
+
 jQuery(function () {
   jQuery('[data-toggle="tooltip"]').tooltip()
 })
@@ -59,6 +63,38 @@ function getRowHtml(data, termOfOwnership, format) {
   return html;
 }
 
+function linkClickerDots() {
+  jQuery(".mobile_clicker > .dot")
+    .off("click")
+    .on("click", function (e) {
+      jQuery(".mobile_clicker > .active").removeClass("active");
+      jQuery(this).addClass("active");
+
+      var index = jQuery(this).data("index");
+      var step = columnsPerSmall;
+      if (jQuery(window).width() >= 768) {
+        step = columnsPerMedium;
+      }
+      if (jQuery(window).width() >= 1200) {
+        step = columnsPerLarge;
+      }
+
+      var from = index * step;
+      var to = from + step;
+
+      jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
+        jQuery(this)
+          .find(".col-xl-1")
+          .each(function (index) {
+            jQuery(this).hide();
+            if (index >= from && index < to) {
+              jQuery(this).show();
+            }
+          });
+      });
+    });
+}
+
 function updateFields() {
   purchasePrice = getMoney(jQuery("#purchase-price").val());
   totalLoan = getMoney(jQuery("#total-loan").val(), false) / 100.0 * purchasePrice;
@@ -77,6 +113,48 @@ function updateFields() {
   debtReduction = jQuery("#debt-reduction").prop('checked');
   profitNotForDebtReduction = getMoney(jQuery("#profit-not-for-debt-reduction").val(), false);
 
+  windowWidth = jQuery(window).width();
+
+  columns = columnsPerSmall;
+
+  if (windowWidth >= 768) {
+    columns = columnsPerMedium;
+  }
+
+  if (windowWidth >= 1200) {
+    columns = columnsPerLarge;
+  }
+
+  tablePages = termOfOwnership / columns;
+
+  jQuery(".mobile_clicker").empty();
+
+  if (tablePages > 1) {
+    for (let index = 0; index < tablePages; index++) {
+      jQuery(".mobile_clicker").append("<span class='dot' data-index='" + index + "'></span>")
+    }
+
+    jQuery(".mobile_clicker .dot").first().addClass("active");
+  }
+
+
+
+  linkClickerDots();
+
+  jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
+    jQuery(this)
+      .find(".col-xl-1")
+      .each(function (index) {
+        jQuery(this).hide();
+        if (index < columns) {
+          jQuery(this).show();
+        }
+      });
+  });
+
+
+
+
   jQuery("#total-loan").selectmenu();
   var yieldOptions = jQuery(".yield-option");
   yieldOptions.map(function (a, b) {
@@ -93,6 +171,8 @@ function updateFields() {
   jQuery("#total-cash-required").text(
     "$" + formatMoney(totalCashRequired, 2)
   );
+
+  jQuery(".term-number").text(termOfOwnership);
 }
 
 jQuery(document).ready(function () {
@@ -164,8 +244,10 @@ jQuery(document).ready(function () {
       cashFlow = ["Cash-flow (rent less interest"];
       returnOnEquity = ["Return on Equity (pure cash flow return)"];
       valueAtSameCapRate = ["Value at same Cap Rate as when  you purchased"];
+      yearHeadings = [""];
 
       for (var i = 1; i <= termOfOwnership; i++) {
+        yearHeadings[i] = "Year " + i;
         rentReceived[i] = netRentalIncome * Math.pow(1 + rentalIncreases / 100, i - 1);
         yieldEachYear[i] = rentReceived[i] / purchasePrice;
         principalRemainingStartOfYear[i] = i == 1 ? totalLoan : principalRemainingStartOfYear[i - 1] - principalRepaid[i - 1];
@@ -186,6 +268,7 @@ jQuery(document).ready(function () {
 
 
       jQuery(".show_tables").html("");
+      jQuery(".show_tables").append(getRowHtml(yearHeadings, termOfOwnership, "text"));
       jQuery(".show_tables").append(getRowHtml(rentReceived, termOfOwnership, "currency"));
       jQuery(".show_tables").append(getRowHtml(yieldEachYear, termOfOwnership, "percentage"));
       jQuery(".show_tables").append(getRowHtml(interestPaid, termOfOwnership, "currency"));
@@ -336,59 +419,10 @@ jQuery(document).ready(function () {
     });
 
   jQuery(window).resize(function (e) {
-    if (jQuery(window).width() > 600 && jQuery(window).width() <= 1200) {
-      jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
-        jQuery(this)
-          .find(".col-xl-1")
-          .each(function (index) {
-            jQuery(this).hide();
-            if (index < 5) {
-              jQuery(this).show();
-            }
-          });
-      });
-    } else if (jQuery(window).width() < 600) {
-      jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
-        jQuery(this)
-          .find(".col-xl-1")
-          .each(function (index) {
-            jQuery(this).hide();
-            if (index < 3) {
-              jQuery(this).show();
-            }
-          });
-      });
-    } else if (jQuery(window).width() > 1200) {
-      jQuery(".sg-cal-wrap .show_tables").find(".col-xl-1").show();
-    }
+    updateFields();
   });
 
-  jQuery(".mobile_clicker > .dot")
-    .off("click")
-    .on("click", function (e) {
-      jQuery(".mobile_clicker > .active").removeClass("active");
-      jQuery(this).addClass("active");
 
-      var index = jQuery(this).data("index");
-      var step = 3;
-      if (jQuery(window).width() > 768) {
-        step = 5;
-      }
-
-      var from = index * step;
-      var to = from + step;
-
-      jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
-        jQuery(this)
-          .find(".col-xl-1")
-          .each(function (index) {
-            jQuery(this).hide();
-            if (index >= from && index < to) {
-              jQuery(this).show();
-            }
-          });
-      });
-    });
 
 
 });

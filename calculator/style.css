@@ -5247,13 +5247,13 @@
 
 @media (min-width: 767px) {
     .mobile_clicker > .dot:nth-child(2) ~ .dot{
-        display: none;
+        /* display: none; */
     }
 }
 
 @media (min-width: 1200px) {
     .mobile_clicker {
-        display: none;
+        /* display: none; */
     }
 }
 
