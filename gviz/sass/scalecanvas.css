@@ -1,3 +1,198 @@
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
+  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+}
+
+.pink-text {
+  color: #ff7bf9;
+}
+
+.blue-text {
+  color: #00d7d7;
+}
+
+.scene-heading {
+  color: white;
+  position: absolute;
+  display: none;
+}
+
+.scene {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1400px;
+  height: 900px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.scene-1 .neonsign {
+  width: 1216px;
+  height: 465px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/neonsign.svg);
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.scene-2 #copy-1, .scene-2 #copy-2, .scene-2 #copy-3 {
+  position: absolute;
+  top: 150%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  right: 0;
+}
+
+.scene-2 .globe {
+  width: 491px;
+  margin: auto;
+  height: 485px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/globe.svg);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-2 #stat-1, .scene-2 #stat-2, .scene-2 #stat-3 {
+  top: 160%;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 0;
+}
+
+.scene-2.cut-2 .globe {
+  left: -100%;
+}
+
+.scene-2.cut-2 #copy-1 {
+  top: 50%;
+}
+
+.scene-2.cut-2 #stat-1 {
+  top: 50%;
+}
+
+.scene-2.cut-3 #copy-1 {
+  right: -150%;
+}
+
+.scene-2.cut-3 #stat-1 {
+  left: -100%;
+}
+
+.scene-2.cut-3 #copy-2 {
+  top: 50%;
+}
+
+.scene-2.cut-3 #stat-2 {
+  top: 50%;
+}
+
+.scene-2.cut-4 #copy-2 {
+  right: -150%;
+}
+
+.scene-2.cut-4 #stat-2 {
+  left: -100%;
+}
+
+.scene-2.cut-4 #copy-3 {
+  top: 50%;
+}
+
+.scene-2.cut-4 #stat-3 {
+  top: 50%;
+}
+
+.scene-3 .perspective-level-1,
+.scene-3 .perspective-level-2,
+.scene-3 .perspective-level-3 {
+  top: 100%;
+}
+
+.scene-3 .perspective-level-2 {
+  right: 80px;
+}
+
+.scene-3 #scene-3-copy-1,
+.scene-3 #scene-3-copy-2,
+.scene-3 #scene-3-copy-3,
+.scene-3 #scene-3-copy-4,
+.scene-3 #scene-3-copy-5,
+.scene-3 #scene-3-copy-6 {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-3.cut-1 .perspective-level-1 {
+  top: 339px;
+}
+
+.scene-3.cut-1 .perspective-level-2 {
+  top: 294px;
+}
+
+.scene-3.cut-1 .perspective-level-3 {
+  top: 100px;
+}
+
+.scene-3.cut-2 #scene-3-copy-1 {
+  top: 50%;
+}
+
+.scene-3.cut-3 #scene-3-copy-1 {
+  left: -150%;
+}
+
+.scene-3.cut-3 #scene-3-copy-2 {
+  top: 50%;
+}
+
+.scene-3.cut-4 #scene-3-copy-2 {
+  left: -150%;
+}
+
+.scene-3.cut-4 #scene-3-copy-3 {
+  top: 50%;
+}
+
+.scene-3.cut-5 #scene-3-copy-3 {
+  left: -150%;
+}
+
+.scene-3.cut-5 #scene-3-copy-4 {
+  top: 50%;
+}
+
+.scene-3.cut-6 #scene-3-copy-4 {
+  left: -150%;
+}
+
+.scene-3.cut-6 #scene-3-copy-5 {
+  top: 50%;
+}
+
+.scene-3.cut-7 #scene-3-copy-5 {
+  left: -150%;
+}
+
+.scene-3.cut-7 #scene-3-copy-6 {
+  top: 50%;
+}
+
 .wholepage {
   background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
   background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
@@ -86,16 +281,6 @@ html {
   scroll-behaviour: smooth;
 }
 
-.neonsign {
-  width: 610px;
-  height: 465px;
-  margin: auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/neonsign.svg);
-  left: 50%;
-}
-
 .stat1 {
   width: 686px;
   height: 376px;
@@ -105,31 +290,22 @@ html {
   background-repeat: no-repeat;
 }
 
-.stat2 {
+#stat-2 {
   width: 686px;
-  height: 660px;
+  height: 931px;
   background-size: contain;
   background-image: url(/gviz/layers/stat2.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.stat3 {
+#stat-3 {
   width: 686px;
-  height: 847px;
+  height: 917px;
   background-size: contain;
   background-image: url(/gviz/layers/stat3.svg);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.globe {
-  width: 485px;
-  margin: auto;
-  height: 485px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/globe.svg);
 }
 
 .center-element {
@@ -141,7 +317,7 @@ html {
 }
 
 .radiating-circle {
-  position: absolute;
+  position: relative;
   width: 50px;
   height: 50px;
   background-size: contain;
@@ -155,11 +331,39 @@ html {
           animation-name: pulse;
 }
 
-.scene1 {
-  background: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/scene.svg");
-  width: 1920px;
-  height: 1080px;
+.perspective-level-1 {
+  background: url("../layers/perspective-level-1.svg");
+  width: 1400px;
+  height: 596px;
   background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.perspective-level-2 {
+  background: url("../layers/perspective-level-2.svg");
+  width: 764px;
+  height: 587px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.perspective-level-3 {
+  background: url("../layers/perspective-level-3.svg");
+  width: 1324px;
+  height: 353px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.background-static {
+  background: url("../layers/background-static.png");
+  width: 1400px;
+  height: 609px;
+  background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
 }
 
@@ -171,11 +375,25 @@ html {
 }
 
 .scene {
-  width: 100%;
-  background: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/background.svg");
   position: fixed;
-  height: 100vh;
-  width: 100%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.scene div {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.scene-below {
+  top: 150%;
+}
+
+.scene-above {
+  top: -100%;
 }
 
 .person {
@@ -499,18 +717,22 @@ html {
 
 .copy {
   background-color: rgba(8, 5, 62, 0.95);
-  position: fixed;
+  position: relative;
   color: white;
-  padding: 100px;
+  padding: 100px 91px 100px 73px;
   width: 627px;
   font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .copy h2 {
   font-size: 32px;
+  font-weight: 700;
 }
 
-.copy p {
+.copy p, .copy li {
   font-size: 22px;
+  font-weight: 400;
 }
 /*# sourceMappingURL=scalecanvas.css.map */
