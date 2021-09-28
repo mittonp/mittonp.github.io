@@ -1,0 +1,416 @@
+.scene-1{
+    .neonsign {
+      width:375px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(/gviz/layers/neonsign.svg);
+      left:50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      position: absolute;
+      @media all and (min-width: 800px){
+        width: 1216px;
+        height: 465px;
+      }
+    }
+  }
+  
+  .scene-2{
+    width: 1400px;
+  
+    #copy-1, #copy-2, #copy-3{
+      position: absolute;
+      top:150%;
+      transform: translate(0, -50%);
+      right:0;
+    }
+  
+    .globe{
+      width:491px;
+      margin: auto;
+      height:485px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(/gviz/layers/globe.svg);
+      left:50%;
+      position: absolute;
+      top:50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    #stat-1, #stat-2, #stat-3{
+      top:160%;
+      position: absolute;
+      transform: translate(0, -50%);
+      left:0;
+    }
+  
+    &.cut-2{
+      .globe{
+        left:-100%;
+      }
+  
+      #copy-1{
+        top:50%;
+      }
+  
+      #stat-1{
+        top:50%;
+      }
+    }
+  
+    &.cut-3{
+      #copy-1{
+        right:-150%;
+      }
+      #stat-1{
+        left:-100%;
+      }
+  
+      #copy-2{
+        top:50%;
+      }
+  
+      #stat-2{
+        top:50%;
+      }
+    }
+  
+    &.cut-4{
+      #copy-2{
+        right:-150%;
+      }
+      #stat-2{
+        left:-100%;
+      }
+      #copy-3{
+        top:50%;
+      }
+  
+      #stat-3{
+        top:50%;
+      }
+    }
+  
+  }
+  
+  .scene-3{
+    .drinker-drink-down{
+      opacity: 0;
+    }
+    .perspective-level-1,
+    .perspective-level-2,
+    .perspective-level-3{
+      top:100%;
+    }
+  
+    .perspective-level-2{
+      right:80px;
+    }
+  
+    .copy{
+      position: absolute;
+      top:150%;
+      left:50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    &.cut-1{
+      .perspective-level-1{
+        top:339px;
+      }
+      .perspective-level-2{
+        top:294px;
+      }
+      .perspective-level-3{
+        top:100px;
+      }
+    }
+  
+    &.cut-2{
+  
+      #scene-3-copy-1{
+        top:50%;
+      }
+    }
+  
+    &.cut-3{
+      #scene-3-copy-1{
+        left:-150%;
+      }
+      #scene-3-copy-2{
+        top:50%;
+      }
+    }
+    &.cut-4{
+      #scene-3-copy-2{
+        left:-150%;
+      }
+      #scene-3-copy-3{
+        top:50%;
+      }
+    }
+    &.cut-5{
+      #scene-3-copy-3{
+        left:-150%;
+      }
+      #scene-3-copy-4{
+        top:50%;
+      }
+    }
+    &.cut-6{
+      #scene-3-copy-4{
+        left:-150%;
+      }
+      #scene-3-copy-5{
+        top:50%;
+      }
+    }
+    &.cut-7{
+      #scene-3-copy-5{
+        left:-150%;
+      }
+      #scene-3-copy-6{
+        top:50%;
+      }
+      .drinker-drink-up{
+        opacity: 0;
+      }
+      .drinker-drink-down{
+        opacity: 1;
+      }
+    }
+    //alcohol
+    &.cut-8{
+      .perspective-level-2, .perspective-level-3{
+        opacity: 0.1;
+      }
+      #scene-3-copy-6{
+        left:-150%;
+      }
+      #scene-3-copy-7{
+        top:50%;
+      }
+      .lookingglass{
+        opacity: 0.9;
+        top:62%;
+        left:19%;
+      }
+  
+    }
+    //smoking
+    &.cut-9{
+      #scene-3-copy-7{
+        left:-150%;
+      }
+      #scene-3-copy-8{
+        top:50%;
+      }
+    }
+    //meds
+    &.cut-10{
+      .perspective-level-1, .perspective-level-3{
+        opacity: 0.1;
+      }
+      .perspective-level-2{
+        opacity: 1;
+      }
+      .scene-content{
+        transform: scale(2) translatey(-9%);
+      }
+      .pocket{
+        opacity:0.7;
+      }
+      #scene-3-copy-8{
+        left:-150%;
+      }
+  
+      #scene-3-copy-9{
+        top:50%;
+        left:25%;
+      }
+  
+      .lookingglass{
+        left:53%;
+      }
+    }
+    //Obesity
+    &.cut-11{
+      .scene-content{
+        transform: unset;
+      }
+      #scene-3-copy-9{
+        left:-150%;
+      }
+  
+      #scene-3-copy-10{
+        top:50%;
+      }
+  
+      .lookingglass{
+        left:83%;
+        top:58%;
+      }
+    }
+    //Pregnancy
+    &.cut-12{
+      .perspective-level-3{
+        opacity:1;
+      }
+      .perspective-level-2, .perspective-level-1{
+        opacity: 0.1;
+      }
+      #scene-3-copy-10{
+        left:-150%;
+      }
+  
+      #scene-3-copy-11{
+        top:50%;
+      }
+  
+      .lookingglass{
+        left:68%;
+        top:37%;
+      }
+    }
+    //Genetics
+    &.cut-13{
+      #scene-3-copy-11{
+        left:-150%;
+      }
+  
+      #scene-3-copy-12{
+        top:50%;
+      }
+  
+      .lookingglass{
+        left:53%;
+      }
+    }
+    //Age
+    &.cut-14{
+      #scene-3-copy-12{
+        left:-150%;
+      }
+  
+      #scene-3-copy-13{
+        top:50%;
+      }
+  
+      .lookingglass{
+        left:13%;
+        top:29%;
+      }
+    }
+  
+  }
+  
+  .scene-4{
+    .copy{
+      position: absolute;
+      top:150%;
+      left:80%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .intestine, .flame{
+      opacity:0;
+    }
+
+    .friend{
+      opacity: 0.1;
+    }
+
+    .character-eating, .character-distressed{
+      opacity: 0;
+    }
+  
+  
+    &.cut-1{
+      #scene-4-copy-1{
+        top:50%;
+        left:80%;
+      }
+    }
+    &.cut-2{
+      .character-eating{
+        opacity: 1;
+      }
+      .character-served{
+        opacity: 0;
+      }
+      #scene-4-copy-1{
+       left:-150%;
+      }
+      #scene-4-copy-2{
+        top:50%;
+        left:80%;
+      }
+
+    }
+    &.cut-3{
+      .character-eating{
+        opacity: 0.2;
+      }
+      #scene-4-copy-2{
+       left:-150%;
+      }
+      #scene-4-copy-3{
+        top:50%;
+      }
+      .intestine-1{
+        opacity: 1;
+      }
+  
+    }
+    &.cut-4{
+      #scene-4-copy-3{
+       left:-150%;
+      }
+      #scene-4-copy-4{
+        top:50%;
+      }
+      .intestine-2{
+        opacity:0;
+      }
+      .intestine-3{
+        opacity:1;
+      }
+    }
+  
+    &.cut-5{
+      #scene-4-copy-4{
+        left:-150%;
+      }
+      .intestine{
+        opacity: 0;
+      }
+  
+      .flame{
+        opacity: 1;
+      }
+      .intestine-3{
+        opacity:0;
+      }
+      .intestine-4{
+        opacity:1;
+      }
+    }
+
+    &.cut-6{
+      .character-eating{
+        opacity: 0;
+      }
+      .character-distressed{
+        opacity: 1;
+      }
+
+      .friend{
+        opacity: 1;
+      }
+
+      .intestine-4{
+        opacity: 0;
+      }
+    }
+  }

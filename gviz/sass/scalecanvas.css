@@ -3,25 +3,16 @@ body {
   background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
 }
 
-.lookingglass {
-  position: absolute;
-  background: url(../layers/transparent.png);
-  width: 2000px;
-  height: 2000px;
-  background-size: contain;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
 .pink-text {
   color: #ff7bf9;
 }
 
 .blue-text {
   color: #00d7d7;
+}
+
+.orange-text {
+  color: #ff8a00;
 }
 
 .scene-heading {
@@ -34,318 +25,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1400px;
-  height: 900px;
+  width: 1920px;
+  height: 1080px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-.scene-1 .neonsign {
-  width: 375px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/neonsign.svg);
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.scene-content {
   position: absolute;
-}
-
-@media all and (min-width: 800px) {
-  .scene-1 .neonsign {
-    width: 1216px;
-    height: 465px;
-  }
-}
-
-.scene-2 #copy-1, .scene-2 #copy-2, .scene-2 #copy-3 {
-  position: absolute;
-  top: 150%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  right: 0;
-}
-
-.scene-2 .globe {
-  width: 491px;
-  margin: auto;
-  height: 485px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/globe.svg);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.scene-2 #stat-1, .scene-2 #stat-2, .scene-2 #stat-3 {
-  top: 160%;
-  position: absolute;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  left: 0;
-}
-
-.scene-2.cut-2 .globe {
-  left: -100%;
-}
-
-.scene-2.cut-2 #copy-1 {
-  top: 50%;
-}
-
-.scene-2.cut-2 #stat-1 {
-  top: 50%;
-}
-
-.scene-2.cut-3 #copy-1 {
-  right: -150%;
-}
-
-.scene-2.cut-3 #stat-1 {
-  left: -100%;
-}
-
-.scene-2.cut-3 #copy-2 {
-  top: 50%;
-}
-
-.scene-2.cut-3 #stat-2 {
-  top: 50%;
-}
-
-.scene-2.cut-4 #copy-2 {
-  right: -150%;
-}
-
-.scene-2.cut-4 #stat-2 {
-  left: -100%;
-}
-
-.scene-2.cut-4 #copy-3 {
-  top: 50%;
-}
-
-.scene-2.cut-4 #stat-3 {
-  top: 50%;
-}
-
-.scene-3 .perspective-level-1,
-.scene-3 .perspective-level-2,
-.scene-3 .perspective-level-3 {
-  top: 100%;
-}
-
-.scene-3 .perspective-level-2 {
-  right: 80px;
-}
-
-.scene-3 .copy {
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.scene-3.cut-1 .perspective-level-1 {
-  top: 339px;
-}
-
-.scene-3.cut-1 .perspective-level-2 {
-  top: 294px;
-}
-
-.scene-3.cut-1 .perspective-level-3 {
-  top: 100px;
-}
-
-.scene-3.cut-2 #scene-3-copy-1 {
-  top: 50%;
-}
-
-.scene-3.cut-3 #scene-3-copy-1 {
-  left: -150%;
-}
-
-.scene-3.cut-3 #scene-3-copy-2 {
-  top: 50%;
-}
-
-.scene-3.cut-4 #scene-3-copy-2 {
-  left: -150%;
-}
-
-.scene-3.cut-4 #scene-3-copy-3 {
-  top: 50%;
-}
-
-.scene-3.cut-5 #scene-3-copy-3 {
-  left: -150%;
-}
-
-.scene-3.cut-5 #scene-3-copy-4 {
-  top: 50%;
-}
-
-.scene-3.cut-6 #scene-3-copy-4 {
-  left: -150%;
-}
-
-.scene-3.cut-6 #scene-3-copy-5 {
-  top: 50%;
-}
-
-.scene-3.cut-7 #scene-3-copy-5 {
-  left: -150%;
-}
-
-.scene-3.cut-7 #scene-3-copy-6 {
-  top: 50%;
-}
-
-.scene-3.cut-8 #scene-3-copy-6 {
-  left: -150%;
-}
-
-.scene-3.cut-8 #scene-3-copy-7 {
-  top: 50%;
-}
-
-.scene-3.cut-8 .lookingglass {
-  opacity: 1;
-  top: 62%;
-  left: 19%;
-}
-
-.scene-3.cut-9 #scene-3-copy-7 {
-  left: -150%;
-}
-
-.scene-3.cut-9 #scene-3-copy-8 {
-  top: 50%;
-}
-
-.scene-3.cut-10 #scene-3-copy-8 {
-  left: -150%;
-}
-
-.scene-3.cut-10 #scene-3-copy-9 {
-  top: 50%;
-}
-
-.scene-3.cut-10 .lookingglass {
-  left: 53%;
-}
-
-.scene-3.cut-11 #scene-3-copy-9 {
-  left: -150%;
-}
-
-.scene-3.cut-11 #scene-3-copy-10 {
-  top: 50%;
-}
-
-.scene-3.cut-11 .lookingglass {
-  left: 83%;
-  top: 58%;
-}
-
-.scene-3.cut-12 #scene-3-copy-10 {
-  left: -150%;
-}
-
-.scene-3.cut-12 #scene-3-copy-11 {
-  top: 50%;
-}
-
-.scene-3.cut-12 .lookingglass {
-  left: 68%;
-  top: 37%;
-}
-
-.scene-3.cut-13 #scene-3-copy-11 {
-  left: -150%;
-}
-
-.scene-3.cut-13 #scene-3-copy-12 {
-  top: 50%;
-}
-
-.scene-3.cut-13 .lookingglass {
-  left: 53%;
-}
-
-.scene-3.cut-14 #scene-3-copy-12 {
-  left: -150%;
-}
-
-.scene-3.cut-14 #scene-3-copy-13 {
-  top: 50%;
-}
-
-.scene-3.cut-14 .lookingglass {
-  left: 13%;
-  top: 29%;
-}
-
-.scene-4 .copy {
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.scene-4 .intestine, .scene-4 .flame {
-  opacity: 0;
-}
-
-.scene-4.cut-1 #scene-4-copy-1 {
-  top: 50%;
-}
-
-.scene-4.cut-2 #scene-4-copy-1 {
-  left: -150%;
-}
-
-.scene-4.cut-2 #scene-4-copy-2 {
-  top: 50%;
-}
-
-.scene-4.cut-2 .intestine {
-  opacity: 1;
-}
-
-.scene-4.cut-3 #scene-4-copy-2 {
-  left: -150%;
-}
-
-.scene-4.cut-3 #scene-4-copy-3 {
-  top: 50%;
-}
-
-.scene-4.cut-4 #scene-4-copy-3 {
-  left: -150%;
-}
-
-.scene-4.cut-4 #scene-4-copy-4 {
-  top: 50%;
-}
-
-.scene-4.cut-5 #scene-4-copy-4 {
-  left: -150%;
-}
-
-.scene-4.cut-5 .intestine {
-  opacity: 0;
-}
-
-.scene-4.cut-5 .flame {
-  opacity: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .wholepage {
@@ -482,158 +171,6 @@ body {
           animation-name: pulse;
 }
 
-.perspective-level-1 {
-  background: url("../layers/perspective-level-1.svg");
-  width: 1400px;
-  height: 596px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
-.character-home {
-  background: url("../layers/character-home.svg");
-  width: 412px;
-  height: 1110px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
-.intestine {
-  background: url("../layers/intestine.svg");
-  width: 287px;
-  height: 751px;
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.food-particles {
-  background: url("../layers/food-particles.svg");
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  left: 99px;
-  -webkit-animation-name: swallow;
-          animation-name: swallow;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-
-.red-stuff {
-  background: url("../layers/red-stuff.svg");
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 162px;
-  height: 109px;
-  left: 98px;
-  top: 608px;
-  -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-
-.stomach-antacid {
-  position: absolute;
-}
-
-.stomach-antacid .antacid-step {
-  position: absolute;
-  width: 563;
-  height: 1477;
-  background-size: contain;
-  -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  opacity: 0;
-}
-
-.stomach-antacid .antacid-step-1 {
-  background: url("../layers/antacid-step-1.svg");
-  -webkit-animation: appear;
-          animation: appear;
-}
-
-.stomach-antacid .antacid-step-2 {
-  background: url("../layers/antacid-step-2.svg");
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
-}
-
-.stomach-antacid .antacid-step-3 {
-  background: url("../layers/antacid-step-3.svg");
-  -webkit-animation-delay: 20s;
-          animation-delay: 20s;
-}
-
-.stomach-antacid .antacid-step-4 {
-  background: url("../layers/antacid-step-4.svg");
-  -webkit-animation-delay: 30s;
-          animation-delay: 30s;
-}
-
-.stomach-antacid .antacid-step-5 {
-  background: url("../layers/antacid-step-5.svg");
-  -webkit-animation-delay: 40s;
-          animation-delay: 40s;
-}
-
-.perspective-level-2 {
-  background: url("../layers/perspective-level-2.svg");
-  width: 764px;
-  height: 587px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
-.perspective-level-3 {
-  background: url("../layers/perspective-level-3.svg");
-  width: 1324px;
-  height: 353px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
-.flame {
-  background: url("../layers/flame.svg");
-  width: 30px;
-  height: 30px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  left: 179px;
-  top: 100px;
-}
-
-.background-static {
-  background: url("../layers/background-static.png");
-  width: 1400px;
-  height: 609px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
 .scene2 {
   width: 100%;
   content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/scene2.svg");
@@ -648,6 +185,7 @@ body {
           transform: translate(0, -50%);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  overflow: hidden;
 }
 
 .scene div {
@@ -656,7 +194,7 @@ body {
 }
 
 .scene-below {
-  top: 150%;
+  top: 160%;
 }
 
 .scene-above {
@@ -1042,7 +580,7 @@ body {
 
 .copy {
   background-color: rgba(8, 5, 62, 0.95);
-  position: relative;
+  position: absolute;
   color: white;
   padding: 100px 91px 100px 73px;
   width: 627px;
