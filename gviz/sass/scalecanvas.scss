@@ -2,11 +2,27 @@
 // @import 'scenes.scss';
 // @import 'elements.scss';
 
+.lookingglass{
+  position: absolute;
+  background:url(../layers/transparent.png);
+  width:4000px;
+  height: 4000px;
+  background-size: contain;
+  opacity: 0;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
 body{
   background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
 }
 
-
+.scene-above, .scene-below{
+  .lookingglass{
+    display: none;
+  }
+}
 
 .pink-text{
   color: #ff7bf9;
@@ -23,32 +39,12 @@ body{
   display: none;
 }
 
-.scene{
-  display: flex;
-  width:1920px;
-  //border: 1px solid white;
-  height: 1080px;
-  flex-wrap: wrap;
-}
-
-.scene-content{
-  position: absolute;
-  width:100%;
-  height: 100%;
-}
 
 
 
 
 
-.wholepage {
-    background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top:0;
-    left:0;
-  }
+
   .scene-container {
     position: fixed;
     width: 1920px;
@@ -78,77 +74,38 @@ body{
     }
   }
   
-  .element1 {
-    width: 100px;
-    height: 200px;
-    background: red;
-  }
 
 
 
-  .thought-bubble{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  .thought-bubble--spaghetti {
-    background-image: url("/gviz/layers/bubble-spaghetti.svg");
-  }
-  
-  .thought-bubble--mint-choco {
-    background-image: url("/gviz/layers/bubble-mint-choco.svg");
-  }
-
-  .thought-bubble--cheese-burger {
-    background-image: url("/gviz/layers/bubble-cheese-burger.svg");
-  }
-
-  .thought-bubble--pizza {
-    background-image: url("/gviz/layers/bubble-pizza.svg");
-  }
-  .thought-bubble--pink-lemonade {
-    background-image: url("/gviz/layers/bubble-pink-lemonade.svg");
-  }
-  .thought-bubble--chilly-tacos {
-    background-image: url("/gviz/layers/bubble-chilly-tacos.svg");
-  }
-  .thought-bubble--garlic-bread {
-    background-image: url("/gviz/layers/bubble-garlic-bread.svg");
-  }
+ 
 
   
   
 
-
-  .stat1{
-    width:686px;
-    height: 376px;
-    background-size: contain;
-    background-image: url(/gviz/layers/stat1.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+.stat-container{
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (orientation:landscape){
+    flex-direction: row;
+    width:1400px;
+    div{
+      width:50%;
+    }
+  }
+  div{
+    width:100%;
   }
 
-  #stat-2{
-    width:686px;
-    height: 931px;
-    background-size: contain;
-    background-image: url(/gviz/layers/stat2.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+  .copy{
+    position: relative;
   }
 
-  #stat-3{
-    width:686px;
-    height: 917px;
-    background-size: contain;
-    background-image: url(/gviz/layers/stat3.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+}
+
+  
 
 
   
@@ -159,43 +116,35 @@ body{
     left:50%;
     top:50%;
   }
-  .radiating-circle{
-    position:relative;
-    width:25px;
-    height: 25px;
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-image: url(/gviz/layers/radiating-circle.svg);
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: pulse;
-  }
+
+  
+
   
   
-  .scene2 {
-    width: 100%;
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/scene2.svg");
-    width: 100%;
-    position: absolute;
-  }
-  
-  // .scene {
-  //   width: 100%;
-  //   background: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/background.svg");
-  //   position: fixed;
-  //   height: 100vh;
-  //   width: 100%;
-  // }
 
   .scene{
     position: fixed;
     top:50%;
     transform:translate(0, -50%);
     transition: all 0.5s;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width:375px;
+    height: 667px;
+    @media (orientation:landscape){
+      width:1920px;
+      height: 1080px;
+    }
+    
     div{
       transition: all 0.5s;
     }
+  }
+  
+  .scene-content{
+    position: absolute;
+    width:100%;
+    height: 100%;
   }
 
   .scene-below{
@@ -206,221 +155,33 @@ body{
     top:-100%;
   }
   
-  .person {
-    position: fixed;
-    /* animation-name: slide; */
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
   
-  .person--mirror {
-    transform: scalex(-1);
-  }
-  
-  .head {
-    position: relative;
-    left: 10px;
-    top: 30px;
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/head.svg");
-    /* animation-name: nod; */
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    transform-origin: bottom left;
-  }
-  
-  .float-rotate {
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-name: float-rotate;
-  }
-
-
-  
-  .float-skew {
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-    animation-name: float-skew;
-  }
-  
-  .torso {
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/torso.svg");
-    animation-name: breathe;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-    transform-origin: bottom left;
-    position: relative;
-    left: -4px;
-  }
-  
-  .arm {
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/arm.svg");
-    position: absolute;
-    top: 154px;
-    left: 52px;
-    animation-name: movearm;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    transform-origin: center left;
-  }
-
-  
-  .legs {
-    content: url("https://raw.githubusercontent.com/mittonp/dataviznf/master/legs.svg");
-  }
-  
-  @keyframes nod {
-    0% {
-      transform: rotate(0);
-    }
-  
-    25% {
-      transform: rotate(10deg);
-    }
-  
-    75% {
-      transform: rotate(-10deg);
-    }
-  
-    99% {
-      transform: rotate(0);
-    }
-  }
-  
-  @keyframes slide {
-    0% {
-      left: 0%;
-    }
-  
-    50% {
-      left: 50%;
-    }
-    100% {
-      left: 0;
-    }
-  }
-
-  @keyframes swallow{
-    0%{
-      top:0%;
-      opacity: 0;
-    }
-    10%{
-      opacity:1;
-    }
-    90%{
-      opacity: 1;
-    }
-    100%{
-      opacity:0;
-      top:60%;
-    }
-  }
-
-  @keyframes appear{
-    0%{
-      opacity: 0;
-    }
-
-    50%{
-      opacity:1;
-    }
-
-    100%{
-      opacity:0;
-    }
-  }
-  
-  @keyframes breathe {
-    0% {
-      transform: scale(1, 1);
-    }
-    25% {
-      transform: scale(1.03, 1);
-    }
-    75% {
-      transform: scale(1, 1);
-    }
-  }
-
-  @keyframes pulse {
-    0%{
-      transform: scale(1);
-    }
-
-    50%{
-      transform: scale(2);
-    }
-  }
-  
-  @keyframes movearm {
-    0% {
-      transform: rotate(0);
-    }
-    25% {
-      transform: rotate(10deg);
-    }
-  
-    75% {
-      transform: rotate(-10deg);
-    }
-  
-    100% {
-      transform: rotate(0);
-    }
-  }
-  
-  @keyframes float-rotate {
-    0% {
-      transform: rotate(0);
-    }
-    10% {
-      transform: rotate(5deg);
-    }
-    20% {
-      transform: rotate(0);
-    }
-    30% {
-      transform: rotate(-5deg);
-    }
-  }
-  
-  @keyframes float-skew {
-    0% {
-      transform: rotateX(0) rotate(0);
-    }
-    10% {
-      transform: rotateX(15deg) rotate(5deg);
-    }
-    20% {
-      transform: rotateX(0) rotate(0);
-    }
-    30% {
-      transform: rotateX(-15deg) rotate(-5deg);
-    }
-  }
   
   .copy{
     background-color: rgba(8, 5, 62, 0.95);
     position: absolute;
     color:white;
-    padding:100px 91px 100px 73px;
-    width:627px;
+    padding:25px 23px 50px 30px;
     font-family: sans-serif;
     box-sizing: border-box;
+    @media(orientation:landscape){
+      width:627px;
+      padding:100px 91px 100px 73px;
+    }
     
     h2{
-      font-size: 32px;
+      font-size: 17px;
       font-weight: 700;
+      @media(orientation:landscape){
+        font-size: 32px;
+      }
     }
     p, li{
-      font-size: 22px;
+      font-size: 15px;
       font-weight: 400;
+      @media(orientation:landscape){
+        font-size: 22px;
+      }
     }
 
     ul{

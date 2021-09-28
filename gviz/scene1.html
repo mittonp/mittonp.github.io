@@ -5,13 +5,14 @@
     <link rel="stylesheet" href="sass/scene-home.css">
     <link rel="stylesheet" href="sass/elements.css">
     <link rel="stylesheet" href="sass/scenes.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
 </head>
 
 <body>
 
     <div style="position:relative; display: flex; justify-content: center; align-items: center;">
         <div class="scene scene-1 cut-1">
-            <div class="scene-heading">Scene 1</div>
             <div class="neonsign"></div>
         </div>
 
@@ -29,32 +30,40 @@
                 <div class="radiating-circle" style="top:129px; left:319px;  animation-duration: 0.7s;"></div>
                 <div class="radiating-circle" style="top:34px; left:148px;  animation-duration: 1.4s;"></div>
             </div>
-            <div class="stat1" id="stat-1"></div>
-            <div class="copy" id="copy-1">
-                <h2>How common is heartburn and indigestion?</h2>
-                <ul>
-                    <li>
-                        1 in 5 adults experience heartburn and regurgitation at least once a week.*
-                    </li>
-                </ul>
+
+            <div class="stat-container" id="stat-container-1">
+                <div class="stat-1" id=""></div>
+                <div class="copy" id="">
+                    <h2>How common is heartburn and indigestion?</h2>
+                    <ul>
+                        <li>
+                            1 in 5 adults experience heartburn and regurgitation at least once a week.*
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="stat-2">stat2</div>
-            <div class="copy" id="copy-2">
-                <h2>In a recent survey of 551 Australian adults:</h2>
-                <ul>
-                    <li>
-                        <span class="blue-text">1 in 2 men</span> and <span class="pink-text">2 in 5 women</span>
-                    </li>
-                </ul>
-                <p>reported experiencing reflux and/or heartburn in the past 12 months*</p>
+
+            <div class="stat-container" id="stat-container-2">
+                <div class="stat-2">stat2</div>
+                <div class="copy" id="copy-2">
+                    <h2>In a recent survey of 551 Australian adults:</h2>
+                    <ul>
+                        <li>
+                            <span class="blue-text">1 in 2 men</span> and <span class="pink-text">2 in 5 women</span>
+                        </li>
+                    </ul>
+                    <p>reported experiencing reflux and/or heartburn in the past 12 months*</p>
+                </div>
             </div>
-            <div id="stat-3">stat3</div>
-            <div class="copy" id="copy-3">
-                <h2>Of all the people who experienced reflux and/or heartburn in the past year,</h2>
-                <ul>
-                    <li><span class="blue-text">1 in 4 suffered episodes a few times each week* </span> and</li>
-                    <li>at least <span class="pink-text"> 1 in 10 suffered symptoms every day*</span></li>
-                </ul>
+            <div class="stat-container" id="stat-container-3">
+                <div class="stat-3">stat3</div>
+                <div class="copy" id="copy-3">
+                    <h2>Of all the people who experienced reflux and/or heartburn in the past year,</h2>
+                    <ul>
+                        <li><span class="blue-text">1 in 4 suffered episodes a few times each week* </span> and</li>
+                        <li>at least <span class="pink-text"> 1 in 10 suffered symptoms every day*</span></li>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -81,131 +90,131 @@
                     <div class="drinker-drink-down"></div>
                 </div>
             </div>
-                <div class="lookingglass"></div>
-                <div class="copy" id="scene-3-copy-1">
-                    <h2>
-                        What does <span class="pink-text">heartburn</span> feel like?
-                    </h2>
-                    <p>Heartburn is very common and describes the burning pain that moves from the chest towards the
-                        throat.
-                    </p>
-                </div>
-                <div class="copy" id="scene-3-copy-2">
-                    <h2>
-                        What does <span class="blue-text">indigestion</span> feel like?
-                    </h2>
-                    <p>Indigestion is another symptom you might experience. It can feel like pain, burning or discomfort
-                        in
-                        your upper abdomen. You might also feel bloated or 'gassy' and burp a lot too.</p>
-                </div>
-                <div class="copy" id="scene-3-copy-3">
-                    <h2>
-                        What's heartburn, reflux and indigestion all about?
-                    </h2>
-                    <p>When deciding if you’re going to have that fried food, fizzy drink or sweet treat, are you
-                        wondering
-                        in the back of your mind whether you’re going to get that burning sensation in your throat or an
-                        uncomfortable feeling in your stomach? Here’s what is happening in the body when you experience
-                        the
-                        symptoms of what’s called reflux.</p>
-                </div>
-                <div class="copy" id="scene-3-copy-4">
-                    <h2>
-                        Types of food and drink that can trigger <span class="pink-text">heartburn</span>
-                    </h2>
-                    <p>Foods:</p>
-                    <ul>
-                        <li>Fatty foods (e.g. burgers, pizza, fried chicken, chips)</li>
-                        <li>Spicy foods (e.g. chilli, pepper, curry)</li>
-                        <li>Salt and salt substitutes</li>
-                        <li>Garlic or onions</li>
-                        <li>Chocolate</li>
-                        <li>Mint (e.g. spearmint, peppermint)</li>
-                        <li>Tomatoes and tomato products</li>
-                        <li>Citrus fruit</li>
-                    </ul>
+            <div class="lookingglass"></div>
+            <div class="copy" id="scene-3-copy-1">
+                <h2>
+                    What does <span class="pink-text">heartburn</span> feel like?
+                </h2>
+                <p>Heartburn is very common and describes the burning pain that moves from the chest towards the
+                    throat.
+                </p>
+            </div>
+            <div class="copy" id="scene-3-copy-2">
+                <h2>
+                    What does <span class="blue-text">indigestion</span> feel like?
+                </h2>
+                <p>Indigestion is another symptom you might experience. It can feel like pain, burning or discomfort
+                    in
+                    your upper abdomen. You might also feel bloated or 'gassy' and burp a lot too.</p>
+            </div>
+            <div class="copy" id="scene-3-copy-3">
+                <h2>
+                    What's heartburn, reflux and indigestion all about?
+                </h2>
+                <p>When deciding if you’re going to have that fried food, fizzy drink or sweet treat, are you
+                    wondering
+                    in the back of your mind whether you’re going to get that burning sensation in your throat or an
+                    uncomfortable feeling in your stomach? Here’s what is happening in the body when you experience
+                    the
+                    symptoms of what’s called reflux.</p>
+            </div>
+            <div class="copy" id="scene-3-copy-4">
+                <h2>
+                    Types of food and drink that can trigger <span class="pink-text">heartburn</span>
+                </h2>
+                <p>Foods:</p>
+                <ul>
+                    <li>Fatty foods (e.g. burgers, pizza, fried chicken, chips)</li>
+                    <li>Spicy foods (e.g. chilli, pepper, curry)</li>
+                    <li>Salt and salt substitutes</li>
+                    <li>Garlic or onions</li>
+                    <li>Chocolate</li>
+                    <li>Mint (e.g. spearmint, peppermint)</li>
+                    <li>Tomatoes and tomato products</li>
+                    <li>Citrus fruit</li>
+                </ul>
 
-                </div>
-                <div class="copy" id="scene-3-copy-5">
-                    <h2>
-                        Types of food and drink that can trigger <span class="pink-text">heartburn</span>
-                    </h2>
-                    <p>Drinks:</p>
-                    <ul>
-                        <li>Alcoholic beverages</li>
-                        <li>Carbonated beverages (e.g. soft drinks, soda water)</li>
-                        <li>Citrus fruit juice or tomato juice</li>
-                        <li>Caffeinated beverages (e.g. coffee, tea, cola)</li>
-                    </ul>
-                </div>
-                <div class="copy" id="scene-3-copy-6">
-                    <h2>
-                        Foods and drink that can trigger <span class="blue-text">indigestion</span>
-                    </h2>
-                    <ul>
-                        <li>Fatty foods (e.g. burgers, pizza, fried chicken, chips)</li>
-                        <li>Spicy foods (e.g. chilli, pepper, curry)</li>
-                        <li>Tomatoes and tomato products</li>
-                        <li>Citrus fruit</li>
-                        <li>Alcohol (e.g. beer, wine, spirits, cocktails)</li>
-                        <li>Caffeinatlied beverages (e.g. coffee, tea, cola)</li>
-                        <li>Carbonated beverages (e.g. soft drinks, soda water)</li>
-                        <li>Citrus fruit juice or tomato juice</li>
-                    </ul>
-                </div>
-                <div class="copy" id="scene-3-copy-7">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Alcohol consumption</p>
-                    <p>Moderate to high alcohol intake (>7 standard drinks per week) can increase risk for reflux
-                        symptoms.
-                    </p>
-                </div>
-                <div class="copy" id="scene-3-copy-8">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Smoking</p>
-                    <p>Risk for reflux symptoms increases with both the duration and amount of smoking.</p>
-                </div>
-                <div class="copy" id="scene-3-copy-9">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Certain medications</p>
-                    <p>Some medications can cause or worsen reflux symptoms</p>
-                </div>
-                <div class="copy" id="scene-3-copy-10">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Obesity</p>
-                    <p>Being overweight or obese or carrying extra belly fat can increase pressure on the stomach and
-                        cause
-                        reflux symptoms</p>
-                </div>
-                <div class="copy" id="scene-3-copy-11">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Pregnancy</p>
-                    <p>Up to 80% of pregnant women experience heartburn.</p>
-                </div>
-                <div class="copy" id="scene-3-copy-12">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Genetics</p>
-                    <p>Having a first-degree relative with heartburn increases risk for reflux symptoms.</p>
-                </div>
-                <div class="copy" id="scene-3-copy-13">
-                    <h2>
-                        Risk factors for reflux
-                    </h2>
-                    <p>Age</p>
-                    <p>Regular reflux symptoms are more common in adults aged over 35 than in younger adults.</p>
-                </div>
+            </div>
+            <div class="copy" id="scene-3-copy-5">
+                <h2>
+                    Types of food and drink that can trigger <span class="pink-text">heartburn</span>
+                </h2>
+                <p>Drinks:</p>
+                <ul>
+                    <li>Alcoholic beverages</li>
+                    <li>Carbonated beverages (e.g. soft drinks, soda water)</li>
+                    <li>Citrus fruit juice or tomato juice</li>
+                    <li>Caffeinated beverages (e.g. coffee, tea, cola)</li>
+                </ul>
+            </div>
+            <div class="copy" id="scene-3-copy-6">
+                <h2>
+                    Foods and drink that can trigger <span class="blue-text">indigestion</span>
+                </h2>
+                <ul>
+                    <li>Fatty foods (e.g. burgers, pizza, fried chicken, chips)</li>
+                    <li>Spicy foods (e.g. chilli, pepper, curry)</li>
+                    <li>Tomatoes and tomato products</li>
+                    <li>Citrus fruit</li>
+                    <li>Alcohol (e.g. beer, wine, spirits, cocktails)</li>
+                    <li>Caffeinatlied beverages (e.g. coffee, tea, cola)</li>
+                    <li>Carbonated beverages (e.g. soft drinks, soda water)</li>
+                    <li>Citrus fruit juice or tomato juice</li>
+                </ul>
+            </div>
+            <div class="copy" id="scene-3-copy-7">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Alcohol consumption</p>
+                <p>Moderate to high alcohol intake (>7 standard drinks per week) can increase risk for reflux
+                    symptoms.
+                </p>
+            </div>
+            <div class="copy" id="scene-3-copy-8">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Smoking</p>
+                <p>Risk for reflux symptoms increases with both the duration and amount of smoking.</p>
+            </div>
+            <div class="copy" id="scene-3-copy-9">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Certain medications</p>
+                <p>Some medications can cause or worsen reflux symptoms</p>
+            </div>
+            <div class="copy" id="scene-3-copy-10">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Obesity</p>
+                <p>Being overweight or obese or carrying extra belly fat can increase pressure on the stomach and
+                    cause
+                    reflux symptoms</p>
+            </div>
+            <div class="copy" id="scene-3-copy-11">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Pregnancy</p>
+                <p>Up to 80% of pregnant women experience heartburn.</p>
+            </div>
+            <div class="copy" id="scene-3-copy-12">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Genetics</p>
+                <p>Having a first-degree relative with heartburn increases risk for reflux symptoms.</p>
+            </div>
+            <div class="copy" id="scene-3-copy-13">
+                <h2>
+                    Risk factors for reflux
+                </h2>
+                <p>Age</p>
+                <p>Regular reflux symptoms are more common in adults aged over 35 than in younger adults.</p>
+            </div>
 
         </div>
 
@@ -226,26 +235,24 @@
 
         <div class="scene scene-4 scene-below cut-1">
             <div class="scene-content">
-            <div class="background-static"></div>
+                <div class="background-static"></div>
 
-            <div class="table-for-two">
-                
+                <div class="table-for-two">
 
-                
+                </div>
+                <div class="character-served"></div>
+                <div class="character-eating"></div>
+                <div class="character-distressed"></div>
+                <div class="intestine intestine-1"></div>
+                <div class="intestine intestine-2"></div>
+                <div class="intestine intestine-3"></div>
+                <div class="intestine intestine-4"></div>
+                <div class="intestine intestine-5"></div>
+                <div class="friend"></div>
+                <div class="friend-distressed"></div>
+                <div class="character-standing-distressed"></div>
+                <div class="speech-bubble-home"></div>
             </div>
-            <div class="character-served"></div>
-            <div class="character-eating"></div>
-            <div class="character-distressed"></div>
-            <div class="intestine intestine-1"></div>
-            <div class="intestine intestine-2"></div>
-            <div class="intestine intestine-3"></div>
-            <div class="intestine intestine-4"></div>
-            <div class="intestine intestine-5"></div>
-            <div class="friend"></div>
-            <div class="friend-distressed"></div>
-            <div class="character-standing-distressed"></div>
-            <div class="speech-bubble-home"></div>
-        </div>
             <div class="lookingglass"></div>
             <div class="copy" id="scene-4-copy-1">
                 <h2>
@@ -327,17 +334,17 @@
 
         <div class="scene scene-home cut-1 scene-below">
             <div class="scene-content">
-            <div class="home-scene"></div>
-            <div class="character-home front-center"></div>
-            <div class="stomach stomach-1 front-center"></div>
-            <div class="stomach stomach-2 front-center"></div>
-            <div class="stomach stomach-3 front-center"></div>
-            <div class="stomach stomach-4 front-center"></div>
-            <div class="stomach stomach-5 front-center"></div>
-            <div class="stomach stomach-6 front-center"></div>
-            <div class="stomach stomach-7 front-center"></div>
-            <div class="stomach stomach-8 front-center"></div>
-        </div>
+                <div class="home-scene"></div>
+                <div class="character-home front-center"></div>
+                <div class="stomach stomach-1 front-center"></div>
+                <div class="stomach stomach-2 front-center"></div>
+                <div class="stomach stomach-3 front-center"></div>
+                <div class="stomach stomach-4 front-center"></div>
+                <div class="stomach stomach-5 front-center"></div>
+                <div class="stomach stomach-6 front-center"></div>
+                <div class="stomach stomach-7 front-center"></div>
+                <div class="stomach stomach-8 front-center"></div>
+            </div>
             <div class="copy" id="scene-home-copy-1">
                 <h2>How to relieve heartburn and indigestion</h2>
                 <p><span class="orange-text">Antacid:</span> neutralises stomach acid to reduce the acidity of any

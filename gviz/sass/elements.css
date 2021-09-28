@@ -6,19 +6,6 @@
           transform: translate(-50%, -50%);
 }
 
-.lookingglass {
-  position: absolute;
-  background: url(../layers/transparent.png);
-  width: 4000px;
-  height: 4000px;
-  background-size: contain;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
 .stomach {
   width: 172px;
   height: 451px;
@@ -386,5 +373,44 @@
   position: absolute;
   left: 351px;
   top: -280px;
+}
+
+.stat-1 {
+  background-size: contain;
+  content: url(/gviz/layers/stat1.svg);
+  background-repeat: no-repeat;
+}
+
+.stat-2 {
+  width: 686px;
+  height: 931px;
+  background-size: contain;
+  background-image: url(/gviz/layers/stat2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.stat-3 {
+  width: 686px;
+  height: 917px;
+  background-size: contain;
+  background-image: url(/gviz/layers/stat3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.radiating-circle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/radiating-circle.svg);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
 }
 /*# sourceMappingURL=elements.css.map */

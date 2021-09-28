@@ -1,6 +1,7 @@
 .scene-1{
     .neonsign {
-      width:375px;
+      width:300px;
+      height: 300px;
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url(/gviz/layers/neonsign.svg);
@@ -8,7 +9,7 @@
       top:50%;
       transform: translate(-50%,-50%);
       position: absolute;
-      @media all and (min-width: 800px){
+      @media (orientation:landscape){
         width: 1216px;
         height: 465px;
       }
@@ -16,19 +17,17 @@
   }
   
   .scene-2{
-    width: 1400px;
-  
-    #copy-1, #copy-2, #copy-3{
-      position: absolute;
-      top:150%;
-      transform: translate(0, -50%);
-      right:0;
+    @media(orientation:landscape){
+      width:1400px;
     }
+    
+  
+
   
     .globe{
-      width:491px;
+      width:300px;
+      height:300px;
       margin: auto;
-      height:485px;
       background-size: contain;
       background-repeat: no-repeat;
       background-image: url(/gviz/layers/globe.svg);
@@ -36,9 +35,13 @@
       position: absolute;
       top:50%;
       transform: translate(-50%, -50%);
+      @media (orientation:landscape){
+        width:491px;
+        height:485px;
+      }
     }
   
-    #stat-1, #stat-2, #stat-3{
+    #stat-container-2, #stat-container-3, #stat-container-1{
       top:160%;
       position: absolute;
       transform: translate(0, -50%);
@@ -49,45 +52,32 @@
       .globe{
         left:-100%;
       }
-  
-      #copy-1{
+
+      #stat-container-1{
         top:50%;
       }
   
-      #stat-1{
-        top:50%;
-      }
+      
     }
   
     &.cut-3{
-      #copy-1{
-        right:-150%;
-      }
-      #stat-1{
-        left:-100%;
+      #stat-container-1{
+        left:-150%;
       }
   
-      #copy-2{
-        top:50%;
-      }
   
-      #stat-2{
+      #stat-container-2{
         top:50%;
       }
     }
   
     &.cut-4{
-      #copy-2{
-        right:-150%;
-      }
-      #stat-2{
+
+      #stat-container-2{
         left:-100%;
       }
-      #copy-3{
-        top:50%;
-      }
   
-      #stat-3{
+      #stat-container-3{
         top:50%;
       }
     }
