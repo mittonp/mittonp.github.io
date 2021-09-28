@@ -313,17 +313,20 @@
       transform: translate(-50%, -50%);
     }
   
-    .intestine, .flame{
-      opacity:0;
-    }
+    
 
     .friend{
       opacity: 0.1;
     }
-
-    .character-eating, .character-distressed{
+    .character-eating, .character-distressed,
+    .speech-bubble-home,
+    .intestine, .flame,
+    .friend-distressed, .character-standing-distressed{
       opacity: 0;
     }
+
+    
+ 
   
   
     &.cut-1{
@@ -360,6 +363,9 @@
       }
       .intestine-1{
         opacity: 1;
+      }
+      .scene-content{
+        transform: scale(1.2) translateY(20%);
       }
   
     }
@@ -411,6 +417,31 @@
 
       .intestine-4{
         opacity: 0;
+      }
+    }
+    &.cut-7{
+      .scene-content{
+        transform: translateY(35%);
+      }
+      .speech-bubble-home{
+        opacity: 1;
+      }
+      .friend{
+        opacity: 0;
+      }
+      .friend-distressed{
+        opacity: 1;
+      }
+    }
+    &.cut-8{
+      .speech-bubble-home{
+        opacity: 0;
+      }
+      .character-distressed{
+        opacity: 0;
+      }
+      .character-standing-distressed{
+        opacity: 1;
       }
     }
   }

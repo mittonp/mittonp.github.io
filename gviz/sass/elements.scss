@@ -18,11 +18,13 @@
 }
 
 .stomach{
-    width:282px;
-    height: 739px;
+    width:172px;
+    height: 451px;
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    top:286px;
+    left:940px;
   }
 
   .stomach-1{
@@ -312,10 +314,43 @@
   .friend{
     background: url("../layers/friend.svg");
     width: 476px;
-    height: 9920px;
+    height: 920px;
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
     top:25px;
     left:1019px;
+  }
+
+  .friend-distressed{
+    background: url("../layers/friend-distressed.svg");
+    width: 476px;
+    height: 920px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top:25px;
+    left:1019px;
+  }
+
+  .speech-bubble-home{
+    background: url("../layers/speech-bubble-home.svg");
+    width: 311px;
+    height: 231px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top:-263px;
+    left:319px;
+  }
+
+  .character-standing-distressed{
+    background: url("../layers/character-standing-distressed.svg");
+    width: 439px;
+    height: 1219px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left:351px;
+    top:-280px;
   }

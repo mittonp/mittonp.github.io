@@ -17,12 +17,22 @@
   opacity: 0;
 }
 
+.scene-home.cut-2 .scene-content {
+  -webkit-transform: scale(1.5) translateY(15%);
+          transform: scale(1.5) translateY(15%);
+}
+
 .scene-home.cut-2 .character-home {
   opacity: 0.5;
 }
 
 .scene-home.cut-2 .stomach-1 {
   opacity: 1;
+}
+
+.scene-home.cut-3 .scene-content {
+  -webkit-transform: scale(1.5) translateY(15%) translatex(-15%);
+          transform: scale(1.5) translateY(15%) translatex(-15%);
 }
 
 .scene-home.cut-3 .character-home {
@@ -95,6 +105,11 @@
 
 .scene-home.cut-9 .stomach-8 {
   opacity: 1;
+}
+
+.scene-home.cut-10 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
 }
 
 .scene-home.cut-10 #scene-home-copy-2 {

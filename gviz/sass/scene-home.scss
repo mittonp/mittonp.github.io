@@ -18,6 +18,9 @@
     }
   
     &.cut-2{
+      .scene-content{
+        transform: scale(1.5) translateY(15%);
+      }
       .character-home{
         opacity:0.5;
       }
@@ -27,6 +30,9 @@
     }
   
     &.cut-3{
+      .scene-content{
+        transform: scale(1.5) translateY(15%) translatex(-15%);
+      }
       .character-home{
         opacity: 0;
       }
@@ -96,6 +102,10 @@
       }
     }
     &.cut-10{
+      .scene-content{
+        transform: unset;
+      }
+      
       #scene-home-copy-2{
         left:150%;
       }

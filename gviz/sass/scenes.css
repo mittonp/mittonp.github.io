@@ -309,15 +309,14 @@
           transform: translate(-50%, -50%);
 }
 
-.scene-4 .intestine, .scene-4 .flame {
-  opacity: 0;
-}
-
 .scene-4 .friend {
   opacity: 0.1;
 }
 
-.scene-4 .character-eating, .scene-4 .character-distressed {
+.scene-4 .character-eating, .scene-4 .character-distressed,
+.scene-4 .speech-bubble-home,
+.scene-4 .intestine, .scene-4 .flame,
+.scene-4 .friend-distressed, .scene-4 .character-standing-distressed {
   opacity: 0;
 }
 
@@ -357,6 +356,11 @@
 
 .scene-4.cut-3 .intestine-1 {
   opacity: 1;
+}
+
+.scene-4.cut-3 .scene-content {
+  -webkit-transform: scale(1.2) translateY(20%);
+          transform: scale(1.2) translateY(20%);
 }
 
 .scene-4.cut-4 #scene-4-copy-3 {
@@ -409,5 +413,34 @@
 
 .scene-4.cut-6 .intestine-4 {
   opacity: 0;
+}
+
+.scene-4.cut-7 .scene-content {
+  -webkit-transform: translateY(35%);
+          transform: translateY(35%);
+}
+
+.scene-4.cut-7 .speech-bubble-home {
+  opacity: 1;
+}
+
+.scene-4.cut-7 .friend {
+  opacity: 0;
+}
+
+.scene-4.cut-7 .friend-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-8 .speech-bubble-home {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .character-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .character-standing-distressed {
+  opacity: 1;
 }
 /*# sourceMappingURL=scenes.css.map */
