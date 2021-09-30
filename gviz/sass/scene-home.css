@@ -5,6 +5,10 @@
           transform: translatey(-50%);
 }
 
+.scene-home #scene-home-copy-3 {
+  left: 20%;
+}
+
 .scene-home .stomach {
   opacity: 0;
 }

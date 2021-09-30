@@ -375,6 +375,91 @@
   top: -280px;
 }
 
+.speech-bubble-cycler {
+  width: 182px;
+  height: 247px;
+  position: absolute;
+}
+
+.speech-bubble {
+  width: 182px;
+  height: 247px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  -webkit-animation-name: timeshare;
+          animation-name: timeshare;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+.speech-bubble-spaghetti {
+  background-image: url("../layers/bubble-spaghetti.svg");
+}
+
+.speech-bubble-cheese-burger {
+  background-image: url("../layers/bubble-cheese-burger.svg");
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.speech-bubble-chilly-tacos {
+  background-image: url("../layers/bubble-chilly-tacos.svg");
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.speech-bubble-garlic-bread {
+  background-image: url("../layers/bubble-garlic-bread.svg");
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.speech-bubble-mint-choco {
+  background-image: url("../layers/bubble-mint-choco.svg");
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.speech-bubble-pink-lemonade {
+  background-image: url("../layers/bubble-pink-lemonade.svg");
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.speech-bubble-pizza {
+  background-image: url("../layers/bubble-pizza.svg");
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+@-webkit-keyframes timeshare {
+  5% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+}
+
+@keyframes timeshare {
+  5% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+}
+
 .stat-1 {
   background-size: contain;
   content: url(/gviz/layers/stat1.svg);
@@ -382,21 +467,13 @@
 }
 
 .stat-2 {
-  width: 686px;
-  height: 931px;
   background-size: contain;
-  background-image: url(/gviz/layers/stat2.svg);
-  background-size: contain;
+  content: url(/gviz/layers/stat2.svg);
   background-repeat: no-repeat;
 }
 
 .stat-3 {
-  width: 686px;
-  height: 917px;
-  background-size: contain;
-  background-image: url(/gviz/layers/stat3.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  content: url(/gviz/layers/stat3.svg);
 }
 
 .radiating-circle {

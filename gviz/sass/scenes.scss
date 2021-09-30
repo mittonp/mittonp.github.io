@@ -42,15 +42,15 @@
     }
   
     #stat-container-2, #stat-container-3, #stat-container-1{
-      top:160%;
+      top:200vh;
       position: absolute;
-      transform: translate(0, -50%);
-      left:0;
+      transform: translate(-50%, -50%);
+      left:50%;
     }
   
     &.cut-2{
       .globe{
-        left:-100%;
+        left:-100vw;
       }
 
       #stat-container-1{
@@ -62,7 +62,7 @@
   
     &.cut-3{
       #stat-container-1{
-        left:-150%;
+        left:-100vw;
       }
   
   
@@ -74,7 +74,7 @@
     &.cut-4{
 
       #stat-container-2{
-        left:-100%;
+        left:-100vw;
       }
   
       #stat-container-3{
@@ -84,8 +84,9 @@
   
   }
   
+  //Restaurant scene
   .scene-3{
-    .drinker-drink-down{
+    .drinker-drink-down, .speech-bubble-cycler{
       opacity: 0;
     }
     .perspective-level-1,
@@ -104,8 +105,20 @@
       left:50%;
       transform: translate(-50%, -50%);
     }
+
+    .speech-bubble-cycler{
+      top:-213px;
+      left:231px;
+    }
   
     &.cut-1{
+      @media (orientation:portrait){
+        .scene-content{
+          transform:translate(36%, 11%) scale(0.4);
+          transform-origin: left;
+        }
+      }
+
       .perspective-level-1{
         top:339px;
       }
@@ -133,6 +146,15 @@
       }
     }
     &.cut-4{
+      .scene-content{
+        @media (orientation:landscape){
+          transform:translatey(20%);
+        }
+        
+      }
+      .speech-bubble-cycler{
+        opacity: 1;
+      }
       #scene-3-copy-2{
         left:-150%;
       }
@@ -172,6 +194,15 @@
     }
     //alcohol
     &.cut-8{
+      .speech-bubble-cycler{
+        opacity: 0;
+      }
+      .scene-content{
+        @media(orientation:landscape){
+          transform: unset;
+        }
+        
+      }
       .perspective-level-2, .perspective-level-3{
         opacity: 0.1;
       }
@@ -259,8 +290,8 @@
       }
   
       .lookingglass{
-        left:68%;
-        top:37%;
+        left:74%;
+        top:31%;
       }
     }
     //Genetics
@@ -295,11 +326,12 @@
   
   }
   
+  //Table for two scene
   .scene-4{
     .copy{
       position: absolute;
       top:150%;
-      left:80%;
+      left:70%;
       transform: translate(-50%, -50%);
     }
   
@@ -322,7 +354,7 @@
     &.cut-1{
       #scene-4-copy-1{
         top:50%;
-        left:80%;
+        //left:80%;
       }
     }
     &.cut-2{
@@ -337,7 +369,7 @@
       }
       #scene-4-copy-2{
         top:50%;
-        left:80%;
+        //left:80%;
       }
 
     }

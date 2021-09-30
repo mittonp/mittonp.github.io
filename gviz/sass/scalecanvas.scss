@@ -84,7 +84,7 @@ body{
 
 .stat-container{
   display: flex;
-  width:100%;
+  width:90vw;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -125,16 +125,32 @@ body{
   .scene{
     position: fixed;
     top:50%;
-    transform:translate(0, -50%);
+    left:50%;
+    transform:translate(-50%, -50%);
     transition: all 0.5s;
     display: flex;
     flex-wrap: wrap;
-    width:375px;
-    height: 667px;
+    width:1920px;
+    height: 1080px;
     @media (orientation:landscape){
       width:1920px;
       height: 1080px;
+      @media(max-width:1700px){
+        transform:translate(-50%, -50%) scale(0.89)
     }
+  
+      @media(max-width:1400px){
+          transform:translate(-50%, -50%) scale(0.73)
+      }
+  
+      @media(max-width:1200px){
+        
+          transform:translate(-50, -50%)scale(0.625)
+        
+      }
+    }
+
+   
     
     div{
       transition: all 0.5s;
@@ -148,7 +164,7 @@ body{
   }
 
   .scene-below{
-    top:160%;
+    top:200vh;
   }
 
   .scene-above{
@@ -164,9 +180,16 @@ body{
     padding:25px 23px 50px 30px;
     font-family: sans-serif;
     box-sizing: border-box;
+    width:90vw;
     @media(orientation:landscape){
       width:627px;
       padding:100px 91px 100px 73px;
+    }
+
+    &--alt{
+      width: 340px;
+      padding:32px 23px;
+      text-align: center;
     }
     
     h2{
@@ -182,6 +205,10 @@ body{
       @media(orientation:landscape){
         font-size: 22px;
       }
+    }
+
+    .fineprint{
+      font-size: 14px;
     }
 
     ul{

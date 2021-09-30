@@ -344,6 +344,57 @@
     top:-280px;
   }
 
+  .speech-bubble-cycler{
+    width: 182px;
+    height: 247px;
+    position: absolute;
+  }
+  .speech-bubble{
+    width: 182px;
+    height: 247px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    animation-name: timeshare;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+  }
+  .speech-bubble-spaghetti{
+    background-image: url("../layers/bubble-spaghetti.svg");
+  }
+  .speech-bubble-cheese-burger{
+    background-image: url("../layers/bubble-cheese-burger.svg");
+    animation-delay: 1s;
+  }
+  .speech-bubble-chilly-tacos{
+    background-image: url("../layers/bubble-chilly-tacos.svg");
+    animation-delay: 2s;
+  }
+  .speech-bubble-garlic-bread{
+    background-image: url("../layers/bubble-garlic-bread.svg");
+    animation-delay: 3s;
+  }
+  .speech-bubble-mint-choco{
+    background-image: url("../layers/bubble-mint-choco.svg");
+    animation-delay: 4s;
+  }
+  .speech-bubble-pink-lemonade{
+    background-image: url("../layers/bubble-pink-lemonade.svg");
+    animation-delay: 5s;
+  }
+
+  .speech-bubble-pizza{
+    background-image: url("../layers/bubble-pizza.svg");
+    animation-delay: 6s;
+  }
+
+  @keyframes timeshare{
+    5%{opacity: 1;}
+    14%{opacity:1;}
+    19%{opacity:0;}
+  }
+
   .stat-1{
     background-size: contain;
     content: url(/gviz/layers/stat1.svg);
@@ -351,21 +402,13 @@
   }
 
   .stat-2{
-    width:686px;
-    height: 931px;
     background-size: contain;
-    background-image: url(/gviz/layers/stat2.svg);
-    background-size: contain;
+    content: url(/gviz/layers/stat2.svg);
     background-repeat: no-repeat;
   }
 
   .stat-3{
-    width:686px;
-    height: 917px;
-    background-size: contain;
-    background-image: url(/gviz/layers/stat3.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    content: url(/gviz/layers/stat3.svg);
   }
 
   .radiating-circle{

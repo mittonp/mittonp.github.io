@@ -74,7 +74,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 90vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -119,8 +119,9 @@ body {
 .scene {
   position: fixed;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   display: -webkit-box;
@@ -128,14 +129,35 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 375px;
-  height: 667px;
+  width: 1920px;
+  height: 1080px;
 }
 
 @media (orientation: landscape) {
   .scene {
     width: 1920px;
     height: 1080px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1700px) {
+  .scene {
+    -webkit-transform: translate(-50%, -50%) scale(0.89);
+            transform: translate(-50%, -50%) scale(0.89);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1400px) {
+  .scene {
+    -webkit-transform: translate(-50%, -50%) scale(0.73);
+            transform: translate(-50%, -50%) scale(0.73);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1200px) {
+  .scene {
+    -webkit-transform: translate(-50, -50%) scale(0.625);
+            transform: translate(-50, -50%) scale(0.625);
   }
 }
 
@@ -151,7 +173,7 @@ body {
 }
 
 .scene-below {
-  top: 160%;
+  top: 200vh;
 }
 
 .scene-above {
@@ -166,6 +188,7 @@ body {
   font-family: sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 90vw;
 }
 
 @media (orientation: landscape) {
@@ -173,6 +196,12 @@ body {
     width: 627px;
     padding: 100px 91px 100px 73px;
   }
+}
+
+.copy--alt {
+  width: 340px;
+  padding: 32px 23px;
+  text-align: center;
 }
 
 .copy h2 {
@@ -195,6 +224,10 @@ body {
   .copy p, .copy li {
     font-size: 22px;
   }
+}
+
+.copy .fineprint {
+  font-size: 14px;
 }
 
 .copy ul {
