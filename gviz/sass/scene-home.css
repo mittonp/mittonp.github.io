@@ -5,6 +5,12 @@
           transform: translatey(-50%);
 }
 
+.scene-home .copy--final {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 1158px;
+}
+
 .scene-home #scene-home-copy-3 {
   left: 20%;
 }
@@ -138,5 +144,17 @@
 
 .scene-home.cut-11 #scene-home-copy-3 {
   top: 50%;
+}
+
+.scene-home.cut-12 #scene-home-copy-3 {
+  left: -150%;
+}
+
+.scene-home.cut-12 #scene-home-copy-final-1 {
+  top: 50%;
+}
+
+.scene-home.cut-12 .scene-content {
+  opacity: 0.1;
 }
 /*# sourceMappingURL=scene-home.css.map */

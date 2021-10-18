@@ -85,6 +85,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 20px;
 }
 
 @media (orientation: landscape) {
@@ -93,6 +94,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    gap: 60px;
     width: 1400px;
   }
   .stat-container div {
@@ -101,7 +103,13 @@ body {
 }
 
 .stat-container div {
-  width: 100%;
+  width: 85%;
+}
+
+@media (orientation: landscape) {
+  .stat-container div {
+    width: 100%;
+  }
 }
 
 .stat-container .copy {
@@ -178,60 +186,5 @@ body {
 
 .scene-above {
   top: -100%;
-}
-
-.copy {
-  background-color: rgba(8, 5, 62, 0.95);
-  position: absolute;
-  color: white;
-  padding: 25px 23px 50px 30px;
-  font-family: sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 90vw;
-}
-
-@media (orientation: landscape) {
-  .copy {
-    width: 627px;
-    padding: 100px 91px 100px 73px;
-  }
-}
-
-.copy--alt {
-  width: 340px;
-  padding: 32px 23px;
-  text-align: center;
-}
-
-.copy h2 {
-  font-size: 17px;
-  font-weight: 700;
-}
-
-@media (orientation: landscape) {
-  .copy h2 {
-    font-size: 32px;
-  }
-}
-
-.copy p, .copy li {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-@media (orientation: landscape) {
-  .copy p, .copy li {
-    font-size: 22px;
-  }
-}
-
-.copy .fineprint {
-  font-size: 14px;
-}
-
-.copy ul {
-  -webkit-padding-start: 1em;
-          padding-inline-start: 1em;
 }
 /*# sourceMappingURL=scalecanvas.css.map */

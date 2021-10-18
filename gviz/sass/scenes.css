@@ -129,12 +129,24 @@
   top: 50%;
 }
 
+@media (orientation: portrait) {
+  .scene-3.cut-2 #scene-3-copy-1 {
+    top: 30%;
+  }
+}
+
 .scene-3.cut-3 #scene-3-copy-1 {
   left: -150%;
 }
 
 .scene-3.cut-3 #scene-3-copy-2 {
   top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-3 #scene-3-copy-2 {
+    top: 30%;
+  }
 }
 
 @media (orientation: landscape) {
@@ -156,12 +168,24 @@
   top: 50%;
 }
 
+@media (orientation: portrait) {
+  .scene-3.cut-4 #scene-3-copy-3 {
+    top: 30%;
+  }
+}
+
 .scene-3.cut-5 #scene-3-copy-3 {
   left: -150%;
 }
 
 .scene-3.cut-5 #scene-3-copy-4 {
   top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-5 #scene-3-copy-4 {
+    top: 30%;
+  }
 }
 
 .scene-3.cut-6 #scene-3-copy-4 {
@@ -172,12 +196,24 @@
   top: 50%;
 }
 
+@media (orientation: portrait) {
+  .scene-3.cut-6 #scene-3-copy-5 {
+    top: 30%;
+  }
+}
+
 .scene-3.cut-7 #scene-3-copy-5 {
   left: -150%;
 }
 
 .scene-3.cut-7 #scene-3-copy-6 {
   top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-7 #scene-3-copy-6 {
+    top: 30%;
+  }
 }
 
 .scene-3.cut-7 .drinker-drink-up {
@@ -303,7 +339,7 @@
 }
 
 .scene-3.cut-13 .lookingglass {
-  left: 53%;
+  left: 57%;
 }
 
 .scene-3.cut-14 #scene-3-copy-12 {

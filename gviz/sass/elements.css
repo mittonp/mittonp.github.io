@@ -490,4 +490,105 @@
   -webkit-animation-name: pulse;
           animation-name: pulse;
 }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+.copy {
+  background-color: rgba(8, 5, 62, 0.95);
+  position: absolute;
+  color: white;
+  padding: 25px 23px 50px 30px;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90vw;
+}
+
+@media (orientation: landscape) {
+  .copy {
+    width: 627px;
+    padding: 100px 91px 100px 73px;
+  }
+}
+
+.copy--alt {
+  width: 340px;
+  padding: 32px 23px;
+  text-align: center;
+}
+
+.copy h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+@media (orientation: landscape) {
+  .copy h2 {
+    font-size: 32px;
+  }
+}
+
+.copy p, .copy li {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media (orientation: landscape) {
+  .copy p, .copy li {
+    font-size: 22px;
+  }
+}
+
+.copy .fineprint {
+  font-size: 14px;
+}
+
+.copy ul {
+  -webkit-padding-start: 1em;
+          padding-inline-start: 1em;
+}
+
+.copy--final {
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
+  font-weight: 400;
+  background-color: white;
+  color: #0a0555;
+  height: 80%;
+  border-radius: 30px;
+  border: 15px solid #2f72f4;
+}
+
+.copy--final h2 {
+  color: #ff8a00;
+  font-size: 48px;
+  font-family: 'Frutiger LT Pro 65 Bold';
+}
+
+.copy--final h3 {
+  color: #2f72f4;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: 'Frutiger LT Pro 55 Roman';
+}
 /*# sourceMappingURL=elements.css.map */

@@ -45,34 +45,34 @@ body{
 
 
 
-  .scene-container {
-    position: fixed;
-    width: 1920px;
-    height: 1080px;
-    transform: translateX(-50%) scale(1.5);
-    left: 50%; 
-    transform-origin: top;
+.scene-container {
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  transform: translateX(-50%) scale(1.5);
+  left: 50%; 
+  transform-origin: top;
   
-    @media (min-width: 600px) {
-      //transform: translateX(-50%) scale(0.3);
-    }
-  
-    @media (min-width: 800px) {
-      //transform: translateX(-50%) scale(0.4);
-    }
-  
-    @media (min-width: 1000px) {
-      transform: translateX(-50%) scale(0.5);
-    }
-  
-    @media (min-width: 1400px) {
-      transform: translateX(-50%) scale(0.7);
-    }
-  
-    @media (min-width: 1920px) {
-      transform: translateX(-50%) scale(1);
-    }
+  @media (min-width: 600px) {
+    //transform: translateX(-50%) scale(0.3);
   }
+  
+  @media (min-width: 800px) {
+    //transform: translateX(-50%) scale(0.4);
+  }
+  
+  @media (min-width: 1000px) {
+    transform: translateX(-50%) scale(0.5);
+  }
+  
+  @media (min-width: 1400px) {
+    transform: translateX(-50%) scale(0.7);
+  }
+  
+  @media (min-width: 1920px) {
+    transform: translateX(-50%) scale(1);
+  }
+}
   
 
 
@@ -88,15 +88,21 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap:20px;
   @media (orientation:landscape){
     flex-direction: row;
+    gap:60px;
     width:1400px;
     div{
       width:50%;
     }
   }
   div{
-    width:100%;
+    width:85%;
+    @media(orientation: landscape){
+      width:100%;
+    }
+    
   }
 
   .copy{
@@ -110,108 +116,66 @@ body{
 
   
 
-  .center-element{
-    position:absolute;
-    transform: translate(-50%, -50%);
-    left:50%;
-    top:50%;
-  }
+.center-element{
+  position:absolute;
+  transform: translate(-50%, -50%);
+  left:50%;
+  top:50%;
+}
 
   
 
   
   
 
-  .scene{
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    transition: all 0.5s;
-    display: flex;
-    flex-wrap: wrap;
+.scene{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  transition: all 0.5s;
+  display: flex;
+  flex-wrap: wrap;
+  width:1920px;
+  height: 1080px;
+  @media (orientation:landscape){
     width:1920px;
     height: 1080px;
-    @media (orientation:landscape){
-      width:1920px;
-      height: 1080px;
-      @media(max-width:1700px){
-        transform:translate(-50%, -50%) scale(0.89)
+    @media(max-width:1700px){
+      transform:translate(-50%, -50%) scale(0.89)
     }
   
-      @media(max-width:1400px){
-          transform:translate(-50%, -50%) scale(0.73)
-      }
-  
-      @media(max-width:1200px){
-        
-          transform:translate(-50, -50%)scale(0.625)
-        
-      }
+    @media(max-width:1400px){
+      transform:translate(-50%, -50%) scale(0.73)
     }
+  
+    @media(max-width:1200px){
+        
+      transform:translate(-50, -50%)scale(0.625)
+        
+    }
+  }
 
    
     
-    div{
-      transition: all 0.5s;
-    }
+  div{
+    transition: all 0.5s;
   }
+}
   
-  .scene-content{
-    position: absolute;
-    width:100%;
-    height: 100%;
-  }
+.scene-content{
+  position: absolute;
+  width:100%;
+  height: 100%;
+}
 
-  .scene-below{
-    top:200vh;
-  }
+.scene-below{
+  top:200vh;
+}
 
-  .scene-above{
-    top:-100%;
-  }
+.scene-above{
+  top:-100%;
+}
   
   
   
-  .copy{
-    background-color: rgba(8, 5, 62, 0.95);
-    position: absolute;
-    color:white;
-    padding:25px 23px 50px 30px;
-    font-family: sans-serif;
-    box-sizing: border-box;
-    width:90vw;
-    @media(orientation:landscape){
-      width:627px;
-      padding:100px 91px 100px 73px;
-    }
-
-    &--alt{
-      width: 340px;
-      padding:32px 23px;
-      text-align: center;
-    }
-    
-    h2{
-      font-size: 17px;
-      font-weight: 700;
-      @media(orientation:landscape){
-        font-size: 32px;
-      }
-    }
-    p, li{
-      font-size: 15px;
-      font-weight: 400;
-      @media(orientation:landscape){
-        font-size: 22px;
-      }
-    }
-
-    .fineprint{
-      font-size: 14px;
-    }
-
-    ul{
-      padding-inline-start: 1em;
-    }
-  }
