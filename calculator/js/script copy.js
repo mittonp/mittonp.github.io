@@ -1,7 +1,6 @@
 const columnsPerSmall = 3;
 const columnsPerMedium = 5;
 const columnsPerLarge = 8;
-var shareUrl;
 model = {
   purchasePrice: 7850000,
   totalLoan: 5102500,
@@ -255,12 +254,7 @@ jQuery(document).ready(function () {
   updateFields();
 
   jQuery("#btn-share").on("click", function () {
-    var chunk = btoa(JSON.stringify(model));
-    var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
-    console.log(shareUrl);
-    navigator.clipboard.writeText(shareUrl);
-    window.alert("Link copied");
-
+    console.log(model);
   })
 
 
@@ -298,12 +292,10 @@ jQuery(document).ready(function () {
   jQuery(".percent").trigger("blur");
   jQuery(".currency").trigger("blur");
 
-  //Click Get your forecast
   jQuery("#btn-calculator")
     .off("click")
     .on("click", showResults);
 
-  //Click start over
   jQuery("#btn-next")
     .off("click")
     .on("click", function (e) {
@@ -321,6 +313,7 @@ jQuery(document).ready(function () {
 });
 
 function showResults() {
+
   rentReceived = ["Rent Received"];
   yieldEachYear = ["Yield Each year"];
   principalRemainingStartOfYear = ["Principal Remaining (Start of Year)"];
@@ -351,6 +344,14 @@ function showResults() {
 
 
   }
+
+
+
+
+  var chunk = btoa(JSON.stringify(model));
+  console.log(chunk);
+  var unchunk = atob(chunk);
+  console.log(unchunk);
 
   jQuery(".show_tables").html("");
   jQuery(".show_tables").append(getRowHtml(yearHeadings, model.termOfOwnership, "text"));

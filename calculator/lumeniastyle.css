@@ -8,3 +8,7 @@
 .hastooltip{
     text-decoration: underline;
 }
+
+.end-column{
+    text-align: right;
+}

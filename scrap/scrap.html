@@ -1,0 +1,111 @@
+<div style="display:none;">
+    <div class="dropdown-menu product-menu">
+        <div>
+            <div>
+                <div>
+                    <a href="#fast-kill" class="dropdown-header" data-toggle="collapse">Fast Kill </a>
+                    <ul id="fast-kill" class="collapse">
+                        <li><a href="https://www.mortein.com.au/solution-finder/ants-fast-kill/">Ants</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/cockroaches-fast-kill/">Cockroaches</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/fleas-fast-kill/">Fleas</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/flies-fast-kill/">Flies</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/mosquitoes-fast-kill/">Mosquitos</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/moths-fast-kill/">Moths</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/rats-mice-fast-kill/">Rat & Mice</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/silverfish-fast-kill/">Silverfish</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/spiders-fast-kill/">Spiders</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#prevention" class="dropdown-header" data-toggle="collapse">Prevention</a>
+                    <ul id="prevention" class="collapse">
+                        <li><a href="https://www.mortein.com.au/solution-finder/ants-repellence/">Ants</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/cockroaches-repellence/">Cockroaches</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/fleas-repellence/">Fleas</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/moths-repellence/">Moths</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/moths-repellence/">Silverfish</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/spider-repellence/">Spiders</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/rats-mice-repellence/">Rat & Mice</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#ongoing-protection" class="dropdown-header" data-toggle="collapse">Ongoing Protection</a>
+                    <ul id="ongoing-protection" class="collapse">
+                        <li><a href="https://www.mortein.com.au/solution-finder/ants-on-going-protection/">Ants</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/cockroaches-on-going-protection/">Cockroaches</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/fleas-on-going-protection/">Fleas</a> </li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/flies-on-going-protection/">Flies</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/mosquitoes-on-going-protection/">Mosquitos</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/moths-on-going-protection/">Moths</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/silverfish-on-going-protection/">Silverfish</a></li>
+                        <li><a href="https://www.mortein.com.au/solution-finder/spiders-on-going-protection/">Spiders</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p><a class="product-caret"><span class="caret" style="display: inline-block;"></span></a> </p>
+    <p style="color: black;" class="activate-menu">a</p>
+</div>
+<script>
+    window.onload = function() {
+        var p = $(".sk-main-links a").first();
+        p.addClass("dropdown");
+        p.attr("href", "#");
+        p.append($(".product-caret"));
+        p.attr("data-toggle", "dropdown");
+        var c = $(".sk-main-links li").first();
+        c.append($(".product-menu"));
+        $(".dropdown-header").click(function(e) {
+            e.preventDefault();
+            $(e.target.hash).collapse("toggle");
+            e.stopPropagation();
+        });
+    };
+</script>
+<style>
+    .product-menu a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .product-menu li a {
+        text-transform: uppercase;
+    }
+
+    .product-menu ul {
+        padding: 3px 20px;
+        list-style: none;
+    }
+
+    @media (min-width:1025px) {
+        .product-menu>div {
+            display: flex;
+        }
+
+        .product-menu>div>div {
+            width: 130px;
+        }
+
+        .product-menu a {
+            color: black;
+        }
+
+        .product-menu a.dropdown-header {
+            color: #777;
+        }
+
+        .product-menu .collapse {
+            display: block;
+            height: auto !important;
+        }
+
+        .product-menu .dropdown-header {
+            pointer-events: none;
+        }
+    }
+</style>
