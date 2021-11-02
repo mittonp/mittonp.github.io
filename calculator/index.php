@@ -21,7 +21,7 @@ $ch = curl_init ("http://api.bitly.com/v3/shorten?access_token=b85e7501087ddced0
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 //the response is a JSON object, send it to your webpage
-echo curl_exec($ch);
+var_dump( curl_exec($ch));
 
 if (!function_exists('sg_cal_shortcode')) {
     function sg_cal_shortcode($atts, $content) {
