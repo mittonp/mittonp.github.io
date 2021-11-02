@@ -256,6 +256,7 @@ jQuery(document).ready(function () {
 
   jQuery("#btn-share").on("click", function () {
     var chunk = btoa(JSON.stringify(model));
+    console.log(chunk);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
     console.log(shareUrl);
     navigator.clipboard.writeText(shareUrl);
