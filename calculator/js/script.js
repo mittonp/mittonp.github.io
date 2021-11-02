@@ -291,9 +291,10 @@ jQuery(document).ready(function () {
       'type': 'POST',
       'data': JSON.stringify(url),
       'dataType': 'json',
-      'contentType': 'application/json; charset=utf-8'
-    }).success(function( msg ) {
-      console.log('ok');
+      'contentType': 'application/json; charset=utf-8',
+      success: function(response){
+        console.log("success");
+      }
     });
   }
 
