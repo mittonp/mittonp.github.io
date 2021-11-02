@@ -265,8 +265,7 @@ jQuery(document).ready(function () {
 
   })
 
-  // const ENDPOINT = 'https://www.jsonstore.io/b7500b390a31a7fdc2bde29c94607fda2a38bcc19368e99835309de795232577';
-  const ENDPOINT = 'http://ww1.jsonstore.io/';
+  const ENDPOINT = 'https://www.jsonstore.io/b7500b390a31a7fdc2bde29c94607fda2a38bcc19368e99835309de795232577';
   const URL_REGEXP = new RegExp("^(http|https|ftp)://", "i");
 
   function getRandomString() {
@@ -287,13 +286,15 @@ jQuery(document).ready(function () {
   }
 
   function sendRequest(url) {
-    $.ajax({
+    jQuery.ajax({
       'url': ENDPOINT + '/' + window.location.hash.substr(1) /* remove # */,
       'type': 'POST',
       'data': JSON.stringify(url),
       'dataType': 'json',
       'contentType': 'application/json; charset=utf-8'
-    })
+    }).success(function( msg ) {
+      console.log('ok');
+    });
   }
 
   function shortenUrl(url) {
@@ -304,7 +305,6 @@ jQuery(document).ready(function () {
 
   function checkCurentUrl() {
     let hashExisting = window.location.hash.substr(1);
-    console.log(hashExisting);
     if (hashExisting) {
       jQuery.getJSON(ENDPOINT + "/" + hashExisting,
           function (data) {
