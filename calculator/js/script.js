@@ -254,37 +254,35 @@ jQuery(document).ready(function () {
 
   updateFields();
 
+
+  var accessToken = "b85e7501087ddced06355f09a23aec9fb016444f";
+
   jQuery("#btn-share").on("click", function () {
     var chunk = btoa(JSON.stringify(model));
-    var encrypted = CryptoJS.AES.encrypt(chunk, "Secret Passphrase");
-    var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
-    alert(decrypted);
-    var str = decrypted.toString(CryptoJS.enc.Utf8);
-    console.log(str);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
-    var shortUrl = sendRequest(shareUrl);
-    navigator.clipboard.writeText(shareUrl);
-    window.alert("Link copied");
+    var params = {
+      "long_url" : shareUrl
+    };
+
+    $.ajax({
+      url: "https://api-ssl.bitly.com/v4/shorten",
+      cache: false,
+      dataType: "json",
+      method: "POST",
+      contentType: "application/json",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+      },
+      data: JSON.stringify(params)
+    }).done(function(data) {
+      navigator.clipboard.writeText(data.link);
+      window.alert("Link copied");
+    }).fail(function(data) {
+      console.log(data);
+    });
+
 
   })
-
-  function sendRequest(url) {
-    jQuery.ajax({
-      'url': "https://paste.rs/",
-      'headers': {  'Access-Control-Allow-Origin': 'https://paste.rs/' },
-      'type': 'POST',
-      'data': 'test',
-      'dataType': 'text',
-      'contentType': 'application/json; charset=utf-8',
-      success: function(response){
-        console.log(response);
-      }
-    });
-  }
-
-  jQuery.getScript("js/crypto.js", function() {
-    alert("Script loaded but not necessarily executed.");
-  });
 
 
   var data = [];
