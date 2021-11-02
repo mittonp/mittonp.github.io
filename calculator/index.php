@@ -27,7 +27,7 @@ if (!function_exists('sg_cal_shortcode')) {
 
         ob_start();
         ?>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
         <div class="sg-cal-wrap">            
             <div class="input-group row" id="step1" >
                 <div class="sub-header">
