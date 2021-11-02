@@ -258,67 +258,25 @@ jQuery(document).ready(function () {
     var chunk = btoa(JSON.stringify(model));
     console.log(model);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
-    var shortUrl = shortenUrl(shareUrl);
+    var shortUrl = sendRequest(shareUrl);
     console.log(shortUrl);
     navigator.clipboard.writeText(shareUrl);
     window.alert("Link copied");
 
   })
 
-  const ENDPOINT = 'https://www.jsonstore.io/b7500b390a31a7fdc2bde29c94607fda2a38bcc19368e99835309de795232577';
-  const URL_REGEXP = new RegExp("^(http|https|ftp)://", "i");
-
-  function getRandomString() {
-    let random_string = Math.random().toString(32).substring(2, 5) + Math.random().toString(32).substring(2, 5);
-    return random_string;
-  }
-
-  // function getUrl() {
-  //   let url = document.getElementById('txtUrl').value;
-  //   let isProtocolOk = URL_REGEXP.test(url);
-  //   return isProtocolOk ? url : ('http://' + url);
-  // }
-
-  function genHash() {
-    if (window.location.hash == '') {
-      window.location.hash = getRandomString();
-    }
-  }
-
   function sendRequest(url) {
     jQuery.ajax({
-      'url': ENDPOINT + '/' + window.location.hash.substr(1) /* remove # */,
+      'url': "https://paste.rs/",
       'type': 'POST',
       'data': JSON.stringify(url),
       'dataType': 'json',
       'contentType': 'application/json; charset=utf-8',
       success: function(response){
-        console.log("success");
+        console.log(response);
       }
     });
   }
-
-  function shortenUrl(url) {
-    let longUrl = url;
-    genHash();
-    sendRequest(longUrl);
-  }
-
-  function checkCurentUrl() {
-    let hashExisting = window.location.hash.substr(1);
-    if (hashExisting) {
-      jQuery.getJSON(ENDPOINT + "/" + hashExisting,
-          function (data) {
-            data = data["result"];
-            if (data != null) {
-              window.location.href = data;
-            }
-          }
-      )
-    }
-  }
-
-  checkCurentUrl();
 
 
   var data = [];
