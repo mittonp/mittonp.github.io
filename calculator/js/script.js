@@ -259,7 +259,6 @@ jQuery(document).ready(function () {
     console.log(model);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
     var shortUrl = sendRequest(shareUrl);
-    console.log(shortUrl);
     navigator.clipboard.writeText(shareUrl);
     window.alert("Link copied");
 
@@ -269,8 +268,8 @@ jQuery(document).ready(function () {
     jQuery.ajax({
       'url': "https://paste.rs/",
       'type': 'POST',
-      'data': JSON.stringify(url),
-      'dataType': 'json',
+      'data': 'test',
+      'dataType': 'text',
       'contentType': 'application/json; charset=utf-8',
       success: function(response){
         console.log(response);
