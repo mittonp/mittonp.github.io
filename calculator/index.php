@@ -12,9 +12,16 @@
 */
 
 define ('SG_CALCULATOR_URL', plugin_dir_url( __FILE__ ));
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+
+//the long url posted by your webpage
+$url = strip_tags($_POST["url"]);
+
+//send it to the bitly shorten webservice
+$ch = curl_init ("http://api.bitly.com/v3/shorten?access_token=b85e7501087ddced06355f09a23aec9fb016444f&longUrl=test.com&format=json");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+//the response is a JSON object, send it to your webpage
+echo curl_exec($ch);
 
 if (!function_exists('sg_cal_shortcode')) {
     function sg_cal_shortcode($atts, $content) {
