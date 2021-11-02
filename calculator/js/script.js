@@ -256,7 +256,8 @@ jQuery(document).ready(function () {
 
   jQuery("#btn-share").on("click", function () {
     var chunk = btoa(JSON.stringify(model));
-    var decrypted = CryptoJS.AES.decrypt(chunk, "Secret Passphrase");
+    var encrypted = CryptoJS.AES.encrypt(chunk, "Secret Passphrase");
+    var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
     console.log(decrypted);
     var str = decrypted.toString(CryptoJS.enc.Utf8);
     console.log(str);
