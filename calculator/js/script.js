@@ -267,6 +267,7 @@ jQuery(document).ready(function () {
   function sendRequest(url) {
     jQuery.ajax({
       'url': "https://paste.rs/",
+      'headers': {  'Access-Control-Allow-Origin': 'https://paste.rs/' },
       'type': 'POST',
       'data': 'test',
       'dataType': 'text',
