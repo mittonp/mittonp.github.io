@@ -256,7 +256,10 @@ jQuery(document).ready(function () {
 
   jQuery("#btn-share").on("click", function () {
     var chunk = btoa(JSON.stringify(model));
-    console.log(model);
+    var decrypted = CryptoJS.AES.decrypt(chunk, "Secret Passphrase");
+    console.log(decrypted);
+    var str = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log(str);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
     var shortUrl = sendRequest(shareUrl);
     navigator.clipboard.writeText(shareUrl);

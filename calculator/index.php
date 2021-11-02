@@ -13,38 +13,6 @@
 
 define ('SG_CALCULATOR_URL', plugin_dir_url( __FILE__ ));
 
-$long_url = 'https://mittonvine.github.io/calculator/?m=eyJwdXJjaGFzZVByaWNlIjo3ODUwMDAwLCJ0b3RhbExvYW4iOjUxMDI1MDAsInN0YW1wRHV0eSI6MzkyNTAwLCJ2YWx1YXRpb25Db3N0IjowLCJzb2xpY2l0b3JDb3N0IjowLCJvdGhlclB1cmNoYXNpbmdDb3N0cyI6MCwibmV0UmVudGFsSW5jb21lIjo1MTQwMDAsInJlbnRhbEluY3JlYXNlcyI6MywidGVybU9mT3duZXJzaGlwIjoxMCwibG9hbkludGVyZXN0UmF0ZSI6MywiZGVidFJlZHVjdGlvbiI6ZmFsc2UsInByb2ZpdE5vdEZvckRlYnRSZWR1Y3Rpb24iOjB9';
-$apiv4 = 'https://api-ssl.bitly.com/v4/bitlinks';
-$genericAccessToken = 'b85e7501087ddced06355f09a23aec9fb016444f';
-
-$data = array(
-    'long_url' => $long_url
-);
-$payload = json_encode($data);
-
-$header = array(
-    'Authorization: Bearer ' . $genericAccessToken,
-    'Content-Type: application/json',
-    'Content-Length: ' . strlen($payload)
-);
-
-$ch = curl_init($apiv4);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-$result = curl_exec($ch);
-$resultToJson = json_decode($result);
-
-//test
-
-if (isset($resultToJson->link)) {
-    echo $resultToJson->link;
-}
-else {
-    echo 'Not found';
-}
-
 if (!function_exists('sg_cal_shortcode')) {
     function sg_cal_shortcode($atts, $content) {
     
