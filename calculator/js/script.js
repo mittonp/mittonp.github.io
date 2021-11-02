@@ -265,7 +265,7 @@ jQuery(document).ready(function () {
 
   })
 
-  const ENDPOINT = 'https://api.npoint.io/be2c8a001c697b5a5ce8';
+  const ENDPOINT = 'https://www.jsonstore.io/b7500b390a31a7fdc2bde29c94607fda2a38bcc19368e99835309de795232577';
   const URL_REGEXP = new RegExp("^(http|https|ftp)://", "i");
 
   function getRandomString() {
