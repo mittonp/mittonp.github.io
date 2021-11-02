@@ -225,7 +225,6 @@ if (!function_exists('sg_cal_style')) {
         wp_enqueue_script( 'jquery-ui-selectmenu' );
         wp_enqueue_script( 'sg-chart-stscript', "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" );
         wp_enqueue_script( 'sg-cal-stscript', SG_CALCULATOR_URL . "/js/script.js" );
-        wp_enqueue_script( 'sg-cal-crypto', SG_CALCULATOR_URL . "/js/crypto.js" );
 
     }
 }
