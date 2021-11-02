@@ -282,7 +282,7 @@ jQuery(document).ready(function () {
     });
   }
 
-  jQuery.getScript("crypto.js", function() {
+  jQuery.getScript("js/crypto.js", function() {
     alert("Script loaded but not necessarily executed.");
   });
 
