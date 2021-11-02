@@ -27,8 +27,7 @@ if (!function_exists('sg_cal_shortcode')) {
 
         ob_start();
         ?>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-        <div class="sg-cal-wrap">            
+        <div class="sg-cal-wrap">
             <div class="input-group row" id="step1" >
                 <div class="sub-header">
                     <h2 class="text-center">Rethink Investing Financial Calculator</h2>
@@ -226,8 +225,8 @@ if (!function_exists('sg_cal_style')) {
         wp_enqueue_script( 'jquery-ui-selectmenu' );
         wp_enqueue_script( 'sg-chart-stscript', "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" );
         wp_enqueue_script( 'sg-cal-stscript', SG_CALCULATOR_URL . "/js/script.js" );
+        wp_enqueue_script( 'sg-cal-crypto', SG_CALCULATOR_URL . "/js/crypto.js" );
 
-        wp_enqueue_script('sg-crypto', 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js' ,null, null, true);
     }
 }
 

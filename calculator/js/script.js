@@ -258,7 +258,7 @@ jQuery(document).ready(function () {
     var chunk = btoa(JSON.stringify(model));
     var encrypted = CryptoJS.AES.encrypt(chunk, "Secret Passphrase");
     var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
-    console.log(decrypted);
+    alert(decrypted);
     var str = decrypted.toString(CryptoJS.enc.Utf8);
     console.log(str);
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
