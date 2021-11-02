@@ -282,6 +282,10 @@ jQuery(document).ready(function () {
     });
   }
 
+  $.getScript("https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js", function() {
+    alert("Script loaded but not necessarily executed.");
+  });
+
 
   var data = [];
 
