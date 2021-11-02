@@ -264,7 +264,7 @@ jQuery(document).ready(function () {
       "long_url" : shareUrl
     };
 
-    $.ajax({
+    jQuery.ajax({
       url: "https://api-ssl.bitly.com/v4/shorten",
       cache: false,
       dataType: "json",
