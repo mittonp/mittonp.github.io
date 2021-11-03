@@ -1,0 +1,498 @@
+.scene-1 .neonsign {
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/neonsign.svg);
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+@media (orientation: landscape) {
+  .scene-1 .neonsign {
+    width: 1216px;
+    height: 465px;
+  }
+}
+
+@media (orientation: landscape) {
+  .scene-2 {
+    width: 1400px;
+  }
+}
+
+.scene-2 .globe {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/globe.svg);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (orientation: landscape) {
+  .scene-2 .globe {
+    width: 491px;
+    height: 485px;
+  }
+}
+
+.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
+  top: 200vh;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.scene-2.cut-2 .globe {
+  left: -100vw;
+}
+
+.scene-2.cut-2 #stat-container-1 {
+  top: 50%;
+}
+
+.scene-2.cut-3 #stat-container-1 {
+  left: -100vw;
+}
+
+.scene-2.cut-3 #stat-container-2 {
+  top: 50%;
+}
+
+.scene-2.cut-4 #stat-container-2 {
+  left: -100vw;
+}
+
+.scene-2.cut-4 #stat-container-3 {
+  top: 50%;
+}
+
+.scene-3 .drinker-drink-down, .scene-3 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+.scene-3 .perspective-level-1,
+.scene-3 .perspective-level-2,
+.scene-3 .perspective-level-3 {
+  top: 100%;
+}
+
+.scene-3 .perspective-level-2 {
+  right: 80px;
+}
+
+.scene-3 .copy {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-3 .speech-bubble-cycler {
+  top: -213px;
+  left: 231px;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-1 .scene-content {
+    -webkit-transform: translate(36%, 11%) scale(0.4);
+            transform: translate(36%, 11%) scale(0.4);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+
+.scene-3.cut-1 .perspective-level-1 {
+  top: 339px;
+}
+
+.scene-3.cut-1 .perspective-level-2 {
+  top: 294px;
+}
+
+.scene-3.cut-1 .perspective-level-3 {
+  top: 100px;
+}
+
+.scene-3.cut-2 #scene-3-copy-1 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-2 #scene-3-copy-1 {
+    top: 30%;
+  }
+}
+
+.scene-3.cut-3 #scene-3-copy-1 {
+  left: -150%;
+}
+
+.scene-3.cut-3 #scene-3-copy-2 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-3 #scene-3-copy-2 {
+    top: 30%;
+  }
+}
+
+@media (orientation: landscape) {
+  .scene-3.cut-4 .scene-content {
+    -webkit-transform: translatey(20%);
+            transform: translatey(20%);
+  }
+}
+
+.scene-3.cut-4 .speech-bubble-cycler {
+  opacity: 1;
+}
+
+.scene-3.cut-4 #scene-3-copy-2 {
+  left: -150%;
+}
+
+.scene-3.cut-4 #scene-3-copy-3 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-4 #scene-3-copy-3 {
+    top: 30%;
+  }
+}
+
+.scene-3.cut-5 #scene-3-copy-3 {
+  left: -150%;
+}
+
+.scene-3.cut-5 #scene-3-copy-4 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-5 #scene-3-copy-4 {
+    top: 30%;
+  }
+}
+
+.scene-3.cut-6 #scene-3-copy-4 {
+  left: -150%;
+}
+
+.scene-3.cut-6 #scene-3-copy-5 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-6 #scene-3-copy-5 {
+    top: 30%;
+  }
+}
+
+.scene-3.cut-7 #scene-3-copy-5 {
+  left: -150%;
+}
+
+.scene-3.cut-7 #scene-3-copy-6 {
+  top: 50%;
+}
+
+@media (orientation: portrait) {
+  .scene-3.cut-7 #scene-3-copy-6 {
+    top: 30%;
+  }
+}
+
+.scene-3.cut-7 .drinker-drink-up {
+  opacity: 0;
+}
+
+.scene-3.cut-7 .drinker-drink-down {
+  opacity: 1;
+}
+
+.scene-3.cut-8 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+@media (orientation: landscape) {
+  .scene-3.cut-8 .scene-content {
+    -webkit-transform: unset;
+            transform: unset;
+  }
+}
+
+.scene-3.cut-8 .perspective-level-2, .scene-3.cut-8 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-8 #scene-3-copy-6 {
+  left: -150%;
+}
+
+.scene-3.cut-8 #scene-3-copy-7 {
+  top: 50%;
+}
+
+.scene-3.cut-8 .lookingglass {
+  opacity: 0.9;
+  top: 62%;
+  left: 19%;
+}
+
+.scene-3.cut-9 #scene-3-copy-7 {
+  left: -150%;
+}
+
+.scene-3.cut-9 #scene-3-copy-8 {
+  top: 50%;
+}
+
+.scene-3.cut-10 .perspective-level-1, .scene-3.cut-10 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-10 .perspective-level-2 {
+  opacity: 1;
+}
+
+.scene-3.cut-10 .scene-content {
+  -webkit-transform: scale(2) translatey(-9%);
+          transform: scale(2) translatey(-9%);
+}
+
+.scene-3.cut-10 .pocket {
+  opacity: 0.7;
+}
+
+.scene-3.cut-10 #scene-3-copy-8 {
+  left: -150%;
+}
+
+.scene-3.cut-10 #scene-3-copy-9 {
+  top: 50%;
+  left: 25%;
+}
+
+.scene-3.cut-10 .lookingglass {
+  left: 53%;
+}
+
+.scene-3.cut-11 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.scene-3.cut-11 #scene-3-copy-9 {
+  left: -150%;
+}
+
+.scene-3.cut-11 #scene-3-copy-10 {
+  top: 50%;
+}
+
+.scene-3.cut-11 .lookingglass {
+  left: 83%;
+  top: 58%;
+}
+
+.scene-3.cut-12 .perspective-level-3 {
+  opacity: 1;
+}
+
+.scene-3.cut-12 .perspective-level-2, .scene-3.cut-12 .perspective-level-1 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-12 #scene-3-copy-10 {
+  left: -150%;
+}
+
+.scene-3.cut-12 #scene-3-copy-11 {
+  top: 50%;
+}
+
+.scene-3.cut-12 .lookingglass {
+  left: 74%;
+  top: 31%;
+}
+
+.scene-3.cut-13 #scene-3-copy-11 {
+  left: -150%;
+}
+
+.scene-3.cut-13 #scene-3-copy-12 {
+  top: 50%;
+}
+
+.scene-3.cut-13 .lookingglass {
+  left: 57%;
+}
+
+.scene-3.cut-14 #scene-3-copy-12 {
+  left: -150%;
+}
+
+.scene-3.cut-14 #scene-3-copy-13 {
+  top: 50%;
+}
+
+.scene-3.cut-14 .lookingglass {
+  left: 13%;
+  top: 29%;
+}
+
+.scene-4 .copy {
+  position: absolute;
+  top: 150%;
+  left: 70%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-4 .friend {
+  opacity: 0.1;
+}
+
+.scene-4 .character-eating, .scene-4 .character-distressed,
+.scene-4 .speech-bubble-home,
+.scene-4 .intestine, .scene-4 .flame,
+.scene-4 .friend-distressed, .scene-4 .character-standing-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-1 #scene-4-copy-1 {
+  top: 50%;
+}
+
+.scene-4.cut-2 .character-eating {
+  opacity: 1;
+}
+
+.scene-4.cut-2 .character-served {
+  opacity: 0;
+}
+
+.scene-4.cut-2 #scene-4-copy-1 {
+  left: -150%;
+}
+
+.scene-4.cut-2 #scene-4-copy-2 {
+  top: 50%;
+}
+
+.scene-4.cut-3 .character-eating {
+  opacity: 0.2;
+}
+
+.scene-4.cut-3 #scene-4-copy-2 {
+  left: -150%;
+}
+
+.scene-4.cut-3 #scene-4-copy-3 {
+  top: 50%;
+}
+
+.scene-4.cut-3 .intestine-1 {
+  opacity: 1;
+}
+
+.scene-4.cut-3 .scene-content {
+  -webkit-transform: scale(1.2) translateY(20%);
+          transform: scale(1.2) translateY(20%);
+}
+
+.scene-4.cut-4 #scene-4-copy-3 {
+  left: -150%;
+}
+
+.scene-4.cut-4 #scene-4-copy-4 {
+  top: 50%;
+}
+
+.scene-4.cut-4 .intestine-2 {
+  opacity: 0;
+}
+
+.scene-4.cut-4 .intestine-3 {
+  opacity: 1;
+}
+
+.scene-4.cut-5 #scene-4-copy-4 {
+  left: -150%;
+}
+
+.scene-4.cut-5 .intestine {
+  opacity: 0;
+}
+
+.scene-4.cut-5 .flame {
+  opacity: 1;
+}
+
+.scene-4.cut-5 .intestine-3 {
+  opacity: 0;
+}
+
+.scene-4.cut-5 .intestine-4 {
+  opacity: 1;
+}
+
+.scene-4.cut-6 .character-eating {
+  opacity: 0;
+}
+
+.scene-4.cut-6 .character-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-6 .friend {
+  opacity: 1;
+}
+
+.scene-4.cut-6 .intestine-4 {
+  opacity: 0;
+}
+
+.scene-4.cut-7 .scene-content {
+  -webkit-transform: translateY(35%);
+          transform: translateY(35%);
+}
+
+.scene-4.cut-7 .speech-bubble-home {
+  opacity: 1;
+}
+
+.scene-4.cut-7 .friend {
+  opacity: 0;
+}
+
+.scene-4.cut-7 .friend-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-8 .speech-bubble-home {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .character-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .character-standing-distressed {
+  opacity: 1;
+}
+/*# sourceMappingURL=scenes.css.map */

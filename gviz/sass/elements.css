@@ -1,0 +1,594 @@
+.front-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.stomach {
+  width: 172px;
+  height: 451px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 286px;
+  left: 940px;
+}
+
+.stomach-1 {
+  background-image: url("../layers/antacid-step-1.svg");
+}
+
+.stomach-2 {
+  background-image: url("../layers/antacid-step-2.svg");
+}
+
+.stomach-3 {
+  background-image: url("../layers/antacid-step-3.svg");
+}
+
+.stomach-4 {
+  background-image: url("../layers/antacid-step-4.svg");
+}
+
+.stomach-5 {
+  background-image: url("../layers/antacid-step-5.svg");
+}
+
+.stomach-6 {
+  background-image: url("../layers/antacid-step-6.svg");
+}
+
+.stomach-7 {
+  background-image: url("../layers/antacid-step-7.svg");
+}
+
+.stomach-8 {
+  background-image: url("../layers/antacid-step-8.svg");
+}
+
+.intestine {
+  width: 149px;
+  height: 391px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 92px;
+  left: 390px;
+}
+
+.intestine-1 {
+  background-image: url("../layers/intestine-1.svg");
+}
+
+.intestine-2 {
+  background-image: url("../layers/intestine-2.svg");
+}
+
+.intestine-3 {
+  background-image: url("../layers/intestine-3.svg");
+}
+
+.intestine-4 {
+  background-image: url("../layers/intestine-4.svg");
+}
+
+.intestine-5 {
+  background-image: url("../layers/intestine-5.svg");
+}
+
+.character-home-waiting {
+  width: 409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("../layers/character-home-waiting.svg");
+}
+
+.character-home-happy {
+  width: 409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("../layers/character-home-happy.svg");
+}
+
+.home-scene {
+  width: 2495px;
+  height: 899px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("../layers/home-scene.svg");
+}
+
+.character-home {
+  background: url("../layers/character-home.svg");
+  width: 412px;
+  height: 1110px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.food-particles {
+  background: url("../layers/food-particles.svg");
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  left: 99px;
+  -webkit-animation-name: swallow;
+          animation-name: swallow;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.red-stuff {
+  background: url("../layers/red-stuff.svg");
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 162px;
+  height: 109px;
+  left: 98px;
+  top: 608px;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.stomach-antacid {
+  position: absolute;
+}
+
+.stomach-antacid .antacid-step {
+  position: absolute;
+  width: 563;
+  height: 1477;
+  background-size: contain;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+.stomach-antacid .antacid-step-1 {
+  background: url("../layers/antacid-step-1.svg");
+  -webkit-animation: appear;
+          animation: appear;
+}
+
+.stomach-antacid .antacid-step-2 {
+  background: url("../layers/antacid-step-2.svg");
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+.stomach-antacid .antacid-step-3 {
+  background: url("../layers/antacid-step-3.svg");
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
+}
+
+.stomach-antacid .antacid-step-4 {
+  background: url("../layers/antacid-step-4.svg");
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+}
+
+.stomach-antacid .antacid-step-5 {
+  background: url("../layers/antacid-step-5.svg");
+  -webkit-animation-delay: 40s;
+          animation-delay: 40s;
+}
+
+.perspective-level-1 {
+  width: 1920px;
+  height: 817px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.perspective-level-2 {
+  background: url("../layers/perspective-level-2.svg");
+  width: 1047px;
+  height: 803px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.pocket {
+  background: url("../layers/pocket.svg");
+  width: 67px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 45%;
+  left: 17%;
+}
+
+.perspective-level-3 {
+  background: url("../layers/perspective-level-3.svg");
+  width: 1814px;
+  height: 484px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.flame {
+  background: url("../layers/flame.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 179px;
+  top: 100px;
+}
+
+.background-static {
+  background: url("../layers/background-static.png");
+  width: 1920px;
+  height: 610px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.drinker-drink-up {
+  background: url("../layers/drinker-drink-up.svg");
+  width: 547px;
+  height: 626px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 183px;
+}
+
+.drinker-drink-down {
+  background: url("../layers/drinker-drink-down.svg");
+  width: 710px;
+  height: 604px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 183px;
+}
+
+.bar-bench {
+  background: url("../layers/bar-bench.svg");
+  width: 1920px;
+  height: 278px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+}
+
+.table-for-two {
+  background: url("../layers/table-for-two.svg");
+  width: 1920px;
+  height: 1595px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+}
+
+.character-served {
+  background: url("../layers/character-served.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -24px;
+  left: 351px;
+}
+
+.character-eating {
+  background: url("../layers/character-eating.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -24px;
+  left: 351px;
+}
+
+.character-distressed {
+  background: url("../layers/character-distressed.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -24px;
+  left: 351px;
+}
+
+.friend {
+  background: url("../layers/friend.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 25px;
+  left: 1019px;
+}
+
+.friend-distressed {
+  background: url("../layers/friend-distressed.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 25px;
+  left: 1019px;
+}
+
+.speech-bubble-home {
+  background: url("../layers/speech-bubble-home.svg");
+  width: 311px;
+  height: 231px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -263px;
+  left: 319px;
+}
+
+.character-standing-distressed {
+  background: url("../layers/character-standing-distressed.svg");
+  width: 439px;
+  height: 1219px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 351px;
+  top: -280px;
+}
+
+.speech-bubble-cycler {
+  width: 182px;
+  height: 247px;
+  position: absolute;
+}
+
+.speech-bubble {
+  width: 182px;
+  height: 247px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  -webkit-animation-name: timeshare;
+          animation-name: timeshare;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+.speech-bubble-spaghetti {
+  background-image: url("../layers/bubble-spaghetti.svg");
+}
+
+.speech-bubble-cheese-burger {
+  background-image: url("../layers/bubble-cheese-burger.svg");
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.speech-bubble-chilly-tacos {
+  background-image: url("../layers/bubble-chilly-tacos.svg");
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.speech-bubble-garlic-bread {
+  background-image: url("../layers/bubble-garlic-bread.svg");
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.speech-bubble-mint-choco {
+  background-image: url("../layers/bubble-mint-choco.svg");
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.speech-bubble-pink-lemonade {
+  background-image: url("../layers/bubble-pink-lemonade.svg");
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.speech-bubble-pizza {
+  background-image: url("../layers/bubble-pizza.svg");
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+@-webkit-keyframes timeshare {
+  5% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+}
+
+@keyframes timeshare {
+  5% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+}
+
+.stat-1 {
+  background-size: contain;
+  content: url(/gviz/layers/stat1.svg);
+  background-repeat: no-repeat;
+}
+
+.stat-2 {
+  background-size: contain;
+  content: url(/gviz/layers/stat2.svg);
+  background-repeat: no-repeat;
+}
+
+.stat-3 {
+  content: url(/gviz/layers/stat3.svg);
+}
+
+.radiating-circle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/radiating-circle.svg);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+.copy {
+  background-color: rgba(8, 5, 62, 0.95);
+  position: absolute;
+  color: white;
+  padding: 25px 23px 50px 30px;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90vw;
+}
+
+@media (orientation: landscape) {
+  .copy {
+    width: 627px;
+    padding: 100px 91px 100px 73px;
+  }
+}
+
+.copy--alt {
+  width: 340px;
+  padding: 32px 23px;
+  text-align: center;
+}
+
+.copy h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+@media (orientation: landscape) {
+  .copy h2 {
+    font-size: 32px;
+  }
+}
+
+.copy p, .copy li {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media (orientation: landscape) {
+  .copy p, .copy li {
+    font-size: 22px;
+  }
+}
+
+.copy .fineprint {
+  font-size: 14px;
+}
+
+.copy ul {
+  -webkit-padding-start: 1em;
+          padding-inline-start: 1em;
+}
+
+.copy--final {
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
+  font-weight: 400;
+  background-color: white;
+  color: #0a0555;
+  height: 80%;
+  border-radius: 30px;
+  border: 15px solid #2f72f4;
+}
+
+.copy--final h2 {
+  color: #ff8a00;
+  font-size: 48px;
+  font-family: 'Frutiger LT Pro 65 Bold';
+}
+
+.copy--final h3 {
+  color: #2f72f4;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: 'Frutiger LT Pro 55 Roman';
+}
+/*# sourceMappingURL=elements.css.map */
