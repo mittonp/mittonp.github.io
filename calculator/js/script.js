@@ -258,12 +258,11 @@ jQuery(document).ready(function () {
   var accessToken = "b85e7501087ddced06355f09a23aec9fb016444f";
 
   jQuery("#btn-share").on("click", function () {
-      let copyUrl = window.location.href;
-//     var chunk = btoa(JSON.stringify(model));
-//     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
-//     var params = {
-//       "long_url" : shareUrl
-//     };
+    var chunk = btoa(JSON.stringify(model));
+    var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
+    var params = {
+      "long_url" : shareUrl
+    };
 
 //     jQuery.ajax({
 //       url: "https://api-ssl.bitly.com/v4/shorten",
@@ -281,7 +280,7 @@ jQuery(document).ready(function () {
 //     }).fail(function(data) {
 //       console.log(data);
 //     });
-      navigator.clipboard.writeText(copyUrl);
+      navigator.clipboard.writeText(params.long_url);
       window.alert("Link copied");
 
   })
