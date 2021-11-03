@@ -258,7 +258,7 @@ jQuery(document).ready(function () {
   var accessToken = "b85e7501087ddced06355f09a23aec9fb016444f";
 
   jQuery("#btn-share").on("click", function () {
-    var url = window.location.href;
+      let copyUrl = window.location.href;
 //     var chunk = btoa(JSON.stringify(model));
 //     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
 //     var params = {
@@ -281,7 +281,7 @@ jQuery(document).ready(function () {
 //     }).fail(function(data) {
 //       console.log(data);
 //     });
-      navigator.clipboard.writeText(url);
+      navigator.clipboard.writeText(copyUrl);
       window.alert("Link copied");
 
   })
