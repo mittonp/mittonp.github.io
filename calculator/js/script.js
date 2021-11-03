@@ -258,29 +258,31 @@ jQuery(document).ready(function () {
   var accessToken = "b85e7501087ddced06355f09a23aec9fb016444f";
 
   jQuery("#btn-share").on("click", function () {
-    var chunk = btoa(JSON.stringify(model));
-    var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
-    var params = {
-      "long_url" : shareUrl
-    };
+    var url = window.location.href;
+//     var chunk = btoa(JSON.stringify(model));
+//     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
+//     var params = {
+//       "long_url" : shareUrl
+//     };
 
-    jQuery.ajax({
-      url: "https://api-ssl.bitly.com/v4/shorten",
-      cache: false,
-      dataType: "json",
-      method: "POST",
-      contentType: "application/json",
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-      },
-      data: JSON.stringify(params)
-    }).done(function(data) {
-      navigator.clipboard.writeText(data.link);
+//     jQuery.ajax({
+//       url: "https://api-ssl.bitly.com/v4/shorten",
+//       cache: false,
+//       dataType: "json",
+//       method: "POST",
+//       contentType: "application/json",
+//       beforeSend: function (xhr) {
+//         xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+//       },
+//       data: JSON.stringify(params)
+//     }).done(function(data) {
+//       navigator.clipboard.writeText(data.link);
+//       window.alert("Link copied");
+//     }).fail(function(data) {
+//       console.log(data);
+//     });
+      navigator.clipboard.writeText(url);
       window.alert("Link copied");
-    }).fail(function(data) {
-      console.log(data);
-    });
-
 
   })
 
