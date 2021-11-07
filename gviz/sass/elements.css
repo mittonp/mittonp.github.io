@@ -353,6 +353,17 @@
   left: 1019px;
 }
 
+.friend-distressed-2 {
+  background: url("../layers/friend-distressed-2.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 25px;
+  left: 1019px;
+}
+
 .speech-bubble-home {
   background: url("../layers/speech-bubble-home.svg");
   width: 311px;
