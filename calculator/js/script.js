@@ -155,7 +155,8 @@ function updateFields() {
     termOfOwnership: termOfOwnership,
     loanInterestRate: loanInterestRate,
     debtReduction: debtReduction,
-    profitNotForDebtReduction: profitNotForDebtReduction
+    profitNotForDebtReduction: profitNotForDebtReduction,
+    totalCashRequired: totalCashRequired,
   }
 
   windowWidth = jQuery(window).width();
@@ -261,27 +262,27 @@ jQuery(document).ready(function () {
     var chunk = btoa(JSON.stringify(model));
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
     var params = {
-      "long_url" : shareUrl
+      "long_url": shareUrl
     };
 
-//     jQuery.ajax({
-//       url: "https://api-ssl.bitly.com/v4/shorten",
-//       cache: false,
-//       dataType: "json",
-//       method: "POST",
-//       contentType: "application/json",
-//       beforeSend: function (xhr) {
-//         xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-//       },
-//       data: JSON.stringify(params)
-//     }).done(function(data) {
-//       navigator.clipboard.writeText(data.link);
-//       window.alert("Link copied");
-//     }).fail(function(data) {
-//       console.log(data);
-//     });
-      navigator.clipboard.writeText(params.long_url);
-      window.alert("Link copied");
+    //     jQuery.ajax({
+    //       url: "https://api-ssl.bitly.com/v4/shorten",
+    //       cache: false,
+    //       dataType: "json",
+    //       method: "POST",
+    //       contentType: "application/json",
+    //       beforeSend: function (xhr) {
+    //         xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+    //       },
+    //       data: JSON.stringify(params)
+    //     }).done(function(data) {
+    //       navigator.clipboard.writeText(data.link);
+    //       window.alert("Link copied");
+    //     }).fail(function(data) {
+    //       console.log(data);
+    //     });
+    navigator.clipboard.writeText(params.long_url);
+    window.alert("Link copied");
 
   })
 
