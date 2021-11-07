@@ -106,9 +106,19 @@
     transform: translate(-50%, -50%);
   }
 
-  .speech-bubble-cycler{
+  .speech-bubble-cycler-1{
     top:-213px;
     left:231px;
+  }
+
+  .speech-bubble-cycler-2{
+    top:-213px;
+    left:1405px;
+  }
+
+  .speech-bubble-cycler-3{
+    top:-28px;
+    left:1592px;
   }
   
   &.cut-1{
@@ -234,6 +244,7 @@
       opacity: 0.9;
       top:62%;
       left:19%;
+      transform: translate(-50%, -50%) scale(2.5);
     }
   
   }
@@ -271,6 +282,7 @@
   
     .lookingglass{
       left:53%;
+      transform: translate(-50%, -50%);
     }
   }
   //Obesity
@@ -361,7 +373,7 @@
   .character-eating, .character-distressed,
   .speech-bubble-home,
   .intestine, .flame,
-  .friend-distressed, .character-standing-distressed{
+  .friend-distressed, .character-standing-distressed, .friend-distressed-2{
     opacity: 0;
   }
 
@@ -477,10 +489,10 @@
     .speech-bubble-home{
       opacity: 0;
     }
-    .character-distressed{
+    .character-distressed, .friend-distressed{
       opacity: 0;
     }
-    .character-standing-distressed{
+    .character-standing-distressed, .friend-distressed-2{
       opacity: 1;
     }
   }
