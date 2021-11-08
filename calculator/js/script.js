@@ -288,8 +288,8 @@ jQuery(document).ready(function () {
   })
 
   function copyToClipboard(url) {
-    var $temp = $("<input>");
-    $("body").append($temp);
+    var $temp = jQuery("<input>");
+    jQuery("body").append($temp);
     $temp.val(url).select();
     document.execCommand("copy");
     $temp.remove();
