@@ -281,11 +281,19 @@ jQuery(document).ready(function () {
     //     }).fail(function(data) {
     //       console.log(data);
     //     });
-    navigator.clipboard.writeText(params.long_url);
+    // navigator.clipboard.writeText(params.long_url);
+    copyToClipboard(params.long_url);
     window.alert("Link copied");
 
   })
 
+  function copyToClipboard(url) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(url).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
 
   var data = [];
 
