@@ -145,27 +145,29 @@ body {
   .scene {
     width: 1920px;
     height: 1080px;
+    -webkit-transform: translate(-50%, -50%) scale(0.76);
+            transform: translate(-50%, -50%) scale(0.76);
   }
 }
 
 @media (orientation: landscape) and (max-width: 1700px) {
   .scene {
-    -webkit-transform: translate(-50%, -50%) scale(0.89);
-            transform: translate(-50%, -50%) scale(0.89);
+    -webkit-transform: translate(-50%, -50%) scale(0.62);
+            transform: translate(-50%, -50%) scale(0.62);
   }
 }
 
 @media (orientation: landscape) and (max-width: 1400px) {
   .scene {
-    -webkit-transform: translate(-50%, -50%) scale(0.73);
-            transform: translate(-50%, -50%) scale(0.73);
+    -webkit-transform: translate(-50%, -50%) scale(0.53);
+            transform: translate(-50%, -50%) scale(0.53);
   }
 }
 
 @media (orientation: landscape) and (max-width: 1200px) {
   .scene {
-    -webkit-transform: translate(-50, -50%) scale(0.625);
-            transform: translate(-50, -50%) scale(0.625);
+    -webkit-transform: translate(-50, -50%) scale(0.425);
+            transform: translate(-50, -50%) scale(0.425);
   }
 }
 

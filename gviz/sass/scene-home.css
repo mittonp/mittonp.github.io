@@ -1,3 +1,7 @@
+.scene-home .character-home-waiting, .scene-home .character-home-hangs-head, .scene-home .medicine-thought-bubble, .scene-home .character-home-taking-meds {
+  opacity: 0;
+}
+
 .scene-home .copy {
   left: 50%;
   top: 150%;
@@ -27,53 +31,49 @@
   opacity: 0;
 }
 
-.scene-home.cut-2 .scene-content {
-  -webkit-transform: scale(1.5) translateY(15%);
-          transform: scale(1.5) translateY(15%);
+.scene-home.cut-2 .character-home-sad {
+  opacity: 0;
 }
 
-.scene-home.cut-2 .character-home {
-  opacity: 0.5;
-}
-
-.scene-home.cut-2 .stomach-1 {
+.scene-home.cut-2 .character-home-hangs-head {
   opacity: 1;
-}
-
-.scene-home.cut-3 .scene-content {
-  -webkit-transform: scale(1.5) translateY(15%) translatex(-15%);
-          transform: scale(1.5) translateY(15%) translatex(-15%);
 }
 
 .scene-home.cut-3 .character-home {
   opacity: 0;
 }
 
-.scene-home.cut-3 .stomach-1 {
-  opacity: 0;
-}
-
-.scene-home.cut-3 .stomach-2 {
-  opacity: 1;
-}
-
 .scene-home.cut-3 #scene-home-copy-1 {
   top: 50%;
 }
 
-.scene-home.cut-4 .stomach-2 {
-  opacity: 0;
+.scene-home.cut-4 .scene-content {
+  -webkit-transform: translatey(300px);
+          transform: translatey(300px);
 }
 
-.scene-home.cut-4 .stomach-3 {
+.scene-home.cut-4 #scene-home-copy-1 {
+  left: -50%;
+}
+
+.scene-home.cut-4 .medicine-thought-bubble {
   opacity: 1;
 }
 
-.scene-home.cut-5 .stomach-3 {
+.scene-home.cut-5 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.scene-home.cut-5 .medicine-thought-bubble {
   opacity: 0;
 }
 
-.scene-home.cut-5 .stomach-4 {
+.scene-home.cut-5 .character-home-hangs-head {
+  opacity: 0;
+}
+
+.scene-home.cut-5 .character-home-taking-meds {
   opacity: 1;
 }
 

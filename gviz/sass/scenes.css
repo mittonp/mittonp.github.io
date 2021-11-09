@@ -61,12 +61,24 @@
   top: 50%;
 }
 
+.scene-2.cut-2 #footnote-1 {
+  display: block;
+}
+
 .scene-2.cut-3 #stat-container-1 {
   left: -100vw;
 }
 
 .scene-2.cut-3 #stat-container-2 {
   top: 50%;
+}
+
+.scene-2.cut-3 #footnote-1 {
+  display: none;
+}
+
+.scene-2.cut-3 #footnote-2 {
+  display: block;
 }
 
 .scene-2.cut-4 #stat-container-2 {
@@ -384,7 +396,7 @@
 .scene-4 .character-eating, .scene-4 .character-distressed,
 .scene-4 .speech-bubble-home,
 .scene-4 .intestine, .scene-4 .flame,
-.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2 {
+.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward {
   opacity: 0;
 }
 
@@ -400,28 +412,20 @@
   opacity: 0;
 }
 
-.scene-4.cut-2 #scene-4-copy-1 {
-  left: -150%;
-}
-
-.scene-4.cut-2 #scene-4-copy-2 {
-  top: 50%;
-}
-
 .scene-4.cut-3 .character-eating {
   opacity: 0.2;
 }
 
-.scene-4.cut-3 #scene-4-copy-2 {
+.scene-4.cut-3 #scene-4-copy-1 {
   left: -150%;
 }
 
-.scene-4.cut-3 #scene-4-copy-3 {
+.scene-4.cut-3 #scene-4-copy-2 {
   top: 50%;
 }
 
-.scene-4.cut-3 .intestine-1 {
-  opacity: 1;
+.scene-4.cut-3 .intestine-food-in-throat {
+  opacity: 0.5;
 }
 
 .scene-4.cut-3 .scene-content {
@@ -429,84 +433,142 @@
           transform: scale(1.2) translateY(20%);
 }
 
-.scene-4.cut-4 #scene-4-copy-3 {
+.scene-4.cut-4 .intestine-food-in-throat {
+  opacity: 0;
+}
+
+.scene-4.cut-4 .intestine-food-entering-stomach {
+  opacity: 1;
+}
+
+.scene-4.cut-5 .intestine-food-entering-stomach {
+  opacity: 0;
+}
+
+.scene-4.cut-5 .intestine-blue-red-bubbles {
+  opacity: 1;
+}
+
+.scene-4.cut-6 .intestine-blue-red-bubbles {
+  opacity: 0;
+}
+
+.scene-4.cut-6 .intestine-red {
+  opacity: 1;
+}
+
+.scene-4.cut-7 .intestine-red {
+  opacity: 0;
+}
+
+.scene-4.cut-7 .intestine-red-and-filling {
+  opacity: 1;
+}
+
+.scene-4.cut-8 .intestine-red-and-filling {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .intestine-with-flame {
+  opacity: 1;
+}
+
+.scene-4.cut-9 #scene-4-copy-2 {
   left: -150%;
 }
 
-.scene-4.cut-4 #scene-4-copy-4 {
+.scene-4.cut-9 #scene-4-copy-3 {
   top: 50%;
 }
 
-.scene-4.cut-4 .intestine-2 {
-  opacity: 0;
-}
-
-.scene-4.cut-4 .intestine-3 {
-  opacity: 1;
-}
-
-.scene-4.cut-5 #scene-4-copy-4 {
+.scene-4.cut-11 #scene-4-copy-3 {
   left: -150%;
 }
 
-.scene-4.cut-5 .intestine {
+.scene-4.cut-11 #scene-4-copy-4 {
+  top: 50%;
+}
+
+.scene-4.cut-12 #scene-4-copy-4 {
+  left: -150%;
+}
+
+.scene-4.cut-12 .character-eating {
   opacity: 0;
 }
 
-.scene-4.cut-5 .flame {
+.scene-4.cut-12 .character-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-5 .intestine-3 {
+.scene-4.cut-12 .friend {
+  opacity: 1;
+}
+
+.scene-4.cut-12 .intestine-with-flame {
   opacity: 0;
 }
 
-.scene-4.cut-5 .intestine-4 {
-  opacity: 1;
-}
-
-.scene-4.cut-6 .character-eating {
+.scene-4.cut-13 .character-distressed {
   opacity: 0;
 }
 
-.scene-4.cut-6 .character-distressed {
+.scene-4.cut-13 .character-leans-forward {
   opacity: 1;
 }
 
-.scene-4.cut-6 .friend {
-  opacity: 1;
-}
-
-.scene-4.cut-6 .intestine-4 {
-  opacity: 0;
-}
-
-.scene-4.cut-7 .scene-content {
+.scene-4.cut-13 .scene-content {
   -webkit-transform: translateY(35%);
           transform: translateY(35%);
 }
 
-.scene-4.cut-7 .speech-bubble-home {
-  opacity: 1;
-}
-
-.scene-4.cut-7 .friend {
+.scene-4.cut-13 .friend {
   opacity: 0;
 }
 
-.scene-4.cut-7 .friend-distressed {
+.scene-4.cut-13 .friend-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-8 .speech-bubble-home {
+.scene-4.cut-14 .character-leans-forward {
   opacity: 0;
 }
 
-.scene-4.cut-8 .character-distressed, .scene-4.cut-8 .friend-distressed {
-  opacity: 0;
-}
-
-.scene-4.cut-8 .character-standing-distressed, .scene-4.cut-8 .friend-distressed-2 {
+.scene-4.cut-14 .character-distressed {
   opacity: 1;
+}
+
+.scene-4.cut-14 .speech-bubble-home {
+  opacity: 1;
+}
+
+.scene-4.cut-15 .speech-bubble-home {
+  opacity: 0;
+}
+
+.scene-4.cut-15 .friend-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-15 .character-distressed {
+  -webkit-animation-name: standUp;
+          animation-name: standUp;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.scene-4.cut-15 .friend-distressed-2 {
+  opacity: 1;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 133px;
+  color: white;
+  display: none;
 }
 /*# sourceMappingURL=scenes.css.map */
