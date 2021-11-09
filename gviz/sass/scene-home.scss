@@ -1,5 +1,9 @@
 .scene-home{
 
+  .character-home-waiting, .character-home-hangs-head, .medicine-thought-bubble, .character-home-taking-meds{
+    opacity:0;
+  }
+
   .copy{
     left:50%;
     top:150%;
@@ -27,50 +31,59 @@
     opacity: 0;
   }
   
+  //go closer, advance clock, hang head
   &.cut-2{
-    .scene-content{
-      transform: scale(1.5) translateY(15%);
+    .character-home-sad{
+      opacity:0;
     }
-    .character-home{
-      opacity:0.5;
-    }
-    .stomach-1{
+
+    .character-home-hangs-head{
       opacity: 1;
     }
+
   }
   
+  //display copy how to relieve
   &.cut-3{
-    .scene-content{
-      transform: scale(1.5) translateY(15%) translatex(-15%);
-    }
     .character-home{
       opacity: 0;
     }
-    .stomach-1{
-      opacity:0;
-    }
-    .stomach-2{
-      opacity:1;
-    }
+
     #scene-home-copy-1{
       top:50%;
     }
   }
   
+  //medicine thought bubble appears, copy moves out
   &.cut-4{
-    .stomach-2{
-      opacity:0;
+    .scene-content{
+      transform: translatey(300px);
     }
-    .stomach-3{
-      opacity:1;
+    #scene-home-copy-1{
+      left:-50%;
+    }
+
+    .medicine-thought-bubble{
+      opacity: 1;
     }
   }
+
+  //thought bubble goes away, he takes his meds
   &.cut-5{
-    .stomach-3{
-      opacity:0;
+
+    .scene-content{
+      transform: unset;
     }
-    .stomach-4{
-      opacity:1;
+
+    .medicine-thought-bubble{
+      opacity: 0;
+    }
+    .character-home-hangs-head{
+      opacity: 0;
+    }
+
+    .character-home-taking-meds{
+      opacity: 1;
     }
   }
   &.cut-6{

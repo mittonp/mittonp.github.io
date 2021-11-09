@@ -58,24 +58,46 @@
   left: 390px;
 }
 
-.intestine-1 {
-  background-image: url("../layers/intestine-1.svg");
+.intestine-food-in-throat {
+  background-image: url("../layers/intestine-food-in-throat.png");
 }
 
-.intestine-2 {
-  background-image: url("../layers/intestine-2.svg");
+.intestine-food-entering-stomach {
+  background-image: url("../layers/intestine-food-entering-stomach.svg");
 }
 
-.intestine-3 {
-  background-image: url("../layers/intestine-3.svg");
+.intestine-blue-red-bubbles {
+  background-image: url("../layers/intestine-blue-red-bubbles.svg");
 }
 
-.intestine-4 {
-  background-image: url("../layers/intestine-4.svg");
+.intestine-red {
+  background-image: url("../layers/intestine-red.svg");
 }
 
-.intestine-5 {
-  background-image: url("../layers/intestine-5.svg");
+.intestine-red-and-filling {
+  background-image: url("../layers/intestine-red-and-filling.svg");
+}
+
+.intestine-with-flame {
+  background-image: url("../layers/intestine-with-flame.svg");
+}
+
+.character-home-sad {
+  width: 409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("../layers/character-home-sad.svg");
+}
+
+.character-home-hangs-head {
+  width: 412px;
+  height: 1110px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url("../layers/character-home-hangs-head.svg");
 }
 
 .character-home-waiting {
@@ -105,7 +127,7 @@
   background: url("../layers/home-scene.svg");
 }
 
-.character-home {
+.character-home-taking-meds {
   background: url("../layers/character-home.svg");
   width: 412px;
   height: 1110px;
@@ -320,8 +342,8 @@
   left: 351px;
 }
 
-.character-distressed {
-  background: url("../layers/character-distressed.svg");
+.character-leans-forward {
+  background: url("../layers/character-leans-forward.svg");
   width: 560px;
   height: 958px;
   background-repeat: no-repeat;
@@ -375,8 +397,18 @@
   left: 319px;
 }
 
+.medicine-thought-bubble {
+  background: url("../layers/medicine-thought-bubble.svg");
+  width: 311px;
+  height: 231px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -250px;
+  left: 843px;
+}
+
 .character-standing-distressed {
-  background: url("../layers/character-standing-distressed.svg");
   width: 439px;
   height: 1219px;
   background-repeat: no-repeat;
@@ -384,6 +416,110 @@
   position: absolute;
   left: 351px;
   top: -280px;
+  background-image: url("../layers/character-standing-distressed.svg");
+}
+
+.character-distressed {
+  background-image: url("../layers/character-distressed.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -24px;
+  left: 351px;
+  -webkit-transition: all 0;
+  transition: all 0;
+}
+
+@-webkit-keyframes standUp {
+  0% {
+    background-image: url("../layers/get-up-1.svg");
+    width: 561px;
+    height: 1025px;
+    left: 351px;
+    top: -25px;
+  }
+  15% {
+    background-image: url("../layers/get-up-2.svg");
+    width: 560px;
+    height: 1120px;
+    left: 351px;
+    top: -88px;
+  }
+  30% {
+    background-image: url("../layers/get-up-3.svg");
+    width: 560px;
+    height: 1120px;
+    left: 351px;
+    top: -186px;
+  }
+  45% {
+    background-image: url("../layers/get-up-4.svg");
+    width: 561px;
+    height: 1199px;
+    left: 349px;
+    top: -266px;
+  }
+  70% {
+    background-image: url("../layers/get-up-5.svg");
+    width: 649px;
+    height: 1265px;
+    left: 303px;
+    top: -330px;
+  }
+  100% {
+    background-image: url("../layers/character-standing-distressed.svg");
+    width: 439px;
+    height: 1219px;
+    left: 351px;
+    top: -280px;
+  }
+}
+
+@keyframes standUp {
+  0% {
+    background-image: url("../layers/get-up-1.svg");
+    width: 561px;
+    height: 1025px;
+    left: 351px;
+    top: -25px;
+  }
+  15% {
+    background-image: url("../layers/get-up-2.svg");
+    width: 560px;
+    height: 1120px;
+    left: 351px;
+    top: -88px;
+  }
+  30% {
+    background-image: url("../layers/get-up-3.svg");
+    width: 560px;
+    height: 1120px;
+    left: 351px;
+    top: -186px;
+  }
+  45% {
+    background-image: url("../layers/get-up-4.svg");
+    width: 561px;
+    height: 1199px;
+    left: 349px;
+    top: -266px;
+  }
+  70% {
+    background-image: url("../layers/get-up-5.svg");
+    width: 649px;
+    height: 1265px;
+    left: 303px;
+    top: -330px;
+  }
+  100% {
+    background-image: url("../layers/character-standing-distressed.svg");
+    width: 439px;
+    height: 1219px;
+    left: 351px;
+    top: -280px;
+  }
 }
 
 .speech-bubble-cycler {

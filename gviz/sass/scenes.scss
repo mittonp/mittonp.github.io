@@ -16,13 +16,11 @@
   }
 }
   
+//Statistics
 .scene-2{
   @media(orientation:landscape){
     width:1400px;
   }
-    
-  
-
   
   .globe{
     width:300px;
@@ -48,6 +46,7 @@
     left:50%;
   }
   
+  // 1 in 5 adults
   &.cut-2{
     .globe{
       left:-100vw;
@@ -55,6 +54,10 @@
 
     #stat-container-1{
       top:50%;
+    }
+
+    #footnote-1{
+      display: block;
     }
   
       
@@ -68,6 +71,13 @@
   
     #stat-container-2{
       top:50%;
+    }
+
+    #footnote-1{
+      display: none;
+    }
+    #footnote-2{
+      display: block;
     }
   }
   
@@ -373,7 +383,7 @@
   .character-eating, .character-distressed,
   .speech-bubble-home,
   .intestine, .flame,
-  .friend-distressed, .character-standing-distressed, .friend-distressed-2{
+  .friend-distressed, .character-standing-distressed, .friend-distressed-2, .character-leans-forward{
     opacity: 0;
   }
 
@@ -387,6 +397,8 @@
       //left:80%;
     }
   }
+
+  //pick up food
   &.cut-2{
     .character-eating{
       opacity: 1;
@@ -394,68 +406,120 @@
     .character-served{
       opacity: 0;
     }
+
+
+  }
+
+  //go closer, food in throat
+  &.cut-3{
+    .character-eating{
+      opacity: 0.2;
+    }
     #scene-4-copy-1{
       left:-150%;
     }
     #scene-4-copy-2{
       top:50%;
-      //left:80%;
-    }
-
-  }
-  &.cut-3{
-    .character-eating{
-      opacity: 0.2;
     }
     #scene-4-copy-2{
-      left:-150%;
+      //left:-150%;
     }
     #scene-4-copy-3{
-      top:50%;
+      //top:50%;
     }
-    .intestine-1{
-      opacity: 1;
+    .intestine-food-in-throat{
+      opacity: 0.5;
     }
     .scene-content{
       transform: scale(1.2) translateY(20%);
     }
   
   }
+
+  //stomach into focus, food entering stomach
   &.cut-4{
+
+    .intestine-food-in-throat{
+      opacity:0;
+    }
+    .intestine-food-entering-stomach{
+      opacity:1;
+    }
+  }
+  
+  //stomach blue, red bubbles
+  &.cut-5{
+
+
+    .intestine-food-entering-stomach{
+      opacity:0;
+    }
+    .intestine-blue-red-bubbles{
+      opacity:1;
+    }
+  }
+
+  //stomach red
+  &.cut-6{
+    .intestine-blue-red-bubbles{
+      opacity:0;
+    }
+    .intestine-red{
+      opacity: 1;
+    }
+  }
+
+  //stomach red and filling up
+  &.cut-7{
+    .intestine-red{
+      opacity: 0;
+    }
+    .intestine-red-and-filling{
+      opacity: 1;
+    }
+  }
+
+  //flame appears
+  &.cut-8{
+    .intestine-red-and-filling{
+      opacity: 0;
+    }
+    .intestine-with-flame{
+      opacity: 1;
+    }
+  }
+
+  //flame glows, show symptoms of reflux copy
+  &.cut-9{
+    #scene-4-copy-2{
+      left:-150%;
+    }
+
+    #scene-4-copy-3{
+      top:50%;
+    }
+  }
+
+  //glow in mouth
+  &.cut-10{
+
+  }
+
+  //show what happens indigestion copy
+  &.cut-11{
     #scene-4-copy-3{
       left:-150%;
     }
     #scene-4-copy-4{
       top:50%;
     }
-    .intestine-2{
-      opacity:0;
-    }
-    .intestine-3{
-      opacity:1;
-    }
   }
-  
-  &.cut-5{
+
+  //table for 2 scene back in focus. Dude is unhappy and has flame on chest
+  &.cut-12{
     #scene-4-copy-4{
       left:-150%;
     }
-    .intestine{
-      opacity: 0;
-    }
-  
-    .flame{
-      opacity: 1;
-    }
-    .intestine-3{
-      opacity:0;
-    }
-    .intestine-4{
-      opacity:1;
-    }
-  }
-
-  &.cut-6{
     .character-eating{
       opacity: 0;
     }
@@ -467,17 +531,24 @@
       opacity: 1;
     }
 
-    .intestine-4{
+    .intestine-with-flame{
       opacity: 0;
     }
   }
-  &.cut-7{
+
+  //dude leans forward, friend distressed 1
+  &.cut-13{
+    .character-distressed{
+      opacity: 0;
+    }
+
+    .character-leans-forward{
+      opacity: 1;
+    }
     .scene-content{
       transform: translateY(35%);
     }
-    .speech-bubble-home{
-      opacity: 1;
-    }
+
     .friend{
       opacity: 0;
     }
@@ -485,15 +556,58 @@
       opacity: 1;
     }
   }
-  &.cut-8{
+
+  //dude leans back, speech bubble home
+  &.cut-14{
+
+    .character-leans-forward{
+      opacity: 0;
+    }
+
+    .character-distressed{
+      opacity: 1;
+    }
+
     .speech-bubble-home{
-      opacity: 0;
-    }
-    .character-distressed, .friend-distressed{
-      opacity: 0;
-    }
-    .character-standing-distressed, .friend-distressed-2{
       opacity: 1;
     }
   }
+
+  //dude stands up, friend distressed 2
+  &.cut-15{
+    .speech-bubble-home{
+      opacity: 0;
+    }
+    .friend-distressed{
+      opacity: 0;
+    }
+    
+    .character-distressed{
+      animation-name: standUp;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .friend-distressed-2{
+      opacity: 1;
+    }
+    .character-standing-distressed{
+
+    }
+  }
+
+  //people disappear, transition to home
+  &.cut-16{
+
+  }
+
+
+}
+
+.footnote{
+  position:absolute;
+  bottom:133px;
+  color:white;
+  display: none;
 }
