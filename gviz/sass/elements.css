@@ -281,6 +281,15 @@
   position: absolute;
 }
 
+.background-static-light-on {
+  background: url("../layers/background-static-light-on.png");
+  width: 1920px;
+  height: 610px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
 .drinker-drink-up {
   background: url("../layers/drinker-drink-up.svg");
   width: 547px;
@@ -677,6 +686,11 @@
     width: 627px;
     padding: 100px 91px 100px 73px;
   }
+}
+
+.copy--time {
+  padding: 20px 80px;
+  width: auto;
 }
 
 .copy--alt {

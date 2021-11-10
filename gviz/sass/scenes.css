@@ -1,3 +1,7 @@
+.scene-above, .scene-below {
+  opacity: 0;
+}
+
 .scene-1 .neonsign {
   width: 300px;
   height: 300px;
@@ -24,6 +28,10 @@
   }
 }
 
+.scene-2 #copy-scene-1-global {
+  top: 150%;
+}
+
 .scene-2 .globe {
   width: 300px;
   height: 300px;
@@ -46,7 +54,7 @@
 }
 
 .scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
-  top: 200vh;
+  top: 150%;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -54,38 +62,61 @@
 }
 
 .scene-2.cut-2 .globe {
-  left: -100vw;
+  left: 20%;
 }
 
-.scene-2.cut-2 #stat-container-1 {
+.scene-2.cut-2 #copy-scene-1-global {
   top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
-.scene-2.cut-2 #footnote-1 {
+.scene-2.cut-2 #footnote-recent-meta {
   display: block;
 }
 
-.scene-2.cut-3 #stat-container-1 {
+.scene-2.cut-3 #footnote-recent-meta {
+  display: none;
+}
+
+.scene-2.cut-3 .globe {
   left: -100vw;
 }
 
-.scene-2.cut-3 #stat-container-2 {
+.scene-2.cut-3 #copy-scene-1-global {
+  left: -100vw;
+}
+
+.scene-2.cut-3 #stat-container-1 {
   top: 50%;
 }
 
 .scene-2.cut-3 #footnote-1 {
-  display: none;
-}
-
-.scene-2.cut-3 #footnote-2 {
   display: block;
 }
 
-.scene-2.cut-4 #stat-container-2 {
+.scene-2.cut-4 #stat-container-1 {
   left: -100vw;
 }
 
-.scene-2.cut-4 #stat-container-3 {
+.scene-2.cut-4 #stat-container-2 {
+  top: 50%;
+}
+
+.scene-2.cut-4 #footnote-1 {
+  display: none;
+}
+
+.scene-2.cut-4 #footnote-2 {
+  display: block;
+}
+
+.scene-2.cut-5 #stat-container-2 {
+  left: -100vw;
+}
+
+.scene-2.cut-5 #stat-container-3 {
   top: 50%;
 }
 
@@ -317,6 +348,10 @@
           transform: translate(-50%, -50%);
 }
 
+.scene-3.cut-11 #footnote-obesity {
+  display: block;
+}
+
 .scene-3.cut-11 .scene-content {
   -webkit-transform: unset;
           transform: unset;
@@ -333,6 +368,14 @@
 .scene-3.cut-11 .lookingglass {
   left: 83%;
   top: 58%;
+}
+
+.scene-3.cut-12 #footnote-obesity {
+  display: none;
+}
+
+.scene-3.cut-12 #footnote-pregnancy {
+  display: block;
 }
 
 .scene-3.cut-12 .perspective-level-3 {
@@ -356,6 +399,10 @@
   top: 31%;
 }
 
+.scene-3.cut-13 #footnote-pregnancy {
+  display: none;
+}
+
 .scene-3.cut-13 #scene-3-copy-11 {
   left: -150%;
 }
@@ -366,6 +413,10 @@
 
 .scene-3.cut-13 .lookingglass {
   left: 57%;
+}
+
+.scene-3.cut-14 #footnote-age {
+  display: block;
 }
 
 .scene-3.cut-14 #scene-3-copy-12 {
@@ -379,6 +430,10 @@
 .scene-3.cut-14 .lookingglass {
   left: 13%;
   top: 29%;
+}
+
+.scene-4 .background-static-light-on {
+  opacity: 0;
 }
 
 .scene-4 .copy {
@@ -542,6 +597,11 @@
   opacity: 1;
 }
 
+.scene-4.cut-15 .scene-content {
+  -webkit-transform-origin: 48% 20%;
+          transform-origin: 48% 20%;
+}
+
 .scene-4.cut-15 .speech-bubble-home {
   opacity: 0;
 }
@@ -565,10 +625,25 @@
   opacity: 1;
 }
 
+.scene-4.cut-16 .scene-content {
+  -webkit-transform: scale(10);
+          transform: scale(10);
+}
+
+.scene-4.cut-16 .background-static {
+  opacity: 0;
+}
+
+.scene-4.cut-16 .background-static-light-on {
+  opacity: 1;
+}
+
 .footnote {
   position: absolute;
-  bottom: 133px;
+  bottom: 0;
   color: white;
   display: none;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
 }
 /*# sourceMappingURL=scenes.css.map */
