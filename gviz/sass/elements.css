@@ -119,12 +119,13 @@
 }
 
 .home-scene {
-  width: 2495px;
-  height: 899px;
+  width: 1920px;
+  height: 426px;
   position: absolute;
+  top: 30%;
   background-size: contain;
   background-repeat: no-repeat;
-  background: url("../layers/home-scene.svg");
+  background: url("../layers/home-background.svg");
 }
 
 .character-home-taking-meds {
