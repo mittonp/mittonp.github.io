@@ -16,7 +16,7 @@
     //top:50%;
   }
 
-  #scene-home-copy-3{
+  #scene-home-copy-4{
     left:20%;
   }
   .stomach{
@@ -86,81 +86,154 @@
       opacity: 1;
     }
   }
+
+  //he fades and we show only the stomach
   &.cut-6{
-    .stomach-4{
-      opacity:0;
+    .scene-content{
+      transform: translate(-21%,31%) scale(2);
     }
-    .stomach-5{
+    .character-home-taking-meds{
+      opacity: 0.1;
+    }
+    .stomach-1{
       opacity:1;
     }
   }
+
+  //copy appears
   &.cut-7{
-    .stomach-5{
-      opacity:0;
-    }
-    .stomach-6{
-      opacity:1;
-    }
-    #scene-home-copy-1{
-      left:150%;
-    }
     #scene-home-copy-2{
       top:50%;
     }
   }
+
+  //meds slide down throat
   &.cut-8{
-    .stomach-6{
+    .stomach-1{
       opacity:0;
     }
-    .stomach-7{
+    .stomach-2{
       opacity:1;
     }
   }
+
+  //meds slide more
   &.cut-9{
-    .stomach-7{
+    .stomach-2{
       opacity:0;
     }
-    .stomach-8{
+    .stomach-3{
       opacity:1;
     }
   }
+
+  //meds inside
   &.cut-10{
+    .stomach-3{
+      opacity:0;
+    }
+
+    .stomach-4{
+      opacity: 1;
+    }
+  }
+
+  //antacid worked
+  &.cut-11{
+    .stomach-4{
+      opacity: 0;
+    }
+    .stomach-5{
+      opacity: 1;
+    }
+  }
+
+  //meds float up, new copy
+  &.cut-12{
+    #scene-home-copy-2{
+      left:-150%;
+    }
+
+    #scene-home-copy-3{
+      top:50%;
+    }
+
+    .stomach-5{
+      opacity: 0;
+    }
+
+    .stomach-6{
+      opacity: 1;
+    }
+  }
+
+  //raft starts to form
+  &.cut-13{
+    .stomach-6{
+      opacity: 0;
+    }
+
+    .stomach-7{
+      opacity: 1;
+    }
+  }
+
+  //raft complete
+  &.cut-14{
+    .stomach-7{
+      opacity: 0;
+    }
+
+    .stomach-8{
+      opacity: 1;
+    }
+  }
+
+  //zoom out and show guy waiting, remove copy
+  //show 1 minute later
+  &.cut-15{
+    .stomach-8{
+      opacity: 0;
+    }
     .scene-content{
       transform: unset;
     }
-      
-    #scene-home-copy-2{
-      left:150%;
-    }
-    .stomach-8{
-      opacity:0;
-    }
-    .character-home-waiting{
-      opacity: 1;
-    }
-  }
-  &.cut-11{
-    .character-home-waiting{
+    .character-home-taking-meds{
       opacity: 0;
     }
-    .character-home-happy{
+    .character-home-waiting{
       opacity: 1;
     }
-
-    #scene-home-copy-3{
-      top:50%;
-    }
-  }
-
-  &.cut-12{
     #scene-home-copy-3{
       left:-150%;
     }
-    #scene-home-copy-final-1{
-      top:50%;
+  }
+
+  //2 minutes later
+  &.cut-16{
+
+  }
+
+  //3 minutes later
+  &.cut-17{
+    
+  }
+
+  //4 minutes later
+  //guy relieved
+  //show meds copy
+  &.cut-18{
+    .character-home-waiting{
+      opacity: 0;
     }
-    .scene-content{
-      opacity: 0.1;
+
+    .character-home-happy{
+      opacity: 1;
     }
+  }
+
+  //start showing final copy
+  &.cut-19{
+
   }
 }
