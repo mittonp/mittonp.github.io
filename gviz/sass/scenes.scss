@@ -1,3 +1,8 @@
+.scene-above,.scene-below{
+  opacity: 0;
+
+}
+
 .scene-1{
   .neonsign {
     width:300px;
@@ -22,6 +27,11 @@
     width:1400px;
   }
   
+  #copy-scene-1-global{
+    top:150%;
+
+  }
+
   .globe{
     width:300px;
     height:300px;
@@ -40,15 +50,43 @@
   }
   
   #stat-container-2, #stat-container-3, #stat-container-1{
-    top:200vh;
+    top:150%;
     position: absolute;
     transform: translate(-50%, -50%);
     left:50%;
   }
-  
-  // 1 in 5 adults
+
+  //only globe
+  &.cut-1{}
+
+  //globe moves a bit, add first copy
+  //footnone-recent-meta-analysis
   &.cut-2{
     .globe{
+      left:20%;
+    }
+    #copy-scene-1-global{
+      top:50%;
+      left:50%;
+      transform: translateY(-50%);
+    }
+
+    #footnote-recent-meta{
+      display: block;
+    }
+  }
+  
+  //move the globe and global copy
+  // 1 in 5 adults
+  &.cut-3{
+    #footnote-recent-meta{
+      display: none;
+    }
+    .globe{
+      left:-100vw;
+    }
+
+    #copy-scene-1-global{
       left:-100vw;
     }
 
@@ -63,7 +101,7 @@
       
   }
   
-  &.cut-3{
+  &.cut-4{
     #stat-container-1{
       left:-100vw;
     }
@@ -81,7 +119,7 @@
     }
   }
   
-  &.cut-4{
+  &.cut-5{
 
     #stat-container-2{
       left:-100vw;
@@ -131,6 +169,7 @@
     left:1592px;
   }
   
+
   &.cut-1{
     @media (orientation:portrait){
       .scene-content{
@@ -150,6 +189,7 @@
     }
   }
   
+  //intro copy what does heartburn feel like
   &.cut-2{
   
     #scene-3-copy-1{
@@ -160,6 +200,7 @@
     }
   }
   
+  //what does indigetstion feel like copy
   &.cut-3{
     #scene-3-copy-1{
       left:-150%;
@@ -171,6 +212,9 @@
       }
     }
   }
+
+  //what's it all about copy
+  //thought bubbles appear
   &.cut-4{
     .scene-content{
       @media (orientation:landscape){
@@ -191,6 +235,8 @@
       }
     }
   }
+
+  //types of food and drink copy -- foods
   &.cut-5{
     #scene-3-copy-3{
       left:-150%;
@@ -202,6 +248,8 @@
       }
     }
   }
+
+  //types of food and drink copy -- drinks
   &.cut-6{
     #scene-3-copy-4{
       left:-150%;
@@ -213,6 +261,8 @@
       }
     }
   }
+
+  //foods and drinks that can trigger indigestion copy
   &.cut-7{
     #scene-3-copy-5{
       left:-150%;
@@ -230,6 +280,7 @@
       opacity: 1;
     }
   }
+  
   //alcohol
   &.cut-8{
     .speech-bubble-cycler{
@@ -296,7 +347,11 @@
     }
   }
   //Obesity
+  //display footnote obesity
   &.cut-11{
+    #footnote-obesity{
+      display: block;
+    }
     .scene-content{
       transform: unset;
     }
@@ -314,7 +369,15 @@
     }
   }
   //Pregnancy
+  //display footnote pregnancy
   &.cut-12{
+    #footnote-obesity{
+      display:none;
+    }
+
+    #footnote-pregnancy{
+      display: block;
+    }
     .perspective-level-3{
       opacity:1;
     }
@@ -336,6 +399,9 @@
   }
   //Genetics
   &.cut-13{
+    #footnote-pregnancy{
+      display: none;
+    }
     #scene-3-copy-11{
       left:-150%;
     }
@@ -349,7 +415,11 @@
     }
   }
   //Age
+  //display footnote age
   &.cut-14{
+    #footnote-age{
+      display: block;
+    }
     #scene-3-copy-12{
       left:-150%;
     }
@@ -368,6 +438,9 @@
   
 //Table for two scene
 .scene-4{
+  .background-static-light-on{
+    opacity: 0;
+  }
   .copy{
     position: absolute;
     top:150%;
@@ -575,6 +648,9 @@
 
   //dude stands up, friend distressed 2
   &.cut-15{
+    .scene-content{
+      transform-origin: 48% 20%;
+    }
     .speech-bubble-home{
       opacity: 0;
     }
@@ -599,7 +675,17 @@
 
   //people disappear, transition to home
   &.cut-16{
+    .scene-content{
+      transform: scale(10);
+    }
 
+    .background-static{
+      opacity: 0;
+    }
+
+    .background-static-light-on{
+      opacity: 1;
+    }
   }
 
 
@@ -607,7 +693,9 @@
 
 .footnote{
   position:absolute;
-  bottom:133px;
+  bottom:0;
   color:white;
   display: none;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
 }
