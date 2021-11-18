@@ -28,7 +28,7 @@
   }
   
   #copy-scene-1-global{
-    top:150%;
+    top:180vh;
 
   }
 
@@ -50,7 +50,7 @@
   }
   
   #stat-container-2, #stat-container-3, #stat-container-1{
-    top:150%;
+    top:180vh;
     position: absolute;
     transform: translate(-50%, -50%);
     left:50%;
@@ -83,11 +83,11 @@
       display: none;
     }
     .globe{
-      left:-100vw;
+      top:-100vh;
     }
 
     #copy-scene-1-global{
-      left:-100vw;
+      top:-100vh;
     }
 
     #stat-container-1{
@@ -103,7 +103,7 @@
   
   &.cut-4{
     #stat-container-1{
-      left:-100vw;
+      top:-100vh;
     }
   
   
@@ -122,7 +122,7 @@
   &.cut-5{
 
     #stat-container-2{
-      left:-100vw;
+      top:-100vh;
     }
   
     #stat-container-3{
@@ -149,7 +149,7 @@
   
   .copy{
     position: absolute;
-    top:150%;
+    top:180vh;
     left:50%;
     transform: translate(-50%, -50%);
   }
@@ -203,7 +203,7 @@
   //what does indigetstion feel like copy
   &.cut-3{
     #scene-3-copy-1{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-2{
       top:50%;
@@ -226,7 +226,7 @@
       opacity: 1;
     }
     #scene-3-copy-2{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-3{
       top:50%;
@@ -239,7 +239,7 @@
   //types of food and drink copy -- foods
   &.cut-5{
     #scene-3-copy-3{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-4{
       top:50%;
@@ -252,7 +252,7 @@
   //types of food and drink copy -- drinks
   &.cut-6{
     #scene-3-copy-4{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-5{
       top:50%;
@@ -265,7 +265,7 @@
   //foods and drinks that can trigger indigestion copy
   &.cut-7{
     #scene-3-copy-5{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-6{
       top:50%;
@@ -296,7 +296,7 @@
       opacity: 0.1;
     }
     #scene-3-copy-6{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-7{
       top:50%;
@@ -312,7 +312,7 @@
   //smoking
   &.cut-9{
     #scene-3-copy-7{
-      left:-150%;
+      top:-100vh;
     }
     #scene-3-copy-8{
       top:50%;
@@ -333,7 +333,7 @@
       opacity:0.7;
     }
     #scene-3-copy-8{
-      left:-150%;
+      top:-100vh;
     }
   
     #scene-3-copy-9{
@@ -356,7 +356,7 @@
       transform: unset;
     }
     #scene-3-copy-9{
-      left:-150%;
+      top:-100vh;
     }
   
     #scene-3-copy-10{
@@ -385,7 +385,7 @@
       opacity: 0.1;
     }
     #scene-3-copy-10{
-      left:-150%;
+      top:-100vh;
     }
   
     #scene-3-copy-11{
@@ -403,7 +403,7 @@
       display: none;
     }
     #scene-3-copy-11{
-      left:-150%;
+      top:-100vh;
     }
   
     #scene-3-copy-12{
@@ -421,7 +421,7 @@
       display: block;
     }
     #scene-3-copy-12{
-      left:-150%;
+      top:-100vh;
     }
   
     #scene-3-copy-13{
@@ -443,7 +443,7 @@
   }
   .copy{
     position: absolute;
-    top:150%;
+    top:180vh;
     left:70%;
     transform: translate(-50%, -50%);
   }
@@ -489,7 +489,7 @@
       opacity: 0.2;
     }
     #scene-4-copy-1{
-      left:-150%;
+      top:-100vh;
     }
     #scene-4-copy-2{
       top:50%;
@@ -565,7 +565,7 @@
   //flame glows, show symptoms of reflux copy
   &.cut-9{
     #scene-4-copy-2{
-      left:-150%;
+      top:-100vh;
     }
 
     #scene-4-copy-3{
@@ -581,7 +581,7 @@
   //show what happens indigestion copy
   &.cut-11{
     #scene-4-copy-3{
-      left:-150%;
+      top:-100vh;
     }
     #scene-4-copy-4{
       top:50%;
@@ -591,7 +591,7 @@
   //table for 2 scene back in focus. Dude is unhappy and has flame on chest
   &.cut-12{
     #scene-4-copy-4{
-      left:-150%;
+      top:-100vh;
     }
     .character-eating{
       opacity: 0;

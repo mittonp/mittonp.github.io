@@ -29,7 +29,7 @@
 }
 
 .scene-2 #copy-scene-1-global {
-  top: 150%;
+  top: 180vh;
 }
 
 .scene-2 .globe {
@@ -54,7 +54,7 @@
 }
 
 .scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
-  top: 150%;
+  top: 180vh;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -81,11 +81,11 @@
 }
 
 .scene-2.cut-3 .globe {
-  left: -100vw;
+  top: -100vh;
 }
 
 .scene-2.cut-3 #copy-scene-1-global {
-  left: -100vw;
+  top: -100vh;
 }
 
 .scene-2.cut-3 #stat-container-1 {
@@ -97,7 +97,7 @@
 }
 
 .scene-2.cut-4 #stat-container-1 {
-  left: -100vw;
+  top: -100vh;
 }
 
 .scene-2.cut-4 #stat-container-2 {
@@ -113,7 +113,7 @@
 }
 
 .scene-2.cut-5 #stat-container-2 {
-  left: -100vw;
+  top: -100vh;
 }
 
 .scene-2.cut-5 #stat-container-3 {
@@ -136,7 +136,7 @@
 
 .scene-3 .copy {
   position: absolute;
-  top: 150%;
+  top: 180vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -189,7 +189,7 @@
 }
 
 .scene-3.cut-3 #scene-3-copy-1 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-3 #scene-3-copy-2 {
@@ -214,7 +214,7 @@
 }
 
 .scene-3.cut-4 #scene-3-copy-2 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-4 #scene-3-copy-3 {
@@ -228,7 +228,7 @@
 }
 
 .scene-3.cut-5 #scene-3-copy-3 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-5 #scene-3-copy-4 {
@@ -242,7 +242,7 @@
 }
 
 .scene-3.cut-6 #scene-3-copy-4 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-6 #scene-3-copy-5 {
@@ -256,7 +256,7 @@
 }
 
 .scene-3.cut-7 #scene-3-copy-5 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-7 #scene-3-copy-6 {
@@ -293,7 +293,7 @@
 }
 
 .scene-3.cut-8 #scene-3-copy-6 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-8 #scene-3-copy-7 {
@@ -309,7 +309,7 @@
 }
 
 .scene-3.cut-9 #scene-3-copy-7 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-9 #scene-3-copy-8 {
@@ -334,7 +334,7 @@
 }
 
 .scene-3.cut-10 #scene-3-copy-8 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-10 #scene-3-copy-9 {
@@ -358,7 +358,7 @@
 }
 
 .scene-3.cut-11 #scene-3-copy-9 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-11 #scene-3-copy-10 {
@@ -387,7 +387,7 @@
 }
 
 .scene-3.cut-12 #scene-3-copy-10 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-12 #scene-3-copy-11 {
@@ -404,7 +404,7 @@
 }
 
 .scene-3.cut-13 #scene-3-copy-11 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-13 #scene-3-copy-12 {
@@ -420,7 +420,7 @@
 }
 
 .scene-3.cut-14 #scene-3-copy-12 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-3.cut-14 #scene-3-copy-13 {
@@ -438,7 +438,7 @@
 
 .scene-4 .copy {
   position: absolute;
-  top: 150%;
+  top: 180vh;
   left: 70%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -472,7 +472,7 @@
 }
 
 .scene-4.cut-3 #scene-4-copy-1 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-4.cut-3 #scene-4-copy-2 {
@@ -529,7 +529,7 @@
 }
 
 .scene-4.cut-9 #scene-4-copy-2 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-4.cut-9 #scene-4-copy-3 {
@@ -537,7 +537,7 @@
 }
 
 .scene-4.cut-11 #scene-4-copy-3 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-4.cut-11 #scene-4-copy-4 {
@@ -545,7 +545,7 @@
 }
 
 .scene-4.cut-12 #scene-4-copy-4 {
-  left: -150%;
+  top: -100vh;
 }
 
 .scene-4.cut-12 .character-eating {
