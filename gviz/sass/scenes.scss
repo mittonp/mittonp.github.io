@@ -456,7 +456,7 @@
   .character-eating, .character-distressed,
   .speech-bubble-home,
   .intestine, .flame,
-  .friend-distressed, .character-standing-distressed, .friend-distressed-2, .character-leans-forward{
+  .friend-distressed, .character-standing-distressed, .friend-distressed-2, .character-leans-forward, .window-lit{
     opacity: 0;
   }
 
@@ -484,7 +484,11 @@
   }
 
   //go closer, food in throat
+  //background fades
   &.cut-3{
+    .background-static{
+      opacity: 0.1;
+    }
     .character-eating{
       opacity: 0.2;
     }
@@ -564,6 +568,12 @@
 
   //flame glows, show symptoms of reflux copy
   &.cut-9{
+    .intestine-with-flame{
+      opacity: 0;
+    }
+    .intestine-with-glowing-flame{
+      opacity: 1;
+    }
     #scene-4-copy-2{
       top:-100vh;
     }
@@ -575,7 +585,12 @@
 
   //glow in mouth
   &.cut-10{
-
+    .intestine-with-glowing-flame{
+      opacity: 0;
+    }
+    .intestine-glow-in-mouth{
+      opacity: 1;
+    }
   }
 
   //show what happens indigestion copy
@@ -590,6 +605,9 @@
 
   //table for 2 scene back in focus. Dude is unhappy and has flame on chest
   &.cut-12{
+    .background-static{
+      opacity: 1;
+    }
     #scene-4-copy-4{
       top:-100vh;
     }
@@ -604,7 +622,7 @@
       opacity: 1;
     }
 
-    .intestine-with-flame{
+    .intestine-glow-in-mouth{
       opacity: 0;
     }
   }
@@ -680,10 +698,14 @@
     }
 
     .background-static{
-      opacity: 0;
+      //opacity: 0;
     }
 
     .background-static-light-on{
+      //opacity: 1;
+    }
+
+    .window-lit{
       opacity: 1;
     }
   }

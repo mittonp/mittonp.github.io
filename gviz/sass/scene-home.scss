@@ -1,6 +1,6 @@
 .scene-home{
 
-  .character-home-waiting, .character-home-hangs-head, .medicine-thought-bubble, .character-home-taking-meds{
+  .character-home-waiting, .character-home-hangs-head, .medicine-thought-bubble, .character-home-taking-meds, .clock--08{
     opacity:0;
   }
 
@@ -43,6 +43,14 @@
     }
 
     .character-home-hangs-head{
+      opacity: 1;
+    }
+
+    .clock--07{
+      opacity: 0;
+    }
+
+    .clock--08{
       opacity: 1;
     }
 
@@ -114,6 +122,9 @@
     }
 
     .home-scene{
+      opacity: 0;
+    }
+    .clock{
       opacity: 0;
     }
     .stomach-1{
@@ -214,6 +225,9 @@
   //show 1 minute later
   &.cut-15{
     .home-scene{
+      opacity: 1;
+    }
+    .clock{
       opacity: 1;
     }
     .stomach-8{

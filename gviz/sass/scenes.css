@@ -451,7 +451,7 @@
 .scene-4 .character-eating, .scene-4 .character-distressed,
 .scene-4 .speech-bubble-home,
 .scene-4 .intestine, .scene-4 .flame,
-.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward {
+.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward, .scene-4 .window-lit {
   opacity: 0;
 }
 
@@ -465,6 +465,10 @@
 
 .scene-4.cut-2 .character-served {
   opacity: 0;
+}
+
+.scene-4.cut-3 .background-static {
+  opacity: 0.1;
 }
 
 .scene-4.cut-3 .character-eating {
@@ -528,6 +532,14 @@
   opacity: 1;
 }
 
+.scene-4.cut-9 .intestine-with-flame {
+  opacity: 0;
+}
+
+.scene-4.cut-9 .intestine-with-glowing-flame {
+  opacity: 1;
+}
+
 .scene-4.cut-9 #scene-4-copy-2 {
   top: -100vh;
 }
@@ -536,12 +548,24 @@
   top: 50%;
 }
 
+.scene-4.cut-10 .intestine-with-glowing-flame {
+  opacity: 0;
+}
+
+.scene-4.cut-10 .intestine-glow-in-mouth {
+  opacity: 1;
+}
+
 .scene-4.cut-11 #scene-4-copy-3 {
   top: -100vh;
 }
 
 .scene-4.cut-11 #scene-4-copy-4 {
   top: 50%;
+}
+
+.scene-4.cut-12 .background-static {
+  opacity: 1;
 }
 
 .scene-4.cut-12 #scene-4-copy-4 {
@@ -560,7 +584,7 @@
   opacity: 1;
 }
 
-.scene-4.cut-12 .intestine-with-flame {
+.scene-4.cut-12 .intestine-glow-in-mouth {
   opacity: 0;
 }
 
@@ -630,11 +654,7 @@
           transform: scale(10);
 }
 
-.scene-4.cut-16 .background-static {
-  opacity: 0;
-}
-
-.scene-4.cut-16 .background-static-light-on {
+.scene-4.cut-16 .window-lit {
   opacity: 1;
 }
 

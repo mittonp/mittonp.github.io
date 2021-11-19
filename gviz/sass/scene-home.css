@@ -1,4 +1,4 @@
-.scene-home .character-home-waiting, .scene-home .character-home-hangs-head, .scene-home .medicine-thought-bubble, .scene-home .character-home-taking-meds {
+.scene-home .character-home-waiting, .scene-home .character-home-hangs-head, .scene-home .medicine-thought-bubble, .scene-home .character-home-taking-meds, .scene-home .clock--08 {
   opacity: 0;
 }
 
@@ -41,6 +41,14 @@
 }
 
 .scene-home.cut-2 .character-home-hangs-head {
+  opacity: 1;
+}
+
+.scene-home.cut-2 .clock--07 {
+  opacity: 0;
+}
+
+.scene-home.cut-2 .clock--08 {
   opacity: 1;
 }
 
@@ -105,6 +113,10 @@
 }
 
 .scene-home.cut-6 .home-scene {
+  opacity: 0;
+}
+
+.scene-home.cut-6 .clock {
   opacity: 0;
 }
 
@@ -181,6 +193,10 @@
 }
 
 .scene-home.cut-15 .home-scene {
+  opacity: 1;
+}
+
+.scene-home.cut-15 .clock {
   opacity: 1;
 }
 

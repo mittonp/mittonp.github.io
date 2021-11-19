@@ -48,6 +48,22 @@
   background-image: url("../layers/antacid-step-8.svg");
 }
 
+.clock {
+  width: 181px;
+  height: 181px;
+  top: -100px;
+  left: 1200px;
+  position: absolute;
+}
+
+.clock--07 {
+  background-image: url("../layers/clock-07.svg");
+}
+
+.clock--08 {
+  background-image: url("../layers/clock-08.svg");
+}
+
 .intestine {
   width: 149px;
   height: 391px;
@@ -82,6 +98,16 @@
   background-image: url("../layers/intestine-with-flame.svg");
 }
 
+.intestine-with-glowing-flame {
+  background-image: url("../layers/intestine-with-glowing-flame.svg");
+}
+
+.intestine-glow-in-mouth {
+  background-image: url("../layers/intestine-glow-in-mouth.svg");
+  top: 82px;
+  height: 399px;
+}
+
 .character-home-sad {
   width: 409px;
   height: 1136px;
@@ -93,7 +119,7 @@
 
 .character-home-hangs-head {
   width: 412px;
-  height: 1110px;
+  height: 1116px;
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
@@ -290,6 +316,16 @@
   position: absolute;
 }
 
+.window-lit {
+  background: url("../layers/window-lit.svg");
+  width: 10px;
+  height: 13px;
+  position: absolute;
+  top: 20.9%;
+  left: 48.1%;
+  background-size: contain;
+}
+
 .drinker-drink-up {
   background: url("../layers/drinker-drink-up.svg");
   width: 547px;
@@ -408,14 +444,14 @@
 }
 
 .medicine-thought-bubble {
-  background: url("../layers/medicine-thought-bubble.svg");
-  width: 311px;
+  background: url("../layers/medicine-thought-bubble.png");
+  width: 237px;
   height: 231px;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   top: -250px;
-  left: 843px;
+  left: 871px;
 }
 
 .character-standing-distressed {
