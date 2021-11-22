@@ -3,8 +3,8 @@
 }
 
 .scene-1 .neonsign {
-  width: 300px;
-  height: 300px;
+  width: 1216px;
+  height: 465px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(/gviz/layers/neonsign.svg);
@@ -15,17 +15,8 @@
   position: absolute;
 }
 
-@media (orientation: landscape) {
-  .scene-1 .neonsign {
-    width: 1216px;
-    height: 465px;
-  }
-}
-
-@media (orientation: landscape) {
-  .scene-2 {
-    width: 1400px;
-  }
+.scene-2 {
+  width: 1400px;
 }
 
 .scene-2 #copy-scene-1-global {
@@ -33,8 +24,8 @@
 }
 
 .scene-2 .globe {
-  width: 300px;
-  height: 300px;
+  width: 491px;
+  height: 485px;
   margin: auto;
   background-size: contain;
   background-repeat: no-repeat;
@@ -44,13 +35,6 @@
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-@media (orientation: landscape) {
-  .scene-2 .globe {
-    width: 491px;
-    height: 485px;
-  }
 }
 
 .scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
@@ -157,15 +141,6 @@
   left: 1592px;
 }
 
-@media (orientation: portrait) {
-  .scene-3.cut-1 .scene-content {
-    -webkit-transform: translate(36%, 11%) scale(0.4);
-            transform: translate(36%, 11%) scale(0.4);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-  }
-}
-
 .scene-3.cut-1 .perspective-level-1 {
   top: 339px;
 }
@@ -182,12 +157,6 @@
   top: 50%;
 }
 
-@media (orientation: portrait) {
-  .scene-3.cut-2 #scene-3-copy-1 {
-    top: 30%;
-  }
-}
-
 .scene-3.cut-3 #scene-3-copy-1 {
   top: -100vh;
 }
@@ -196,17 +165,9 @@
   top: 50%;
 }
 
-@media (orientation: portrait) {
-  .scene-3.cut-3 #scene-3-copy-2 {
-    top: 30%;
-  }
-}
-
-@media (orientation: landscape) {
-  .scene-3.cut-4 .scene-content {
-    -webkit-transform: translatey(20%);
-            transform: translatey(20%);
-  }
+.scene-3.cut-4 .scene-content {
+  -webkit-transform: translatey(20%);
+          transform: translatey(20%);
 }
 
 .scene-3.cut-4 .speech-bubble-cycler {
@@ -221,24 +182,12 @@
   top: 50%;
 }
 
-@media (orientation: portrait) {
-  .scene-3.cut-4 #scene-3-copy-3 {
-    top: 30%;
-  }
-}
-
 .scene-3.cut-5 #scene-3-copy-3 {
   top: -100vh;
 }
 
 .scene-3.cut-5 #scene-3-copy-4 {
   top: 50%;
-}
-
-@media (orientation: portrait) {
-  .scene-3.cut-5 #scene-3-copy-4 {
-    top: 30%;
-  }
 }
 
 .scene-3.cut-6 #scene-3-copy-4 {
@@ -249,24 +198,12 @@
   top: 50%;
 }
 
-@media (orientation: portrait) {
-  .scene-3.cut-6 #scene-3-copy-5 {
-    top: 30%;
-  }
-}
-
 .scene-3.cut-7 #scene-3-copy-5 {
   top: -100vh;
 }
 
 .scene-3.cut-7 #scene-3-copy-6 {
   top: 50%;
-}
-
-@media (orientation: portrait) {
-  .scene-3.cut-7 #scene-3-copy-6 {
-    top: 30%;
-  }
 }
 
 .scene-3.cut-7 .drinker-drink-up {
@@ -281,11 +218,9 @@
   opacity: 0;
 }
 
-@media (orientation: landscape) {
-  .scene-3.cut-8 .scene-content {
-    -webkit-transform: unset;
-            transform: unset;
-  }
+.scene-3.cut-8 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
 }
 
 .scene-3.cut-8 .perspective-level-2, .scene-3.cut-8 .perspective-level-3 {

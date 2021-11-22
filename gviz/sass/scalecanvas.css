@@ -49,6 +49,20 @@ body {
           transform-origin: top;
 }
 
+@media (min-width: 600px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.3);
+            transform: translateX(-50%) scale(0.3);
+  }
+}
+
+@media (min-width: 800px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.4);
+            transform: translateX(-50%) scale(0.4);
+  }
+}
+
 @media (min-width: 1000px) {
   .scene-container {
     -webkit-transform: translateX(-50%) scale(0.5);
@@ -141,39 +155,65 @@ body {
   height: 1080px;
 }
 
-@media (orientation: landscape) {
-  .scene {
-    width: 1920px;
-    height: 1080px;
-    -webkit-transform: translate(-50%, -50%) scale(0.76);
-            transform: translate(-50%, -50%) scale(0.76);
-  }
-}
-
-@media (orientation: landscape) and (max-width: 1700px) {
-  .scene {
-    -webkit-transform: translate(-50%, -50%) scale(0.62);
-            transform: translate(-50%, -50%) scale(0.62);
-  }
-}
-
-@media (orientation: landscape) and (max-width: 1400px) {
-  .scene {
-    -webkit-transform: translate(-50%, -50%) scale(0.53);
-            transform: translate(-50%, -50%) scale(0.53);
-  }
-}
-
-@media (orientation: landscape) and (max-width: 1200px) {
-  .scene {
-    -webkit-transform: translate(-50, -50%) scale(0.425);
-            transform: translate(-50, -50%) scale(0.425);
-  }
-}
-
 .scene div {
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
+}
+
+.scene-scale {
+  position: absolute;
+  -webkit-transform: scale(0.76);
+          transform: scale(0.76);
+  width: 100%;
+  height: 100%;
+}
+
+@media (orientation: portrait) {
+  .scene-scale {
+    top: calc( 100vh - 50%);
+  }
+}
+
+@media (max-width: 1700px) {
+  .scene-scale {
+    -webkit-transform: scale(0.62);
+            transform: scale(0.62);
+  }
+}
+
+@media (max-width: 1400px) {
+  .scene-scale {
+    -webkit-transform: scale(0.53);
+            transform: scale(0.53);
+  }
+}
+
+@media (max-width: 1200px) {
+  .scene-scale {
+    -webkit-transform: scale(0.425);
+            transform: scale(0.425);
+  }
+}
+
+@media (max-width: 1000px) {
+  .scene-scale {
+    -webkit-transform: scale(0.325);
+            transform: scale(0.325);
+  }
+}
+
+@media (max-width: 800px) {
+  .scene-scale {
+    -webkit-transform: scale(0.225);
+            transform: scale(0.225);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-scale {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+  }
 }
 
 .scene-content {
