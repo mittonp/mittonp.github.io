@@ -1,0 +1,616 @@
+.scene-above, .scene-below {
+  opacity: 0;
+}
+
+.scene-1 .neonsign {
+  width: 1216px;
+  height: 465px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/neonsign.svg);
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.scene-2 #copy-scene-1-global {
+  top: 180vh;
+}
+
+.scene-2 .globe {
+  width: 491px;
+  height: 485px;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/globe.svg);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
+  top: 180vh;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.scene-2.cut-2 .globe {
+  left: 20%;
+}
+
+.scene-2.cut-2 #copy-scene-1-global {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.scene-2.cut-2 #footnote-recent-meta {
+  display: block;
+}
+
+.scene-2.cut-3 #footnote-recent-meta {
+  display: none;
+}
+
+.scene-2.cut-3 .globe {
+  top: -100vh;
+}
+
+.scene-2.cut-3 #copy-scene-1-global {
+  top: -100vh;
+}
+
+.scene-2.cut-3 #stat-container-1 {
+  top: 50%;
+}
+
+.scene-2.cut-3 #footnote-1 {
+  display: block;
+}
+
+.scene-2.cut-4 #stat-container-1 {
+  top: -100vh;
+}
+
+.scene-2.cut-4 #stat-container-2 {
+  top: 50%;
+}
+
+.scene-2.cut-4 #footnote-1 {
+  display: none;
+}
+
+.scene-2.cut-4 #footnote-2 {
+  display: block;
+}
+
+.scene-2.cut-5 #stat-container-2 {
+  top: -100vh;
+}
+
+.scene-2.cut-5 #stat-container-3 {
+  top: 50%;
+}
+
+.scene-3 .drinker-drink-down, .scene-3 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+.scene-3 .perspective-level-1,
+.scene-3 .perspective-level-2,
+.scene-3 .perspective-level-3 {
+  top: 100%;
+}
+
+.scene-3 .perspective-level-2 {
+  right: 80px;
+}
+
+.scene-3 .copy {
+  position: absolute;
+  top: 180vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+  .scene-3 .copy {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
+.scene-3 .speech-bubble-cycler-1 {
+  top: -213px;
+  left: 231px;
+}
+
+.scene-3 .speech-bubble-cycler-2 {
+  top: -213px;
+  left: 1405px;
+}
+
+.scene-3 .speech-bubble-cycler-3 {
+  top: -28px;
+  left: 1592px;
+}
+
+.scene-3.cut-1 .perspective-level-1 {
+  top: 339px;
+}
+
+.scene-3.cut-1 .perspective-level-2 {
+  top: 294px;
+}
+
+.scene-3.cut-1 .perspective-level-3 {
+  top: 100px;
+}
+
+.scene-3.cut-2 #scene-3-copy-1 {
+  top: 50%;
+}
+
+.scene-3.cut-3 #scene-3-copy-1 {
+  top: -100vh;
+}
+
+.scene-3.cut-3 #scene-3-copy-2 {
+  top: 50%;
+}
+
+.scene-3.cut-4 .scene-content {
+  -webkit-transform: translatey(20%);
+          transform: translatey(20%);
+}
+
+.scene-3.cut-4 .speech-bubble-cycler {
+  opacity: 1;
+}
+
+.scene-3.cut-4 #scene-3-copy-2 {
+  top: -100vh;
+}
+
+.scene-3.cut-4 #scene-3-copy-3 {
+  top: 50%;
+}
+
+.scene-3.cut-5 #scene-3-copy-3 {
+  top: -100vh;
+}
+
+.scene-3.cut-5 #scene-3-copy-4 {
+  top: 50%;
+}
+
+.scene-3.cut-6 #scene-3-copy-4 {
+  top: -100vh;
+}
+
+.scene-3.cut-6 #scene-3-copy-5 {
+  top: 50%;
+}
+
+.scene-3.cut-7 #scene-3-copy-5 {
+  top: -100vh;
+}
+
+.scene-3.cut-7 #scene-3-copy-6 {
+  top: 50%;
+}
+
+.scene-3.cut-7 .drinker-drink-up {
+  opacity: 0;
+}
+
+.scene-3.cut-7 .drinker-drink-down {
+  opacity: 1;
+}
+
+.scene-3.cut-8 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+.scene-3.cut-8 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.scene-3.cut-8 .perspective-level-2, .scene-3.cut-8 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-8 #scene-3-copy-6 {
+  top: -100vh;
+}
+
+.scene-3.cut-8 #scene-3-copy-7 {
+  top: 50%;
+}
+
+.scene-3.cut-8 .lookingglass {
+  opacity: 0.9;
+  top: 62%;
+  left: 19%;
+  -webkit-transform: translate(-50%, -50%) scale(2.5);
+          transform: translate(-50%, -50%) scale(2.5);
+}
+
+.scene-3.cut-9 #scene-3-copy-7 {
+  top: -100vh;
+}
+
+.scene-3.cut-9 #scene-3-copy-8 {
+  top: 50%;
+}
+
+.scene-3.cut-10 .perspective-level-1, .scene-3.cut-10 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-10 .perspective-level-2 {
+  opacity: 1;
+}
+
+.scene-3.cut-10 .scene-content {
+  -webkit-transform: scale(2) translatey(-9%);
+          transform: scale(2) translatey(-9%);
+}
+
+.scene-3.cut-10 .pocket {
+  opacity: 0.7;
+}
+
+.scene-3.cut-10 #scene-3-copy-8 {
+  top: -100vh;
+}
+
+.scene-3.cut-10 #scene-3-copy-9 {
+  top: 50%;
+  left: 25%;
+}
+
+.scene-3.cut-10 .lookingglass {
+  left: 53%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scene-3.cut-11 #footnote-obesity {
+  display: block;
+}
+
+.scene-3.cut-11 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.scene-3.cut-11 #scene-3-copy-9 {
+  top: -100vh;
+}
+
+.scene-3.cut-11 #scene-3-copy-10 {
+  top: 50%;
+}
+
+.scene-3.cut-11 .lookingglass {
+  left: 83%;
+  top: 58%;
+}
+
+.scene-3.cut-12 #footnote-obesity {
+  display: none;
+}
+
+.scene-3.cut-12 #footnote-pregnancy {
+  display: block;
+}
+
+.scene-3.cut-12 .perspective-level-3 {
+  opacity: 1;
+}
+
+.scene-3.cut-12 .perspective-level-2, .scene-3.cut-12 .perspective-level-1 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-12 #scene-3-copy-10 {
+  top: -100vh;
+}
+
+.scene-3.cut-12 #scene-3-copy-11 {
+  top: 50%;
+}
+
+.scene-3.cut-12 .lookingglass {
+  left: 74%;
+  top: 31%;
+}
+
+.scene-3.cut-13 #footnote-pregnancy {
+  display: none;
+}
+
+.scene-3.cut-13 #scene-3-copy-11 {
+  top: -100vh;
+}
+
+.scene-3.cut-13 #scene-3-copy-12 {
+  top: 50%;
+}
+
+.scene-3.cut-13 .lookingglass {
+  left: 57%;
+}
+
+.scene-3.cut-14 #footnote-age {
+  display: block;
+}
+
+.scene-3.cut-14 #scene-3-copy-12 {
+  top: -100vh;
+}
+
+.scene-3.cut-14 #scene-3-copy-13 {
+  top: 50%;
+}
+
+.scene-3.cut-14 .lookingglass {
+  left: 13%;
+  top: 29%;
+}
+
+.scene-4 .background-static-light-on {
+  opacity: 0;
+}
+
+.scene-4 .copy {
+  position: absolute;
+  top: 180vh;
+  left: 70%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+  .scene-4 .copy {
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
+.scene-4 .friend {
+  opacity: 0.1;
+}
+
+.scene-4 .character-eating, .scene-4 .character-distressed,
+.scene-4 .speech-bubble-home,
+.scene-4 .intestine, .scene-4 .flame,
+.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward, .scene-4 .window-lit {
+  opacity: 0;
+}
+
+.scene-4.cut-1 #scene-4-copy-1 {
+  top: 50%;
+}
+
+.scene-4.cut-2 .character-eating {
+  opacity: 1;
+}
+
+.scene-4.cut-2 .character-served {
+  opacity: 0;
+}
+
+.scene-4.cut-3 .background-static {
+  opacity: 0.1;
+}
+
+.scene-4.cut-3 .character-eating {
+  opacity: 0.2;
+}
+
+.scene-4.cut-3 #scene-4-copy-1 {
+  top: -100vh;
+}
+
+.scene-4.cut-3 #scene-4-copy-2 {
+  top: 50%;
+}
+
+.scene-4.cut-3 .intestine-food-in-throat {
+  opacity: 0.5;
+}
+
+.scene-4.cut-3 .scene-content {
+  -webkit-transform: scale(1.2) translateY(20%);
+          transform: scale(1.2) translateY(20%);
+}
+
+.scene-4.cut-4 .intestine-food-in-throat {
+  opacity: 0;
+}
+
+.scene-4.cut-4 .intestine-food-entering-stomach {
+  opacity: 1;
+}
+
+.scene-4.cut-5 .intestine-food-entering-stomach {
+  opacity: 0;
+}
+
+.scene-4.cut-5 .intestine-blue-red-bubbles {
+  opacity: 1;
+}
+
+.scene-4.cut-6 .intestine-blue-red-bubbles {
+  opacity: 0;
+}
+
+.scene-4.cut-6 .intestine-red {
+  opacity: 1;
+}
+
+.scene-4.cut-7 .intestine-red {
+  opacity: 0;
+}
+
+.scene-4.cut-7 .intestine-red-and-filling {
+  opacity: 1;
+}
+
+.scene-4.cut-8 .intestine-red-and-filling {
+  opacity: 0;
+}
+
+.scene-4.cut-8 .intestine-with-flame {
+  opacity: 1;
+}
+
+.scene-4.cut-9 .intestine-with-flame {
+  opacity: 0;
+}
+
+.scene-4.cut-9 .intestine-with-glowing-flame {
+  opacity: 1;
+}
+
+.scene-4.cut-9 #scene-4-copy-2 {
+  top: -100vh;
+}
+
+.scene-4.cut-9 #scene-4-copy-3 {
+  top: 50%;
+}
+
+.scene-4.cut-10 .intestine-with-glowing-flame {
+  opacity: 0;
+}
+
+.scene-4.cut-10 .intestine-glow-in-mouth {
+  opacity: 1;
+}
+
+.scene-4.cut-11 #scene-4-copy-3 {
+  top: -100vh;
+}
+
+.scene-4.cut-11 #scene-4-copy-4 {
+  top: 50%;
+}
+
+.scene-4.cut-12 .background-static {
+  opacity: 1;
+}
+
+.scene-4.cut-12 #scene-4-copy-4 {
+  top: -100vh;
+}
+
+.scene-4.cut-12 .character-eating {
+  opacity: 0;
+}
+
+.scene-4.cut-12 .character-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-12 .friend {
+  opacity: 1;
+}
+
+.scene-4.cut-12 .intestine-glow-in-mouth {
+  opacity: 0;
+}
+
+.scene-4.cut-13 .character-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-13 .character-leans-forward {
+  opacity: 1;
+}
+
+.scene-4.cut-13 .scene-content {
+  -webkit-transform: translateY(35%);
+          transform: translateY(35%);
+}
+
+.scene-4.cut-13 .friend {
+  opacity: 0;
+}
+
+.scene-4.cut-13 .friend-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-14 .character-leans-forward {
+  opacity: 0;
+}
+
+.scene-4.cut-14 .character-distressed {
+  opacity: 1;
+}
+
+.scene-4.cut-14 .speech-bubble-home {
+  opacity: 1;
+}
+
+.scene-4.cut-15 .scene-content {
+  -webkit-transform-origin: 48% 20%;
+          transform-origin: 48% 20%;
+}
+
+.scene-4.cut-15 .speech-bubble-home {
+  opacity: 0;
+}
+
+.scene-4.cut-15 .friend-distressed {
+  opacity: 0;
+}
+
+.scene-4.cut-15 .character-distressed {
+  -webkit-animation-name: standUp;
+          animation-name: standUp;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.scene-4.cut-15 .friend-distressed-2 {
+  opacity: 1;
+}
+
+.scene-4.cut-16 .scene-content {
+  -webkit-transform: scale(10);
+          transform: scale(10);
+}
+
+.scene-4.cut-16 .window-lit {
+  opacity: 1;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  display: none;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
+  margin: 0 128px;
+}
+/*# sourceMappingURL=scenes.css.map */

@@ -1,0 +1,667 @@
+.front-center{
+  left:50%;
+  position: absolute;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.stomach{
+  width:172px;
+  height: 451px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top:286px;
+  left:940px;
+}
+
+.stomach-1{
+  background-image:url('../layers/antacid-step-1.svg');
+}
+.stomach-2{
+  background-image:url('../layers/antacid-step-2.svg');
+}
+.stomach-3{
+  background-image:url('../layers/antacid-step-3.svg');
+}
+.stomach-4{
+  background-image:url('../layers/antacid-step-4.svg');
+}
+.stomach-5{
+  background-image:url('../layers/antacid-step-5.svg');
+}
+.stomach-6{
+  background-image:url('../layers/antacid-step-6.svg');
+}
+.stomach-7{
+  background-image:url('../layers/antacid-step-7.svg');
+}
+.stomach-8{
+  background-image:url('../layers/antacid-step-8.svg');
+}
+
+.clock{
+  width:181px;
+  height: 181px;
+  top:-100px;
+  left:1200px;
+  position:absolute;
+
+  &--07{
+    background-image:url('../layers/clock-07.svg');
+  }
+
+  &--08{
+    background-image:url('../layers/clock-08.svg');
+  }
+}
+
+
+.intestine{
+  width:149px;
+  height: 391px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top:92px;
+  left:390px;
+}
+
+.intestine-food-in-throat{
+  background-image:url('../layers/intestine-food-in-throat.png');
+}
+
+.intestine-food-entering-stomach{
+  background-image:url('../layers/intestine-food-entering-stomach.svg');
+}
+.intestine-blue-red-bubbles{
+  background-image:url('../layers/intestine-blue-red-bubbles.svg');
+}
+.intestine-red{
+  background-image:url('../layers/intestine-red.svg');
+}
+.intestine-red-and-filling{
+  background-image:url('../layers/intestine-red-and-filling.svg');
+}
+.intestine-with-flame{
+  background-image:url('../layers/intestine-with-flame.svg');
+}
+.intestine-with-glowing-flame{
+  background-image:url('../layers/intestine-with-glowing-flame.svg');
+}
+.intestine-glow-in-mouth{
+  background-image:url('../layers/intestine-glow-in-mouth.svg');
+  top:82px;
+  height: 399px;
+}
+
+
+.character-home-sad{
+  width:409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background:url('../layers/character-home-sad.svg');
+}
+
+.character-home-hangs-head{
+  width:412px;
+  height: 1116px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background:url('../layers/character-home-hangs-head.svg');
+}
+
+.character-home-waiting{
+  width:409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background:url('../layers/character-home-waiting.svg');
+}
+
+.character-home-happy{
+  width:409px;
+  height: 1136px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background:url('../layers/character-home-happy.svg');
+}
+
+.home-scene{
+  width:1920px;
+  height: 426px;
+  position: absolute;
+  top:30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background:url('../layers/home-background.svg');
+}
+
+  
+
+.character-home-taking-meds {
+  background: url("../layers/character-home.svg");
+  width: 412px;
+  height: 1110px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+  
+
+.food-particles{
+  background:url('../layers/food-particles.svg');
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:100px;
+  height: 100px;
+  left:99px;
+  animation-name: swallow;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.red-stuff{
+  background:url('../layers/red-stuff.svg');
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:162px;
+  height: 109px;
+  left:98px;
+  top:608px;
+  animation-name: appear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.stomach-antacid{
+  position: absolute;
+  .antacid-step{
+    position: absolute;
+    width:563;
+    height: 1477;
+    background-size: contain;
+    animation-name:appear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity:0;
+  }
+  .antacid-step-1{
+    background: url("../layers/antacid-step-1.svg");  
+    animation:appear;
+  }
+  .antacid-step-2{
+    background: url("../layers/antacid-step-2.svg"); 
+    animation-delay: 10s; 
+  }
+  .antacid-step-3{
+    background: url("../layers/antacid-step-3.svg");  
+    animation-delay: 20s;
+  }
+  .antacid-step-4{
+    background: url("../layers/antacid-step-4.svg");  
+    animation-delay: 30s;
+  }
+  .antacid-step-5{
+    background: url("../layers/antacid-step-5.svg");  
+    animation-delay: 40s;
+  }
+}
+.perspective-level-1 {
+  //background: url("../layers/perspective-level-1.svg");
+  width: 1920px;
+  height: 817px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.perspective-level-2 {
+  background: url("../layers/perspective-level-2.svg");
+  width: 1047px;
+  height: 803px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.pocket {
+  background: url("../layers/pocket.svg");
+  width: 67px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:45%;
+  left:17%;
+}
+
+.perspective-level-3 {
+  background: url("../layers/perspective-level-3.svg");
+  width: 1814px;
+  height: 484px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+  
+.flame {
+  background: url("../layers/flame.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left:179px;
+  top:100px;
+}
+
+.background-static {
+  background: url("../layers/background-static.png");
+  width: 1920px;
+  height: 610px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+.background-static-light-on {
+  background: url("../layers/background-static-light-on.png");
+  width: 1920px;
+  height: 610px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.window-lit{
+  background: url("../layers/window-lit.svg");
+  width:10px;
+  height:13px;
+  position: absolute;
+  top:20.9%;
+  left:48.1%;
+  background-size: contain;
+}
+
+.drinker-drink-up {
+  background: url("../layers/drinker-drink-up.svg");
+  width: 547px;
+  height: 626px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left:183px;
+}
+.drinker-drink-down {
+  background: url("../layers/drinker-drink-down.svg");
+  width: 710px;
+  height: 604px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left:183px;
+}
+
+.bar-bench {
+  background: url("../layers/bar-bench.svg");
+  width: 1920px;
+  height: 278px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom:0;
+}
+  
+.table-for-two {
+  background: url("../layers/table-for-two.svg");
+  width: 1920px;
+  height: 1595px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom:0;
+}
+  
+.character-served{
+  background: url("../layers/character-served.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-24px;
+  left:351px;
+}
+
+.character-eating{
+  background: url("../layers/character-eating.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-24px;
+  left:351px;
+}
+
+
+
+.character-leans-forward{
+  background: url("../layers/character-leans-forward.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-24px;
+  left:351px;
+}
+
+.friend{
+  background: url("../layers/friend.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:25px;
+  left:1019px;
+}
+
+.friend-distressed{
+  background: url("../layers/friend-distressed.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:25px;
+  left:1019px;
+}
+
+.friend-distressed-2{
+  background: url("../layers/friend-distressed-2.svg");
+  width: 476px;
+  height: 920px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:25px;
+  left:1019px;
+}
+
+.speech-bubble-home{
+  background: url("../layers/speech-bubble-home.svg");
+  width: 311px;
+  height: 231px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-263px;
+  left:319px;
+}
+
+.medicine-thought-bubble{
+  background: url("../layers/medicine-thought-bubble.png");
+  width: 237px;
+  height: 231px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-250px;
+  left:871px;
+}
+
+.character-standing-distressed{
+  width: 439px;
+  height: 1219px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left:351px;
+  top:-280px;
+  background-image: url("../layers/character-standing-distressed.svg");
+}
+
+.character-distressed{
+  background-image: url("../layers/character-distressed.svg");
+  width: 560px;
+  height: 958px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-24px;
+  left:351px;
+  transition: all 0;
+}
+
+@keyframes standUp{
+  0% {
+    background-image: url("../layers/get-up-1.svg");
+    width:561px;
+    height:1025px;
+    left:351px;
+    top:-25px  
+  }
+  15% {
+    background-image: url("../layers/get-up-2.svg");
+    width:560px;
+    height:1120px;
+    left:351px;
+    top:-88px  
+  }
+  30% {
+    background-image: url("../layers/get-up-3.svg");
+    width:560px;
+    height:1120px;
+    left:351px;
+    top:-186px  
+  }
+  45% {
+    background-image: url("../layers/get-up-4.svg");
+    width:561px;
+    height:1199px;
+    left:349px;
+    top:-266px  
+  }
+  70% {
+    background-image: url("../layers/get-up-5.svg");
+     width:649px;
+     height:1265px;
+     left:303px;
+     top:-330px
+  }
+  100% {
+    background-image: url("../layers/character-standing-distressed.svg");
+    width:439px;
+    height:1219px;
+    left:351px;
+    top:-280px
+  };
+}
+
+.speech-bubble-cycler{
+  width: 182px;
+  height: 247px;
+  position: absolute;
+}
+.speech-bubble{
+  width: 182px;
+  height: 247px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  animation-name: timeshare;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.speech-bubble-spaghetti{
+  background-image: url("../layers/bubble-spaghetti.svg");
+}
+.speech-bubble-cheese-burger{
+  background-image: url("../layers/bubble-cheese-burger.svg");
+  animation-delay: 1s;
+}
+.speech-bubble-chilly-tacos{
+  background-image: url("../layers/bubble-chilly-tacos.svg");
+  animation-delay: 2s;
+}
+.speech-bubble-garlic-bread{
+  background-image: url("../layers/bubble-garlic-bread.svg");
+  animation-delay: 3s;
+}
+.speech-bubble-mint-choco{
+  background-image: url("../layers/bubble-mint-choco.svg");
+  animation-delay: 4s;
+}
+.speech-bubble-pink-lemonade{
+  background-image: url("../layers/bubble-pink-lemonade.svg");
+  animation-delay: 5s;
+}
+
+.speech-bubble-pizza{
+  background-image: url("../layers/bubble-pizza.svg");
+  animation-delay: 6s;
+}
+
+@keyframes timeshare{
+  5%{opacity: 1;}
+  14%{opacity:1;}
+  19%{opacity:0;}
+}
+
+.stat-1{
+  background-size: contain;
+  content: url(/gviz/layers/stat1.svg);
+  background-repeat: no-repeat;
+}
+
+.stat-2{
+  background-size: contain;
+  content: url(/gviz/layers/stat2.svg);
+  background-repeat: no-repeat;
+}
+
+.stat-3{
+  content: url(/gviz/layers/stat3.svg);
+}
+
+.radiating-circle{
+  position:relative;
+  width:25px;
+  height: 25px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/radiating-circle.svg);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+}
+  
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(2); } }
+
+.copy{
+  background-color: rgba(8, 5, 62, 0.95);
+  position: absolute;
+  color:white;
+  padding:25px 23px 50px 30px;
+  font-family:'Frutiger LT Pro 55 Roman';
+  //font-family: sans-serif;
+  box-sizing: border-box;
+  width:90vw;
+  @media(orientation:landscape){
+    width:627px;
+    padding:100px 91px 100px 73px;
+  }
+
+  &--time{
+    padding:20px 80px;
+    width:auto;
+  }
+    
+  &--alt{
+    width: 340px;
+    padding:32px 23px;
+    text-align: center;
+  }
+        
+  h2{
+    font-size: 17px;
+    font-weight: 700;
+    @media(orientation:landscape){
+      font-size: 32px;
+    }
+  }
+  p, li{
+    font-size: 15px;
+    font-weight: 400;
+    @media(orientation:landscape){
+      font-size: 22px;
+    }
+  }
+    
+  .fineprint{
+    font-size: 14px;
+  }
+    
+  ul{
+    padding-inline-start: 1em;
+  }
+}
+
+.copy--final{
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
+  font-weight: 400;
+  background-color: rgba(255,255,255,0.9);
+  color:#0a0555;
+  padding:10px;
+  border:5px solid #2f72f4;
+  @media(min-width:1000px){
+    height: 80%;
+    border:15px solid #2f72f4;
+    width:1100px;
+    padding:unset;
+  }
+  
+  border-radius: 30px;
+  
+  h2{
+    color:#ff8a00;
+    font-size: 22px;
+    @media(min-width: 1000px){
+      font-size: 48px;
+    }
+    
+    font-family: 'Frutiger LT Pro 65 Bold';
+  }
+
+  h3{
+    color:#2f72f4;
+    font-size: 22px;
+    @media(min-width: 1000px){
+      font-size: 40px;
+    }
+    font-weight: 400;
+    font-family: 'Frutiger LT Pro 55 Roman';
+  }
+}

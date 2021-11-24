@@ -1,0 +1,46 @@
+$sprite: 'spritesheet1.png';
+
+body {
+   text-align: center;
+   background: #0a0f5d;
+}
+
+@-webkit-keyframes walk {
+   from { background-position:    0   0; }
+   to   { background-position: -3917px 0; }
+}
+
+@-moz-keyframes walk {
+   from { background-position:    0   0; }
+   to   { background-position: -3917px 0; } 
+}
+
+h3 {
+   margin: 50px 0 30px;
+   font-size: 2em;
+   font: 2em/1.1 Georgia, serif;
+   
+   &:after, &:before {
+      content: "";
+      width: 1.5em;
+      height: 1px;
+      background-color: #949494;
+      display: inline-block;
+   }
+   
+   &:before {
+      margin: 0 0.4em .2em 0;
+   }
+   
+   &:after {
+      margin: 0 0 .2em 0.4em;
+   }
+}
+
+.character {
+   display: inline-block;
+   width: calc(3917px/7); /* 500 / 10 (frames in sprite sheet) */
+   height: 959px;
+   background: url($sprite) no-repeat;
+   animation: walk 1s steps(7) infinite;
+}

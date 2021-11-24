@@ -1,0 +1,230 @@
+.speech-bubble{
+    position:fixed;
+    top:0;
+    color:white;
+    background: red;
+    z-index: 10;
+}
+
+.drinker{
+    content:url(drinker.svg);
+}
+
+.neonsign{
+    content:url('neonsign.svg');
+    max-width: 500px;
+    margin: auto;
+    position:relative;
+}
+
+.restaurant-level{
+    position: absolute;
+    /* width:100%; */
+    /* height: 500px; */
+}
+.restaurant-level1{
+    background-image:url(restaurant-bg1.png);
+    width:1920px;
+    height: 610px;
+}
+
+.restaurant-level2 .person{
+    left:260px;
+    position: relative;
+    top:-35px;
+}
+
+.restaurant-level2{
+    background-image:url(restaurant-bg2.png);
+    width: 1920px;
+
+}
+
+.restaurant-level3{
+    background-image:url(restaurant-bg3.png);
+    width:1920px
+}
+
+.restaurant-level4{
+    background-image:url(restaurant-bg4.png);
+    width: 1920px;
+}
+
+.scene1{
+content:url('scene.svg');
+width:auto;
+position: absolute;
+
+}
+
+.scene2{
+    content:url('scene2.svg');
+    width:100%;
+    position: absolute;
+}
+
+
+.scene{
+    width: 1920px;
+    background: url('background.svg');
+    position: fixed;
+    height: 1080px;
+
+  } 
+  
+  .person{
+          position: fixed;
+          /* animation-name: slide; */
+          animation-duration: 20s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+      }
+
+.person--mirror{
+  transform: scalex(-1);
+}
+  
+      .head {
+          position: relative;
+          left: 10px;
+          top:30px;
+          content:url('https://raw.githubusercontent.com/mittonp/dataviznf/master/head.svg');
+          /* animation-name: nod; */
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function:ease-in-out;
+          transform-origin: bottom left;
+      }
+
+      .float-rotate{
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          animation-name: float-rotate;
+      }
+
+      .float-skew{
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        animation-name: float-skew;
+    }
+  
+      .torso{
+          content:url('https://raw.githubusercontent.com/mittonp/dataviznf/master/torso.svg');
+          animation-name: breathe;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in;
+          transform-origin: bottom left;
+          position:relative;
+          left:-4px;
+      }
+
+      .arm{
+        content:url('https://raw.githubusercontent.com/mittonp/dataviznf/master/arm.svg');
+        position:absolute;
+        top:154px;
+        left:52px;
+        animation-name: movearm;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transform-origin: center left;
+    }
+
+    .legs{
+        content:url('https://raw.githubusercontent.com/mittonp/dataviznf/master/legs.svg');
+    }
+  
+      @keyframes nod {
+          0% {
+              transform: rotate(0);
+          }
+  
+          25% {
+              transform: rotate(10deg);
+          }
+  
+          75%{
+              transform: rotate(-10deg);
+          }
+  
+          99%{
+              transform: rotate(0);
+          }
+      }
+
+      @keyframes slide{
+          0%{
+              left: 0%;
+          }
+
+          50%{
+              left:50%
+          }
+          100%{
+              left:0;
+          }
+      }
+
+      @keyframes breathe{
+          0%{
+              transform: scale(1,1);
+          }
+          25%{
+              transform: scale(1.03,1);
+          }
+          75%{
+              transform: scale(1,1) ;
+          }
+      }
+
+      @keyframes movearm{
+          0%{
+              transform: rotate(0);
+          }
+          25%{
+              transform: rotate(10deg);
+          }
+
+          75%{
+              transform: rotate(-10deg)
+          }
+
+          100%{
+              transform: rotate(0);
+          }
+      }
+
+      @keyframes float-rotate{
+          0%{
+              transform: rotate(0);
+          }
+          10%{
+              transform: rotate(5deg);
+          }
+          20%{
+              transform: rotate(0);
+          }
+          30%{
+              transform: rotate(-5deg);
+          }
+
+      }
+
+      @keyframes float-skew{
+        0%{
+            transform: rotateX(0) rotate(0);
+        }
+        10%{
+            transform: rotateX(15deg) rotate(5deg);
+        }
+        20%{
+            transform: rotateX(0) rotate(0);
+        }
+        30%{
+            transform: rotateX(-15deg) rotate(-5deg);
+        }
+
+    }
