@@ -9,6 +9,13 @@
           transform: translatey(-50%);
 }
 
+@media (orientation: portrait) {
+  .scene-home .copy {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
 .scene-home .copy--time {
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -17,7 +24,6 @@
 .scene-home .copy--final {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 1158px;
 }
 
 .scene-home #scene-home-copy-with-meds {

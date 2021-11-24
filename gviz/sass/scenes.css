@@ -15,10 +15,6 @@
   position: absolute;
 }
 
-.scene-2 {
-  width: 1400px;
-}
-
 .scene-2 #copy-scene-1-global {
   top: 180vh;
 }
@@ -124,6 +120,13 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+  .scene-3 .copy {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
 }
 
 .scene-3 .speech-bubble-cycler-1 {
@@ -379,6 +382,14 @@
           transform: translate(-50%, -50%);
 }
 
+@media (orientation: portrait) {
+  .scene-4 .copy {
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
 .scene-4 .friend {
   opacity: 0.1;
 }
@@ -595,10 +606,11 @@
 
 .footnote {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   color: white;
   display: none;
   font-family: 'Frutiger LT Pro 55 Roman';
   font-size: 22px;
+  margin: 0 128px;
 }
 /*# sourceMappingURL=scenes.css.map */
