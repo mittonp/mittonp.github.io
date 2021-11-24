@@ -1,4 +1,4 @@
-const columnsPerSmall = 3;
+const columnsPerSmall = 2;
 const columnsPerMedium = 5;
 const columnsPerLarge = 8;
 var shareUrl;
@@ -63,7 +63,7 @@ function getRowHtml(data, termOfOwnership, format) {
   var html = "";
   html += "<div class='row expense'>";
   html +=
-    "<div class='col-3 col-sm-2'><div class='item-title'>" +
+    "<div class='col-md-3 col-4'><div class='item-title'>" +
     data[0] +
     "</div></div>";
   for (var j = 1; j <= termOfOwnership; j++) {
@@ -72,7 +72,7 @@ function getRowHtml(data, termOfOwnership, format) {
     if (format == "currency") { dataItem = "$" + formatMoney(dataItem); }
     if (format == "percentage") { dataItem = formatMoney(dataItem * 100) + "%"; }
     html +=
-      "<div class='col-3 col-sm-3 col-md-2 col-xl-1 rolling-column'><div class='item'>" +
+      "<div class='col-4 col-md-2 col-xl-1 rolling-column'><div class='item'>" +
       dataItem +
       "</div></div>";
   }
@@ -83,7 +83,7 @@ function getRowHtml(data, termOfOwnership, format) {
   if (format == "text") { avg = "Average"; }
 
   html +=
-    "<div class='col-3 col-sm-2 rolling-column'><div class='item-title end-column'>" +
+    "<div class='col-md-3 col-4 rolling-column'><div class='item-title end-column'>" +
     avg +
     "</div></div>";
 
@@ -176,7 +176,7 @@ function updateFields() {
   jQuery(".mobile_clicker").empty();
 
   if (tablePages > 1) {
-    for (let index = 0; index < tablePages; index++) {
+    for (let index = 0; index <= tablePages; index++) {
       jQuery(".mobile_clicker").append("<span class='dot' data-index='" + index + "'></span>")
     }
 
