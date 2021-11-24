@@ -19,8 +19,6 @@
   
 //Statistics
 .scene-2{
-  width:1400px;
-  
   
   #copy-scene-1-global{
     top:180vh;
@@ -143,6 +141,9 @@
     top:180vh;
     left:50%;
     transform: translate(-50%, -50%);
+    @media(orientation:portrait){
+      transform: translate(-50%, -100%);
+    }
   }
 
   .speech-bubble-cycler-1{
@@ -409,6 +410,10 @@
     top:180vh;
     left:70%;
     transform: translate(-50%, -50%);
+    @media(orientation: portrait){
+      left:50%;
+      transform: translate(-50%, -100%);
+    }
   }
   
     
@@ -678,9 +683,10 @@
 
 .footnote{
   position:absolute;
-  bottom:0;
+  bottom:10px;
   color:white;
   display: none;
   font-family: 'Frutiger LT Pro 55 Roman';
   font-size: 22px;
+  margin:0 128px;
 }
