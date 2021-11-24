@@ -689,4 +689,7 @@
   font-family: 'Frutiger LT Pro 55 Roman';
   font-size: 22px;
   margin:0 128px;
+  @media(max-width:600px){
+    opacity: 0;
+  }
 }
