@@ -72,7 +72,7 @@ function getRowHtml(data, termOfOwnership, format) {
     if (format == "currency") { dataItem = "$" + formatMoney(dataItem); }
     if (format == "percentage") { dataItem = formatMoney(dataItem * 100) + "%"; }
     html +=
-      "<div class='col-3 col-sm-3 col-md-2 col-xl-1'><div class='item'>" +
+      "<div class='col-3 col-sm-3 col-md-2 col-xl-1 rolling-column'><div class='item'>" +
       dataItem +
       "</div></div>";
   }
@@ -83,7 +83,7 @@ function getRowHtml(data, termOfOwnership, format) {
   if (format == "text") { avg = "Average"; }
 
   html +=
-    "<div class='col-3 col-sm-2'><div class='item-title end-column'>" +
+    "<div class='col-3 col-sm-2 rolling-column'><div class='item-title end-column'>" +
     avg +
     "</div></div>";
 
@@ -113,7 +113,7 @@ function linkClickerDots() {
 
       jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
         jQuery(this)
-          .find(".col-xl-1")
+          .find(".rolling-column")
           //.find(".data-column")
           .each(function (index) {
             jQuery(this).hide();
@@ -189,7 +189,7 @@ function updateFields() {
 
   jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
     jQuery(this)
-      .find(".col-xl-1")
+      .find(".rolling-column")
       .each(function (index) {
         jQuery(this).hide();
         if (index < columns) {
