@@ -1,0 +1,692 @@
+.scene-above,.scene-below{
+  opacity: 0;
+
+}
+
+.scene-1{
+  .neonsign {
+    width: 1216px;
+    height: 465px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/gviz/layers/neonsign.svg);
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+  }
+}
+  
+//Statistics
+.scene-2{
+  
+  #copy-scene-1-global{
+    top:180vh;
+
+  }
+
+  .globe{
+    width:491px;
+    height:485px;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/gviz/layers/globe.svg);
+    left:50%;
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #stat-container-2, #stat-container-3, #stat-container-1{
+    top:180vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left:50%;
+  }
+
+  //only globe
+  &.cut-1{}
+
+  //globe moves a bit, add first copy
+  //footnone-recent-meta-analysis
+  &.cut-2{
+    .globe{
+      left:20%;
+    }
+    #copy-scene-1-global{
+      top:50%;
+      left:50%;
+      transform: translateY(-50%);
+    }
+
+    #footnote-recent-meta{
+      display: block;
+    }
+  }
+  
+  //move the globe and global copy
+  // 1 in 5 adults
+  &.cut-3{
+    #footnote-recent-meta{
+      display: none;
+    }
+    .globe{
+      top:-100vh;
+    }
+
+    #copy-scene-1-global{
+      top:-100vh;
+    }
+
+    #stat-container-1{
+      top:50%;
+    }
+
+    #footnote-1{
+      display: block;
+    }
+  
+      
+  }
+  
+  &.cut-4{
+    #stat-container-1{
+      top:-100vh;
+    }
+  
+  
+    #stat-container-2{
+      top:50%;
+    }
+
+    #footnote-1{
+      display: none;
+    }
+    #footnote-2{
+      display: block;
+    }
+  }
+  
+  &.cut-5{
+
+    #stat-container-2{
+      top:-100vh;
+    }
+  
+    #stat-container-3{
+      top:50%;
+    }
+  }
+  
+}
+  
+//Restaurant scene
+.scene-3{
+  .drinker-drink-down, .speech-bubble-cycler{
+    opacity: 0;
+  }
+  .perspective-level-1,
+  .perspective-level-2,
+  .perspective-level-3{
+    top:100%;
+  }
+  
+  .perspective-level-2{
+    right:80px;
+  }
+  
+  .copy{
+    position: absolute;
+    top:180vh;
+    left:50%;
+    transform: translate(-50%, -50%);
+    @media(orientation:portrait){
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  .speech-bubble-cycler-1{
+    top:-213px;
+    left:231px;
+  }
+
+  .speech-bubble-cycler-2{
+    top:-213px;
+    left:1405px;
+  }
+
+  .speech-bubble-cycler-3{
+    top:-28px;
+    left:1592px;
+  }
+  
+
+  &.cut-1{
+
+    .perspective-level-1{
+      top:339px;
+    }
+    .perspective-level-2{
+      top:294px;
+    }
+    .perspective-level-3{
+      top:100px;
+    }
+  }
+  
+  //intro copy what does heartburn feel like
+  &.cut-2{
+  
+    #scene-3-copy-1{
+      top:50%;
+    }
+  }
+  
+  //what does indigetstion feel like copy
+  &.cut-3{
+    #scene-3-copy-1{
+      top:-100vh;
+    }
+    #scene-3-copy-2{
+      top:50%;
+    }
+  }
+
+  //what's it all about copy
+  //thought bubbles appear
+  &.cut-4{
+    .scene-content{
+      transform:translatey(20%);
+        
+    }
+    .speech-bubble-cycler{
+      opacity: 1;
+    }
+    #scene-3-copy-2{
+      top:-100vh;
+    }
+    #scene-3-copy-3{
+      top:50%;
+    }
+  }
+
+  //types of food and drink copy -- foods
+  &.cut-5{
+    #scene-3-copy-3{
+      top:-100vh;
+    }
+    #scene-3-copy-4{
+      top:50%;
+    }
+  }
+
+  //types of food and drink copy -- drinks
+  &.cut-6{
+    #scene-3-copy-4{
+      top:-100vh;
+    }
+    #scene-3-copy-5{
+      top:50%;
+    }
+  }
+
+  //foods and drinks that can trigger indigestion copy
+  &.cut-7{
+    #scene-3-copy-5{
+      top:-100vh;
+    }
+    #scene-3-copy-6{
+      top:50%;
+    }
+    .drinker-drink-up{
+      opacity: 0;
+    }
+    .drinker-drink-down{
+      opacity: 1;
+    }
+  }
+  
+  //alcohol
+  &.cut-8{
+    .speech-bubble-cycler{
+      opacity: 0;
+    }
+    .scene-content{
+      transform: unset;
+        
+    }
+    .perspective-level-2, .perspective-level-3{
+      opacity: 0.1;
+    }
+    #scene-3-copy-6{
+      top:-100vh;
+    }
+    #scene-3-copy-7{
+      top:50%;
+    }
+    .lookingglass{
+      opacity: 0.9;
+      top:62%;
+      left:19%;
+      transform: translate(-50%, -50%) scale(2.5);
+    }
+  
+  }
+  //smoking
+  &.cut-9{
+    #scene-3-copy-7{
+      top:-100vh;
+    }
+    #scene-3-copy-8{
+      top:50%;
+    }
+  }
+  //meds
+  &.cut-10{
+    .perspective-level-1, .perspective-level-3{
+      opacity: 0.1;
+    }
+    .perspective-level-2{
+      opacity: 1;
+    }
+    .scene-content{
+      transform: scale(2) translatey(-9%);
+    }
+    .pocket{
+      opacity:0.7;
+    }
+    #scene-3-copy-8{
+      top:-100vh;
+    }
+  
+    #scene-3-copy-9{
+      top:50%;
+      left:25%;
+    }
+  
+    .lookingglass{
+      left:53%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  //Obesity
+  //display footnote obesity
+  &.cut-11{
+    #footnote-obesity{
+      display: block;
+    }
+    .scene-content{
+      transform: unset;
+    }
+    #scene-3-copy-9{
+      top:-100vh;
+    }
+  
+    #scene-3-copy-10{
+      top:50%;
+    }
+  
+    .lookingglass{
+      left:83%;
+      top:58%;
+    }
+  }
+  //Pregnancy
+  //display footnote pregnancy
+  &.cut-12{
+    #footnote-obesity{
+      display:none;
+    }
+
+    #footnote-pregnancy{
+      display: block;
+    }
+    .perspective-level-3{
+      opacity:1;
+    }
+    .perspective-level-2, .perspective-level-1{
+      opacity: 0.1;
+    }
+    #scene-3-copy-10{
+      top:-100vh;
+    }
+  
+    #scene-3-copy-11{
+      top:50%;
+    }
+  
+    .lookingglass{
+      left:74%;
+      top:31%;
+    }
+  }
+  //Genetics
+  &.cut-13{
+    #footnote-pregnancy{
+      display: none;
+    }
+    #scene-3-copy-11{
+      top:-100vh;
+    }
+  
+    #scene-3-copy-12{
+      top:50%;
+    }
+  
+    .lookingglass{
+      left:57%;
+    }
+  }
+  //Age
+  //display footnote age
+  &.cut-14{
+    #footnote-age{
+      display: block;
+    }
+    #scene-3-copy-12{
+      top:-100vh;
+    }
+  
+    #scene-3-copy-13{
+      top:50%;
+    }
+  
+    .lookingglass{
+      left:13%;
+      top:29%;
+    }
+  }
+  
+}
+  
+//Table for two scene
+.scene-4{
+  .background-static-light-on{
+    opacity: 0;
+  }
+  .copy{
+    position: absolute;
+    top:180vh;
+    left:70%;
+    transform: translate(-50%, -50%);
+    @media(orientation: portrait){
+      left:50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+  
+    
+
+  .friend{
+    opacity: 0.1;
+  }
+  .character-eating, .character-distressed,
+  .speech-bubble-home,
+  .intestine, .flame,
+  .friend-distressed, .character-standing-distressed, .friend-distressed-2, .character-leans-forward, .window-lit{
+    opacity: 0;
+  }
+
+    
+ 
+  
+  
+  &.cut-1{
+    #scene-4-copy-1{
+      top:50%;
+      //left:80%;
+    }
+  }
+
+  //pick up food
+  &.cut-2{
+    .character-eating{
+      opacity: 1;
+    }
+    .character-served{
+      opacity: 0;
+    }
+
+
+  }
+
+  //go closer, food in throat
+  //background fades
+  &.cut-3{
+    .background-static{
+      opacity: 0.1;
+    }
+    .character-eating{
+      opacity: 0.2;
+    }
+    #scene-4-copy-1{
+      top:-100vh;
+    }
+    #scene-4-copy-2{
+      top:50%;
+    }
+    #scene-4-copy-2{
+      //left:-150%;
+    }
+    #scene-4-copy-3{
+      //top:50%;
+    }
+    .intestine-food-in-throat{
+      opacity: 0.5;
+    }
+    .scene-content{
+      transform: scale(1.2) translateY(20%);
+    }
+  
+  }
+
+  //stomach into focus, food entering stomach
+  &.cut-4{
+
+    .intestine-food-in-throat{
+      opacity:0;
+    }
+    .intestine-food-entering-stomach{
+      opacity:1;
+    }
+  }
+  
+  //stomach blue, red bubbles
+  &.cut-5{
+
+
+    .intestine-food-entering-stomach{
+      opacity:0;
+    }
+    .intestine-blue-red-bubbles{
+      opacity:1;
+    }
+  }
+
+  //stomach red
+  &.cut-6{
+    .intestine-blue-red-bubbles{
+      opacity:0;
+    }
+    .intestine-red{
+      opacity: 1;
+    }
+  }
+
+  //stomach red and filling up
+  &.cut-7{
+    .intestine-red{
+      opacity: 0;
+    }
+    .intestine-red-and-filling{
+      opacity: 1;
+    }
+  }
+
+  //flame appears
+  &.cut-8{
+    .intestine-red-and-filling{
+      opacity: 0;
+    }
+    .intestine-with-flame{
+      opacity: 1;
+    }
+  }
+
+  //flame glows, show symptoms of reflux copy
+  &.cut-9{
+    .intestine-with-flame{
+      opacity: 0;
+    }
+    .intestine-with-glowing-flame{
+      opacity: 1;
+    }
+    #scene-4-copy-2{
+      top:-100vh;
+    }
+
+    #scene-4-copy-3{
+      top:50%;
+    }
+  }
+
+  //glow in mouth
+  &.cut-10{
+    .intestine-with-glowing-flame{
+      opacity: 0;
+    }
+    .intestine-glow-in-mouth{
+      opacity: 1;
+    }
+  }
+
+  //show what happens indigestion copy
+  &.cut-11{
+    #scene-4-copy-3{
+      top:-100vh;
+    }
+    #scene-4-copy-4{
+      top:50%;
+    }
+  }
+
+  //table for 2 scene back in focus. Dude is unhappy and has flame on chest
+  &.cut-12{
+    .background-static{
+      opacity: 1;
+    }
+    #scene-4-copy-4{
+      top:-100vh;
+    }
+    .character-eating{
+      opacity: 0;
+    }
+    .character-distressed{
+      opacity: 1;
+    }
+
+    .friend{
+      opacity: 1;
+    }
+
+    .intestine-glow-in-mouth{
+      opacity: 0;
+    }
+  }
+
+  //dude leans forward, friend distressed 1
+  &.cut-13{
+    .character-distressed{
+      opacity: 0;
+    }
+
+    .character-leans-forward{
+      opacity: 1;
+    }
+    .scene-content{
+      transform: translateY(35%);
+    }
+
+    .friend{
+      opacity: 0;
+    }
+    .friend-distressed{
+      opacity: 1;
+    }
+  }
+
+  //dude leans back, speech bubble home
+  &.cut-14{
+
+    .character-leans-forward{
+      opacity: 0;
+    }
+
+    .character-distressed{
+      opacity: 1;
+    }
+
+    .speech-bubble-home{
+      opacity: 1;
+    }
+  }
+
+  //dude stands up, friend distressed 2
+  &.cut-15{
+    .scene-content{
+      transform-origin: 48% 20%;
+    }
+    .speech-bubble-home{
+      opacity: 0;
+    }
+    .friend-distressed{
+      opacity: 0;
+    }
+    
+    .character-distressed{
+      animation-name: standUp;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .friend-distressed-2{
+      opacity: 1;
+    }
+    .character-standing-distressed{
+
+    }
+  }
+
+  //people disappear, transition to home
+  &.cut-16{
+    .scene-content{
+      transform: scale(10);
+    }
+
+    .background-static{
+      //opacity: 0;
+    }
+
+    .background-static-light-on{
+      //opacity: 1;
+    }
+
+    .window-lit{
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.footnote{
+  position:absolute;
+  bottom:10px;
+  color:white;
+  display: none;
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 22px;
+  margin:0 128px;
+}

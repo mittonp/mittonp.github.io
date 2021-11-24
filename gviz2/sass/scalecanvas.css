@@ -1,0 +1,226 @@
+.lookingglass {
+  position: absolute;
+  background: url(../layers/transparent.png);
+  width: 4000px;
+  height: 4000px;
+  background-size: contain;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
+  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+}
+
+.scene-above .lookingglass, .scene-below .lookingglass {
+  display: none;
+}
+
+.pink-text {
+  color: #ff7bf9;
+}
+
+.blue-text {
+  color: #00d7d7;
+}
+
+.orange-text {
+  color: #ff8a00;
+}
+
+.scene-heading {
+  color: white;
+  position: absolute;
+  display: none;
+}
+
+.scene-container {
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  -webkit-transform: translateX(-50%) scale(1.5);
+          transform: translateX(-50%) scale(1.5);
+  left: 50%;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+@media (min-width: 600px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.3);
+            transform: translateX(-50%) scale(0.3);
+  }
+}
+
+@media (min-width: 800px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.4);
+            transform: translateX(-50%) scale(0.4);
+  }
+}
+
+@media (min-width: 1000px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.5);
+            transform: translateX(-50%) scale(0.5);
+  }
+}
+
+@media (min-width: 1400px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(0.7);
+            transform: translateX(-50%) scale(0.7);
+  }
+}
+
+@media (min-width: 1920px) {
+  .scene-container {
+    -webkit-transform: translateX(-50%) scale(1);
+            transform: translateX(-50%) scale(1);
+  }
+}
+
+.stat-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+@media (orientation: landscape) {
+  .stat-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 60px;
+    width: 1400px;
+  }
+  .stat-container div {
+    width: 50%;
+  }
+}
+
+.stat-container div {
+  width: 85%;
+}
+
+@media (orientation: landscape) {
+  .stat-container div {
+    width: 100%;
+  }
+}
+
+.stat-container .copy {
+  position: relative;
+}
+
+.center-element {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.scene {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.scene div {
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.scene-scale {
+  position: absolute;
+  -webkit-transform: scale(0.76);
+          transform: scale(0.76);
+  width: 1920px;
+  height: 1080px;
+}
+
+@media (max-width: 1700px) {
+  .scene-scale {
+    -webkit-transform: scale(0.62);
+            transform: scale(0.62);
+  }
+}
+
+@media (max-width: 1400px) {
+  .scene-scale {
+    -webkit-transform: scale(0.53);
+            transform: scale(0.53);
+  }
+}
+
+@media (max-width: 1200px) {
+  .scene-scale {
+    -webkit-transform: scale(0.425);
+            transform: scale(0.425);
+  }
+}
+
+@media (max-width: 1000px) {
+  .scene-scale {
+    -webkit-transform: scale(0.325);
+            transform: scale(0.325);
+  }
+}
+
+@media (max-width: 800px) {
+  .scene-scale {
+    -webkit-transform: scale(0.225);
+            transform: scale(0.225);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-scale {
+    -webkit-transform: translate(-40%, 0) scale(0.2);
+            transform: translate(-40%, 0) scale(0.2);
+  }
+}
+
+.scene-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-below {
+  top: 200vh;
+}
+
+.scene-above {
+  top: -100%;
+}
+/*# sourceMappingURL=scalecanvas.css.map */

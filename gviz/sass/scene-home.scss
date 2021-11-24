@@ -8,9 +8,6 @@
     left:50%;
     top:180vh;
     transform: translatey(-50%);
-    @media(orientation: portrait){
-      transform: translate(-50%, -100%);
-    }
   }
 
   .copy--time{
@@ -19,6 +16,8 @@
 
   .copy--final{
     transform: translate(-50%, -50%);
+    width:1158px;
+    //top:50%;
   }
 
   #scene-home-copy-with-meds{

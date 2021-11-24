@@ -772,42 +772,21 @@
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.9);
   color: #0a0555;
-  padding: 10px;
-  border: 5px solid #2f72f4;
+  height: 80%;
   border-radius: 30px;
-}
-
-@media (min-width: 1000px) {
-  .copy--final {
-    height: 80%;
-    border: 15px solid #2f72f4;
-    width: 1100px;
-    padding: unset;
-  }
+  border: 15px solid #2f72f4;
 }
 
 .copy--final h2 {
   color: #ff8a00;
-  font-size: 22px;
+  font-size: 48px;
   font-family: 'Frutiger LT Pro 65 Bold';
-}
-
-@media (min-width: 1000px) {
-  .copy--final h2 {
-    font-size: 48px;
-  }
 }
 
 .copy--final h3 {
   color: #2f72f4;
-  font-size: 22px;
+  font-size: 40px;
   font-weight: 400;
   font-family: 'Frutiger LT Pro 55 Roman';
-}
-
-@media (min-width: 1000px) {
-  .copy--final h3 {
-    font-size: 40px;
-  }
 }
 /*# sourceMappingURL=elements.css.map */
