@@ -5,15 +5,9 @@
 
 .scene-1{
   .neonsign {
-    width: 1216px;
-    height: 465px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(/gviz/layers/neonsign.svg);
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-    position: absolute;
   }
 }
   
@@ -63,6 +57,14 @@
     #footnote-recent-meta{
       display: block;
     }
+    @media (max-width:600px){
+      .globe{
+        left:50%;
+      }
+      #copy-scene-1-global{
+        left:unset;
+      }
+    }
   }
   
   //move the globe and global copy
@@ -72,7 +74,7 @@
       display: none;
     }
     .globe{
-      top:-100vh;
+      top:-1000vh;
     }
 
     #copy-scene-1-global{
@@ -123,7 +125,7 @@
   
 //Restaurant scene
 .scene-3{
-  .drinker-drink-down, .speech-bubble-cycler{
+  .drinker--drink-down, .speech-bubble-cycler{
     opacity: 0;
   }
   .perspective-level-1,
@@ -131,9 +133,36 @@
   .perspective-level-3{
     top:100%;
   }
-  
+
+  .perspective-level-1{
+    top:339px;
+    @media (max-width:600px){
+      top:262px;
+      transform: scale(1.5) translatex(15%);
+    }
+  }
   .perspective-level-2{
+    top:294px;
     right:80px;
+    @media (max-width:600px){
+      top:-694px;
+      transform: scale(1.5) translatex(-20%);
+    }
+  }
+  .perspective-level-3{
+    top:100px;
+    @media (max-width:600px){
+      top:-1500px;
+      transform: scale(2) translatex(-20%);
+    }
+  }
+
+  .perspective-level-4{
+    top:100px;
+    @media(max-width:600px){
+      top:-2400px;
+      transform: scale(2) translatex(24%);
+    }
   }
   
   .copy{
@@ -160,20 +189,7 @@
     top:-28px;
     left:1592px;
   }
-  
 
-  &.cut-1{
-
-    .perspective-level-1{
-      top:339px;
-    }
-    .perspective-level-2{
-      top:294px;
-    }
-    .perspective-level-3{
-      top:100px;
-    }
-  }
   
   //intro copy what does heartburn feel like
   &.cut-2{
@@ -239,10 +255,10 @@
     #scene-3-copy-6{
       top:50%;
     }
-    .drinker-drink-up{
+    .drinker--drink-up{
       opacity: 0;
     }
-    .drinker-drink-down{
+    .drinker--drink-down{
       opacity: 1;
     }
   }
@@ -435,7 +451,8 @@
   &.cut-1{
     #scene-4-copy-1{
       top:50%;
-      //left:80%;
+    }
+    .scene-content{
     }
   }
 
@@ -467,10 +484,10 @@
       top:50%;
     }
     #scene-4-copy-2{
-      //left:-150%;
+      
     }
     #scene-4-copy-3{
-      //top:50%;
+    
     }
     .intestine-food-in-throat{
       opacity: 0.5;

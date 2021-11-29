@@ -155,10 +155,9 @@ body{
   bottom:0;
   transform-origin: bottom;
 
-  
-
-  @media (orientation:portrait){
-    //top:calc( 100vh - 50% );
+  &--mobile{
+    width:375px;
+    height: 600px;
   }
 
   

@@ -177,6 +177,11 @@ body {
           transform-origin: bottom;
 }
 
+.scene-scale--mobile {
+  width: 375px;
+  height: 600px;
+}
+
 @media (max-width: 1700px) {
   .scene-scale {
     -webkit-transform: scale(0.62);
