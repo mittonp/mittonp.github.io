@@ -3,16 +3,10 @@
 }
 
 .scene-1 .neonsign {
-  width: 1216px;
-  height: 465px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/neonsign.svg);
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  position: absolute;
 }
 
 .scene-2 #copy-scene-1-global {
@@ -56,12 +50,21 @@
   display: block;
 }
 
+@media (max-width: 600px) {
+  .scene-2.cut-2 .globe {
+    left: 50%;
+  }
+  .scene-2.cut-2 #copy-scene-1-global {
+    left: unset;
+  }
+}
+
 .scene-2.cut-3 #footnote-recent-meta {
   display: none;
 }
 
 .scene-2.cut-3 .globe {
-  top: -100vh;
+  top: -1000vh;
 }
 
 .scene-2.cut-3 #copy-scene-1-global {
@@ -100,7 +103,7 @@
   top: 50%;
 }
 
-.scene-3 .drinker-drink-down, .scene-3 .speech-bubble-cycler {
+.scene-3 .drinker--drink-down, .scene-3 .speech-bubble-cycler {
   opacity: 0;
 }
 
@@ -110,8 +113,53 @@
   top: 100%;
 }
 
+.scene-3 .perspective-level-1 {
+  top: 339px;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-1 {
+    top: 262px;
+    -webkit-transform: scale(1.5) translatex(15%);
+            transform: scale(1.5) translatex(15%);
+  }
+}
+
 .scene-3 .perspective-level-2 {
+  top: 294px;
   right: 80px;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-2 {
+    top: -694px;
+    -webkit-transform: scale(1.5) translatex(-20%);
+            transform: scale(1.5) translatex(-20%);
+  }
+}
+
+.scene-3 .perspective-level-3 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-3 {
+    top: -1500px;
+    -webkit-transform: scale(2) translatex(-20%);
+            transform: scale(2) translatex(-20%);
+  }
+}
+
+.scene-3 .perspective-level-4 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-4 {
+    top: -2400px;
+    -webkit-transform: scale(2) translatex(24%);
+            transform: scale(2) translatex(24%);
+  }
 }
 
 .scene-3 .copy {
@@ -142,18 +190,6 @@
 .scene-3 .speech-bubble-cycler-3 {
   top: -28px;
   left: 1592px;
-}
-
-.scene-3.cut-1 .perspective-level-1 {
-  top: 339px;
-}
-
-.scene-3.cut-1 .perspective-level-2 {
-  top: 294px;
-}
-
-.scene-3.cut-1 .perspective-level-3 {
-  top: 100px;
 }
 
 .scene-3.cut-2 #scene-3-copy-1 {
@@ -209,11 +245,11 @@
   top: 50%;
 }
 
-.scene-3.cut-7 .drinker-drink-up {
+.scene-3.cut-7 .drinker--drink-up {
   opacity: 0;
 }
 
-.scene-3.cut-7 .drinker-drink-down {
+.scene-3.cut-7 .drinker--drink-down {
   opacity: 1;
 }
 

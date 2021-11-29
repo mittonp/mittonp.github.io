@@ -5,6 +5,17 @@
   transform: translate(-50%, -50%);
 }
 
+.neonsign{
+  width: 1216px;
+  height: 465px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/gviz/layers/neonsign.svg);
+  position: absolute;
+  left:50%;
+  top:-100%;
+  transform: translate(-50%,-100%);
+}
 
 .stomach{
   width:172px;
@@ -235,7 +246,35 @@
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
+  &--mobile{
+    width: 383px;
+    height: 294px;
+  }
 }
+
+
+
+
+
+
+.perspective-level-3 {
+  background: url("../layers/perspective-level-3.svg");
+  width: 1814px;
+  height: 484px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.perspective-level-4 {
+  background: url("../layers/perspective-level-3.svg");
+  width: 1814px;
+  height: 484px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
 
 .pocket {
   background: url("../layers/pocket.svg");
@@ -248,13 +287,16 @@
   left:17%;
 }
 
-.perspective-level-3 {
-  background: url("../layers/perspective-level-3.svg");
-  width: 1814px;
-  height: 484px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
+.desktop-element{
+  @media (max-width:600px){
+    display: none;
+  }
+}
+
+.mobile-element{
+  @media(min-width:600px){
+    display: none;
+  }
 }
   
 .flame {
@@ -295,24 +337,34 @@
   background-size: contain;
 }
 
-.drinker-drink-up {
-  background: url("../layers/drinker-drink-up.svg");
-  width: 547px;
-  height: 626px;
+.drinker{
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  left:183px;
+  &--drink-up {
+    background: url("../layers/drinker-drink-up.svg");
+    width: 547px;
+    height: 626px;
+    left:183px;
+    &--mobile{
+      width:199px;
+      height: 228px;
+      left:0;
+    }
+  }
+  &--drink-down {
+    background: url("../layers/drinker-drink-down.svg");
+    width: 710px;
+    height: 604px;
+    left:183px;
+    &--mobile{
+      width:258px;
+      height: 219px;
+      left:0;
+    }
+  }
 }
-.drinker-drink-down {
-  background: url("../layers/drinker-drink-down.svg");
-  width: 710px;
-  height: 604px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  left:183px;
-}
+
 
 .bar-bench {
   background: url("../layers/bar-bench.svg");
