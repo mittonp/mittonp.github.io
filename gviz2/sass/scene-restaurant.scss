@@ -9,6 +9,14 @@
     .perspective-level-4{
       top:100%;
     }
+
+    .background-static{
+        @media(max-width:600px){
+
+            top:-250%;
+        }
+        
+    }
   
 
     .perspective-level-1{

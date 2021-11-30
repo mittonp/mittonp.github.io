@@ -338,6 +338,9 @@
     }
     .scene-content{
       transform: translateY(35%);
+      @media(max-width:600px){
+        transform: unset;
+      }
     }
 
     .friend{

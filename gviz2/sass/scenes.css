@@ -295,6 +295,13 @@
           transform: translateY(35%);
 }
 
+@media (max-width: 600px) {
+  .scene-4.cut-13 .scene-content {
+    -webkit-transform: unset;
+            transform: unset;
+  }
+}
+
 .scene-4.cut-13 .friend {
   opacity: 0;
 }

@@ -10,6 +10,12 @@
 }
 
 @media (max-width: 600px) {
+  .scene-3 .background-static {
+    top: -250%;
+  }
+}
+
+@media (max-width: 600px) {
   .scene-3 .perspective-level-1 {
     -webkit-transform: scale(1.5) translatex(15%);
             transform: scale(1.5) translatex(15%);
