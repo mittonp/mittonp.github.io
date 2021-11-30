@@ -35,6 +35,16 @@
     opacity: 0;
   }
   
+
+  &.cut-1{
+    .scene-content{
+      @media(max-width:600px){
+        transform: scale(1.5) translatey(-20%);
+      }
+      
+    }
+  }
+
   //go closer, advance clock, hang head
   &.cut-2{
     .character-home-sad{
@@ -58,7 +68,10 @@
   //display copy how to relieve
   &.cut-3{
     .scene-content{
-      transform: translate(-300px, 300px);
+      @media(min-width:600px){
+        transform: translate(-300px, 300px);
+      }
+      
     }
     .character-home{
       opacity: 0;
@@ -76,7 +89,13 @@
   //medicine thought bubble appears, copy moves out
   &.cut-4{
     .scene-content{
-      transform: translatey(300px);
+      @media(min-width:600px){
+        transform: translatey(300px);
+      }
+      @media(max-width:600px){
+        transform:scale(2.5) translatey(30%);
+      }
+      
     }
 
     #scene-home-copy-1{
@@ -92,7 +111,10 @@
   &.cut-5{
 
     .scene-content{
-      transform: unset;
+      @media(min-width:600px){
+        transform: unset;
+      }
+      
     }
 
     .medicine-thought-bubble{
@@ -238,7 +260,7 @@
     .scene-content{
       transform: translateY(300px);
       @media(max-width:600px){
-        transform: translatey(-100px);
+        transform: scale(3.2) translatey(30%);
       }
     }
     .character-home-taking-meds{

@@ -705,19 +705,54 @@
 }
 
 .stat-1 {
-  background-size: contain;
-  content: url(/gviz/layers/stat1.svg);
+  background-image: url("../layers/stat1.svg");
   background-repeat: no-repeat;
+  width: 686px;
+  height: 375px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .stat-1 {
+    height: 375px;
+  }
 }
 
 .stat-2 {
-  background-size: contain;
-  content: url(/gviz/layers/stat2.svg);
+  background-image: url("../layers/stat2.svg");
   background-repeat: no-repeat;
+  width: 686px;
+  height: 931px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .stat-2 {
+    height: 375px;
+  }
 }
 
 .stat-3 {
-  content: url(/gviz/layers/stat3.svg);
+  background-image: url("../layers/stat3.svg");
+  background-repeat: no-repeat;
+  width: 620px;
+  height: 917px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .stat-3 {
+    height: 375px;
+  }
 }
 
 .radiating-circle {
