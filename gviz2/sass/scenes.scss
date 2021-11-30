@@ -43,6 +43,9 @@
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    @media(max-width:600px){
+      transform: translate(-50%, -300%) scale(1.5);
+    }
   }
 }
   
@@ -65,6 +68,9 @@
     position: absolute;
     top:50%;
     transform: translate(-50%, -50%);
+    @media(max-width:600px){
+      transform: translate(-50%, -250%) scale(3);
+    }
   }
   
   #stat-container-2, #stat-container-3, #stat-container-1{

@@ -30,6 +30,13 @@
   opacity: 0;
 }
 
+@media (max-width: 600px) {
+  .scene.scene-home.cut-1 .scene-content {
+    -webkit-transform: scale(1.5) translatey(-20%);
+            transform: scale(1.5) translatey(-20%);
+  }
+}
+
 .scene.scene-home.cut-2 .character-home-sad {
   opacity: 0;
 }
@@ -46,9 +53,11 @@
   opacity: 1;
 }
 
-.scene.scene-home.cut-3 .scene-content {
-  -webkit-transform: translate(-300px, 300px);
-          transform: translate(-300px, 300px);
+@media (min-width: 600px) {
+  .scene.scene-home.cut-3 .scene-content {
+    -webkit-transform: translate(-300px, 300px);
+            transform: translate(-300px, 300px);
+  }
 }
 
 .scene.scene-home.cut-3 .character-home {
@@ -63,9 +72,18 @@
   display: block;
 }
 
-.scene.scene-home.cut-4 .scene-content {
-  -webkit-transform: translatey(300px);
-          transform: translatey(300px);
+@media (min-width: 600px) {
+  .scene.scene-home.cut-4 .scene-content {
+    -webkit-transform: translatey(300px);
+            transform: translatey(300px);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene.scene-home.cut-4 .scene-content {
+    -webkit-transform: scale(2.5) translatey(30%);
+            transform: scale(2.5) translatey(30%);
+  }
 }
 
 .scene.scene-home.cut-4 #scene-home-copy-1 {
@@ -76,9 +94,11 @@
   opacity: 1;
 }
 
-.scene.scene-home.cut-5 .scene-content {
-  -webkit-transform: unset;
-          transform: unset;
+@media (min-width: 600px) {
+  .scene.scene-home.cut-5 .scene-content {
+    -webkit-transform: unset;
+            transform: unset;
+  }
 }
 
 .scene.scene-home.cut-5 .medicine-thought-bubble {
@@ -212,8 +232,8 @@
 
 @media (max-width: 600px) {
   .scene.scene-home.cut-15 .scene-content {
-    -webkit-transform: translatey(-100px);
-            transform: translatey(-100px);
+    -webkit-transform: scale(3.2) translatey(30%);
+            transform: scale(3.2) translatey(30%);
   }
 }
 

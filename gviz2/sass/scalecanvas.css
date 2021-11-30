@@ -102,17 +102,23 @@ body {
   gap: 20px;
 }
 
-@media (orientation: landscape) {
+@media (min-width: 600px) {
   .scene .stat-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     gap: 60px;
-    width: 1400px;
+    width: 1200px;
   }
   .scene .stat-container div {
     width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .scene .stat-container {
+    width: 1400px;
   }
 }
 

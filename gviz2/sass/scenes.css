@@ -51,6 +51,13 @@
           transform: translate(-50%, -50%);
 }
 
+@media (max-width: 600px) {
+  .scene-1 .neonsign {
+    -webkit-transform: translate(-50%, -300%) scale(1.5);
+            transform: translate(-50%, -300%) scale(1.5);
+  }
+}
+
 .scene-2 #copy-scene-1-global {
   top: 180vh;
 }
@@ -67,6 +74,13 @@
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+  .scene-2 .globe {
+    -webkit-transform: translate(-50%, -250%) scale(3);
+            transform: translate(-50%, -250%) scale(3);
+  }
 }
 
 .scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
