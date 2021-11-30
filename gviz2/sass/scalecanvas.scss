@@ -81,6 +81,8 @@ body{
 
   
   
+.scene{
+
 
 .stat-container{
   display: flex;
@@ -107,10 +109,13 @@ body{
 
   .copy{
     position: relative;
+    top:unset;
+    left:unset;
+    transform:unset;
   }
 
 }
-
+}
   
 
 

@@ -1,0 +1,337 @@
+.scene-3 .drinker--drink-down, .scene-3 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+.scene-3 .perspective-level-1,
+.scene-3 .perspective-level-2,
+.scene-3 .perspective-level-3,
+.scene-3 .perspective-level-4 {
+  top: 100%;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-1 {
+    -webkit-transform: scale(1.5) translatex(15%);
+            transform: scale(1.5) translatex(15%);
+  }
+}
+
+.scene-3 .perspective-level-2 {
+  right: 80px;
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-2 {
+    -webkit-transform: scale(1.5) translatex(-20%);
+            transform: scale(1.5) translatex(-20%);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-3 {
+    -webkit-transform: scale(2) translatex(-20%);
+            transform: scale(2) translatex(-20%);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3 .perspective-level-4 {
+    -webkit-transform: scale(2) translatex(24%);
+            transform: scale(2) translatex(24%);
+  }
+}
+
+.scene-3 .speech-bubble-cycler-1 {
+  top: -213px;
+  left: 231px;
+}
+
+.scene-3 .speech-bubble-cycler-2 {
+  top: -213px;
+  left: 1405px;
+}
+
+.scene-3 .speech-bubble-cycler-3 {
+  top: -190px;
+  left: 797px;
+}
+
+.scene-3.cut-1 .perspective-level-1 {
+  top: 339px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-1 .perspective-level-1 {
+    top: 262px;
+    -webkit-transform: scale(1.5) translatex(15%);
+            transform: scale(1.5) translatex(15%);
+  }
+}
+
+.scene-3.cut-1 .perspective-level-2 {
+  top: 294px;
+  right: 80px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-1 .perspective-level-2 {
+    top: -694px;
+    -webkit-transform: scale(1.5) translatex(-20%);
+            transform: scale(1.5) translatex(-20%);
+  }
+}
+
+.scene-3.cut-1 .perspective-level-3 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-1 .perspective-level-3 {
+    top: -1500px;
+    -webkit-transform: scale(2) translatex(-20%);
+            transform: scale(2) translatex(-20%);
+  }
+}
+
+.scene-3.cut-1 .perspective-level-4 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-1 .perspective-level-4 {
+    top: -2400px;
+    -webkit-transform: scale(2) translatex(24%);
+            transform: scale(2) translatex(24%);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-4 .perspective-level-1 {
+    top: 700px;
+    opacity: 0;
+  }
+  .scene-3.cut-4 .perspective-level-2 {
+    top: 400px;
+  }
+  .scene-3.cut-4 .perspective-level-3 {
+    top: 100px;
+  }
+  .scene-3.cut-4 .perspective-level-4 {
+    top: -223px;
+  }
+}
+
+.scene-3.cut-4 .scene-content {
+  -webkit-transform: translatey(20%);
+          transform: translatey(20%);
+}
+
+.scene-3.cut-4 .speech-bubble-cycler {
+  opacity: 1;
+}
+
+.scene-3.cut-7 .drinker--drink-up {
+  opacity: 0;
+}
+
+.scene-3.cut-7 .drinker--drink-down {
+  opacity: 1;
+}
+
+.scene-3.cut-8 .perspective-level-1 {
+  top: 339px;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-8 .perspective-level-1 {
+    top: 262px;
+  }
+}
+
+.scene-3.cut-8 .perspective-level-2 {
+  top: 294px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-8 .perspective-level-2 {
+    top: -694px;
+  }
+}
+
+.scene-3.cut-8 .perspective-level-3 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-8 .perspective-level-3 {
+    top: -1500px;
+  }
+}
+
+.scene-3.cut-8 .perspective-level-4 {
+  top: 100px;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-8 .perspective-level-4 {
+    top: -2400px;
+  }
+}
+
+.scene-3.cut-8 .speech-bubble-cycler {
+  opacity: 0;
+}
+
+.scene-3.cut-8 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.scene-3.cut-8 .perspective-level-2, .scene-3.cut-8 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-8 .lookingglass {
+  opacity: 0.9;
+  -webkit-transform: translate(-65%, -45%) scale(2);
+          transform: translate(-65%, -45%) scale(2);
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-8 .lookingglass {
+    -webkit-transform: translate(-57%, -50%) scale(2.5);
+            transform: translate(-57%, -50%) scale(2.5);
+  }
+}
+
+.scene-3.cut-10 .perspective-level-1, .scene-3.cut-10 .perspective-level-3 {
+  opacity: 0.1;
+}
+
+.scene-3.cut-10 .perspective-level-2 {
+  opacity: 1;
+}
+
+.scene-3.cut-10 .scene-content {
+  -webkit-transform: scale(2) translatey(-9%);
+          transform: scale(2) translatey(-9%);
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-10 .scene-content {
+    -webkit-transform: scale(2) translate(20%, 50%);
+            transform: scale(2) translate(20%, 50%);
+  }
+}
+
+.scene-3.cut-10 .pocket {
+  opacity: 0.7;
+}
+
+.scene-3.cut-10 .lookingglass {
+  -webkit-transform: translate(-47%, -47%);
+          transform: translate(-47%, -47%);
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-10 .lookingglass {
+    -webkit-transform: translate(-53%, -65%);
+            transform: translate(-53%, -65%);
+  }
+}
+
+.scene-3.cut-11 #footnote-obesity {
+  display: block;
+}
+
+.scene-3.cut-11 .scene-content {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-11 .scene-content {
+    -webkit-transform: scale(2) translate(-30%, 70%);
+            transform: scale(2) translate(-30%, 70%);
+  }
+}
+
+.scene-3.cut-11 .lookingglass {
+  -webkit-transform: translate(-33%, -48%);
+          transform: translate(-33%, -48%);
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-11 .lookingglass {
+    -webkit-transform: translate(-53%, -65%) scale(2.5);
+            transform: translate(-53%, -65%) scale(2.5);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-12 .scene-content {
+    -webkit-transform: scale(2) translate(-20%, 140%);
+            transform: scale(2) translate(-20%, 140%);
+  }
+}
+
+.scene-3.cut-12 #footnote-obesity {
+  display: none;
+}
+
+.scene-3.cut-12 #footnote-pregnancy {
+  display: block;
+}
+
+.scene-3.cut-12 .perspective-level-3 {
+  opacity: 1;
+}
+
+.scene-3.cut-12 .perspective-level-2, .scene-3.cut-12 .perspective-level-1 {
+  opacity: 0.1;
+}
+
+@media (min-width: 600px) {
+  .scene-3.cut-12 .lookingglass {
+    -webkit-transform: translate(-38%, -55%);
+            transform: translate(-38%, -55%);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-13 .scene-content {
+    -webkit-transform: scale(2) translate(25%, 140%);
+            transform: scale(2) translate(25%, 140%);
+  }
+}
+
+.scene-3.cut-13 #footnote-pregnancy {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .scene-3.cut-13 .lookingglass {
+    -webkit-transform: translate(-47%, -55%);
+            transform: translate(-47%, -55%);
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-3.cut-14 .scene-content {
+    -webkit-transform: scale(2) translate(20%, 240%);
+            transform: scale(2) translate(20%, 240%);
+  }
+}
+
+.scene-3.cut-14 #footnote-age {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .scene-3.cut-14 .lookingglass {
+    -webkit-transform: translate(-66%, -55%);
+            transform: translate(-66%, -55%);
+  }
+}
+/*# sourceMappingURL=scene-restaurant.css.map */
