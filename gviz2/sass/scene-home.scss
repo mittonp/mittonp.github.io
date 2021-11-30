@@ -1,24 +1,22 @@
-.scene-home{
+.scene.scene-home{
 
   .character-home-waiting, .character-home-hangs-head, .medicine-thought-bubble, .character-home-taking-meds, .clock--08{
     opacity:0;
   }
 
   .copy{
-    left:50%;
-    top:180vh;
-    transform: translatey(-50%);
-    @media(orientation: portrait){
-      transform: translate(-50%, -100%);
+    &--time{
+      transform: translate(-50%, -250%);
+      @media(max-width:600px){
+        transform: translate(0%, 350%);
+      }
     }
   }
 
-  .copy--time{
-    transform: translate(-50%);
-  }
+
 
   .copy--final{
-    transform: translate(-50%, -50%);
+    //transform: translate(-50%, -50%);
   }
 
   #scene-home-copy-with-meds{
@@ -117,6 +115,9 @@
   &.cut-6{
     .scene-content{
       transform: translate(-21%,31%) scale(2);
+      @media(max-width:600px){
+        transform: translate(0, 30%) scale(4);
+      }
     }
     .character-home-taking-meds{
       opacity: 0;
@@ -236,6 +237,9 @@
     }
     .scene-content{
       transform: translateY(300px);
+      @media(max-width:600px){
+        transform: translatey(-100px);
+      }
     }
     .character-home-taking-meds{
       opacity: 0;

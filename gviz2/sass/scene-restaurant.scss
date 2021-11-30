@@ -1,0 +1,316 @@
+//Restaurant scene
+.scene-3{
+    .drinker--drink-down, .speech-bubble-cycler{
+      opacity: 0;
+    }
+    .perspective-level-1,
+    .perspective-level-2,
+    .perspective-level-3, 
+    .perspective-level-4{
+      top:100%;
+    }
+  
+
+    .perspective-level-1{
+        @media (max-width:600px){
+          transform: scale(1.5) translatex(15%);
+        }
+      }
+      .perspective-level-2{
+        right:80px;
+        @media (max-width:600px){
+          transform: scale(1.5) translatex(-20%);
+        }
+      }
+      .perspective-level-3{
+        @media (max-width:600px){
+          transform: scale(2) translatex(-20%);
+        }
+      }
+    
+      .perspective-level-4{
+        @media(max-width:600px){
+          transform: scale(2) translatex(24%);
+        }
+      }
+    
+  
+    .speech-bubble-cycler-1{
+      top:-213px;
+      left:231px;
+    }
+  
+    .speech-bubble-cycler-2{
+      top:-213px;
+      left:1405px;
+    }
+  
+    .speech-bubble-cycler-3{
+      top:-190px;
+      left:797px;
+    }
+  
+    &.cut-1{
+        .perspective-level-1{
+            top:339px;
+            @media (max-width:600px){
+              top:262px;
+              transform: scale(1.5) translatex(15%);
+            }
+          }
+          .perspective-level-2{
+            top:294px;
+            right:80px;
+            @media (max-width:600px){
+              top:-694px;
+              transform: scale(1.5) translatex(-20%);
+            }
+          }
+          .perspective-level-3{
+            top:100px;
+            @media (max-width:600px){
+              top:-1500px;
+              transform: scale(2) translatex(-20%);
+            }
+          }
+        
+          .perspective-level-4{
+            top:100px;
+            @media(max-width:600px){
+              top:-2400px;
+              transform: scale(2) translatex(24%);
+            }
+          }
+    }
+    
+    //intro copy what does heartburn feel like
+    &.cut-2{
+    
+  
+    }
+    
+    //what does indigetstion feel like copy
+    &.cut-3{
+  
+    }
+  
+    //what's it all about copy
+    //thought bubbles appear
+    &.cut-4{
+        //Squash the scene a little bit for mobile, and focus on the parts where there are speech bubbles
+        @media(max-width:600px){
+        .perspective-level-1{
+            top:700px;
+            opacity: 0;
+        }
+
+        .perspective-level-2{
+            top:400px;
+        }
+        .perspective-level-3{
+            top:100px;
+        }
+        .perspective-level-4{
+            top:-223px;
+        }
+    }
+
+        .scene-content{
+            transform:translatey(20%);
+        }
+        .speech-bubble-cycler{
+            opacity: 1;
+        }
+  
+    }
+  
+    //types of food and drink copy -- foods
+    &.cut-5{
+  
+    }
+  
+    //types of food and drink copy -- drinks
+    &.cut-6{
+  
+    }
+  
+    //foods and drinks that can trigger indigestion copy
+    &.cut-7{
+  
+      .drinker--drink-up{
+        opacity: 0;
+      }
+      .drinker--drink-down{
+        opacity: 1;
+      }
+    }
+    
+    //alcohol
+    //unsquash the scene for mobile
+    &.cut-8{
+        .perspective-level-1{
+            top:339px;
+            opacity: 1;
+            @media (max-width:600px){
+              top:262px;
+            }
+          }
+          .perspective-level-2{
+            top:294px;
+            @media (max-width:600px){
+              top:-694px;
+            }
+          }
+          .perspective-level-3{
+            top:100px;
+            @media (max-width:600px){
+              top:-1500px;
+            }
+          }
+        
+          .perspective-level-4{
+            top:100px;
+            @media(max-width:600px){
+              top:-2400px;
+            }
+          }
+      .speech-bubble-cycler{
+        opacity: 0;
+      }
+      .scene-content{
+        transform: unset;
+          
+      }
+      .perspective-level-2, .perspective-level-3{
+        opacity: 0.1;
+      }
+  
+      .lookingglass{
+        opacity: 0.9;
+        transform: translate(-65%, -45%) scale(2);
+        @media(max-width:600px){
+            transform: translate(-57%, -50%) scale(2.5);
+        }
+      }
+    
+    }
+    //smoking
+    &.cut-9{
+  
+    }
+    //meds
+    &.cut-10{
+      .perspective-level-1, .perspective-level-3{
+        opacity: 0.1;
+      }
+      .perspective-level-2{
+        opacity: 1;
+      }
+      .scene-content{
+        transform: scale(2) translatey(-9%);
+        @media(max-width:600px){
+            transform: scale(2) translate(20%,50%);
+        }
+      }
+      .pocket{
+        opacity:0.7;
+      }
+  
+    
+      .lookingglass{
+        transform: translate(-47%, -47%);
+        @media(max-width:600px){
+            transform: translate(-53%, -65%);
+        }
+      }
+    }
+    //Obesity
+    //display footnote obesity
+    &.cut-11{
+      #footnote-obesity{
+        display: block;
+      }
+      .scene-content{
+        transform: unset;
+        @media(max-width:600px){
+            transform: scale(2) translate(-30%,70%);
+        }
+      }
+  
+    
+      .lookingglass{
+          transform:translate(-33%, -48%);
+        @media(max-width:600px){
+            transform: translate(-53%, -65%) scale(2.5);
+        }
+      }
+    }
+    //Pregnancy
+    //display footnote pregnancy
+    &.cut-12{
+        .scene-content{
+            @media(max-width:600px){
+                transform: scale(2) translate(-20%, 140%);
+            }
+        }
+      #footnote-obesity{
+        display:none;
+      }
+  
+      #footnote-pregnancy{
+        display: block;
+      }
+      .perspective-level-3{
+        opacity:1;
+      }
+      .perspective-level-2, .perspective-level-1{
+        opacity: 0.1;
+      }
+  
+    
+      .lookingglass{
+        @media(min-width:600px){
+            transform:translate(-38%, -55%);
+        }
+      }
+    }
+    //Genetics
+    &.cut-13{
+        .scene-content{
+            @media(max-width:600px){
+                transform: scale(2) translate(25%, 140%);
+            }
+        }
+      #footnote-pregnancy{
+        display: none;
+      }
+  
+    
+      .lookingglass{
+        @media(min-width:600px){
+            transform:translate(-47%, -55%);
+        }
+      }
+    }
+    //Age display copy 13
+    //display footnote age
+    &.cut-14{
+        .scene-content{
+            @media(max-width:600px){
+                transform: scale(2) translate(20%, 240%);
+            }
+        }
+      #footnote-age{
+        display: block;
+      }
+    
+      
+        .lookingglass{
+            @media(min-width:600px){
+                transform:translate(-66%, -55%);
+            }
+          }
+      
+    }
+    
+  }
