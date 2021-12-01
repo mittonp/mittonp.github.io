@@ -194,7 +194,11 @@ body{
   }
 
   @media(max-width:600px){   
-    transform: scale(0.200)
+    transform: scale(0.3)
+  }
+
+  @media(max-width:400px){
+    transform: scale(0.2);
   }
 }
   

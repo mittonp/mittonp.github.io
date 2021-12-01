@@ -229,6 +229,13 @@ body {
 
 @media (max-width: 600px) {
   .scene-scale {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+}
+
+@media (max-width: 400px) {
+  .scene-scale {
     -webkit-transform: scale(0.2);
             transform: scale(0.2);
   }

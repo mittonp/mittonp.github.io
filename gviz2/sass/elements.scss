@@ -764,6 +764,8 @@
     font-size:22px;
   }
   @media(max-width:600px){
-    opacity: 0;
+    //opacity: 0;
+    margin:0 20px;
+    font-size:10px;
   }
 }
