@@ -5279,6 +5279,12 @@
   background: #fff;
 }
 
+@media(max-width:600px){
+  .graph-wrapper{
+    display:none;
+  }
+}
+
 .ui-menu {
 	list-style: none;
 	padding: 0;
