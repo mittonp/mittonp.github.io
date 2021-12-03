@@ -40,11 +40,13 @@
 
 .scene-1{
   .neonsign {
-    left:50%;
+    //left:50%;
     top:50%;
+    width: 100%;
     transform: translate(-50%,-50%);
+    background-position: center;
     @media(max-width:600px){
-      transform: translate(-50%, -300%) scale(1.5);
+      //transform: translate(-50%, -300%) scale(1.5);
     }
   }
 }
@@ -52,60 +54,30 @@
 //Statistics
 .scene-2{
   
-  #copy-scene-1-global{
-    top:180vh;
 
-  }
 
-  .globe{
-    width:491px;
-    height:485px;
-    margin: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(/gviz/layers/globe.svg);
-    left:50%;
-    position: absolute;
-    top:50%;
-    transform: translate(-50%, -50%);
-    @media(max-width:600px){
-      transform: translate(-50%, -250%) scale(3);
-    }
-  }
+
   
-  #stat-container-2, #stat-container-3, #stat-container-1{
+  #stat-container-2, #stat-container-3, #stat-container-1, #stat-container-0{
     top:180vh;
     position: absolute;
     transform: translate(-50%, -50%);
     left:50%;
   }
 
-  //only globe
   &.cut-1{}
 
   //globe moves a bit, add first copy
   //footnone-recent-meta-analysis
   &.cut-2{
-    .globe{
-      left:20%;
-    }
-    #copy-scene-1-global{
-      top:50%;
-      left:50%;
-      transform: translateY(-50%);
-    }
 
+    #stat-container-0{
+      top:50%;
+    }
     #footnote-recent-meta{
       display: block;
     }
-    @media (max-width:600px){
-      .globe{
-        left:50%;
-      }
-      #copy-scene-1-global{
-        left:unset;
-      }
-    }
+    
   }
   
   //move the globe and global copy
@@ -114,11 +86,8 @@
     #footnote-recent-meta{
       display: none;
     }
-    .globe{
-      top:-1000vh;
-    }
 
-    #copy-scene-1-global{
+    #stat-container-0{
       top:-100vh;
     }
 

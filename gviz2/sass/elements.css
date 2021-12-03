@@ -755,6 +755,22 @@
   }
 }
 
+.globe {
+  background-image: url(/gviz/layers/globe.svg);
+  background-repeat: no-repeat;
+  width: 491px;
+  height: 485px;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .globe {
+    height: 375px;
+  }
+}
+
 .radiating-circle {
   position: relative;
   width: 25px;
