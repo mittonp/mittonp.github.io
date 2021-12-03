@@ -121,6 +121,9 @@
         .perspective-level-4{
             top:-223px;
         }
+        .background-static{
+          top:-500px;
+        }
     }
 
         .scene-content{
@@ -181,6 +184,10 @@
             @media(max-width:600px){
               top:-2400px;
             }
+          }
+
+          .background-static{
+            top:-250%;
           }
       .speech-bubble-cycler{
         opacity: 0;
