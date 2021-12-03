@@ -45,45 +45,14 @@
 }
 
 .scene-1 .neonsign {
-  left: 50%;
   top: 50%;
+  width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background-position: center;
 }
 
-@media (max-width: 600px) {
-  .scene-1 .neonsign {
-    -webkit-transform: translate(-50%, -300%) scale(1.5);
-            transform: translate(-50%, -300%) scale(1.5);
-  }
-}
-
-.scene-2 #copy-scene-1-global {
-  top: 180vh;
-}
-
-.scene-2 .globe {
-  width: 491px;
-  height: 485px;
-  margin: auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(/gviz/layers/globe.svg);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-@media (max-width: 600px) {
-  .scene-2 .globe {
-    -webkit-transform: translate(-50%, -250%) scale(3);
-            transform: translate(-50%, -250%) scale(3);
-  }
-}
-
-.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1 {
+.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1, .scene-2 #stat-container-0 {
   top: 180vh;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -91,39 +60,19 @@
   left: 50%;
 }
 
-.scene-2.cut-2 .globe {
-  left: 20%;
-}
-
-.scene-2.cut-2 #copy-scene-1-global {
+.scene-2.cut-2 #stat-container-0 {
   top: 50%;
-  left: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .scene-2.cut-2 #footnote-recent-meta {
   display: block;
 }
 
-@media (max-width: 600px) {
-  .scene-2.cut-2 .globe {
-    left: 50%;
-  }
-  .scene-2.cut-2 #copy-scene-1-global {
-    left: unset;
-  }
-}
-
 .scene-2.cut-3 #footnote-recent-meta {
   display: none;
 }
 
-.scene-2.cut-3 .globe {
-  top: -1000vh;
-}
-
-.scene-2.cut-3 #copy-scene-1-global {
+.scene-2.cut-3 #stat-container-0 {
   top: -100vh;
 }
 
