@@ -95,7 +95,7 @@ body{
     flex-direction: row;
     gap:60px;
     width:1200px;
-    div{
+    .stat-graphic, .stat-copy{
       width:50%;
     }
   }
@@ -105,8 +105,8 @@ body{
   }
 
 
-  div{
-    width:85%;
+  .stat-graphic, .stat-copy{
+    //width:85%;
     @media(orientation: landscape){
       width:100%;
     }

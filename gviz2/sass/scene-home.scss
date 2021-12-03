@@ -303,7 +303,12 @@
   //show meds copy
   //show may not be for you footnote
   &.cut-18{
-
+    .scene-content{
+      @media(max-width:600px){
+        transform: scale(1.5) translatey(-20%);
+      }
+      
+    }
     #footnote-may-not-be-for-you{
       display: block;
     }
