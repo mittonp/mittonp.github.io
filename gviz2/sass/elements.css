@@ -901,7 +901,7 @@
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.9);
   color: #0a0555;
-  padding: 10px;
+  padding: 20px 10px;
   border: 5px solid #2f72f4;
   border-radius: 30px;
 }
@@ -929,7 +929,7 @@
 
 .copy--final h3 {
   color: #2f72f4;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   font-family: 'Frutiger LT Pro 55 Roman';
 }

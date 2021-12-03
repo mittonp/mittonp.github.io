@@ -125,6 +125,9 @@
   .scene-3.cut-4 .perspective-level-4 {
     top: -223px;
   }
+  .scene-3.cut-4 .background-static {
+    top: -500px;
+  }
 }
 
 .scene-3.cut-4 .scene-content {
@@ -183,6 +186,10 @@
   .scene-3.cut-8 .perspective-level-4 {
     top: -2400px;
   }
+}
+
+.scene-3.cut-8 .background-static {
+  top: -250%;
 }
 
 .scene-3.cut-8 .speech-bubble-cycler {
