@@ -269,6 +269,13 @@
   top: 15%;
 }
 
+@media (max-width: 600px) {
+  .scene.scene-home.cut-18 .scene-content {
+    -webkit-transform: scale(1.5) translatey(-20%);
+            transform: scale(1.5) translatey(-20%);
+  }
+}
+
 .scene.scene-home.cut-18 #footnote-may-not-be-for-you {
   display: block;
 }

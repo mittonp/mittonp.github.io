@@ -111,7 +111,7 @@ body {
     gap: 60px;
     width: 1200px;
   }
-  .scene .stat-container div {
+  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
     width: 50%;
   }
 }
@@ -122,12 +122,8 @@ body {
   }
 }
 
-.scene .stat-container div {
-  width: 85%;
-}
-
 @media (orientation: landscape) {
-  .scene .stat-container div {
+  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
     width: 100%;
   }
 }

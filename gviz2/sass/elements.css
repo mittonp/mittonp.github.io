@@ -717,7 +717,8 @@
 
 @media (max-width: 600px) {
   .stat-1 {
-    height: 375px;
+    width: 343px;
+    height: 187px;
   }
 }
 
@@ -734,7 +735,8 @@
 
 @media (max-width: 600px) {
   .stat-2 {
-    height: 375px;
+    width: 343px;
+    height: 465px;
   }
 }
 
@@ -751,7 +753,8 @@
 
 @media (max-width: 600px) {
   .stat-3 {
-    height: 375px;
+    height: 458px;
+    width: 310px;
   }
 }
 
@@ -767,7 +770,8 @@
 
 @media (max-width: 600px) {
   .globe {
-    height: 375px;
+    width: 300px;
+    height: 296px;
   }
 }
 
@@ -784,6 +788,13 @@
           animation-iteration-count: infinite;
   -webkit-animation-name: pulse;
           animation-name: pulse;
+}
+
+@media (max-width: 600px) {
+  .radiating-circle {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 @-webkit-keyframes pulse {

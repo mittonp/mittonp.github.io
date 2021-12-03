@@ -605,7 +605,8 @@
   position: relative;
   background-position: center;
   @media(max-width:600px){
-    height: 375px;
+    width: 343px;
+    height: 187px;
   }
 }
 
@@ -619,7 +620,8 @@
   position: relative;
   background-position: center;
   @media(max-width:600px){
-    height: 375px;
+    width:343px;
+    height: 465px;
   }
 }
 
@@ -633,7 +635,8 @@
   position: relative;
   background-position: center;
   @media(max-width:600px){
-    height: 375px;
+    height: 458px;
+    width:310px;
   }
 }
 
@@ -645,9 +648,9 @@
   background-size: contain;
   position: relative;
   background-position: center;
-
   @media(max-width:600px){
-    height: 375px;
+    width:300px;
+    height: 296px;
   }
 }
 
@@ -661,6 +664,10 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: pulse;
+  @media(max-width:600px){
+    width:15px;
+    height: 15px;
+  }
 }
   
 
