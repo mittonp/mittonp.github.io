@@ -51,10 +51,10 @@ $(document).ready(function () {
   initForce();
 
   $(".search-volume").counterUp();
-  //$(window).resize(function () {
-  //landingInit();
-  //bubbleInit();
-  //initForce();
-  //});
+  $(window).resize(function () {
+    landingInit();
+    bubbleInit();
+    //initForce();
+  });
   $(".splash-screen").hide();
 });
