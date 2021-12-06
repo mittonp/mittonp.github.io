@@ -1,4 +1,5 @@
 var initForce = function () {
+  am4core.disposeAllCharts();
   console.log("initForce");
   $("#instructions--force").click(function () {
     $("#instructions--force").hide();
