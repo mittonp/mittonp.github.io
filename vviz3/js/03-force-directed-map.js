@@ -5,13 +5,14 @@ var initForce = function () {
 
   var el = document.getElementsByClassName("section-canvas");
   el.forEach((a) => {
-    a.addEventListener("touchmove", function (a) {
+    a.addEventListener("touchstart", function (a) {
       if ($(a.srcElement)[0].tagName == "circle") {
         $.scrollify.disable();
-      } else {
-        if ($.scrollify.isDisabled()) {
-          $.scrollify.enable();
-        }
+      }
+    });
+    a.addEventListener("touchend", function (a) {
+      if ($(a.srcElement)[0].tagName == "circle") {
+        $.scrollify.enable();
       }
     });
   });
