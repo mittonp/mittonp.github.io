@@ -3,19 +3,20 @@ var initForce = function () {
     $("#instructions--force").hide();
   });
 
-  var el = document.getElementsByClassName("section-canvas");
-  el.forEach((a) => {
-    a.addEventListener("touchstart", function (a) {
-      if ($(a.srcElement)[0].tagName == "circle") {
-        $.scrollify.disable();
-      }
-    });
-    a.addEventListener("touchend", function (a) {
-      if ($(a.srcElement)[0].tagName == "circle") {
-        $.scrollify.enable();
-      }
-    });
+  var el = document.getElementById("chartdiv");
+  el.addEventListener("touchstart", function (a) {
+    if ($(a.srcElement)[0].tagName == "circle") {
+      $.scrollify.disable();
+      console.log("disable scrollify");
+    }
   });
+  el.addEventListener("touchend", function (a) {
+    if ($(a.srcElement)[0].tagName == "circle") {
+      $.scrollify.enable();
+      console.log("enable scrollify");
+    }
+  });
+  ;
 
   var myTemplate;
   am4core.ready(function () {
