@@ -15,6 +15,7 @@ var initForce = function () {
   el.addEventListener("touchend", function (a) {
     if ($(a.srcElement)[0].tagName == "circle") {
       $.scrollify.enable();
+      $.scrollify.instantMove("#page3");
       console.log("enable scrollify");
     }
   });
