@@ -55,7 +55,7 @@ $(document).ready(function () {
     console.log("window resize");
     landingInit();
     bubbleInit();
-    initForce();
+    //initForce();
   });
   $(".splash-screen").hide();
 });
