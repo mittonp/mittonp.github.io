@@ -70,7 +70,16 @@ header.main-header {
 body {
   font-family: "Gotham Light", sans-serif;
   margin: 0;
+
+  // height: 100%;
+  // position: fixed;
+  // // /* prevent overscroll bounce*/
+  // background-color: lightgreen;
+  // overflow-y: scroll;
+  // -webkit-overflow-scrolling: touch;
+  // // /* iOS velocity scrolling */
 }
+
 
 .section-canvas {
   width: 100%;
