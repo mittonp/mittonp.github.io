@@ -193,7 +193,7 @@ var bubbleInit = function () {
         .iterations(1)
     );
 
-   var data=[
+  var data = [
     {
       2004: 1,
       2005: 0,
@@ -2440,216 +2440,216 @@ var bubbleInit = function () {
     }
   ];
 
-    $(".year-button").click(function (e) {
-      redraw(parseInt(e.target.innerText));
-    });
+  $(".year-button").click(function (e) {
+    redraw(parseInt(e.target.innerText));
+  });
 
-    $(".year-arrow--forward").click(function (e) {
-      if (currentYear < 2020) {
-        redraw(currentYear + 1);
-      }
-    });
+  $(".year-arrow--forward").click(function (e) {
+    if (currentYear < 2020) {
+      redraw(currentYear + 1);
+    }
+  });
 
-    $(".year-arrow--back").click(function (e) {
-      if (currentYear > 2004) {
-        redraw(currentYear - 1);
-      }
-    });
-    function redraw(year) {
-      setYear(year);
-      currentData = getYearData(data, year);
-      for (let index = 0; index < currentData.length; index++) {
-        graph[index].size = currentData[index].size;
-      }
-
-      svg.selectAll("svg.textnode").style("display", function (d) {
-        if (d.size <= 1) return "none";
-        return "block";
-      });
-
-      svg
-        .selectAll("svg.textnode")
-        .select("text")
-        .text(function (d) {
-          return d.name;
-        })
-        .style("display", function (d) {
-          return d.size > 2000 ? "block" : "none";
-        })
-        .call(wrap, function (d) {
-          sizeFactor = 1;
-          //if (currentYear < 2016) sizeFactor = 0.7;
-          return size(d.size) * sizeFactor;
-        });
-
-      svg
-        .selectAll("svg.textnode")
-        .select("circle")
-        .transition()
-        .duration(500)
-        .attr("r", function (d) {
-          sizeFactor = 1;
-          //if (currentYear < 2016) sizeFactor = 0.7;
-          return size(d.size) * sizeFactor;
-        });
-      simulation.nodes(graph).on("tick", function (d) {
-        textNodeSvg
-          .attr("x", function (d) {
-            return d.x;
-          })
-          .attr("y", function (d) {
-            return d.y;
-          });
-      });
-      simulation.alphaTarget(0.03).restart();
+  $(".year-arrow--back").click(function (e) {
+    if (currentYear > 2004) {
+      redraw(currentYear - 1);
+    }
+  });
+  function redraw(year) {
+    setYear(year);
+    currentData = getYearData(data, year);
+    for (let index = 0; index < currentData.length; index++) {
+      graph[index].size = currentData[index].size;
     }
 
-    graph = getYearData(data, 2004);
+    svg.selectAll("svg.textnode").style("display", function (d) {
+      if (d.size <= 1) return "none";
+      return "block";
+    });
 
-    textNode = svg
-      .append("g")
-      .attr("class", "node")
-      .selectAll("svg")
-      .data(graph);
-
-    textNodeSvg = textNode
-      .enter()
-      .append("svg")
-      .attr("x", function (d) {
-        d.x = width / 2;
-        if (width >= height) {
-          d.x = Math.random() * width;
-        }
-        return d.x;
+    svg
+      .selectAll("svg.textnode")
+      .select("text")
+      .text(function (d) {
+        return d.name;
       })
-      .attr("y", function (d) {
-        d.y = height / 2;
-        if (width < height) {
-          d.y = Math.random() * height;
-        }
-        return d.y;
+      .style("display", function (d) {
+        return d.size > 2000 ? "block" : "none";
       })
-      .attr("class", "textnode")
+      .call(wrap, function (d) {
+        sizeFactor = 1;
+        //if (currentYear < 2016) sizeFactor = 0.7;
+        return size(d.size) * sizeFactor;
+      });
 
-      .on("mouseover", showTooltip)
-      .on("mouseout", hideTooltip)
-      .call(
-        d3
-          .drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended)
-      );
-
-    textNodeSvg
-      .append("circle")
+    svg
+      .selectAll("svg.textnode")
+      .select("circle")
+      .transition()
+      .duration(500)
       .attr("r", function (d) {
         sizeFactor = 1;
         //if (currentYear < 2016) sizeFactor = 0.7;
         return size(d.size) * sizeFactor;
-      })
-      .attr("fill", function (d) {
-        return d.color;
       });
+    simulation.nodes(graph).on("tick", function (d) {
+      textNodeSvg
+        .attr("x", function (d) {
+          return d.x;
+        })
+        .attr("y", function (d) {
+          return d.y;
+        });
+    });
+    simulation.alphaTarget(0.03).restart();
+  }
 
-    textNodeSvg
-      .append("text")
-      .text(function (d) {
-        return d.name;
-      })
-      .attr("text-anchor", "middle");
+  graph = getYearData(data, 2004);
 
-    function dragstarted(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.03).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    }
+  textNode = svg
+    .append("g")
+    .attr("class", "node")
+    .selectAll("svg")
+    .data(graph);
 
-    function dragged(d) {
-      d.fx = d3.event.x;
-      d.fy = d3.event.y;
-    }
+  textNodeSvg = textNode
+    .enter()
+    .append("svg")
+    .attr("x", function (d) {
+      d.x = width / 2;
+      if (width >= height) {
+        d.x = Math.random() * width;
+      }
+      return d.x;
+    })
+    .attr("y", function (d) {
+      d.y = height / 2;
+      if (width < height) {
+        d.y = Math.random() * height;
+      }
+      return d.y;
+    })
+    .attr("class", "textnode")
 
-    function dragended(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.03);
-      d.fx = null;
-      d.fy = null;
-    }
+    .on("mouseover", showTooltip)
+    .on("mouseout", hideTooltip)
+    .call(
+      d3
+        .drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended)
+    );
 
-    function wrap(texat, width) {
-      texat.each(function () {
-        var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
+  textNodeSvg
+    .append("circle")
+    .attr("r", function (d) {
+      sizeFactor = 1;
+      //if (currentYear < 2016) sizeFactor = 0.7;
+      return size(d.size) * sizeFactor;
+    })
+    .attr("fill", function (d) {
+      return d.color;
+    });
+
+  textNodeSvg
+    .append("text")
+    .text(function (d) {
+      return d.name;
+    })
+    .attr("text-anchor", "middle");
+
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.03).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.03);
+    d.fx = null;
+    d.fy = null;
+  }
+
+  function wrap(texat, width) {
+    texat.each(function () {
+      var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        tspan = text
+          .text(null)
+          .attr("text-anchor", "middle")
+          .append("tspan")
+          .attr("text-anchor", "middle")
+          .attr("x", 0);
+
+      sizeFactor = 1;
+      //if (currentYear < 2016) sizeFactor = 0.7;
+      var diameter = size(text.data()[0].size) * sizeFactor * 2;
+      text.attr("dy", 0);
+      width = diameter - diameter * 0.24;
+      height = diameter - diameter * 0.5;
+      var oneLine = true;
+      while ((word = words.pop())) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          lineNumber++;
+          oneLine = false;
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text
+            .append("tspan")
+            .attr("dy", 15)
+            .attr("x", 0)
+            .attr("text-anchor", "middle")
+            .text(word);
+        }
+
+        prevLength = tspan.node().getComputedTextLength();
+        //See if it's still too long
+        if (tspan.node().getComputedTextLength() > width) {
+          //It's still too long, hide the whole thing
+          text.style("display", "none");
+        }
+      }
+      if (text.node().getBBox().height > height) {
+        text.style("display", "none");
+      }
+
+      if (lineNumber > 1) {
+        text.attr("dy", -0.5 + "em");
+      }
+
+      if (oneLine) {
+        //Only one line. We must split it if its more than one word
+        words = text.text().split(/\s+/);
+        if (words.length > 1) {
+          //Yep, more than one word. Split it
           tspan = text
             .text(null)
             .attr("text-anchor", "middle")
             .append("tspan")
             .attr("text-anchor", "middle")
-            .attr("x", 0);
-
-        sizeFactor = 1;
-        //if (currentYear < 2016) sizeFactor = 0.7;
-        var diameter = size(text.data()[0].size) * sizeFactor * 2;
-        text.attr("dy", 0);
-        width = diameter - diameter * 0.24;
-        height = diameter - diameter * 0.5;
-        var oneLine = true;
-        while ((word = words.pop())) {
-          line.push(word);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > width) {
-            lineNumber++;
-            oneLine = false;
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [word];
-            tspan = text
-              .append("tspan")
-              .attr("dy", 15)
-              .attr("x", 0)
-              .attr("text-anchor", "middle")
-              .text(word);
-          }
-
-          prevLength = tspan.node().getComputedTextLength();
-          //See if it's still too long
-          if (tspan.node().getComputedTextLength() > width) {
-            //It's still too long, hide the whole thing
-            text.style("display", "none");
-          }
+            .attr("x", 0)
+            .text(words.slice(0, words.length / 2).join(" "));
+          text
+            .append("tspan")
+            .attr("text-anchor", "middle")
+            .attr("x", 0)
+            .attr("dy", 15)
+            .text(words.slice(words.length / 2, words.length).join(" "));
         }
-        if (text.node().getBBox().height > height) {
-          text.style("display", "none");
-        }
-
-        if (lineNumber > 1) {
-          text.attr("dy", -0.5 + "em");
-        }
-
-        if (oneLine) {
-          //Only one line. We must split it if its more than one word
-          words = text.text().split(/\s+/);
-          if (words.length > 1) {
-            //Yep, more than one word. Split it
-            tspan = text
-              .text(null)
-              .attr("text-anchor", "middle")
-              .append("tspan")
-              .attr("text-anchor", "middle")
-              .attr("x", 0)
-              .text(words.slice(0, words.length / 2).join(" "));
-            text
-              .append("tspan")
-              .attr("text-anchor", "middle")
-              .attr("x", 0)
-              .attr("dy", 15)
-              .text(words.slice(words.length / 2, words.length).join(" "));
-          }
-        }
-      });
-    }
-    redraw(2004);
+      }
+    });
+  }
+  redraw(2004);
 };
