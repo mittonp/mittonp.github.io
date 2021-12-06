@@ -53,8 +53,8 @@ $(document).ready(function () {
   $(".search-volume").counterUp();
   $(window).resize(function () {
     console.log("window resize");
-    landingInit();
-    bubbleInit();
+    //landingInit();
+    //bubbleInit();
     //initForce();
   });
   $(".splash-screen").hide();
