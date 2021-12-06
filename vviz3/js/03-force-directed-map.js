@@ -1,17 +1,18 @@
 var initForce = function () {
+  console.log("initForce");
   $("#instructions--force").click(function () {
     $("#instructions--force").hide();
   });
 
   var el = document.getElementById("chartdiv");
   el.addEventListener("touchstart", function (a) {
-    if ($(a)[0].tagName == "circle") {
+    if ($(a.srcElement)[0].tagName == "circle") {
       $.scrollify.disable();
       console.log("disable scrollify");
     }
   });
   el.addEventListener("touchend", function (a) {
-    if ($(a)[0].tagName == "circle") {
+    if ($(a.srcElement)[0].tagName == "circle") {
       $.scrollify.enable();
       console.log("enable scrollify");
     }
