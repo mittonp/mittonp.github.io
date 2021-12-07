@@ -1,11 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="sass/scalecanvas.css">
-    <link rel="stylesheet" href="sass/scene-restaurant.css">
-    <link rel="stylesheet" href="sass/scene-home.css">
-    <link rel="stylesheet" href="sass/elements.css">
-    <link rel="stylesheet" href="sass/scenes.css">
+    <link rel="stylesheet" href="sass/style.css">
     <link rel="stylesheet" href="fonts/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -568,47 +564,7 @@
 
     <script src="js/01jquery.min.js"></script>
     <script src="js/10jquery.scrollify.js"></script>
-    <script>
-        $(function() {
-            prevIndex = 0;
-            $.scrollify({
-                updateHash: false,
-                section: ".scroll-container",
-                scrollSpeed: 500,
-                before: function(index, sections) {
-                    direction = index < prevIndex ? "up" : "down";
-                    console.log(index, prevIndex, direction);
-                    prevSceneName = sections[prevIndex].attr("data-scene");
-                    curSceneName = sections[index].attr("data-scene");
-                    prevCutName = sections[prevIndex].attr("data-cut");
-                    curCutName = sections[index].attr("data-cut");
-                    previousCopy = $(".current-copy");
-                    copyToShow = $(curSceneName + " .copy[data-cut='"  + curCutName + "']");
-                    copyToShow.addClass("current-copy");
-                    copyToShow.removeClass("previous-copy");
-                    previousCopy.removeClass("current-copy");
-                    if (direction == "up") {
-                        $(prevSceneName).removeClass("cut-" + prevCutName);                        
-                    } else {
-                        previousCopy.addClass("previous-copy");
-                        $(curSceneName).addClass("cut-" + curCutName);
-                    }
-                    if (prevSceneName != curSceneName) {
-                        if (direction == "up") {
-                            $(prevSceneName).addClass("scene-below");
-                            $(curSceneName).removeClass("scene-above");
-                        } else {
-                            $(curSceneName).removeClass("scene-below");
-                            $(prevSceneName).addClass("scene-above");
-                        }
-                    }
-                },
-                after: function(index, sections) {
-                    prevIndex = index;
-                }
-            })
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
