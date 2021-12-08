@@ -1,7 +1,8 @@
-// @import 'scene-home.scss';
-// @import 'scenes.scss';
-// @import 'elements.scss';
+body{
+  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+}
 
+.article-details-page .container-fluid .article-body .text-block{
 .lookingglass{
   position: absolute;
   background:url(https://mittonvine.github.io/gviz2/layers/transparent.png);
@@ -14,9 +15,7 @@
   transform:translate(-50%, -50%);
 }
 
-body{
-  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
-}
+
 
 .scene-above, .scene-below{
   .lookingglass{
@@ -218,3 +217,4 @@ body{
   
   
   
+}

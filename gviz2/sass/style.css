@@ -1,351 +1,351 @@
 @import url(c:\Users\mitto\src\mittonvine.github.io\gviz2\fonts\style.css);
-.scene.scene-home .character-home-waiting, .scene.scene-home .character-home-hangs-head, .scene.scene-home .medicine-thought-bubble, .scene.scene-home .character-home-taking-meds, .scene.scene-home .clock--08 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home .character-home-waiting, .article-details-page .container-fluid .article-body .text-block .scene.scene-home .character-home-hangs-head, .article-details-page .container-fluid .article-body .text-block .scene.scene-home .medicine-thought-bubble, .article-details-page .container-fluid .article-body .text-block .scene.scene-home .character-home-taking-meds, .article-details-page .container-fluid .article-body .text-block .scene.scene-home .clock--08 {
   opacity: 0;
 }
 
-.scene.scene-home .copy--time {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home .copy--time {
   -webkit-transform: translate(-50%, -250%);
           transform: translate(-50%, -250%);
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home .copy--time {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home .copy--time {
     -webkit-transform: translate(0%, 350%);
             transform: translate(0%, 350%);
   }
 }
 
-.scene.scene-home #scene-home-copy-with-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home #scene-home-copy-with-meds {
   left: 20%;
 }
 
-.scene.scene-home .stomach {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home .stomach {
   opacity: 0;
 }
 
-.scene.scene-home .character-home-waiting {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home .character-home-waiting {
   opacity: 0;
 }
 
-.scene.scene-home .character-home-happy {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home .character-home-happy {
   opacity: 0;
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home.cut-1 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-1 .scene-content {
     -webkit-transform: scale(1.5) translatey(-20%);
             transform: scale(1.5) translatey(-20%);
   }
 }
 
-.scene.scene-home.cut-2 .character-home-sad {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-2 .character-home-sad {
   opacity: 0;
 }
 
-.scene.scene-home.cut-2 .character-home-hangs-head {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-2 .character-home-hangs-head {
   opacity: 1;
 }
 
-.scene.scene-home.cut-2 .clock--07 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-2 .clock--07 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-2 .clock--08 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-2 .clock--08 {
   opacity: 1;
 }
 
 @media (min-width: 600px) {
-  .scene.scene-home.cut-3 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-3 .scene-content {
     -webkit-transform: translate(-300px, 300px);
             transform: translate(-300px, 300px);
   }
 }
 
-.scene.scene-home.cut-3 .character-home {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-3 .character-home {
   opacity: 0;
 }
 
-.scene.scene-home.cut-3 #scene-home-copy-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-3 #scene-home-copy-1 {
   top: 50%;
 }
 
-.scene.scene-home.cut-3 #footnote-may-not-be-for-you {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-3 #footnote-may-not-be-for-you {
   display: block;
 }
 
 @media (min-width: 600px) {
-  .scene.scene-home.cut-4 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-4 .scene-content {
     -webkit-transform: translatey(300px);
             transform: translatey(300px);
   }
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home.cut-4 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-4 .scene-content {
     -webkit-transform: scale(2.5) translatey(30%);
             transform: scale(2.5) translatey(30%);
   }
 }
 
-.scene.scene-home.cut-4 #scene-home-copy-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-4 #scene-home-copy-1 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-4 .medicine-thought-bubble {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-4 .medicine-thought-bubble {
   opacity: 1;
 }
 
 @media (min-width: 600px) {
-  .scene.scene-home.cut-5 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-5 .scene-content {
     -webkit-transform: unset;
             transform: unset;
   }
 }
 
-.scene.scene-home.cut-5 .medicine-thought-bubble {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-5 .medicine-thought-bubble {
   opacity: 0;
 }
 
-.scene.scene-home.cut-5 .character-home-hangs-head {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-5 .character-home-hangs-head {
   opacity: 0;
 }
 
-.scene.scene-home.cut-5 .character-home-taking-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-5 .character-home-taking-meds {
   opacity: 1;
 }
 
-.scene.scene-home.cut-5 #footnote-may-not-be-for-you {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-5 #footnote-may-not-be-for-you {
   display: none;
 }
 
-.scene.scene-home.cut-6 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .scene-content {
   -webkit-transform: translate(-21%, 31%) scale(2);
           transform: translate(-21%, 31%) scale(2);
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home.cut-6 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .scene-content {
     -webkit-transform: translate(0, 30%) scale(4);
             transform: translate(0, 30%) scale(4);
   }
 }
 
-.scene.scene-home.cut-6 .character-home-taking-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .character-home-taking-meds {
   opacity: 0;
 }
 
-.scene.scene-home.cut-6 .home-scene {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .home-scene {
   opacity: 0;
 }
 
-.scene.scene-home.cut-6 .clock {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .clock {
   opacity: 0;
 }
 
-.scene.scene-home.cut-6 .stomach-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-6 .stomach-1 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-7 #scene-home-copy-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-7 #scene-home-copy-2 {
   top: 50%;
 }
 
-.scene.scene-home.cut-8 .stomach-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-8 .stomach-1 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-8 .stomach-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-8 .stomach-2 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-9 .stomach-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-9 .stomach-2 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-9 .stomach-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-9 .stomach-3 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-10 .stomach-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-10 .stomach-3 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-10 .stomach-4 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-10 .stomach-4 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-11 .stomach-4 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-11 .stomach-4 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-11 .stomach-5 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-11 .stomach-5 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-12 #scene-home-copy-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-12 #scene-home-copy-2 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-12 #scene-home-copy-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-12 #scene-home-copy-3 {
   top: 50%;
 }
 
-.scene.scene-home.cut-12 .stomach-5 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-12 .stomach-5 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-12 .stomach-6 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-12 .stomach-6 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-13 .stomach-6 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-13 .stomach-6 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-13 .stomach-7 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-13 .stomach-7 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-14 .stomach-7 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-14 .stomach-7 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-14 .stomach-8 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-14 .stomach-8 {
   opacity: 1;
 }
 
-.scene.scene-home.cut-15 .home-scene {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .home-scene {
   opacity: 1;
 }
 
-.scene.scene-home.cut-15 .clock {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .clock {
   opacity: 1;
 }
 
-.scene.scene-home.cut-15 .stomach-8 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .stomach-8 {
   opacity: 0;
 }
 
-.scene.scene-home.cut-15 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .scene-content {
   -webkit-transform: translateY(300px);
           transform: translateY(300px);
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home.cut-15 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .scene-content {
     -webkit-transform: scale(3.2) translatey(30%);
             transform: scale(3.2) translatey(30%);
   }
 }
 
-.scene.scene-home.cut-15 .character-home-taking-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .character-home-taking-meds {
   opacity: 0;
 }
 
-.scene.scene-home.cut-15 .character-home-waiting {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 .character-home-waiting {
   opacity: 1;
 }
 
-.scene.scene-home.cut-15 #scene-home-copy-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 #scene-home-copy-3 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-15 #scene-home-copy-1-minute {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-15 #scene-home-copy-1-minute {
   top: 15%;
 }
 
-.scene.scene-home.cut-16 #scene-home-copy-1-minute {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-16 #scene-home-copy-1-minute {
   top: -100vh;
 }
 
-.scene.scene-home.cut-16 #scene-home-copy-2-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-16 #scene-home-copy-2-minutes {
   top: 15%;
 }
 
-.scene.scene-home.cut-17 #scene-home-copy-2-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-17 #scene-home-copy-2-minutes {
   top: -100vh;
 }
 
-.scene.scene-home.cut-17 #scene-home-copy-3-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-17 #scene-home-copy-3-minutes {
   top: 15%;
 }
 
 @media (max-width: 600px) {
-  .scene.scene-home.cut-18 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 .scene-content {
     -webkit-transform: scale(1.5) translatey(-20%);
             transform: scale(1.5) translatey(-20%);
   }
 }
 
-.scene.scene-home.cut-18 #footnote-may-not-be-for-you {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 #footnote-may-not-be-for-you {
   display: block;
 }
 
-.scene.scene-home.cut-18 #scene-home-copy-3-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 #scene-home-copy-3-minutes {
   top: -100vh;
 }
 
-.scene.scene-home.cut-18 #scene-home-copy-4-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 #scene-home-copy-4-minutes {
   top: 15%;
 }
 
-.scene.scene-home.cut-18 #scene-home-copy-with-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 #scene-home-copy-with-meds {
   top: 50%;
 }
 
-.scene.scene-home.cut-18 .character-home-waiting {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 .character-home-waiting {
   opacity: 0;
 }
 
-.scene.scene-home.cut-18 .character-home-happy {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-18 .character-home-happy {
   opacity: 1;
 }
 
-.scene.scene-home.cut-19 #footnote-may-not-be-for-you {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-19 #footnote-may-not-be-for-you {
   display: none;
 }
 
-.scene.scene-home.cut-19 #scene-home-copy-4-minutes {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-19 #scene-home-copy-4-minutes {
   top: -100vh;
 }
 
-.scene.scene-home.cut-19 #scene-home-copy-with-meds {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-19 #scene-home-copy-with-meds {
   top: -100vh;
 }
 
-.scene.scene-home.cut-19 #scene-home-copy-final-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-19 #scene-home-copy-final-1 {
   top: 50%;
 }
 
-.scene.scene-home.cut-20 #scene-home-copy-final-1 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-20 #scene-home-copy-final-1 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-20 #scene-home-copy-final-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-20 #scene-home-copy-final-2 {
   top: 50%;
 }
 
-.scene.scene-home.cut-21 #scene-home-copy-final-2 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-21 #scene-home-copy-final-2 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-21 #scene-home-copy-final-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-21 #scene-home-copy-final-3 {
   top: 50%;
 }
 
-.scene.scene-home.cut-22 #scene-home-copy-final-3 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-22 #scene-home-copy-final-3 {
   top: -100vh;
 }
 
-.scene.scene-home.cut-22 #scene-home-copy-final-4 {
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-22 #scene-home-copy-final-4 {
   top: 50%;
 }
 
-.scene-above, .scene-below {
+.article-details-page .container-fluid .article-body .text-block .scene-above, .article-details-page .container-fluid .article-body .text-block .scene-below {
   opacity: 0;
 }
 
-.scene .copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy {
   position: absolute;
   top: 180vh;
   left: 50%;
@@ -354,7 +354,7 @@
 }
 
 @media (orientation: portrait) {
-  .scene .copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy {
     -webkit-transform: unset;
             transform: unset;
     left: unset;
@@ -362,32 +362,32 @@
 }
 
 @media (min-width: 600px) {
-  .scene .copy--left {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy--left {
     left: 25%;
   }
 }
 
 @media (min-width: 600px) {
-  .scene .copy--right {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy--right {
     left: 75%;
   }
 }
 
-.scene .copy.current-copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy.current-copy {
   top: 50%;
 }
 
 @media (max-width: 600px) {
-  .scene .copy.current-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy.current-copy {
     top: 5vw;
   }
 }
 
-.scene .copy.previous-copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy.previous-copy {
   top: -100vh;
 }
 
-.scene-1 .neonsign {
+.article-details-page .container-fluid .article-body .text-block .scene-1 .neonsign {
   top: 50%;
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
@@ -395,7 +395,7 @@
   background-position: center;
 }
 
-.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1, .scene-2 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-2, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-3, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-1, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-0 {
   top: 180vh;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -403,231 +403,231 @@
   left: 50%;
 }
 
-.scene-2.cut-2 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-2 #stat-container-0 {
   top: 50%;
 }
 
-.scene-2.cut-2 #footnote-recent-meta {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-2 #footnote-recent-meta {
   display: block;
 }
 
-.scene-2.cut-3 #footnote-recent-meta {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #footnote-recent-meta {
   display: none;
 }
 
-.scene-2.cut-3 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #stat-container-0 {
   top: -100vh;
 }
 
-.scene-2.cut-3 #stat-container-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #stat-container-1 {
   top: 50%;
 }
 
-.scene-2.cut-3 #footnote-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #footnote-1 {
   display: block;
 }
 
-.scene-2.cut-4 #stat-container-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #stat-container-1 {
   top: -100vh;
 }
 
-.scene-2.cut-4 #stat-container-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #stat-container-2 {
   top: 50%;
 }
 
-.scene-2.cut-4 #footnote-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #footnote-1 {
   display: none;
 }
 
-.scene-2.cut-4 #footnote-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #footnote-2 {
   display: block;
 }
 
-.scene-2.cut-5 #stat-container-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-5 #stat-container-2 {
   top: -100vh;
 }
 
-.scene-2.cut-5 #stat-container-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-5 #stat-container-3 {
   top: 50%;
 }
 
-.scene-4 .background-static-light-on {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .background-static-light-on {
   opacity: 0;
 }
 
-.scene-4 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .friend {
   opacity: 0.1;
 }
 
-.scene-4 .character-eating, .scene-4 .character-distressed,
-.scene-4 .speech-bubble-home,
-.scene-4 .intestine, .scene-4 .flame,
-.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward, .scene-4 .window-lit {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .character-eating, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-distressed,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .speech-bubble-home,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .intestine, .article-details-page .container-fluid .article-body .text-block .scene-4 .flame,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .friend-distressed, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-standing-distressed, .article-details-page .container-fluid .article-body .text-block .scene-4 .friend-distressed-2, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-leans-forward, .article-details-page .container-fluid .article-body .text-block .scene-4 .window-lit {
   opacity: 0;
 }
 
-.scene-4.cut-2 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-2 .character-eating {
   opacity: 1;
 }
 
-.scene-4.cut-2 .character-served {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-2 .character-served {
   opacity: 0;
 }
 
-.scene-4.cut-3 .background-static {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .background-static {
   opacity: 0.1;
 }
 
-.scene-4.cut-3 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .character-eating {
   opacity: 0.2;
 }
 
-.scene-4.cut-3 .intestine-food-in-throat {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .intestine-food-in-throat {
   opacity: 0.5;
 }
 
-.scene-4.cut-3 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .scene-content {
   -webkit-transform: scale(1.2) translateY(20%);
           transform: scale(1.2) translateY(20%);
 }
 
 @media (max-width: 600px) {
-  .scene-4.cut-3 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .scene-content {
     -webkit-transform: scale(3.5) translate(25%, 15%);
             transform: scale(3.5) translate(25%, 15%);
   }
 }
 
-.scene-4.cut-4 .intestine-food-in-throat {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-4 .intestine-food-in-throat {
   opacity: 0;
 }
 
-.scene-4.cut-4 .intestine-food-entering-stomach {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-4 .intestine-food-entering-stomach {
   opacity: 1;
 }
 
-.scene-4.cut-5 .intestine-food-entering-stomach {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-5 .intestine-food-entering-stomach {
   opacity: 0;
 }
 
-.scene-4.cut-5 .intestine-blue-red-bubbles {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-5 .intestine-blue-red-bubbles {
   opacity: 1;
 }
 
-.scene-4.cut-6 .intestine-blue-red-bubbles {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-6 .intestine-blue-red-bubbles {
   opacity: 0;
 }
 
-.scene-4.cut-6 .intestine-red {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-6 .intestine-red {
   opacity: 1;
 }
 
-.scene-4.cut-7 .intestine-red {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-7 .intestine-red {
   opacity: 0;
 }
 
-.scene-4.cut-7 .intestine-red-and-filling {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-7 .intestine-red-and-filling {
   opacity: 1;
 }
 
-.scene-4.cut-8 .intestine-red-and-filling {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-8 .intestine-red-and-filling {
   opacity: 0;
 }
 
-.scene-4.cut-8 .intestine-with-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-8 .intestine-with-flame {
   opacity: 1;
 }
 
-.scene-4.cut-9 .intestine-with-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-9 .intestine-with-flame {
   opacity: 0;
 }
 
-.scene-4.cut-9 .intestine-with-glowing-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-9 .intestine-with-glowing-flame {
   opacity: 1;
 }
 
-.scene-4.cut-10 .intestine-with-glowing-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-10 .intestine-with-glowing-flame {
   opacity: 0;
 }
 
-.scene-4.cut-10 .intestine-glow-in-mouth {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-10 .intestine-glow-in-mouth {
   opacity: 1;
 }
 
-.scene-4.cut-12 .background-static {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .background-static {
   opacity: 1;
 }
 
-.scene-4.cut-12 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .character-eating {
   opacity: 0;
 }
 
-.scene-4.cut-12 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .character-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-12 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .friend {
   opacity: 1;
 }
 
-.scene-4.cut-12 .intestine-glow-in-mouth {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .intestine-glow-in-mouth {
   opacity: 0;
 }
 
-.scene-4.cut-13 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .character-distressed {
   opacity: 0;
 }
 
-.scene-4.cut-13 .character-leans-forward {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .character-leans-forward {
   opacity: 1;
 }
 
-.scene-4.cut-13 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .scene-content {
   -webkit-transform: translateY(35%);
           transform: translateY(35%);
 }
 
 @media (max-width: 600px) {
-  .scene-4.cut-13 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .scene-content {
     -webkit-transform: unset;
             transform: unset;
   }
 }
 
-.scene-4.cut-13 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .friend {
   opacity: 0;
 }
 
-.scene-4.cut-13 .friend-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .friend-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-14 .character-leans-forward {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .character-leans-forward {
   opacity: 0;
 }
 
-.scene-4.cut-14 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .character-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-14 .speech-bubble-home {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .speech-bubble-home {
   opacity: 1;
 }
 
-.scene-4.cut-15 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .scene-content {
   -webkit-transform-origin: 48% 20%;
           transform-origin: 48% 20%;
 }
 
-.scene-4.cut-15 .speech-bubble-home {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .speech-bubble-home {
   opacity: 0;
 }
 
-.scene-4.cut-15 .friend-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .friend-distressed {
   opacity: 0;
 }
 
-.scene-4.cut-15 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .character-distressed {
   -webkit-animation-name: standUp;
           animation-name: standUp;
   -webkit-animation-duration: 0.5s;
@@ -638,20 +638,20 @@
           animation-fill-mode: forwards;
 }
 
-.scene-4.cut-15 .friend-distressed-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .friend-distressed-2 {
   opacity: 1;
 }
 
-.scene-4.cut-16 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-16 .scene-content {
   -webkit-transform: scale(10);
           transform: scale(10);
 }
 
-.scene-4.cut-16 .window-lit {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-16 .window-lit {
   opacity: 1;
 }
 
-.front-center {
+.article-details-page .container-fluid .article-body .text-block .front-center {
   left: 50%;
   position: absolute;
   top: 50%;
@@ -659,7 +659,7 @@
           transform: translate(-50%, -50%);
 }
 
-.neonsign {
+.article-details-page .container-fluid .article-body .text-block .neonsign {
   width: 1216px;
   height: 465px;
   background-size: contain;
@@ -672,7 +672,7 @@
           transform: translate(-50%, -100%);
 }
 
-.stomach {
+.article-details-page .container-fluid .article-body .text-block .stomach {
   width: 172px;
   height: 451px;
   position: absolute;
@@ -682,39 +682,39 @@
   left: 940px;
 }
 
-.stomach-1 {
+.article-details-page .container-fluid .article-body .text-block .stomach-1 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-1.svg");
 }
 
-.stomach-2 {
+.article-details-page .container-fluid .article-body .text-block .stomach-2 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-2.svg");
 }
 
-.stomach-3 {
+.article-details-page .container-fluid .article-body .text-block .stomach-3 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-3.svg");
 }
 
-.stomach-4 {
+.article-details-page .container-fluid .article-body .text-block .stomach-4 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-4.svg");
 }
 
-.stomach-5 {
+.article-details-page .container-fluid .article-body .text-block .stomach-5 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-5.svg");
 }
 
-.stomach-6 {
+.article-details-page .container-fluid .article-body .text-block .stomach-6 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-6.svg");
 }
 
-.stomach-7 {
+.article-details-page .container-fluid .article-body .text-block .stomach-7 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-7.svg");
 }
 
-.stomach-8 {
+.article-details-page .container-fluid .article-body .text-block .stomach-8 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/antacid-step-8.svg");
 }
 
-.clock {
+.article-details-page .container-fluid .article-body .text-block .clock {
   width: 181px;
   height: 181px;
   top: -100px;
@@ -722,15 +722,15 @@
   position: absolute;
 }
 
-.clock--07 {
+.article-details-page .container-fluid .article-body .text-block .clock--07 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/clock-07.svg");
 }
 
-.clock--08 {
+.article-details-page .container-fluid .article-body .text-block .clock--08 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/clock-08.svg");
 }
 
-.intestine {
+.article-details-page .container-fluid .article-body .text-block .intestine {
   width: 149px;
   height: 391px;
   position: absolute;
@@ -740,41 +740,41 @@
   left: 390px;
 }
 
-.intestine-food-in-throat {
+.article-details-page .container-fluid .article-body .text-block .intestine-food-in-throat {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-food-in-throat.png");
 }
 
-.intestine-food-entering-stomach {
+.article-details-page .container-fluid .article-body .text-block .intestine-food-entering-stomach {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-food-entering-stomach.svg");
 }
 
-.intestine-blue-red-bubbles {
+.article-details-page .container-fluid .article-body .text-block .intestine-blue-red-bubbles {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-blue-red-bubbles.svg");
 }
 
-.intestine-red {
+.article-details-page .container-fluid .article-body .text-block .intestine-red {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-red.svg");
 }
 
-.intestine-red-and-filling {
+.article-details-page .container-fluid .article-body .text-block .intestine-red-and-filling {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-red-and-filling.svg");
 }
 
-.intestine-with-flame {
+.article-details-page .container-fluid .article-body .text-block .intestine-with-flame {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-with-flame.svg");
 }
 
-.intestine-with-glowing-flame {
+.article-details-page .container-fluid .article-body .text-block .intestine-with-glowing-flame {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-with-glowing-flame.svg");
 }
 
-.intestine-glow-in-mouth {
+.article-details-page .container-fluid .article-body .text-block .intestine-glow-in-mouth {
   background-image: url("https://mittonvine.github.io/gviz2/layers/intestine-glow-in-mouth.svg");
   top: 82px;
   height: 399px;
 }
 
-.character-home-sad {
+.article-details-page .container-fluid .article-body .text-block .character-home-sad {
   width: 409px;
   height: 1136px;
   position: absolute;
@@ -783,7 +783,7 @@
   background: url("https://mittonvine.github.io/gviz2/layers/character-home-sad.svg");
 }
 
-.character-home-hangs-head {
+.article-details-page .container-fluid .article-body .text-block .character-home-hangs-head {
   width: 412px;
   height: 1116px;
   position: absolute;
@@ -792,7 +792,7 @@
   background: url("https://mittonvine.github.io/gviz2/layers/character-home-hangs-head.svg");
 }
 
-.character-home-waiting {
+.article-details-page .container-fluid .article-body .text-block .character-home-waiting {
   width: 409px;
   height: 1136px;
   position: absolute;
@@ -801,7 +801,7 @@
   background: url("https://mittonvine.github.io/gviz2/layers/character-home-waiting.svg");
 }
 
-.character-home-happy {
+.article-details-page .container-fluid .article-body .text-block .character-home-happy {
   width: 409px;
   height: 1136px;
   position: absolute;
@@ -810,7 +810,7 @@
   background: url("https://mittonvine.github.io/gviz2/layers/character-home-happy.svg");
 }
 
-.home-scene {
+.article-details-page .container-fluid .article-body .text-block .home-scene {
   width: 1920px;
   height: 426px;
   position: absolute;
@@ -820,7 +820,7 @@
   background: url("https://mittonvine.github.io/gviz2/layers/home-background.svg");
 }
 
-.character-home-taking-meds {
+.article-details-page .container-fluid .article-body .text-block .character-home-taking-meds {
   background: url("https://mittonvine.github.io/gviz2/layers/character-home.svg");
   width: 412px;
   height: 1110px;
@@ -829,7 +829,7 @@
   position: absolute;
 }
 
-.food-particles {
+.article-details-page .container-fluid .article-body .text-block .food-particles {
   background: url("https://mittonvine.github.io/gviz2/layers/food-particles.svg");
   position: absolute;
   background-size: contain;
@@ -847,7 +847,7 @@
           animation-timing-function: ease-in-out;
 }
 
-.red-stuff {
+.article-details-page .container-fluid .article-body .text-block .red-stuff {
   background: url("https://mittonvine.github.io/gviz2/layers/red-stuff.svg");
   position: absolute;
   background-size: contain;
@@ -866,11 +866,11 @@
           animation-timing-function: ease-in-out;
 }
 
-.stomach-antacid {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid {
   position: absolute;
 }
 
-.stomach-antacid .antacid-step {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step {
   position: absolute;
   width: 563;
   height: 1477;
@@ -886,37 +886,37 @@
   opacity: 0;
 }
 
-.stomach-antacid .antacid-step-1 {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step-1 {
   background: url("https://mittonvine.github.io/gviz2/layers/antacid-step-1.svg");
   -webkit-animation: appear;
           animation: appear;
 }
 
-.stomach-antacid .antacid-step-2 {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step-2 {
   background: url("https://mittonvine.github.io/gviz2/layers/antacid-step-2.svg");
   -webkit-animation-delay: 10s;
           animation-delay: 10s;
 }
 
-.stomach-antacid .antacid-step-3 {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step-3 {
   background: url("https://mittonvine.github.io/gviz2/layers/antacid-step-3.svg");
   -webkit-animation-delay: 20s;
           animation-delay: 20s;
 }
 
-.stomach-antacid .antacid-step-4 {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step-4 {
   background: url("https://mittonvine.github.io/gviz2/layers/antacid-step-4.svg");
   -webkit-animation-delay: 30s;
           animation-delay: 30s;
 }
 
-.stomach-antacid .antacid-step-5 {
+.article-details-page .container-fluid .article-body .text-block .stomach-antacid .antacid-step-5 {
   background: url("https://mittonvine.github.io/gviz2/layers/antacid-step-5.svg");
   -webkit-animation-delay: 40s;
           animation-delay: 40s;
 }
 
-.perspective-level-1 {
+.article-details-page .container-fluid .article-body .text-block .perspective-level-1 {
   width: 1920px;
   height: 817px;
   background-repeat: no-repeat;
@@ -924,7 +924,7 @@
   position: absolute;
 }
 
-.perspective-level-2 {
+.article-details-page .container-fluid .article-body .text-block .perspective-level-2 {
   background: url("https://mittonvine.github.io/gviz2/layers/perspective-level-2.svg");
   width: 1047px;
   height: 803px;
@@ -933,12 +933,12 @@
   position: absolute;
 }
 
-.perspective-level-2--mobile {
+.article-details-page .container-fluid .article-body .text-block .perspective-level-2--mobile {
   width: 383px;
   height: 294px;
 }
 
-.perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .perspective-level-3 {
   background: url("https://mittonvine.github.io/gviz2/layers/perspective-level-3.svg");
   width: 1814px;
   height: 484px;
@@ -947,7 +947,7 @@
   position: absolute;
 }
 
-.perspective-level-4 {
+.article-details-page .container-fluid .article-body .text-block .perspective-level-4 {
   background: url("https://mittonvine.github.io/gviz2/layers/perspective-level-3.svg");
   width: 1814px;
   height: 484px;
@@ -956,7 +956,7 @@
   position: absolute;
 }
 
-.pocket {
+.article-details-page .container-fluid .article-body .text-block .pocket {
   background: url("https://mittonvine.github.io/gviz2/layers/pocket.svg");
   width: 67px;
   height: 64px;
@@ -968,18 +968,18 @@
 }
 
 @media (max-width: 600px) {
-  .desktop-element {
+  .article-details-page .container-fluid .article-body .text-block .desktop-element {
     display: none;
   }
 }
 
 @media (min-width: 600px) {
-  .mobile-element {
+  .article-details-page .container-fluid .article-body .text-block .mobile-element {
     display: none;
   }
 }
 
-.flame {
+.article-details-page .container-fluid .article-body .text-block .flame {
   background: url("https://mittonvine.github.io/gviz2/layers/flame.svg");
   width: 30px;
   height: 30px;
@@ -990,7 +990,7 @@
   top: 100px;
 }
 
-.background-static {
+.article-details-page .container-fluid .article-body .text-block .background-static {
   background: url("https://mittonvine.github.io/gviz2/layers/background-static.png");
   width: 1920px;
   height: 610px;
@@ -999,7 +999,7 @@
   position: absolute;
 }
 
-.background-static-light-on {
+.article-details-page .container-fluid .article-body .text-block .background-static-light-on {
   background: url("https://mittonvine.github.io/gviz2/layers/background-static-light-on.png");
   width: 1920px;
   height: 610px;
@@ -1008,7 +1008,7 @@
   position: absolute;
 }
 
-.window-lit {
+.article-details-page .container-fluid .article-body .text-block .window-lit {
   background: url("https://mittonvine.github.io/gviz2/layers/window-lit.svg");
   width: 10px;
   height: 13px;
@@ -1018,39 +1018,39 @@
   background-size: contain;
 }
 
-.drinker {
+.article-details-page .container-fluid .article-body .text-block .drinker {
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
 }
 
-.drinker--drink-up {
+.article-details-page .container-fluid .article-body .text-block .drinker--drink-up {
   background: url("https://mittonvine.github.io/gviz2/layers/drinker-drink-up.svg");
   width: 547px;
   height: 626px;
   left: 183px;
 }
 
-.drinker--drink-up--mobile {
+.article-details-page .container-fluid .article-body .text-block .drinker--drink-up--mobile {
   width: 199px;
   height: 228px;
   left: 0;
 }
 
-.drinker--drink-down {
+.article-details-page .container-fluid .article-body .text-block .drinker--drink-down {
   background: url("https://mittonvine.github.io/gviz2/layers/drinker-drink-down.svg");
   width: 710px;
   height: 604px;
   left: 183px;
 }
 
-.drinker--drink-down--mobile {
+.article-details-page .container-fluid .article-body .text-block .drinker--drink-down--mobile {
   width: 258px;
   height: 219px;
   left: 0;
 }
 
-.bar-bench {
+.article-details-page .container-fluid .article-body .text-block .bar-bench {
   background: url("https://mittonvine.github.io/gviz2/layers/bar-bench.svg");
   width: 1920px;
   height: 278px;
@@ -1060,7 +1060,7 @@
   bottom: 0;
 }
 
-.table-for-two {
+.article-details-page .container-fluid .article-body .text-block .table-for-two {
   background: url("https://mittonvine.github.io/gviz2/layers/table-for-two.svg");
   width: 1920px;
   height: 1595px;
@@ -1070,7 +1070,7 @@
   bottom: 0;
 }
 
-.character-served {
+.article-details-page .container-fluid .article-body .text-block .character-served {
   background: url("https://mittonvine.github.io/gviz2/layers/character-served.svg");
   width: 560px;
   height: 958px;
@@ -1081,7 +1081,7 @@
   left: 351px;
 }
 
-.character-eating {
+.article-details-page .container-fluid .article-body .text-block .character-eating {
   background: url("https://mittonvine.github.io/gviz2/layers/character-eating.svg");
   width: 560px;
   height: 958px;
@@ -1092,7 +1092,7 @@
   left: 351px;
 }
 
-.character-leans-forward {
+.article-details-page .container-fluid .article-body .text-block .character-leans-forward {
   background: url("https://mittonvine.github.io/gviz2/layers/character-leans-forward.svg");
   width: 560px;
   height: 958px;
@@ -1103,7 +1103,7 @@
   left: 351px;
 }
 
-.friend {
+.article-details-page .container-fluid .article-body .text-block .friend {
   background: url("https://mittonvine.github.io/gviz2/layers/friend.svg");
   width: 476px;
   height: 920px;
@@ -1114,7 +1114,7 @@
   left: 1019px;
 }
 
-.friend-distressed {
+.article-details-page .container-fluid .article-body .text-block .friend-distressed {
   background: url("https://mittonvine.github.io/gviz2/layers/friend-distressed.svg");
   width: 476px;
   height: 920px;
@@ -1125,7 +1125,7 @@
   left: 1019px;
 }
 
-.friend-distressed-2 {
+.article-details-page .container-fluid .article-body .text-block .friend-distressed-2 {
   background: url("https://mittonvine.github.io/gviz2/layers/friend-distressed-2.svg");
   width: 476px;
   height: 920px;
@@ -1136,7 +1136,7 @@
   left: 1019px;
 }
 
-.speech-bubble-home {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-home {
   background: url("https://mittonvine.github.io/gviz2/layers/speech-bubble-home.svg");
   width: 311px;
   height: 231px;
@@ -1147,7 +1147,7 @@
   left: 319px;
 }
 
-.medicine-thought-bubble {
+.article-details-page .container-fluid .article-body .text-block .medicine-thought-bubble {
   background: url("https://mittonvine.github.io/gviz2/layers/medicine-thought-bubble.png");
   width: 237px;
   height: 231px;
@@ -1158,7 +1158,7 @@
   left: 871px;
 }
 
-.character-standing-distressed {
+.article-details-page .container-fluid .article-body .text-block .character-standing-distressed {
   width: 439px;
   height: 1219px;
   background-repeat: no-repeat;
@@ -1169,7 +1169,7 @@
   background-image: url("https://mittonvine.github.io/gviz2/layers/character-standing-distressed.svg");
 }
 
-.character-distressed {
+.article-details-page .container-fluid .article-body .text-block .character-distressed {
   background-image: url("https://mittonvine.github.io/gviz2/layers/character-distressed.svg");
   width: 560px;
   height: 958px;
@@ -1272,13 +1272,13 @@
   }
 }
 
-.speech-bubble-cycler {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-cycler {
   width: 182px;
   height: 247px;
   position: absolute;
 }
 
-.speech-bubble {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble {
   width: 182px;
   height: 247px;
   background-repeat: no-repeat;
@@ -1293,41 +1293,41 @@
   opacity: 0;
 }
 
-.speech-bubble-spaghetti {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-spaghetti {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-spaghetti.svg");
 }
 
-.speech-bubble-cheese-burger {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-cheese-burger {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-cheese-burger.svg");
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.speech-bubble-chilly-tacos {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-chilly-tacos {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-chilly-tacos.svg");
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
 
-.speech-bubble-garlic-bread {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-garlic-bread {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-garlic-bread.svg");
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
 
-.speech-bubble-mint-choco {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-mint-choco {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-mint-choco.svg");
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
 
-.speech-bubble-pink-lemonade {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-pink-lemonade {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-pink-lemonade.svg");
   -webkit-animation-delay: 5s;
           animation-delay: 5s;
 }
 
-.speech-bubble-pizza {
+.article-details-page .container-fluid .article-body .text-block .speech-bubble-pizza {
   background-image: url("https://mittonvine.github.io/gviz2/layers/bubble-pizza.svg");
   -webkit-animation-delay: 6s;
           animation-delay: 6s;
@@ -1357,7 +1357,7 @@
   }
 }
 
-.stat-1 {
+.article-details-page .container-fluid .article-body .text-block .stat-1 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/stat1.svg");
   background-repeat: no-repeat;
   width: 686px;
@@ -1369,13 +1369,13 @@
 }
 
 @media (max-width: 600px) {
-  .stat-1 {
+  .article-details-page .container-fluid .article-body .text-block .stat-1 {
     width: 343px;
     height: 187px;
   }
 }
 
-.stat-2 {
+.article-details-page .container-fluid .article-body .text-block .stat-2 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/stat2.svg");
   background-repeat: no-repeat;
   width: 686px;
@@ -1387,13 +1387,13 @@
 }
 
 @media (max-width: 600px) {
-  .stat-2 {
+  .article-details-page .container-fluid .article-body .text-block .stat-2 {
     width: 343px;
     height: 465px;
   }
 }
 
-.stat-3 {
+.article-details-page .container-fluid .article-body .text-block .stat-3 {
   background-image: url("https://mittonvine.github.io/gviz2/layers/stat3.svg");
   background-repeat: no-repeat;
   width: 620px;
@@ -1405,13 +1405,13 @@
 }
 
 @media (max-width: 600px) {
-  .stat-3 {
+  .article-details-page .container-fluid .article-body .text-block .stat-3 {
     height: 458px;
     width: 310px;
   }
 }
 
-.globe {
+.article-details-page .container-fluid .article-body .text-block .globe {
   background-image: url(https://mittonvine.github.io/gviz2/layers/globe.svg);
   background-repeat: no-repeat;
   width: 491px;
@@ -1422,13 +1422,13 @@
 }
 
 @media (max-width: 600px) {
-  .globe {
+  .article-details-page .container-fluid .article-body .text-block .globe {
     width: 300px;
     height: 296px;
   }
 }
 
-.radiating-circle {
+.article-details-page .container-fluid .article-body .text-block .radiating-circle {
   position: relative;
   width: 25px;
   height: 25px;
@@ -1444,7 +1444,7 @@
 }
 
 @media (max-width: 600px) {
-  .radiating-circle {
+  .article-details-page .container-fluid .article-body .text-block .radiating-circle {
     width: 15px;
     height: 15px;
   }
@@ -1472,7 +1472,7 @@
   }
 }
 
-.copy {
+.article-details-page .container-fluid .article-body .text-block .copy {
   background-color: rgba(8, 5, 62, 0.95);
   position: absolute;
   color: white;
@@ -1484,71 +1484,71 @@
 }
 
 @media (min-width: 600px) {
-  .copy {
+  .article-details-page .container-fluid .article-body .text-block .copy {
     width: 527px;
     padding: 80px 71px 90px 63px;
   }
 }
 
 @media (min-width: 1400px) {
-  .copy {
+  .article-details-page .container-fluid .article-body .text-block .copy {
     width: 627px;
     padding: 100px 91px 100px 73px;
   }
 }
 
-.copy--time {
+.article-details-page .container-fluid .article-body .text-block .copy--time {
   padding: 20px 80px;
   width: auto;
 }
 
-.copy--alt {
+.article-details-page .container-fluid .article-body .text-block .copy--alt {
   width: 340px;
   padding: 32px 23px;
   text-align: center;
 }
 
-.copy h2 {
+.article-details-page .container-fluid .article-body .text-block .copy h2 {
   font-size: 17px;
   font-weight: 700;
   margin: 0;
 }
 
 @media (min-width: 600px) {
-  .copy h2 {
+  .article-details-page .container-fluid .article-body .text-block .copy h2 {
     font-size: 22px;
   }
 }
 
 @media (min-width: 1400px) {
-  .copy h2 {
+  .article-details-page .container-fluid .article-body .text-block .copy h2 {
     font-size: 32px;
   }
 }
 
-.copy p, .copy li {
+.article-details-page .container-fluid .article-body .text-block .copy p, .article-details-page .container-fluid .article-body .text-block .copy li {
   font-size: 15px;
   font-weight: 400;
 }
 
 @media (min-width: 600px) {
-  .copy p, .copy li {
+  .article-details-page .container-fluid .article-body .text-block .copy p, .article-details-page .container-fluid .article-body .text-block .copy li {
     font-size: 17px;
   }
 }
 
 @media (min-width: 1400px) {
-  .copy p, .copy li {
+  .article-details-page .container-fluid .article-body .text-block .copy p, .article-details-page .container-fluid .article-body .text-block .copy li {
     font-size: 22px;
   }
 }
 
-.copy ul {
+.article-details-page .container-fluid .article-body .text-block .copy ul {
   -webkit-padding-start: 1em;
           padding-inline-start: 1em;
 }
 
-.copy--final {
+.article-details-page .container-fluid .article-body .text-block .copy--final {
   font-family: 'Frutiger LT Pro 55 Roman';
   font-size: 22px;
   font-weight: 400;
@@ -1560,7 +1560,7 @@
 }
 
 @media (min-width: 1000px) {
-  .copy--final {
+  .article-details-page .container-fluid .article-body .text-block .copy--final {
     height: 80%;
     border: 15px solid #2f72f4;
     width: 1100px;
@@ -1568,19 +1568,19 @@
   }
 }
 
-.copy--final h2 {
+.article-details-page .container-fluid .article-body .text-block .copy--final h2 {
   color: #ff8a00;
   font-size: 22px;
   font-family: 'Frutiger LT Pro 65 Bold';
 }
 
 @media (min-width: 1000px) {
-  .copy--final h2 {
+  .article-details-page .container-fluid .article-body .text-block .copy--final h2 {
     font-size: 48px;
   }
 }
 
-.copy--final h3 {
+.article-details-page .container-fluid .article-body .text-block .copy--final h3 {
   color: #2f72f4;
   font-size: 18px;
   font-weight: 400;
@@ -1588,12 +1588,12 @@
 }
 
 @media (min-width: 1000px) {
-  .copy--final h3 {
+  .article-details-page .container-fluid .article-body .text-block .copy--final h3 {
     font-size: 40px;
   }
 }
 
-.footnote {
+.article-details-page .container-fluid .article-body .text-block .footnote {
   position: absolute;
   bottom: 10px;
   color: white;
@@ -1604,19 +1604,24 @@
 }
 
 @media (min-width: 1400px) {
-  .footnote {
+  .article-details-page .container-fluid .article-body .text-block .footnote {
     font-size: 22px;
   }
 }
 
 @media (max-width: 600px) {
-  .footnote {
+  .article-details-page .container-fluid .article-body .text-block .footnote {
     margin: 0 20px;
     font-size: 10px;
   }
 }
 
-.lookingglass {
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
+  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+}
+
+.article-details-page .container-fluid .article-body .text-block .lookingglass {
   position: absolute;
   background: url(https://mittonvine.github.io/gviz2/layers/transparent.png);
   width: 4000px;
@@ -1629,34 +1634,29 @@
           transform: translate(-50%, -50%);
 }
 
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
-  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
-}
-
-.scene-above .lookingglass, .scene-below .lookingglass {
+.article-details-page .container-fluid .article-body .text-block .scene-above .lookingglass, .article-details-page .container-fluid .article-body .text-block .scene-below .lookingglass {
   display: none;
 }
 
-.pink-text {
+.article-details-page .container-fluid .article-body .text-block .pink-text {
   color: #ff7bf9;
 }
 
-.blue-text {
+.article-details-page .container-fluid .article-body .text-block .blue-text {
   color: #00d7d7;
 }
 
-.orange-text {
+.article-details-page .container-fluid .article-body .text-block .orange-text {
   color: #ff8a00;
 }
 
-.scene-heading {
+.article-details-page .container-fluid .article-body .text-block .scene-heading {
   color: white;
   position: absolute;
   display: none;
 }
 
-.scene-container {
+.article-details-page .container-fluid .article-body .text-block .scene-container {
   position: fixed;
   width: 1920px;
   height: 1080px;
@@ -1668,41 +1668,41 @@ body {
 }
 
 @media (min-width: 600px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.3);
             transform: translateX(-50%) scale(0.3);
   }
 }
 
 @media (min-width: 800px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.4);
             transform: translateX(-50%) scale(0.4);
   }
 }
 
 @media (min-width: 1000px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.5);
             transform: translateX(-50%) scale(0.5);
   }
 }
 
 @media (min-width: 1400px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.7);
             transform: translateX(-50%) scale(0.7);
   }
 }
 
 @media (min-width: 1920px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(1);
             transform: translateX(-50%) scale(1);
   }
 }
 
-.scene .stat-container {
+.article-details-page .container-fluid .article-body .text-block .scene .stat-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1721,7 +1721,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  .scene .stat-container {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1729,24 +1729,24 @@ body {
     gap: 60px;
     width: 1200px;
   }
-  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-graphic, .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-copy {
     width: 50%;
   }
 }
 
 @media (min-width: 1400px) {
-  .scene .stat-container {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container {
     width: 1400px;
   }
 }
 
 @media (orientation: landscape) {
-  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-graphic, .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-copy {
     width: 100%;
   }
 }
 
-.scene .stat-container .copy {
+.article-details-page .container-fluid .article-body .text-block .scene .stat-container .copy {
   position: relative;
   top: unset;
   left: unset;
@@ -1754,7 +1754,7 @@ body {
           transform: unset;
 }
 
-.center-element {
+.article-details-page .container-fluid .article-body .text-block .center-element {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -1762,7 +1762,7 @@ body {
   top: 50%;
 }
 
-.scene {
+.article-details-page .container-fluid .article-body .text-block .scene {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1785,12 +1785,12 @@ body {
           align-items: center;
 }
 
-.scene div {
+.article-details-page .container-fluid .article-body .text-block .scene div {
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
 }
 
-.scene-scale {
+.article-details-page .container-fluid .article-body .text-block .scene-scale {
   position: absolute;
   -webkit-transform: scale(0.76);
           transform: scale(0.76);
@@ -1801,181 +1801,181 @@ body {
           transform-origin: bottom;
 }
 
-.scene-scale--mobile {
+.article-details-page .container-fluid .article-body .text-block .scene-scale--mobile {
   width: 375px;
   height: 600px;
 }
 
 @media (max-width: 1700px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.62);
             transform: scale(0.62);
   }
 }
 
 @media (max-width: 1400px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.53);
             transform: scale(0.53);
   }
 }
 
 @media (max-width: 1200px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.425);
             transform: scale(0.425);
   }
 }
 
 @media (max-width: 1000px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.325);
             transform: scale(0.325);
   }
 }
 
 @media (max-width: 800px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.225);
             transform: scale(0.225);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.3);
             transform: scale(0.3);
   }
 }
 
 @media (max-width: 400px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.2);
             transform: scale(0.2);
   }
 }
 
-.scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-content {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.scene-below {
+.article-details-page .container-fluid .article-body .text-block .scene-below {
   top: 200vh;
 }
 
-.scene-above {
+.article-details-page .container-fluid .article-body .text-block .scene-above {
   top: -100%;
 }
 
-.scene-3 .drinker--drink-down, .scene-3 .speech-bubble-cycler {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .drinker--drink-down, .article-details-page .container-fluid .article-body .text-block .scene-3 .speech-bubble-cycler {
   opacity: 0;
 }
 
-.scene-3 .perspective-level-1,
-.scene-3 .perspective-level-2,
-.scene-3 .perspective-level-3,
-.scene-3 .perspective-level-4 {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-1,
+.article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-2,
+.article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-3,
+.article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-4 {
   top: 100%;
 }
 
 @media (max-width: 600px) {
-  .scene-3 .background-static {
+  .article-details-page .container-fluid .article-body .text-block .scene-3 .background-static {
     top: -250%;
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3 .perspective-level-1 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-1 {
     -webkit-transform: scale(1.5) translatex(15%);
             transform: scale(1.5) translatex(15%);
   }
 }
 
-.scene-3 .perspective-level-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-2 {
   right: 80px;
 }
 
 @media (max-width: 600px) {
-  .scene-3 .perspective-level-2 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-2 {
     -webkit-transform: scale(1.5) translatex(-20%);
             transform: scale(1.5) translatex(-20%);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3 .perspective-level-3 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-3 {
     -webkit-transform: scale(2) translatex(-20%);
             transform: scale(2) translatex(-20%);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3 .perspective-level-4 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3 .perspective-level-4 {
     -webkit-transform: scale(2) translatex(24%);
             transform: scale(2) translatex(24%);
   }
 }
 
-.scene-3 .speech-bubble-cycler-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .speech-bubble-cycler-1 {
   top: -213px;
   left: 231px;
 }
 
-.scene-3 .speech-bubble-cycler-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .speech-bubble-cycler-2 {
   top: -213px;
   left: 1405px;
 }
 
-.scene-3 .speech-bubble-cycler-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3 .speech-bubble-cycler-3 {
   top: -190px;
   left: 797px;
 }
 
-.scene-3.cut-1 .perspective-level-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-1 {
   top: 339px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-1 .perspective-level-1 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-1 {
     top: 262px;
     -webkit-transform: scale(1.5) translatex(15%);
             transform: scale(1.5) translatex(15%);
   }
 }
 
-.scene-3.cut-1 .perspective-level-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-2 {
   top: 294px;
   right: 80px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-1 .perspective-level-2 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-2 {
     top: -694px;
     -webkit-transform: scale(1.5) translatex(-20%);
             transform: scale(1.5) translatex(-20%);
   }
 }
 
-.scene-3.cut-1 .perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-3 {
   top: 100px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-1 .perspective-level-3 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-3 {
     top: -1500px;
     -webkit-transform: scale(2) translatex(-20%);
             transform: scale(2) translatex(-20%);
   }
 }
 
-.scene-3.cut-1 .perspective-level-4 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-4 {
   top: 100px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-1 .perspective-level-4 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-1 .perspective-level-4 {
     top: -2400px;
     -webkit-transform: scale(2) translatex(24%);
             transform: scale(2) translatex(24%);
@@ -1983,237 +1983,237 @@ body {
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-4 .perspective-level-1 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .perspective-level-1 {
     top: 700px;
     opacity: 0;
   }
-  .scene-3.cut-4 .perspective-level-2 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .perspective-level-2 {
     top: 400px;
   }
-  .scene-3.cut-4 .perspective-level-3 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .perspective-level-3 {
     top: 100px;
   }
-  .scene-3.cut-4 .perspective-level-4 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .perspective-level-4 {
     top: -223px;
   }
-  .scene-3.cut-4 .background-static {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .background-static {
     top: -500px;
   }
 }
 
-.scene-3.cut-4 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .scene-content {
   -webkit-transform: translatey(20%);
           transform: translatey(20%);
 }
 
-.scene-3.cut-4 .speech-bubble-cycler {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-4 .speech-bubble-cycler {
   opacity: 1;
 }
 
-.scene-3.cut-7 .drinker--drink-up {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-7 .drinker--drink-up {
   opacity: 0;
 }
 
-.scene-3.cut-7 .drinker--drink-down {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-7 .drinker--drink-down {
   opacity: 1;
 }
 
-.scene-3.cut-8 .perspective-level-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-1 {
   top: 339px;
   opacity: 1;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-8 .perspective-level-1 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-1 {
     top: 262px;
   }
 }
 
-.scene-3.cut-8 .perspective-level-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-2 {
   top: 294px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-8 .perspective-level-2 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-2 {
     top: -694px;
   }
 }
 
-.scene-3.cut-8 .perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-3 {
   top: 100px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-8 .perspective-level-3 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-3 {
     top: -1500px;
   }
 }
 
-.scene-3.cut-8 .perspective-level-4 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-4 {
   top: 100px;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-8 .perspective-level-4 {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-4 {
     top: -2400px;
   }
 }
 
-.scene-3.cut-8 .background-static {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .background-static {
   top: -250%;
 }
 
-.scene-3.cut-8 .speech-bubble-cycler {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .speech-bubble-cycler {
   opacity: 0;
 }
 
-.scene-3.cut-8 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .scene-content {
   -webkit-transform: unset;
           transform: unset;
 }
 
-.scene-3.cut-8 .perspective-level-2, .scene-3.cut-8 .perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-2, .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .perspective-level-3 {
   opacity: 0.1;
 }
 
-.scene-3.cut-8 .lookingglass {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .lookingglass {
   opacity: 0.9;
   -webkit-transform: translate(-65%, -45%) scale(2);
           transform: translate(-65%, -45%) scale(2);
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-8 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-8 .lookingglass {
     -webkit-transform: translate(-57%, -50%) scale(2.5);
             transform: translate(-57%, -50%) scale(2.5);
   }
 }
 
-.scene-3.cut-10 .perspective-level-1, .scene-3.cut-10 .perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .perspective-level-1, .article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .perspective-level-3 {
   opacity: 0.1;
 }
 
-.scene-3.cut-10 .perspective-level-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .perspective-level-2 {
   opacity: 1;
 }
 
-.scene-3.cut-10 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .scene-content {
   -webkit-transform: scale(2) translatey(-9%);
           transform: scale(2) translatey(-9%);
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-10 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .scene-content {
     -webkit-transform: scale(2) translate(20%, 50%);
             transform: scale(2) translate(20%, 50%);
   }
 }
 
-.scene-3.cut-10 .pocket {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .pocket {
   opacity: 0.7;
 }
 
-.scene-3.cut-10 .lookingglass {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .lookingglass {
   -webkit-transform: translate(-47%, -47%);
           transform: translate(-47%, -47%);
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-10 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-10 .lookingglass {
     -webkit-transform: translate(-53%, -65%);
             transform: translate(-53%, -65%);
   }
 }
 
-.scene-3.cut-11 #footnote-obesity {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-11 #footnote-obesity {
   display: block;
 }
 
-.scene-3.cut-11 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-11 .scene-content {
   -webkit-transform: unset;
           transform: unset;
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-11 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-11 .scene-content {
     -webkit-transform: scale(2) translate(-30%, 70%);
             transform: scale(2) translate(-30%, 70%);
   }
 }
 
-.scene-3.cut-11 .lookingglass {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-11 .lookingglass {
   -webkit-transform: translate(-33%, -48%);
           transform: translate(-33%, -48%);
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-11 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-11 .lookingglass {
     -webkit-transform: translate(-53%, -65%) scale(2.5);
             transform: translate(-53%, -65%) scale(2.5);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-12 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 .scene-content {
     -webkit-transform: scale(2) translate(-20%, 140%);
             transform: scale(2) translate(-20%, 140%);
   }
 }
 
-.scene-3.cut-12 #footnote-obesity {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 #footnote-obesity {
   display: none;
 }
 
-.scene-3.cut-12 #footnote-pregnancy {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 #footnote-pregnancy {
   display: block;
 }
 
-.scene-3.cut-12 .perspective-level-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 .perspective-level-3 {
   opacity: 1;
 }
 
-.scene-3.cut-12 .perspective-level-2, .scene-3.cut-12 .perspective-level-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 .perspective-level-2, .article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 .perspective-level-1 {
   opacity: 0.1;
 }
 
 @media (min-width: 600px) {
-  .scene-3.cut-12 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-12 .lookingglass {
     -webkit-transform: translate(-38%, -55%);
             transform: translate(-38%, -55%);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-13 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-13 .scene-content {
     -webkit-transform: scale(2) translate(25%, 140%);
             transform: scale(2) translate(25%, 140%);
   }
 }
 
-.scene-3.cut-13 #footnote-pregnancy {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-13 #footnote-pregnancy {
   display: none;
 }
 
 @media (min-width: 600px) {
-  .scene-3.cut-13 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-13 .lookingglass {
     -webkit-transform: translate(-47%, -55%);
             transform: translate(-47%, -55%);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-3.cut-14 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-14 .scene-content {
     -webkit-transform: scale(2) translate(20%, 240%);
             transform: scale(2) translate(20%, 240%);
   }
 }
 
-.scene-3.cut-14 #footnote-age {
+.article-details-page .container-fluid .article-body .text-block .scene-3.cut-14 #footnote-age {
   display: block;
 }
 
 @media (min-width: 600px) {
-  .scene-3.cut-14 .lookingglass {
+  .article-details-page .container-fluid .article-body .text-block .scene-3.cut-14 .lookingglass {
     -webkit-transform: translate(-66%, -55%);
             transform: translate(-66%, -55%);
   }

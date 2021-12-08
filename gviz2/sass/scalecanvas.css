@@ -1,4 +1,9 @@
-.lookingglass {
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
+  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
+}
+
+.article-details-page .container-fluid .article-body .text-block .lookingglass {
   position: absolute;
   background: url(https://mittonvine.github.io/gviz2/layers/transparent.png);
   width: 4000px;
@@ -11,34 +16,29 @@
           transform: translate(-50%, -50%);
 }
 
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#05003D), color-stop(43.83%, #090F5C), color-stop(79.55%, #0C1672));
-  background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
-}
-
-.scene-above .lookingglass, .scene-below .lookingglass {
+.article-details-page .container-fluid .article-body .text-block .scene-above .lookingglass, .article-details-page .container-fluid .article-body .text-block .scene-below .lookingglass {
   display: none;
 }
 
-.pink-text {
+.article-details-page .container-fluid .article-body .text-block .pink-text {
   color: #ff7bf9;
 }
 
-.blue-text {
+.article-details-page .container-fluid .article-body .text-block .blue-text {
   color: #00d7d7;
 }
 
-.orange-text {
+.article-details-page .container-fluid .article-body .text-block .orange-text {
   color: #ff8a00;
 }
 
-.scene-heading {
+.article-details-page .container-fluid .article-body .text-block .scene-heading {
   color: white;
   position: absolute;
   display: none;
 }
 
-.scene-container {
+.article-details-page .container-fluid .article-body .text-block .scene-container {
   position: fixed;
   width: 1920px;
   height: 1080px;
@@ -50,41 +50,41 @@ body {
 }
 
 @media (min-width: 600px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.3);
             transform: translateX(-50%) scale(0.3);
   }
 }
 
 @media (min-width: 800px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.4);
             transform: translateX(-50%) scale(0.4);
   }
 }
 
 @media (min-width: 1000px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.5);
             transform: translateX(-50%) scale(0.5);
   }
 }
 
 @media (min-width: 1400px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(0.7);
             transform: translateX(-50%) scale(0.7);
   }
 }
 
 @media (min-width: 1920px) {
-  .scene-container {
+  .article-details-page .container-fluid .article-body .text-block .scene-container {
     -webkit-transform: translateX(-50%) scale(1);
             transform: translateX(-50%) scale(1);
   }
 }
 
-.scene .stat-container {
+.article-details-page .container-fluid .article-body .text-block .scene .stat-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,7 +103,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  .scene .stat-container {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -111,24 +111,24 @@ body {
     gap: 60px;
     width: 1200px;
   }
-  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-graphic, .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-copy {
     width: 50%;
   }
 }
 
 @media (min-width: 1400px) {
-  .scene .stat-container {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container {
     width: 1400px;
   }
 }
 
 @media (orientation: landscape) {
-  .scene .stat-container .stat-graphic, .scene .stat-container .stat-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-graphic, .article-details-page .container-fluid .article-body .text-block .scene .stat-container .stat-copy {
     width: 100%;
   }
 }
 
-.scene .stat-container .copy {
+.article-details-page .container-fluid .article-body .text-block .scene .stat-container .copy {
   position: relative;
   top: unset;
   left: unset;
@@ -136,7 +136,7 @@ body {
           transform: unset;
 }
 
-.center-element {
+.article-details-page .container-fluid .article-body .text-block .center-element {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -144,7 +144,7 @@ body {
   top: 50%;
 }
 
-.scene {
+.article-details-page .container-fluid .article-body .text-block .scene {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -167,12 +167,12 @@ body {
           align-items: center;
 }
 
-.scene div {
+.article-details-page .container-fluid .article-body .text-block .scene div {
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
 }
 
-.scene-scale {
+.article-details-page .container-fluid .article-body .text-block .scene-scale {
   position: absolute;
   -webkit-transform: scale(0.76);
           transform: scale(0.76);
@@ -183,71 +183,71 @@ body {
           transform-origin: bottom;
 }
 
-.scene-scale--mobile {
+.article-details-page .container-fluid .article-body .text-block .scene-scale--mobile {
   width: 375px;
   height: 600px;
 }
 
 @media (max-width: 1700px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.62);
             transform: scale(0.62);
   }
 }
 
 @media (max-width: 1400px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.53);
             transform: scale(0.53);
   }
 }
 
 @media (max-width: 1200px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.425);
             transform: scale(0.425);
   }
 }
 
 @media (max-width: 1000px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.325);
             transform: scale(0.325);
   }
 }
 
 @media (max-width: 800px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.225);
             transform: scale(0.225);
   }
 }
 
 @media (max-width: 600px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.3);
             transform: scale(0.3);
   }
 }
 
 @media (max-width: 400px) {
-  .scene-scale {
+  .article-details-page .container-fluid .article-body .text-block .scene-scale {
     -webkit-transform: scale(0.2);
             transform: scale(0.2);
   }
 }
 
-.scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-content {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.scene-below {
+.article-details-page .container-fluid .article-body .text-block .scene-below {
   top: 200vh;
 }
 
-.scene-above {
+.article-details-page .container-fluid .article-body .text-block .scene-above {
   top: -100%;
 }
 /*# sourceMappingURL=scalecanvas.css.map */
