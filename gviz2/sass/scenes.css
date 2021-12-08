@@ -1,8 +1,8 @@
-.scene-above, .scene-below {
+.article-details-page .container-fluid .article-body .text-block .scene-above, .article-details-page .container-fluid .article-body .text-block .scene-below {
   opacity: 0;
 }
 
-.scene .copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy {
   position: absolute;
   top: 180vh;
   left: 50%;
@@ -11,7 +11,7 @@
 }
 
 @media (orientation: portrait) {
-  .scene .copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy {
     -webkit-transform: unset;
             transform: unset;
     left: unset;
@@ -19,32 +19,32 @@
 }
 
 @media (min-width: 600px) {
-  .scene .copy--left {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy--left {
     left: 25%;
   }
 }
 
 @media (min-width: 600px) {
-  .scene .copy--right {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy--right {
     left: 75%;
   }
 }
 
-.scene .copy.current-copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy.current-copy {
   top: 50%;
 }
 
 @media (max-width: 600px) {
-  .scene .copy.current-copy {
+  .article-details-page .container-fluid .article-body .text-block .scene .copy.current-copy {
     top: 5vw;
   }
 }
 
-.scene .copy.previous-copy {
+.article-details-page .container-fluid .article-body .text-block .scene .copy.previous-copy {
   top: -100vh;
 }
 
-.scene-1 .neonsign {
+.article-details-page .container-fluid .article-body .text-block .scene-1 .neonsign {
   top: 50%;
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
@@ -52,7 +52,7 @@
   background-position: center;
 }
 
-.scene-2 #stat-container-2, .scene-2 #stat-container-3, .scene-2 #stat-container-1, .scene-2 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-2, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-3, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-1, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-0 {
   top: 180vh;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -60,231 +60,231 @@
   left: 50%;
 }
 
-.scene-2.cut-2 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-2 #stat-container-0 {
   top: 50%;
 }
 
-.scene-2.cut-2 #footnote-recent-meta {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-2 #footnote-recent-meta {
   display: block;
 }
 
-.scene-2.cut-3 #footnote-recent-meta {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #footnote-recent-meta {
   display: none;
 }
 
-.scene-2.cut-3 #stat-container-0 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #stat-container-0 {
   top: -100vh;
 }
 
-.scene-2.cut-3 #stat-container-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #stat-container-1 {
   top: 50%;
 }
 
-.scene-2.cut-3 #footnote-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-3 #footnote-1 {
   display: block;
 }
 
-.scene-2.cut-4 #stat-container-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #stat-container-1 {
   top: -100vh;
 }
 
-.scene-2.cut-4 #stat-container-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #stat-container-2 {
   top: 50%;
 }
 
-.scene-2.cut-4 #footnote-1 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #footnote-1 {
   display: none;
 }
 
-.scene-2.cut-4 #footnote-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-4 #footnote-2 {
   display: block;
 }
 
-.scene-2.cut-5 #stat-container-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-5 #stat-container-2 {
   top: -100vh;
 }
 
-.scene-2.cut-5 #stat-container-3 {
+.article-details-page .container-fluid .article-body .text-block .scene-2.cut-5 #stat-container-3 {
   top: 50%;
 }
 
-.scene-4 .background-static-light-on {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .background-static-light-on {
   opacity: 0;
 }
 
-.scene-4 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .friend {
   opacity: 0.1;
 }
 
-.scene-4 .character-eating, .scene-4 .character-distressed,
-.scene-4 .speech-bubble-home,
-.scene-4 .intestine, .scene-4 .flame,
-.scene-4 .friend-distressed, .scene-4 .character-standing-distressed, .scene-4 .friend-distressed-2, .scene-4 .character-leans-forward, .scene-4 .window-lit {
+.article-details-page .container-fluid .article-body .text-block .scene-4 .character-eating, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-distressed,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .speech-bubble-home,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .intestine, .article-details-page .container-fluid .article-body .text-block .scene-4 .flame,
+.article-details-page .container-fluid .article-body .text-block .scene-4 .friend-distressed, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-standing-distressed, .article-details-page .container-fluid .article-body .text-block .scene-4 .friend-distressed-2, .article-details-page .container-fluid .article-body .text-block .scene-4 .character-leans-forward, .article-details-page .container-fluid .article-body .text-block .scene-4 .window-lit {
   opacity: 0;
 }
 
-.scene-4.cut-2 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-2 .character-eating {
   opacity: 1;
 }
 
-.scene-4.cut-2 .character-served {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-2 .character-served {
   opacity: 0;
 }
 
-.scene-4.cut-3 .background-static {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .background-static {
   opacity: 0.1;
 }
 
-.scene-4.cut-3 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .character-eating {
   opacity: 0.2;
 }
 
-.scene-4.cut-3 .intestine-food-in-throat {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .intestine-food-in-throat {
   opacity: 0.5;
 }
 
-.scene-4.cut-3 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .scene-content {
   -webkit-transform: scale(1.2) translateY(20%);
           transform: scale(1.2) translateY(20%);
 }
 
 @media (max-width: 600px) {
-  .scene-4.cut-3 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-4.cut-3 .scene-content {
     -webkit-transform: scale(3.5) translate(25%, 15%);
             transform: scale(3.5) translate(25%, 15%);
   }
 }
 
-.scene-4.cut-4 .intestine-food-in-throat {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-4 .intestine-food-in-throat {
   opacity: 0;
 }
 
-.scene-4.cut-4 .intestine-food-entering-stomach {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-4 .intestine-food-entering-stomach {
   opacity: 1;
 }
 
-.scene-4.cut-5 .intestine-food-entering-stomach {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-5 .intestine-food-entering-stomach {
   opacity: 0;
 }
 
-.scene-4.cut-5 .intestine-blue-red-bubbles {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-5 .intestine-blue-red-bubbles {
   opacity: 1;
 }
 
-.scene-4.cut-6 .intestine-blue-red-bubbles {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-6 .intestine-blue-red-bubbles {
   opacity: 0;
 }
 
-.scene-4.cut-6 .intestine-red {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-6 .intestine-red {
   opacity: 1;
 }
 
-.scene-4.cut-7 .intestine-red {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-7 .intestine-red {
   opacity: 0;
 }
 
-.scene-4.cut-7 .intestine-red-and-filling {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-7 .intestine-red-and-filling {
   opacity: 1;
 }
 
-.scene-4.cut-8 .intestine-red-and-filling {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-8 .intestine-red-and-filling {
   opacity: 0;
 }
 
-.scene-4.cut-8 .intestine-with-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-8 .intestine-with-flame {
   opacity: 1;
 }
 
-.scene-4.cut-9 .intestine-with-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-9 .intestine-with-flame {
   opacity: 0;
 }
 
-.scene-4.cut-9 .intestine-with-glowing-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-9 .intestine-with-glowing-flame {
   opacity: 1;
 }
 
-.scene-4.cut-10 .intestine-with-glowing-flame {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-10 .intestine-with-glowing-flame {
   opacity: 0;
 }
 
-.scene-4.cut-10 .intestine-glow-in-mouth {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-10 .intestine-glow-in-mouth {
   opacity: 1;
 }
 
-.scene-4.cut-12 .background-static {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .background-static {
   opacity: 1;
 }
 
-.scene-4.cut-12 .character-eating {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .character-eating {
   opacity: 0;
 }
 
-.scene-4.cut-12 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .character-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-12 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .friend {
   opacity: 1;
 }
 
-.scene-4.cut-12 .intestine-glow-in-mouth {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-12 .intestine-glow-in-mouth {
   opacity: 0;
 }
 
-.scene-4.cut-13 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .character-distressed {
   opacity: 0;
 }
 
-.scene-4.cut-13 .character-leans-forward {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .character-leans-forward {
   opacity: 1;
 }
 
-.scene-4.cut-13 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .scene-content {
   -webkit-transform: translateY(35%);
           transform: translateY(35%);
 }
 
 @media (max-width: 600px) {
-  .scene-4.cut-13 .scene-content {
+  .article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .scene-content {
     -webkit-transform: unset;
             transform: unset;
   }
 }
 
-.scene-4.cut-13 .friend {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .friend {
   opacity: 0;
 }
 
-.scene-4.cut-13 .friend-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-13 .friend-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-14 .character-leans-forward {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .character-leans-forward {
   opacity: 0;
 }
 
-.scene-4.cut-14 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .character-distressed {
   opacity: 1;
 }
 
-.scene-4.cut-14 .speech-bubble-home {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-14 .speech-bubble-home {
   opacity: 1;
 }
 
-.scene-4.cut-15 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .scene-content {
   -webkit-transform-origin: 48% 20%;
           transform-origin: 48% 20%;
 }
 
-.scene-4.cut-15 .speech-bubble-home {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .speech-bubble-home {
   opacity: 0;
 }
 
-.scene-4.cut-15 .friend-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .friend-distressed {
   opacity: 0;
 }
 
-.scene-4.cut-15 .character-distressed {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .character-distressed {
   -webkit-animation-name: standUp;
           animation-name: standUp;
   -webkit-animation-duration: 0.5s;
@@ -295,16 +295,16 @@
           animation-fill-mode: forwards;
 }
 
-.scene-4.cut-15 .friend-distressed-2 {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-15 .friend-distressed-2 {
   opacity: 1;
 }
 
-.scene-4.cut-16 .scene-content {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-16 .scene-content {
   -webkit-transform: scale(10);
           transform: scale(10);
 }
 
-.scene-4.cut-16 .window-lit {
+.article-details-page .container-fluid .article-body .text-block .scene-4.cut-16 .window-lit {
   opacity: 1;
 }
 /*# sourceMappingURL=scenes.css.map */
