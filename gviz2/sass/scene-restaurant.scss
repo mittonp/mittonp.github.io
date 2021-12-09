@@ -14,10 +14,6 @@
 
     .background-static{
         @media(max-width:600px){
-
-            top:-250%;
-        }
-        @media (max-height:670px){
           top:-180%;
         }
         
@@ -75,32 +71,23 @@
             top:294px;
             right:80px;
             @media (max-width:600px){
-              top:-694px;
-              transform: scale(1.5) translatex(-20%);
-            }
-            @media (max-height:670px){
               top:-400px;
+              transform: scale(1.5) translatex(-20%);
             }
           }
           .perspective-level-3{
             top:100px;
             @media (max-width:600px){
-              top:-1500px;
-              transform: scale(2) translatex(-20%);
-            }
-            @media (max-height:670px){
               top:-1000px;
+              transform: scale(2) translatex(-20%);
             }
           }
         
           .perspective-level-4{
             top:100px;
             @media(max-width:600px){
-              top:-2400px;
-              transform: scale(2) translatex(24%);
-            }
-            @media (max-height:670px){
               top:-1700px;
+              transform: scale(2) translatex(24%);
             }
           }
     }
