@@ -35,6 +35,9 @@ $(function () {
         after: function (index, sections) {
             prevIndex = index;
         }
+    });
+
+    $("document").ready(function () {
+        $('head link[rel="stylesheet"], style').remove();
     })
-    $('head link[rel="stylesheet"], style').remove();
 });
