@@ -17,6 +17,9 @@
 
             top:-250%;
         }
+        @media (max-height:670px){
+          top:-180%;
+        }
         
     }
   
@@ -75,12 +78,18 @@
               top:-694px;
               transform: scale(1.5) translatex(-20%);
             }
+            @media (max-height:670px){
+              top:-400px;
+            }
           }
           .perspective-level-3{
             top:100px;
             @media (max-width:600px){
               top:-1500px;
               transform: scale(2) translatex(-20%);
+            }
+            @media (max-height:670px){
+              top:-1000px;
             }
           }
         
@@ -89,6 +98,9 @@
             @media(max-width:600px){
               top:-2400px;
               transform: scale(2) translatex(24%);
+            }
+            @media (max-height:670px){
+              top:-1700px;
             }
           }
     }
