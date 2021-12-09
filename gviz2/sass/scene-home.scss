@@ -302,28 +302,7 @@
 
   //4 minutes later
   //guy relieved
-  //show meds copy
-  //show may not be for you footnote
-  &.cut-18{
-    .scene-content{
-      @media(max-width:600px){
-        transform: scale(1.5) translatey(-20%);
-      }
-      
-    }
-    #footnote-may-not-be-for-you{
-      display: block;
-    }
-    #scene-home-copy-3-minutes{
-      top:-100vh;
-    }
-    #scene-home-copy-4-minutes{
-      top:15%;
-    }
-
-    #scene-home-copy-with-meds{
-      top:50%;
-    }
+  &.cut-17-2{
     .character-home-waiting{
       opacity: 0;
     }
@@ -333,11 +312,39 @@
     }
   }
 
+  //show meds copy
+  //show may not be for you footnote
+  //show stragula et al footnote
+  &.cut-18{
+    .scene-content{
+      @media(max-width:600px){
+        transform: scale(1.5) translatey(-20%);
+      }
+      
+    }
+
+    #footnote-stragula-2010{
+      display: block;
+    }
+
+    #scene-home-copy-4-minutes{
+      top:-100vh;
+    }
+    #scene-home-copy-with-meds{
+      top:50%;
+    }
+
+  }
+
   //start showing final copy
   &.cut-19{
     #footnote-may-not-be-for-you{
       display: none;
     }
+    #footnote-stragula-2010{
+      display: none;
+    }
+
     #scene-home-copy-4-minutes{
       top:-100vh;
     }
