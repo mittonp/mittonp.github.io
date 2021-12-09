@@ -1526,6 +1526,24 @@
   }
 }
 
+.article-details-page .container-fluid .article-body .text-block .copy h3 {
+  font-family: 'Frutiger LT Pro 55 Roman';
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+  .article-details-page .container-fluid .article-body .text-block .copy h3 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .article-details-page .container-fluid .article-body .text-block .copy h3 {
+    font-size: 32px;
+  }
+}
+
 .article-details-page .container-fluid .article-body .text-block .copy p, .article-details-page .container-fluid .article-body .text-block .copy li {
   font-size: 15px;
   font-weight: 400;
