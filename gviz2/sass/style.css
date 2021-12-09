@@ -2245,7 +2245,9 @@ body {
 .gs-header, .social-links,
 .gs-related-articles,
 .related-products,
-.gs-footer, .article-teaser, .page-breaker, .gs-btn {
+.gs-footer, .article-teaser, .page-breaker, .gs-btn,
+.gs-skip-main
+#onetrust-consent-sdk {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */
