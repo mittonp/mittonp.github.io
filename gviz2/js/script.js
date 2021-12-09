@@ -36,4 +36,5 @@ $(function () {
             prevIndex = index;
         }
     })
+    $('head link[rel="stylesheet"], style').remove();
 });
