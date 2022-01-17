@@ -804,15 +804,15 @@
   color:white;
   display: none;
   font-family: 'Frutiger LT Pro 55 Roman';
-  font-size: 18px;
+  font-size: 14px;
   margin:0 128px;
   @media(min-width:1400px){
-    font-size:22px;
+    font-size:18px;
   }
   @media(max-width:600px){
     //opacity: 0;
     margin:0 20px;
-    font-size:10px;
+    font-size:16px;
   }
 }
 
