@@ -975,20 +975,20 @@
   color: white;
   display: none;
   font-family: 'Frutiger LT Pro 55 Roman';
-  font-size: 18px;
+  font-size: 14px;
   margin: 0 128px;
 }
 
 @media (min-width: 1400px) {
   .article-details-page .container-fluid .article-body .text-block .footnote {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 600px) {
   .article-details-page .container-fluid .article-body .text-block .footnote {
     margin: 0 20px;
-    font-size: 10px;
+    font-size: 16px;
   }
 }
 /*# sourceMappingURL=elements.css.map */
