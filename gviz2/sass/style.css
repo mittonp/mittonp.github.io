@@ -340,6 +340,10 @@
   top: 50%;
 }
 
+.article-details-page .container-fluid .article-body .text-block .scene.scene-home.cut-22 #footnote-reflux-pregnancy {
+  display: block;
+}
+
 .article-details-page .container-fluid .article-body .text-block .scene-above, .article-details-page .container-fluid .article-body .text-block .scene-below {
   opacity: 0;
 }
