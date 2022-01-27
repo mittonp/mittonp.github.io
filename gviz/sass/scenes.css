@@ -666,4 +666,10 @@
   font-family: 'Frutiger LT Pro 55 Roman';
   font-size: 22px;
 }
+
+@media (max-width: 600px) {
+  .footnote {
+    font-size: 8px;
+  }
+}
 /*# sourceMappingURL=scenes.css.map */
