@@ -1392,7 +1392,7 @@
 @media (max-width: 600px) {
   .article-details-page .container-fluid .article-body .text-block .stat-2 {
     width: 343px;
-    height: 400px;
+    height: 375px;
   }
 }
 
@@ -1409,7 +1409,7 @@
 
 @media (max-width: 600px) {
   .article-details-page .container-fluid .article-body .text-block .stat-3 {
-    height: 400px;
+    height: 375px;
     width: 343px;
   }
 }
