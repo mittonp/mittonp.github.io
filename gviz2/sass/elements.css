@@ -934,6 +934,13 @@
   }
 }
 
+@media (max-width: 1700px) {
+  .article-details-page .container-fluid .article-body .text-block .copy--final {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 .article-details-page .container-fluid .article-body .text-block .copy--final li {
   padding: 4px 0;
 }
