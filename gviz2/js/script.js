@@ -38,6 +38,6 @@ $(function () {
     });
 
     $("document").ready(function () {
-        $('head link[rel="stylesheet"], style').remove();
+        //$('head link[rel="stylesheet"], style').remove();
     })
 });
