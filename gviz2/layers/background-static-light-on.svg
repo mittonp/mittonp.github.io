@@ -1,4 +1,21 @@
 <svg width="1920" height="610" viewBox="0 0 1920 610" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="1287.89" cy="135.299" r="2.14949" fill="#304FBD"/>
+<circle cx="966.149" cy="141.149" r="2.14949" fill="#2B32A0"/>
+<circle cx="1092.15" cy="186.149" r="2.14949" fill="#2B32A0"/>
+<circle cx="1084.15" cy="171.149" r="2.14949" fill="#2B32A0"/>
+<circle cx="1162.15" cy="99.5982" r="2.14949" fill="#2B32A0"/>
+<circle opacity="0.5" cx="740.149" cy="75.2989" r="2.14949" fill="#304FBD"/>
+<circle cx="785.149" cy="162.149" r="2.14949" fill="#304FBD"/>
+<circle cx="619.507" cy="144.662" r="2.14949" fill="#304FBD"/>
+<circle cx="449.15" cy="150.449" r="2.14949" fill="#304FBD"/>
+<circle opacity="0.5" cx="475.15" cy="34.8507" r="2.14949" fill="#304FBD"/>
+<circle cx="591.149" cy="111.912" r="2.14949" fill="#304FBD"/>
+<circle cx="365.507" cy="194.662" r="2.14949" fill="#304FBD"/>
+<circle cx="180.149" cy="74.1495" r="2.14949" fill="#304FBD"/>
+<circle cx="269.507" cy="95.2989" r="2.14949" fill="#304FBD"/>
+<circle cx="907.851" cy="76.2994" r="2.14949" fill="#304FBD"/>
+<circle opacity="0.5" cx="626.851" cy="68.8507" r="2.14949" fill="#304FBD"/>
+<path d="M321.951 136.412C313.9 133.59 309.652 124.783 312.456 116.725V116.725C313.048 115.018 311.658 113.075 310.108 114.001C306.53 116.137 303.966 119.769 303.255 124.046C302.253 130.075 305.151 136.084 310.494 139.054C314.283 141.16 318.721 141.415 322.62 139.946C324.31 139.309 323.654 137.012 321.951 136.412V136.412Z" fill="#304FBD"/>
 <mask id="mask0_1439_4299" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="610">
 <rect width="1920" height="609.674" fill="url(#paint0_radial_1439_4299)"/>
 </mask>
@@ -106,23 +123,6 @@
 <circle cx="543.149" cy="67.1495" r="2.14949" fill="#2B32A0"/>
 <circle cx="523.507" cy="75.2989" r="2.14949" fill="#304FBD"/>
 </g>
-<circle cx="1287.89" cy="135.299" r="2.14949" fill="#304FBD"/>
-<circle cx="966.149" cy="141.149" r="2.14949" fill="#2B32A0"/>
-<circle cx="1092.15" cy="186.149" r="2.14949" fill="#2B32A0"/>
-<circle cx="1084.15" cy="171.149" r="2.14949" fill="#2B32A0"/>
-<circle cx="1162.15" cy="99.5982" r="2.14949" fill="#2B32A0"/>
-<circle opacity="0.5" cx="740.149" cy="75.2989" r="2.14949" fill="#304FBD"/>
-<circle cx="785.149" cy="162.149" r="2.14949" fill="#304FBD"/>
-<circle cx="619.507" cy="144.662" r="2.14949" fill="#304FBD"/>
-<circle cx="449.15" cy="150.449" r="2.14949" fill="#304FBD"/>
-<circle opacity="0.5" cx="475.15" cy="34.8507" r="2.14949" fill="#304FBD"/>
-<circle cx="591.149" cy="111.912" r="2.14949" fill="#304FBD"/>
-<circle cx="365.507" cy="194.662" r="2.14949" fill="#304FBD"/>
-<circle cx="180.149" cy="74.1495" r="2.14949" fill="#304FBD"/>
-<circle cx="269.507" cy="95.2989" r="2.14949" fill="#304FBD"/>
-<circle cx="907.851" cy="76.2994" r="2.14949" fill="#304FBD"/>
-<circle opacity="0.5" cx="626.851" cy="68.8507" r="2.14949" fill="#304FBD"/>
-<path d="M321.951 136.412C313.9 133.59 309.652 124.783 312.456 116.725V116.725C313.048 115.018 311.658 113.075 310.108 114.001C306.53 116.137 303.966 119.769 303.255 124.046C302.253 130.075 305.151 136.084 310.494 139.054C314.283 141.16 318.721 141.415 322.62 139.946C324.31 139.309 323.654 137.012 321.951 136.412V136.412Z" fill="#304FBD"/>
 <defs>
 <filter id="filter0_f_1439_4299" x="-35.2832" y="-256" width="1861.02" height="993.963" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
