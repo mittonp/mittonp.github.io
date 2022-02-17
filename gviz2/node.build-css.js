@@ -4,6 +4,7 @@ const sass = require( 'sass' );
 
 const svg_function = require( '../node_modules/node-sass-svg/svg-function' );
 const svg_importer = require( '../node_modules/node-sass-svg/svg-importer' );
+const SassAssetInliner = require('../node_modules/@lassehaslev/sass-asset-inliner')
 
 console.log( sass.info );
 [
@@ -20,7 +21,7 @@ console.log( sass.info );
             sourceMap:      false,
             sourceMapEmbed: false,
             
-            functions: Object.assign( {}, svg_function(__dirname) ),
+            functions: Object.assign( {}, svg_function(__dirname), SassAssetInliner ),
             importer:  [ svg_importer ],
         },
         ( error, result ) => {

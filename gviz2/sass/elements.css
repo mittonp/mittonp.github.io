@@ -88,7 +88,7 @@
 }
 
 .article-details-page .container-fluid .article-body .text-block .intestine-food-in-throat {
-  background-image: svg("layers/intestine-food-in-throat.svg");
+  background-image: inline-image("layers/intestine-food-in-throat.png");
 }
 
 .article-details-page .container-fluid .article-body .text-block .intestine-food-entering-stomach {
@@ -338,7 +338,7 @@
 }
 
 .article-details-page .container-fluid .article-body .text-block .background-static {
-  background: svg("layers/background-static.svg");
+  background: inline-image("layers/background-static.png");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
@@ -347,7 +347,7 @@
 }
 
 .article-details-page .container-fluid .article-body .text-block .background-static-light-on {
-  background: svg("layers/background-static-light-on.svg");
+  background: inline-image("layers/background-static-light-on.png");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
@@ -495,7 +495,7 @@
 }
 
 .article-details-page .container-fluid .article-body .text-block .medicine-thought-bubble {
-  background: svg("layers/medicine-thought-bubble.svg");
+  background: inline-image("layers/medicine-thought-bubble.png");
   width: 237px;
   height: 231px;
   background-repeat: no-repeat;
