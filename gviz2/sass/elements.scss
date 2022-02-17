@@ -85,7 +85,7 @@
 
 .intestine-food-in-throat{
   //was png
-  background-image:svg('layers/intestine-food-in-throat.svg');
+  background-image:inline-image('layers/intestine-food-in-throat.png');
 }
 
 .intestine-food-entering-stomach{
@@ -317,7 +317,7 @@
 
 .background-static {
   //was png
-  background: svg("layers/background-static.svg");
+  background: inline-image("layers/background-static.png");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
@@ -326,7 +326,7 @@
 }
 .background-static-light-on {
   //was png
-  background: svg("layers/background-static-light-on.svg");
+  background: inline-image("layers/background-static-light-on.png");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
@@ -474,7 +474,7 @@
 
 .medicine-thought-bubble{
   //was png
-  background: svg("layers/medicine-thought-bubble.svg");
+  background: inline-image("layers/medicine-thought-bubble.png");
   width: 237px;
   height: 231px;
   background-repeat: no-repeat;
