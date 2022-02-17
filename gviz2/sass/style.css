@@ -770,7 +770,7 @@
   top: 100px;
 }
 .article-details-page .container-fluid .article-body .text-block .background-static {
-  background: inline-image("layers/background-static.png");
+  background: inline-image("layers/background-static.svg");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
