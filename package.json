@@ -1,34 +1,7 @@
 {
-  "name": "mittonp.github.io",
-  "version": "1.0.0",
-  "description": "��#\u0000 \u0000m\u0000i\u0000t\u0000t\u0000o\u0000n\u0000p\u0000.\u0000g\u0000i\u0000t\u0000h\u0000u\u0000b\u0000.\u0000i\u0000o\u0000\r\u0000 \u0000",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "gulp sass",
-    "watch": "gulp sass:watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mittonp/mittonp.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mittonp/mittonp.github.io/issues"
-  },
-  "homepage": "https://github.com/mittonp/mittonp.github.io#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.1.0",
-    "node-sass": "^5.0.0"
-  },
   "dependencies": {
-    "@lassehaslev/sass-asset-inliner": "^1.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2",
-    "node-sass-svg": "^2.0.0",
+    "@zemax/sass-svg": "^2.0.1",
+    "gulp-sass": "^5.1.0",
     "sass": "^1.49.7"
   }
 }
