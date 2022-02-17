@@ -317,7 +317,7 @@
 
 .background-static {
   //was png
-  background: inline-image("layers/background-static.svg");
+  background: svg("layers/background-static.svg");
   width: 1920px;
   height: 610px;
   background-repeat: no-repeat;
