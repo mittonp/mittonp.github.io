@@ -79,8 +79,8 @@
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  top:92px;
-  left:390px;
+  top:89px;
+  left:417px;
 }
 
 .intestine-food-in-throat{
@@ -385,12 +385,12 @@
   
 .table-for-two {
   background: svg("layers/table-for-two.svg");
-  width: 1920px;
-  height: 1595px;
+  width: 2190px;
+  height: 613px;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  bottom:0;
+  top:320px;
 }
   
 .character-served{
@@ -401,7 +401,7 @@
   background-size: contain;
   position: absolute;
   top:-24px;
-  left:351px;
+  left:372px;
 }
 
 .character-eating{
@@ -412,7 +412,7 @@
   background-size: contain;
   position: absolute;
   top:-24px;
-  left:351px;
+  left:372px;
 }
 
 
@@ -425,7 +425,7 @@
   background-size: contain;
   position: absolute;
   top:-24px;
-  left:351px;
+  left:372px;
 }
 
 .friend{
@@ -436,7 +436,7 @@
   background-size: contain;
   position: absolute;
   top:25px;
-  left:1019px;
+  left:1040px;
 }
 
 .friend-distressed{
@@ -447,7 +447,7 @@
   background-size: contain;
   position: absolute;
   top:25px;
-  left:1019px;
+  left:1040px;
 }
 
 .friend-distressed-2{
@@ -458,7 +458,7 @@
   background-size: contain;
   position: absolute;
   top:25px;
-  left:1019px;
+  left:1040px;
 }
 
 .speech-bubble-home{
@@ -482,6 +482,15 @@
   position: absolute;
   top:-250px;
   left:871px;
+}
+
+.dual-action-bottle{
+  background: svg("layers/dual-action-bottle.svg");
+  width: 50px;
+  height: 122px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin:auto;
 }
 
 .character-standing-distressed{
