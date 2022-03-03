@@ -1076,8 +1076,8 @@
 }
 @media (max-width: 600px) {
   .article-details-page .container-fluid .article-body .text-block .stat-2 {
-    width: 343px;
-    height: 375px;
+    width: 300px;
+    height: 300px;
   }
 }
 .article-details-page .container-fluid .article-body .text-block .stat-3 {
@@ -1092,8 +1092,8 @@
 }
 @media (max-width: 600px) {
   .article-details-page .container-fluid .article-body .text-block .stat-3 {
-    height: 375px;
-    width: 343px;
+    height: 300px;
+    width: 300px;
   }
 }
 .article-details-page .container-fluid .article-body .text-block .globe {
@@ -1239,7 +1239,7 @@
   }
 }
 .article-details-page .container-fluid .article-body .text-block .copy--final li {
-  padding: 4px 0;
+  padding: 0;
 }
 @media (min-width: 1000px) {
   .article-details-page .container-fluid .article-body .text-block .copy--final li {
@@ -1292,16 +1292,23 @@ body {
   background: linear-gradient(180deg, #05003D 0%, #090F5C 43.83%, #0C1672 79.55%);
 }
 
-.article-details-page .container-fluid .article-body .text-block .lookingglass {
-  position: absolute;
-  background: url("https://phx-gaviscon-au-prod.husky-2.rbcloud.io/media/f54nvxzu/transparent.png");
-  width: 4000px;
-  height: 4000px;
-  background-size: contain;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@media (min-width: 600px) {
+  .article-details-page .container-fluid .article-body .text-block .lookingglass {
+    position: absolute;
+    background: url("https://phx-gaviscon-au-prod.husky-2.rbcloud.io/media/f54nvxzu/transparent.png");
+    width: 4000px;
+    height: 4000px;
+    background-size: contain;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 600px) {
+  .article-details-page .container-fluid .article-body .text-block .lookingglass {
+    display: none;
+  }
 }
 .article-details-page .container-fluid .article-body .text-block .scene-above .lookingglass, .article-details-page .container-fluid .article-body .text-block .scene-below .lookingglass {
   display: none;

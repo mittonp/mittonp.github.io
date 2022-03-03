@@ -637,8 +637,8 @@
   position: relative;
   background-position: center;
   @media(max-width:600px){
-    width:343px;
-    height: 375px;
+    width:300px;
+    height: 300px;
   }
 }
 
@@ -652,8 +652,8 @@
   position: relative;
   background-position: center;
   @media(max-width:600px){
-    height: 375px;
-    width:343px;
+    height: 300px;
+    width:300px;
   }
 }
 
@@ -788,7 +788,7 @@
   border-radius: 30px;
 
   li{
-    padding: 4px 0;
+    padding: 0;
     @media(min-width:1000px){
       padding:6px 0;
     }
