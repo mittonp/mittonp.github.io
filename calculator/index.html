@@ -1,234 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investing Calculator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="lumeniastyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investing Calculator</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.0.2/css/fixedColumns.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" id="sg-opensans-css"
+        href="https://fonts.googleapis.com/css?family=Open+Sans&amp;ver=0b71a8d3b79e82e4669fc17f13f7f8d1" media="all">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rethinkstyle.css">
 </head>
+
 <body>
-  <div class="sg-cal-wrap">            
-    <div class="input-group row" id="step1" >
-        <div class="sub-header">
-            <h2 class="text-center">Rethink Investing Financial Calculator</h2>
-            <p class="text-center">Fill out the fields with your budget data to get a full breakdown of your growth potential.</p>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Purchase Price</label>
+    <div class="header" style="background-image: url(/calculator/rethink-calc.png);">
+        <h1>Investment Property Calculator</h1>
+    </div>
+    <div class="calculator-container">
+        <div class="input-group row" id="step1">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Purchase Price</label>
+                        </div>
+                        <input type="text" id="purchase-price" name="purchase-price" class="input currency field"
+                            value="0">
                     </div>
-                    <span class="col2">
-                        <input type="text" id="purchase-price"  name="purchase-price" class="input currency" value="0">
-                    </span>                            
-                </div>
 
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Total Loan</label>
-                    </div>
-                    <span class="col2">                            
-                        <select class="select-menu" id="total-loan" name="total-loan">
-                          <option class="yield-option" value="0%">0%</option>
-                          <option class="yield-option" value="5%">5%</option>
-                          <option class="yield-option" value="10%">10%</option>
-                          <option class="yield-option" value="15%">15%</option>
-                          <option class="yield-option" value="20%">20%</option>
-                          <option class="yield-option" value="25%">25%</option>
-                          <option class="yield-option" value="30%">30%</option>
-                          <option class="yield-option" value="35%">35%</option>
-                          <option class="yield-option" value="40%">40%</option>
-                          <option class="yield-option" value="45%">45%</option>
-                          <option class="yield-option" value="50%">50%</option>
-                          <option class="yield-option" value="55%">55%</option>
-                          <option class="yield-option" value="60%">60%</option>
-                          <option selected class="yield-option" value="65%">65%</option>
-                          <option class="yield-option" value="70%">70%</option>
-                          <option class="yield-option" value="75%">75%</option>
-                          <option class="yield-option" value="80%">80%</option>
-                          <option class="yield-option" value="85%">85%</option>
-                          <option class="yield-option" value="90%">90%</option>
-                          <option class="yield-option" value="95%">95%</option>
-                          <option class="yield-option" value="100%">100%</option>
-                          <option class="yield-option" value="105%">105%</option>
-                        </select>
-                    </span>                            
-                </div>
-  
-                <div class="input-field">
-                    <div class="col2">
-                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Purchase Price minus Total Loan">Deposit</label>
-                    </div>
-                    <span class="col2">
-                        <label id="deposit">549999</label>
-                    </span>                            
-                </div>
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Total Loan</label>
+                        </div>
+                        <div class="field">
+                            <select class="select-menu field" id="total-loan" name="total-loan">
+                                <option class="yield-option" value="0%">0%</option>
+                                <option class="yield-option" value="5%">5%</option>
+                                <option class="yield-option" value="10%">10%</option>
+                                <option class="yield-option" value="15%">15%</option>
+                                <option class="yield-option" value="20%">20%</option>
+                                <option class="yield-option" value="25%">25%</option>
+                                <option class="yield-option" value="30%">30%</option>
+                                <option class="yield-option" value="35%">35%</option>
+                                <option class="yield-option" value="40%">40%</option>
+                                <option class="yield-option" value="45%">45%</option>
+                                <option class="yield-option" value="50%">50%</option>
+                                <option class="yield-option" value="55%">55%</option>
+                                <option class="yield-option" value="60%">60%</option>
+                                <option selected class="yield-option" value="65%">65%</option>
+                                <option class="yield-option" value="70%">70%</option>
+                                <option class="yield-option" value="75%">75%</option>
+                                <option class="yield-option" value="80%">80%</option>
+                                <option class="yield-option" value="85%">85%</option>
+                                <option class="yield-option" value="90%">90%</option>
+                                <option class="yield-option" value="95%">95%</option>
+                                <option class="yield-option" value="100%">100%</option>
+                                <option class="yield-option" value="105%">105%</option>
+                            </select>
+                        </div>
 
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Stamp Duty</label>
                     </div>
-                    <span class="col2">
-                        <input type="text" id="stamp-duty"  name="stamp-duty" class="input currency" value="392500">
-                    </span>                            
-                </div>
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Valuation Cost</label>
+
+                    <div class="input-field">
+                        <div class="label">
+                            <label class="hastooltip" data-toggle="tooltip" data-placement="right"
+                                title="Purchase Price minus Total Loan">Deposit</label>
+                        </div>
+                        <label class="deposit field field--calculated">549999</label>
                     </div>
-                    <span class="col2">
-                        <input type="text" id="valuation-cost"  name="valuation-cost" class="input currency" value="0">
-                    </span>                            
-                </div>
-                <div class="input-field">
-                    <div class="col2">
-                        <label>Solicitor Cost</label>
+
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Stamp Duty</label>
+                        </div>
+                        <input type="text" id="stamp-duty" name="stamp-duty" class="field input currency"
+                            value="392500">
                     </div>
-                    <span class="col2">
-                        <input type="text" id="solicitor-cost"  name="solicitor-cost" class="input currency" value="0">
-                    </span>                            
-                </div>
-            
-  
-                <div class="input-field">
-                    <div class="col2">
-                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Any additional costs associated with buying the property.
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Valuation Cost</label>
+                        </div>
+                        <input type="text" id="valuation-cost" name="valuation-cost" class="field input currency"
+                            value="0">
+                    </div>
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Solicitor Cost</label>
+                        </div>
+                        <input type="text" id="solicitor-cost" name="solicitor-cost" class="input currency field"
+                            value="0">
+                    </div>
+
+
+                    <div class="input-field">
+                        <div class="label">
+                            <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Any additional costs associated with buying the property.
                         ">Other Purchasing Costs</label>
+                        </div>
+                        <input type="text" id="other-purchasing-costs" name="other-purchasing-costs"
+                            class="input currency field" value="0">
                     </div>
-                    <span class="col2">
-                        <input type="text" id="other-purchasing-costs"  name="other-purchasing-costs" class="input currency" value="0">
-                    </span>                            
+
+                    <div class="input-field">
+                        <div class="label">
+                            <label>Total Cash Required</label>
+                        </div>
+                        <label class="total-cash-required field field--calculated">2924565</label>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="input-field">
+                    <div class="label">
+                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Rent after outgoing expenses
+                    ">Year 1 Net Rental Income</label>
+                    </div>
+                    <input type="text" id="net-rental-income" name="net-rental-income" class="input currency field"
+                        value="514000">
                 </div>
 
                 <div class="input-field">
-                    <div class="col2">
-                        <label>Total Cash Required</label>
+                    <div class="label">
+                        <label>Rental Increases %</label>
                     </div>
-                    <span class="col2">
-                        <label id="total-cash-required">2924565</label>
-                    </span>                            
+                    <input type="text" id="rental-increases" name="rental-increases" class="input percent field"
+                        value="3">
                 </div>
-  
 
-  
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="input-field">
-                <div class="col2">
-                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Rent after outgoing expenses
-                    ">Year 1 Net Rental Income</label>
+                <div class="input-field">
+                    <div class="label">
+                        <label>Term of ownership (years)</label>
+                    </div>
+                    <input type="text" id="term-of-ownership" name="term-of-ownership" class="input field" value="10">
                 </div>
-                <span class="col2">                            
-                    <input type="text" id="net-rental-income"  name="net-rental-income" class="input currency" value="514000">
-                </span>                            
-            </div>
-  
-            <div class="input-field">
-                <div class="col2">
-                    <label>Rental Increases %</label>
-                </div>
-                <span class="col2">
-                    <input type="text" id="rental-increases"  name="rental-increases" class="input percent" value="3">
-                </span>                            
-            </div>
-  
-            <div class="input-field">
-                <div class="col2">
-                    <label>Term of ownership (years)</label>
-                </div>
-                <span class="col2">
-                    <input type="text" id="term-of-ownership"  name="term-of-ownership" class="input" value="10">
-                </span>                            
-            </div>
 
-            <div class="input-field">
-                <div class="col2">
-                    <label>Loan Interest Rate %</label>
+                <div class="input-field">
+                    <div class="label">
+                        <label>Loan Interest Rate %</label>
+                    </div>
+                    <input type="text" id="loan-interest-rate" name="loan-interest-rate" class="input percent field"
+                        value="3">
                 </div>
-                <span class="col2">
-                    <input type="text" id="loan-interest-rate"  name="loan-interest-rate" class="input percent" value="3">
-                </span>                            
-            </div>
 
-            <div class="input-field">
-                <div class="col2">
-                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Will you be using rental profits to offset loan repayments?
+                <div class="input-field input-field--checkbox">
+                    <div class="label">
+                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="Will you be using rental profits to offset loan repayments?
                     ">Debt reduction</label>
+                    </div>
+                    <input type="checkbox" id="debt-reduction" name="debt-reduction"
+                        class="input field field--checkbox">
                 </div>
-                <span class="col2">
-                    <input type="checkbox" id="debt-reduction"  name="debt-reduction" class="input">
-                </span>                            
-            </div>
 
-            <div class="input-field">
-                <div class="col2">
-                    <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="0% = all of your profits will be used for debt reduction.
+                <div class="input-field">
+                    <div class="label">
+                        <label class="hastooltip" data-toggle="tooltip" data-placement="right" title="0% = all of your profits will be used for debt reduction.
 
-                    ">% of Profit NOT used for debt reduction</label>
+                    ">% of profit NOT used for debt reduction</label>
+                    </div>
+                    <input type="text" id="profit-not-for-debt-reduction" name="profit-not-for-debt-reduction"
+                        class="input percent field" value="0">
                 </div>
-                <span class="col2">
-                    <input type="text" id="profit-not-for-debt-reduction"  name="profit-not-for-debt-reduction" class="input percent" value="0">
-                </span>                            
+                <div class="input-field">
+                    <div class="label">
+                        <label for=""></label>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <div class="label"></div>
+                    <a href="#" id="btn-calculator" class="calculator-button">Calculate</a>
+
+                </div>
+
+
             </div>
-  
         </div>
-        <div class="col-12 button-wrapper">
-            <div>
-                <button id="btn-calculator" class="btn-cal">Get Your Forecast ></button>
+        <div id="step2">
+            <div class="page-blocks">
+                <div class="table-wrapper">
+                    <table cell-spacing="0" id="calculator-table" class="cell-border stripe">
+                        <thead class="show_table_head"></thead>
+                        <tbody class="show_tables"></tbody>
+                    </table>
+                </div>
+
+                <div class="calculator-controls">
+
+                    <a href="/calculator/index.html" class="calculator-button btn btn-restart">Start Over
+                        <span class="arrow">
+                            <img src="https://www.rethinkinvesting.com.au/wp-content/uploads/2019/08/Arrow.svg" class="lazyloaded" data-ll-status="loaded">
+                            <noscript><img src="https://www.rethinkinvesting.com.au/wp-content/uploads/2019/08/Arrow.svg" /></noscript>
+                        </span>
+                    </a>
+
+
+                    <a class="calculator-button" id="btn-share">
+                        Share link
+                    </a>
+                </div>
+
+                <div class="row summary-tables">
+                    <div class="col-md-5">
+                        <table class="summary-table">
+                            <thead>
+                                <tr>
+                                    <th>Purchase price</th>
+                                    <th class="purchase-price first-number"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Total loan (assuming 70%)</td>
+                                    <td class="total-loan"></td>
+                                </tr>
+                                <tr>
+                                    <td>Deposit</td>
+                                    <td class="deposit"></td>
+                                </tr>
+                                <tr>
+                                    <td>stamp duty</td>
+                                    <td class="stamp-duty"></td>
+                                </tr>
+                                <tr>
+                                    <td>valuation cost</td>
+                                    <td class="valuation-cost"></td>
+                                </tr>
+                                <tr>
+                                    <td>solicitor cost</td>
+                                    <td class="solicitor-cost"></td>
+                                </tr>
+                                <tr>
+                                    <td>rethink fee</td>
+                                    <td class="rethink-fee"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-5">
+                        <table class="summary-table">
+                            <thead>
+                                <tr>
+                                    <th>Total cash required</th>
+                                    <th class="total-cash-required first-number"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Year 1 net rental income</td>
+                                    <td class="net-rental-income"></td>
+                                </tr>
+                                <tr>
+                                    <td>Yearly review</td>
+                                    <td class="yearly-review"></td>
+                                </tr>
+                                <tr>
+                                    <td>Term of ownership</td>
+                                    <td class="term-number"></td>
+                                </tr>
+                                <tr>
+                                    <td>loan interest rate</td>
+                                    <td class="loan-interest-rate"></td>
+                                </tr>
+                                <tr>
+                                    <td>debt reduction (1=yes, 0=no)</td>
+                                    <td class="debt-reduction"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bold">$ of profit NOT used for debt reduction</td>
+                                    <td class="profit-not-for-debt-reduction"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 rethink-logo-tables">
+                        <img src="/calculator/rethink-logo.png" alt="">
+                    </div>
+                </div>
+
+                <div style="width: 100%;" class="graph-wrapper">
+                    <canvas id="canvas-1">
+                </div>
             </div>
-        </div>
-    </div>
-    <div id="step2">
-        <div class="sub-header">
-            <h2 class="text-center">Rethink Investing Financial Calculator</h2>
-            <p class="text-center">See how your investment performs over a <span class="term-number">10</span> year period.</p>
-        </div>
-        <div class="mobile_clicker">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-        </div>
-        <div class="show_tables">
-        </div>
-        <div class="mobile_clicker">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-        </div>
-  
-        <div style="width: 100%;" class="graph-wrapper">                    
-            <canvas id="canvas-1">
-        </div>
-        
-        <div class="button-wrapper">
-            
-            <button class="btn-previous" id="btn-next">Start Over</button>
+
         </div>
 
-        <button id="btn-share">
-            Copy Share Link
-        </button>
+        <div class="disclaimer">
+            <div class="disclaimer-heading">
+                Disclaimer
+            </div>
+            <div class="disclaimer-text">
+                The information which you calculate from this calculator is intended for use by you as a guide only.
+                This simulation and the resulting calculations are based on assumptions and do not relate specifically
+                to your individual objective and personal financial position. The figures and formulae used within this
+                calculator may change at any time without notice. We have assumed for the projections that interest
+                rates do not change, the structure is interest only using excess cash flow to pay down the principal and
+                fixed depreciation amount. Rethink Investing accepts no responsibility for any losses arising from any
+                use of or reliance upon any calculations or conclusions reached using the calculator.
+            </div>
+        </div>
+
     </div>
-    
-   
-  </div>  
-  <script src="js/jquery.js?ver=1.12.4-wp"></script>
-  <script src="js/jquery/ui/core.min.js?ver=1.11.4"></script>
-  <script src="js/jquery/ui/widget.min.js?ver=1.11.4"></script>
-  <script src="js/jquery/ui/menu.min.js?ver=1.11.4"></script>
-  <script src="js/jquery/ui/selectmenu.min.js?ver=1.11.4"></script>
-  <script src="js/ajax/libs/Chart.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
+
+    <div class="rethink-footer">
+        <img class="desktop-footer" src="/calculator/rethink-footer.png" alt="">
+        <img class="mobile-footer" src="/calculator/rethink-footer-mobile.png">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery/ui/core.min.js?ver=1.11.4"></script>
+    <script src="js/jquery/ui/widget.min.js?ver=1.11.4"></script>
+    <script src="js/jquery/ui/menu.min.js?ver=1.11.4"></script>
+    <script src="js/jquery/ui/selectmenu.min.js?ver=1.11.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>
-
-
-
-

@@ -17,9 +17,18 @@ model = {
   profitNotForDebtReduction: 0
 }
 
+function numFormatter(num) {
+  if(num > 999 && num < 1000000){
+      return (num/1000).toFixed(0) + 'K'; // convert to K for number from > 1000 < 1 million 
+  }else if(num > 1000000){
+      return (num/1000000).toFixed(0) + 'M'; // convert to M for number from > 1 million 
+  }else if(num < 900){
+      return num; // if value < 1000, nothing to do
+  }
+}
 
-jQuery(function () {
-  jQuery('[data-toggle="tooltip"]').tooltip()
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 })
 
 function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
@@ -58,23 +67,23 @@ function getMoney(amount, money = true) {
   }
 }
 
-function getRowHtml(data, termOfOwnership, format) {
+function getRowHtml(data, termOfOwnership, format, rowClass = "") {
   var total = 0;
   var html = "";
-  html += "<div class='row expense'>";
+  html += "<tr class='expense " + rowClass +"'>";
   html +=
-    "<div class='col-md-3 col-4'><div class='item-title'>" +
+    "<td class='first-column'>" +
     data[0] +
-    "</div></div>";
+    "</td>";
   for (var j = 1; j <= termOfOwnership; j++) {
     var dataItem = data[j];
     total += dataItem;
     if (format == "currency") { dataItem = "$" + formatMoney(dataItem); }
     if (format == "percentage") { dataItem = formatMoney(dataItem * 100) + "%"; }
     html +=
-      "<div class='col-4 col-md-2 col-xl-1 rolling-column'><div class='item'>" +
+      "<td>" +
       dataItem +
-      "</div></div>";
+      "</td>";
   }
 
   var avg = total / termOfOwnership;
@@ -83,65 +92,68 @@ function getRowHtml(data, termOfOwnership, format) {
   if (format == "text") { avg = "Average"; }
 
   html +=
-    "<div class='col-md-3 col-4 rolling-column'><div class='item-title end-column'>" +
+    "<td class='lastcol'>" +
     avg +
-    "</div></div>";
+    "</td>";
 
 
-  html += "</div>";
+  html += "</tr>";
   return html;
 }
 
-function linkClickerDots() {
-  jQuery(".mobile_clicker > .dot")
-    .off("click")
-    .on("click", function (e) {
-      jQuery(".mobile_clicker > .active").removeClass("active");
-      jQuery(this).addClass("active");
+function getTHead(data, termOfOwnership, format) {
+  var total = 0;
+  var html = "";
+  
+  html +=
+    "<tr><th>" +
+    data[0] +
+    "</th>";
+  for (var j = 1; j <= termOfOwnership; j++) {
+    var dataItem = data[j];
+    total += dataItem;
+    if (format == "currency") { dataItem = "$" + formatMoney(dataItem); }
+    if (format == "percentage") { dataItem = formatMoney(dataItem * 100) + "%"; }
+    html +=
+      "<th>" +
+      dataItem +
+      "</th>";
+  }
 
-      var index = jQuery(this).data("index");
-      var step = columnsPerSmall;
-      if (jQuery(window).width() >= 768) {
-        step = columnsPerMedium;
-      }
-      if (jQuery(window).width() >= 1200) {
-        step = columnsPerLarge;
-      }
+  var avg = total / termOfOwnership;
+  if (format == "currency") { avg = "$" + formatMoney(avg); }
+  if (format == "percentage") { avg = formatMoney(avg * 100) + "%"; }
+  if (format == "text") { avg = "Average"; }
 
-      var from = index * step;
-      var to = from + step;
+  html +=
+    "<th class='lastcol'>" +
+    avg +
+    "</th></tr>";
 
-      jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
-        jQuery(this)
-          .find(".rolling-column")
-          //.find(".data-column")
-          .each(function (index) {
-            jQuery(this).hide();
-            if (index >= from && index < to) {
-              jQuery(this).show();
-            }
-          });
-      });
-    });
+
+  
+  return html;
 }
 
+
 function updateFields() {
-  purchasePrice = getMoney(jQuery("#purchase-price").val());
-  totalLoan = getMoney(jQuery("#total-loan").val(), false) / 100.0 * purchasePrice;
+  purchasePrice = getMoney($("#purchase-price").val());
+  totalLoan = getMoney($("#total-loan").val(), false) / 100.0 * purchasePrice;
   deposit = purchasePrice - totalLoan;
-  stampDuty = getMoney(jQuery("#stamp-duty").val());
-  valuationCost = getMoney(jQuery("#valuation-cost").val());
-  solicitorCost = getMoney(jQuery("#solicitor-cost").val());
+  stampDuty = getMoney($("#stamp-duty").val());
+  valuationCost = getMoney($("#valuation-cost").val());
+  solicitorCost = getMoney($("#solicitor-cost").val());
   otherPurchasingCosts = getMoney(
-    jQuery("#other-purchasing-costs").val()
+    $("#other-purchasing-costs").val()
   );
   totalCashRequired = deposit + stampDuty + valuationCost + solicitorCost + otherPurchasingCosts;
-  netRentalIncome = getMoney(jQuery("#net-rental-income").val());
-  rentalIncreases = getMoney(jQuery("#rental-increases").val());
-  termOfOwnership = getMoney(jQuery("#term-of-ownership").val(), false);
-  loanInterestRate = getMoney(jQuery("#loan-interest-rate").val(), false);
-  debtReduction = jQuery("#debt-reduction").prop('checked');
-  profitNotForDebtReduction = getMoney(jQuery("#profit-not-for-debt-reduction").val(), false);
+  netRentalIncome = getMoney($("#net-rental-income").val());
+  rentalIncreases = getMoney($("#rental-increases").val());
+  termOfOwnership = getMoney($("#term-of-ownership").val(), false);
+  loanInterestRate = getMoney($("#loan-interest-rate").val(), false);
+  debtReduction = $("#debt-reduction").prop('checked');
+  profitNotForDebtReduction = getMoney($("#profit-not-for-debt-reduction").val(), false);
+  rethinkFee = 57475;
 
   model = {
     purchasePrice: purchasePrice,
@@ -159,41 +171,25 @@ function updateFields() {
     totalCashRequired: totalCashRequired,
   }
 
-  windowWidth = jQuery(window).width();
+  windowWidth = $(window).width();
 
-  columns = columnsPerSmall;
+  
 
-  if (windowWidth >= 768) {
-    columns = columnsPerMedium;
-  }
-
-  if (windowWidth >= 1200) {
-    columns = columnsPerLarge;
-  }
-
-  tablePages = model.termOfOwnership / columns;
-
-  jQuery(".mobile_clicker").empty();
-
-  if (tablePages > 1) {
-    for (let index = 0; index <= tablePages; index++) {
-      jQuery(".mobile_clicker").append("<span class='dot' data-index='" + index + "'></span>")
-    }
-
-    jQuery(".mobile_clicker .dot").first().addClass("active");
-  }
+  
 
 
 
-  linkClickerDots();
 
-  jQuery(".sg-cal-wrap .show_tables .row").each(function (e) {
-    jQuery(this)
+
+
+
+  $(".sg-cal-wrap .show_tables .row").each(function (e) {
+    $(this)
       .find(".rolling-column")
       .each(function (index) {
-        jQuery(this).hide();
+        $(this).hide();
         if (index < columns) {
-          jQuery(this).show();
+          $(this).show();
         }
       });
   });
@@ -201,27 +197,38 @@ function updateFields() {
 
 
 
-  jQuery("#total-loan").selectmenu();
-  var yieldOptions = jQuery(".yield-option");
+  $("#total-loan").selectmenu();
+  var yieldOptions = $(".yield-option");
   yieldOptions.map(function (a, b) {
-    item = jQuery(b);
+    item = $(b);
     var yield = getMoney(item.val(), false) / 100.0;
     item.text(
       "$" + formatMoney(purchasePrice * yield) + " (" + item.val() + ")"
     );
   });
-  jQuery("#total-loan").selectmenu("refresh");
 
-  jQuery("#deposit").text("$" + formatMoney(deposit, 2));
 
-  jQuery("#total-cash-required").text(
-    "$" + formatMoney(totalCashRequired, 2)
-  );
+  $("#total-loan").selectmenu("refresh");
 
-  jQuery(".term-number").text(termOfOwnership);
+  //Update display fields
+  $(".deposit").text("$" + formatMoney(deposit, 2));
+  $(".total-cash-required").text("$" + formatMoney(totalCashRequired, 2));
+  $(".term-number").text(termOfOwnership);
+  $(".purchase-price").text("$" + formatMoney(purchasePrice,2));
+  $(".total-loan").text("$" + formatMoney(totalLoan,2));
+  $(".stamp-duty").text("$" + formatMoney(stampDuty,2));
+  $(".valuation-cost").text("$" + formatMoney(valuationCost,2));
+  $(".solicitor-cost").text("$" + formatMoney(solicitorCost,2));
+  $(".rethink-fee").text("$" + formatMoney(rethinkFee,2));
+  $(".total-loan").text("$" + formatMoney(totalLoan,2));
+  $(".net-rental-income").text("$" + formatMoney(netRentalIncome,2));
+  $(".yearly-review").text(rentalIncreases);
+  $(".loan-interest-rate").text(loanInterestRate);
+  $(".debt-reduction").text(debtReduction);
+  $(".profit-not-for-debt-reduction").text(profitNotForDebtReduction);
 }
 
-jQuery(document).ready(function () {
+$(document).ready(function () {
 
   //Check if there's a model embedded in the URL
   const queryString = window.location.search;
@@ -234,22 +241,22 @@ jQuery(document).ready(function () {
   console.log(atob(uModel));
 
   //Hydrate the form from the model
-  jQuery("#purchase-price").val(model.purchasePrice);
-  jQuery("#term-of-ownership").val(model.termOfOwnership);
+  $("#purchase-price").val(model.purchasePrice);
+  $("#term-of-ownership").val(model.termOfOwnership);
 
   //Prepare the form
-  var yieldOptions = jQuery(".yield-option");
-  purchasePrice = getMoney(jQuery("#purchase-price").val());
+  var yieldOptions = $(".yield-option");
+  purchasePrice = getMoney($("#purchase-price").val());
   yieldOptions.map(function (a, b) {
-    item = jQuery(b);
+    item = $(b);
     var yield = getMoney(item.val(), false) / 100.0;
     item.text(
       "$" + formatMoney(purchasePrice * yield) + " (" + item.val() + ")"
     );
   });
-  jQuery("#total-loan").selectmenu();
-  jQuery(".select-menu").on("selectmenuchange", function (event, ui) { updateFields(); })
-  jQuery(".input").on("change", function (e) { updateFields(); })
+  $("#total-loan").selectmenu();
+  $(".select-menu").on("selectmenuchange", function (event, ui) { updateFields(); })
+  $(".input").on("change", function (e) { updateFields(); })
 
 
 
@@ -258,14 +265,14 @@ jQuery(document).ready(function () {
 
   var accessToken = "b85e7501087ddced06355f09a23aec9fb016444f";
 
-  jQuery("#btn-share").on("click", function () {
+  $("#btn-share").on("click", function () {
     var chunk = btoa(JSON.stringify(model));
     var shareUrl = window.location.href.split('?')[0] + "?m=" + chunk;
     var params = {
       "long_url": shareUrl
     };
 
-    //     jQuery.ajax({
+    //     $.ajax({
     //       url: "https://api-ssl.bitly.com/v4/shorten",
     //       cache: false,
     //       dataType: "json",
@@ -288,8 +295,8 @@ jQuery(document).ready(function () {
   })
 
   function copyToClipboard(url) {
-    var $temp = jQuery("<input>");
-    jQuery("body").append($temp);
+    var $temp = $("<input>");
+    $("body").append($temp);
     $temp.val(url).select();
     document.execCommand("copy");
     $temp.remove();
@@ -299,50 +306,53 @@ jQuery(document).ready(function () {
 
 
 
-  jQuery(".currency")
+  $(".currency")
     .off("blur")
     .on("blur", function (e) {
-      jQuery(this).val("$" + formatMoney(jQuery(this).val(), 2));
+      $(this).val("$" + formatMoney($(this).val(), 2));
     });
 
-  jQuery(".currency")
+  $(".currency")
     .off("focus")
     .on("focus", function (e) {
-      var value = jQuery(this).val();
+      var value = $(this).val();
 
       value = getMoney(value).toFixed(2);
-      jQuery(this).val(value);
+      $(this).val(value);
     });
 
-  jQuery(".percent")
+  $(".percent")
     .off("blur")
     .on("blur", function (e) {
-      jQuery(this).val(jQuery(this).val() + "%");
+      $(this).val($(this).val() + "%");
     });
 
-  jQuery(".percent")
+  $(".percent")
     .off("focus")
     .on("focus", function (e) {
-      jQuery(this).val(jQuery(this).val().replace("%", ""));
+      $(this).val($(this).val().replace("%", ""));
     });
 
-  jQuery(".percent").trigger("blur");
-  jQuery(".currency").trigger("blur");
+  $(".percent").trigger("blur");
+  $(".currency").trigger("blur");
 
   //Click Get your forecast
-  jQuery("#btn-calculator")
+  $("#btn-calculator")
     .off("click")
     .on("click", showResults);
 
   //Click start over
-  jQuery("#btn-next")
+  $("#btn-next")
     .off("click")
     .on("click", function (e) {
-      jQuery("#step2").hide();
-      jQuery("#step1").show();
+      $("#step2").hide();
+      $("#step1").show();
+      myTable.destroy();
+      $(".table_wrapper").html("<table cell-spacing='0' id='calculator-table' class='cell-border stripe'><thead class='show_table_head'></thead><tbody class='show_tables'></tbody></table>");
+
     });
 
-  jQuery(window).resize(function (e) {
+  $(window).resize(function (e) {
     updateFields();
   });
 
@@ -351,16 +361,18 @@ jQuery(document).ready(function () {
 
 });
 
+var myTable;
+
 function showResults() {
   rentReceived = ["Rent Received"];
-  yieldEachYear = ["Yield Each year"];
-  principalRemainingStartOfYear = ["Principal Remaining (Start of Year)"];
-  principalRemainingEndOfYear = ["Principal Remaining (End of Year)"];
-  principalRepaid = ["Principal Repaid"];
+  yieldEachYear = ["Yearly yield"];
+  principalRemainingStartOfYear = ["Principal Remaining <div class='table-heading-subtitle'>(start of year)</div>"];
+  principalRemainingEndOfYear = ["Principal Remaining <div class='table-heading-subtitle'>(end of year)</div>"];
+  principalRepaid = ["Principal Paid"];
   interestPaid = ["Interest Paid"];
-  cashFlow = ["Cash-flow (rent less interest"];
-  returnOnEquity = ["Return on Equity (pure cash flow return)"];
-  valueAtSameCapRate = ["Value at same Cap Rate as when  you purchased"];
+  cashFlow = ["Cash-flow <div class='table-heading-subtitle'>(rent less interest)</div>"];
+  returnOnEquity = ["Return on Equity <div class='table-heading-subtitle'>(pure cash flow return)</div>"];
+  valueAtSameCapRate = ["Value at same Cap Rate as when you purchased"];
   yearHeadings = [""];
 
   for (var i = 1; i <= model.termOfOwnership; i++) {
@@ -383,121 +395,138 @@ function showResults() {
 
   }
 
-  jQuery(".show_tables").html("");
-  jQuery(".show_tables").append(getRowHtml(yearHeadings, model.termOfOwnership, "text"));
-  jQuery(".show_tables").append(getRowHtml(rentReceived, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(yieldEachYear, model.termOfOwnership, "percentage"));
-  jQuery(".show_tables").append(getRowHtml(interestPaid, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(cashFlow, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(returnOnEquity, model.termOfOwnership, "percentage"));
-  jQuery(".show_tables").append(getRowHtml(principalRepaid, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(principalRemainingStartOfYear, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(principalRemainingEndOfYear, model.termOfOwnership, "currency"));
-  jQuery(".show_tables").append(getRowHtml(valueAtSameCapRate, model.termOfOwnership, "currency"));
+  $(".table_wrapper").html("<table cell-spacing='0' id='calculator-table' class='cell-border stripe'><thead class='show_table_head'></thead><tbody class='show_tables'></tbody></table>");
+  $(".show_table_head").append(getTHead(yearHeadings, model.termOfOwnership, "text"));
+  $(".show_tables").append(getRowHtml(rentReceived, model.termOfOwnership, "currency"));
+  $(".show_tables").append(getRowHtml(yieldEachYear, model.termOfOwnership, "percentage", "blue-row"));
+  $(".show_tables").append(getRowHtml(interestPaid, model.termOfOwnership, "currency"));
+  $(".show_tables").append(getRowHtml(cashFlow, model.termOfOwnership, "currency", "blue-row"));
+  $(".show_tables").append(getRowHtml(returnOnEquity, model.termOfOwnership, "percentage"));
+  $(".show_tables").append(getRowHtml(principalRepaid, model.termOfOwnership, "currency"));
+  $(".show_tables").append(getRowHtml(principalRemainingStartOfYear, model.termOfOwnership, "currency"));
+  $(".show_tables").append(getRowHtml(principalRemainingEndOfYear, model.termOfOwnership, "currency"));
+  $(".show_tables").append(getRowHtml(valueAtSameCapRate, model.termOfOwnership, "currency"));
+
+  myTable = $("#calculator-table").DataTable({
 
 
-  jQuery("#step1").hide();
-  jQuery("#step2").show();
+    fixedColumns:{
+      left:1
+    },
+
+    //autoWidth:false,
+    
+    scrollX:true,
+
+    paging:false,
+    searching:false,
+    ordering:false,
+    info:false,
+    columnDefs:[
+      {width:"154px", targets:0}, //desktop
+      //{width:"54px", targets:0}, //mobile
+      {width: "142px", targets:model.termOfOwnership+1}, //desktop
+      //{width: "112px", targets:model.termOfOwnership+1}, //mobile
+      {width:"92px", targets:'_all'}, //desktop
+      //{width:"72px", targets:'_all'}, //mobile
+    ]
+  });
+
+  $("#step1").hide();
+  $("#step2").show();
 
 
-  var MONTHS = [];
+  var years = [];
   for (var i = 1; i <= model.termOfOwnership; i++) {
-    MONTHS.push("Year " + i);
+    years.push(i);
   }
 
   var config = {
     type: "line",
     data: {
-      labels: MONTHS,
+      labels: years,
       datasets: [
         {
           label: "Capital Growth",
-          backgroundColor: "rgba(54, 162, 235, 0.4)",
-          borderColor: "rgba(54, 162, 235, 0.4)",
+          borderColor: "#0385ae",
+          borderWidth:2,
           data: [],
           fill: false,
+          pointRadius:0,
         },
         {
           label: "Amount Owing",
-          backgroundColor: "rgba(255, 99, 132, 0.4)",
-          borderColor: "rgba(255, 99, 132, 0.4)",
+          borderColor: "#000",
+          borderWidth:2,
           data: [],
           fill: false,
+          pointRadius:0,
         },
 
       ],
     },
     options: {
-      tooltips: {
-        mode: "index",
-        intersect: false,
-        callbacks: {
-          label: function (tooltipItem, data) {
-            var label = data.datasets[tooltipItem.datasetIndex].label || "";
-
-            if (label) {
-              label += ": $";
-            }
-            label += formatMoney(tooltipItem.value, 2);
-            return label;
-          },
-        },
-      },
-      responsive: true,
-      title: {
-        display: true,
-        text: "Charted Performance Over " + model.termOfOwnership + " Years",
-        fontColor: "#0288ad",
-      },
-
-      hover: {
-        mode: "nearest",
-        intersect: true,
-      },
-      legend: {
-        labels: {
-          fontColor: "#0288ad",
-          fontSize: 12,
+      plugins:{
+        legend:{
+          display:false
         },
       },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "Year",
-              fontColor: "#0288ad",
+        y:{
+          beginAtZero:true,
+          ticks:{
+            color:"#0385ae",
+            callback:function(e){
+              return "$"+numFormatter(e);
             },
-            beginAtZero: true,
-            ticks: {
-              autoSkip: false,
-              fontColor: "#0288ad",
-              fontSize: 12,
-            },
+            font:{
+              size:18,
+              weight:"700",
+              family:"Open Sans"
+            }
           },
-        ],
-        yAxes: [
-          {
-            id: 0,
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "Amount ($ AUD)",
-              fontColor: "#0288ad",
-            },
-            ticks: {
-              autoSkip: false,
-              fontColor: "#0288ad",
-              fontSize: 12,
-              beginAtZero: true,
-              callback: function (label, index, labels) {
-                return "$" + formatMoney(label, 0);
-              },
-            },
+          title:{
+            text:"Amount ($AUD)",
+            display:true,
+            color:"#0385ae",
+            font:{
+              size:18,
+              weight:"300",
+              family:"Open Sans"
+            }
           },
+          grid:{
+            display:false,
+            borderColor:"#0385ae"
+          },
+          
+        },
+        x:{
+          ticks:{
+            color:"#0385ae",
+            font:{
+              size:18,
+              weight:"700",
+              family:"Open Sans"
+            }
+          },
+          title:{
+            text:"Year",
+            display:true,
+            color:"#0385ae",
+            font:{
+              size:18,
+              weight:"300",
+              family:"Open Sans"
+            }
+          },
+          grid:{
+            borderDash:[4,4],
+            color:"#0385ae",
+            borderColor:"#0385ae",
+          },
+        }
 
-        ],
       },
     },
   };
@@ -524,5 +553,9 @@ function showResults() {
   var ctx = document.getElementById("canvas-1").getContext("2d");
   window.myLine = new Chart(ctx, config);
   window.myLine.update();
-  jQuery(window).trigger("resize");
+  $(window).trigger("resize");
 }
+
+document.fonts.ready.then(function(){
+  //myTable.columns.adjust().draw();
+})
