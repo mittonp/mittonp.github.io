@@ -1,5 +1,13 @@
 const TRAY = document.getElementById('js-tray-slide');
 
+var picker = new jscolor("#color-picker",
+  {
+    format:'hex',
+    onChange:function(s){
+      selectSwatch($("#color-picker").val());
+    }
+  });
+
 var theModel;
 
 //const MODEL_PATH = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/chair.glb";
@@ -47,20 +55,44 @@ var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHe
 camera.position.z = cameraFar;
 camera.position.x = 0;
 
-// Initial material
-const INITIAL_MTL = new THREE.MeshPhongMaterial( { color: 0xf1f1f1, shininess: 10 } );
-
-const INITIAL_MAP = [
-  {childID: "frame", mtl: INITIAL_MTL},
-  {childID: "mudguard", mtl: INITIAL_MTL},
-];
 
 // Init the object loader
 var loader = new THREE.GLTFLoader();
 var dracoLoader = new THREE.DRACOLoader();
 dracoLoader.setDecoderPath("/zoomo/static/");
 
+var textureLoader = new THREE.TextureLoader();
+
 loader.setDRACOLoader(dracoLoader);
+
+// Initial materials
+const FRAME_MTL = new THREE.MeshPhongMaterial( { color: 0xc0c0c0, shininess: 0, side: THREE.DoubleSide } );
+const INITIAL_MTL = new THREE.MeshPhongMaterial( { color: 0xf1f1f1, shininess: 0, side: THREE.DoubleSide } );
+const BLACK_MTL = new THREE.MeshPhongMaterial( { color: 0x010101, shininess: 1, side: THREE.DoubleSide } );
+const METAL_MTL = new THREE.MeshPhongMaterial( { color: 0xf0f0f0, shininess: 0.5, metalness:1 } );
+
+let txt = new THREE.TextureLoader().load("/zoomo/wood_.jpg");
+      
+      txt.repeat.set( 2,2,2);
+      txt.wrapS = THREE.RepeatWrapping;
+      txt.wrapT = THREE.RepeatWrapping;
+
+
+const EXAMPLE_LOGO_MTL = new THREE.MeshPhongMaterial({
+  map:txt,
+  shininess:60
+  });
+
+const INITIAL_MAP = [
+  {childID: "frame", mtl: FRAME_MTL},
+  {childID: "frame", mtl: FRAME_MTL},
+  {childID: "saddle", mtl: BLACK_MTL},
+  {childID: "tyre", mtl: BLACK_MTL},
+  {childID: "mudguard", mtl: BLACK_MTL},
+  {childID: "crank", mtl: INITIAL_MTL},
+  {childID: "fork", mtl: FRAME_MTL},
+  {childID: "shocks", mtl: METAL_MTL},
+];
 
 loader.load(MODEL_PATH, function(gltf) {
   theModel = gltf.scene;
@@ -70,14 +102,14 @@ loader.load(MODEL_PATH, function(gltf) {
        o.castShadow = true;
        o.receiveShadow = true;
      }
-   });
+    });
   
 // Set the models initial scale   
   theModel.scale.set(2,2,2);
   theModel.rotation.y = Math.PI/2;
 
   // Offset the y position a bit
-  theModel.position.y = -1;
+  theModel.position.y = -2;
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -106,18 +138,23 @@ function initColor(parent, type, mtl) {
 // Add lights
 var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.61 );
     hemiLight.position.set( 0, 50, 0 );
-// Add hemisphere light to scene   
-scene.add( hemiLight );
+    // Add hemisphere light to scene   
+    scene.add( hemiLight );
 
 var dirLight = new THREE.DirectionalLight( 0xffffff, 0.54 );
     dirLight.position.set( -8, 12, 8 );
-    dirLight.castShadow = true;
+    //dirLight.castShadow = true;
     dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
-// Add directional Light to scene    
+    // Add directional Light to scene    
     scene.add( dirLight );
 
+    // var pointLight = new THREE.PointLight(0xffffff,1);
+    // pointLight.position.set(50,50,50);
+    // scene.add(pointLight);
+
+
 // Floor
-var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
+var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, -2);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: 0xeeeeee,
   shininess: 0
@@ -191,20 +228,21 @@ for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
 
-function selectSwatch(e) {
-     let color = colors[parseInt(e.target.dataset.key)];
+function selectSwatch(color) {
      let new_mtl;
 
       new_mtl = new THREE.MeshPhongMaterial({
-          color: parseInt('0x' + color.color),
-          shininess: color.shininess ? color.shininess : 10
-          
+          color: parseInt('0x' + color.substring(1)),
+          shininess: 10,
+          side: THREE.DoubleSide
         });
     
     setMaterial(theModel, 'frame', new_mtl);
-    setMaterial(theModel, 'mudguard', new_mtl);
+    setMaterial(theModel, 'fork', new_mtl);
+    //setMaterial(theModel, 'mudguard', new_mtl);
     //setMaterial(theModel, 'rearwheel', new_mtl);
 }
+
 
 function setMaterial(parent, type, mtl) {
   parent.traverse((o) => {
