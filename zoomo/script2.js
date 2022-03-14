@@ -15,6 +15,18 @@ const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 0,
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1 });
 const WHITE_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 const BACKGROUND_COLOR = 0xf1f1f1;
+const imgTexture = new THREE.TextureLoader().load("Uber-Eats-Logo.png");
+imgTexture.wrapS = THREE.ClampToEdgeWrapping;
+imgTexture.wrapT = THREE.ClampToEdgeWrapping;
+
+
+const IMG_MTL = new THREE.MeshPhongMaterial({
+  side: THREE.DoubleSide,
+  map: imgTexture,
+  transparent: true
+  //shininess: 10
+
+});
 
 const INITIAL_MAP = [
   { childID: "", mtl: BLACK_MTL },
@@ -23,8 +35,10 @@ const INITIAL_MAP = [
   { childID: "M6", mtl: BLACK_MTL },
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "brakerotor", mtl: SILVER_MTL },
+  { childID: "shocks", mtl: SILVER_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
-  { childID: "spring", mtl: SILVER_MTL },
+  { childID: "spring", mtl: GOLD_MTL },
+  { childID: "Plane", mtl: IMG_MTL },
 ];
 
 init();
@@ -46,18 +60,8 @@ function init() {
 
       texture.mapping = THREE.EquirectangularReflectionMapping;
 
-
-      const imgTexture = new THREE.TextureLoader().load("sample-logo.png");
-      imgTexture.mapping = THREE.EquirectangularReflectionMapping;
-
-      //scene.background = imgTexture;
-      //scene.environment = imgTexture;
-
       scene.background = new THREE.Color(BACKGROUND_COLOR );
       scene.environment = texture;
-
-      //scene.background = WHITE_MTL;
-      //scene.environment = WHITE_MTL;
 
       render();
 
@@ -84,7 +88,7 @@ function init() {
         // Floor
         var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
         var floorMaterial = new THREE.MeshPhongMaterial({
-          color: 0xeeeeee,
+          color: BACKGROUND_COLOR,
           shininess: 0
         });
 
