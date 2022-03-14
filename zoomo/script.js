@@ -34,14 +34,27 @@ const colors = [
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
 const scene = new THREE.Scene();
+
+
+
+var rgbeLoader = new THREE.RGBELoader();
+var envMap = rgbeLoader.load("/zoomo/textures/equirectangular/royal_esplanade_1k.hdr");
+envMap.mapping = THREE.EquirectangularReflectionMapping;
+
+
 // Set background
-scene.background = new THREE.Color(BACKGROUND_COLOR );
+//scene.background = new THREE.Color(BACKGROUND_COLOR );
+scene.environment = envMap;
 scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 
 const canvas = document.querySelector('#c');
 
 // Init the renderer
 const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+
+//renderer.toneMapping = THREE.ACESFilmicToneMapping;
+//renderer.toneMappingExposure = 1;
+renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio); 
@@ -65,33 +78,26 @@ var textureLoader = new THREE.TextureLoader();
 
 loader.setDRACOLoader(dracoLoader);
 
+
+
 // Initial materials
-const FRAME_MTL = new THREE.MeshPhongMaterial( { color: 0xc0c0c0, shininess: 0, side: THREE.DoubleSide } );
+const FRAME_MTL = new THREE.MeshPhongMaterial( { color: 0xc0c0c0, shininess: 100, side: THREE.DoubleSide } );
 const INITIAL_MTL = new THREE.MeshPhongMaterial( { color: 0xf1f1f1, shininess: 0, side: THREE.DoubleSide } );
-const BLACK_MTL = new THREE.MeshPhongMaterial( { color: 0x010101, shininess: 1, side: THREE.DoubleSide } );
-const METAL_MTL = new THREE.MeshPhongMaterial( { color: 0xf0f0f0, shininess: 0.5, metalness:1 } );
-
-let txt = new THREE.TextureLoader().load("/zoomo/wood_.jpg");
-      
-      txt.repeat.set( 2,2,2);
-      txt.wrapS = THREE.RepeatWrapping;
-      txt.wrapT = THREE.RepeatWrapping;
-
-
-const EXAMPLE_LOGO_MTL = new THREE.MeshPhongMaterial({
-  map:txt,
-  shininess:60
-  });
+const BLACK_MTL = new THREE.MeshPhongMaterial( { color: 0x202020, shininess: 25, side: THREE.DoubleSide } );
+const ORANGE_MTL = new THREE.MeshPhongMaterial( { color: 0xf00f0f, shininess: 0.5, metalness:1 } );
+const YELLOW_MTL = new THREE.MeshPhongMaterial( { color: 0xffff00, shininess: 0.5, metalness:1 } );
+const GOLD_MTL = new THREE.MeshStandardMaterial( { color: 0xffff00, roughness: 0.5, metalness: 1 } );
+const SILVER_MTL = new THREE.MeshStandardMaterial( { color: 0xf0f0f0, roughness: 0, metalness:1 } );
 
 const INITIAL_MAP = [
+  {childID:"", mtl:BLACK_MTL},
   {childID: "frame", mtl: FRAME_MTL},
-  {childID: "frame", mtl: FRAME_MTL},
-  {childID: "saddle", mtl: BLACK_MTL},
-  {childID: "tyre", mtl: BLACK_MTL},
-  {childID: "mudguard", mtl: BLACK_MTL},
-  {childID: "crank", mtl: INITIAL_MTL},
-  {childID: "fork", mtl: FRAME_MTL},
-  {childID: "shocks", mtl: METAL_MTL},
+  {childID: "M4", mtl: BLACK_MTL},
+  {childID: "M6", mtl: BLACK_MTL},
+  {childID: "brake", mtl: GOLD_MTL},
+  {childID: "brakerotor", mtl: SILVER_MTL},
+  {childID: "racklightstrip", mtl: ORANGE_MTL},
+  {childID: "spring", mtl: SILVER_MTL},
 ];
 
 loader.load(MODEL_PATH, function(gltf) {
@@ -100,7 +106,7 @@ loader.load(MODEL_PATH, function(gltf) {
     theModel.traverse((o) => {
      if (o.isMesh) {
        o.castShadow = true;
-       o.receiveShadow = true;
+       o.receiveShadow = false;
      }
     });
   
@@ -143,18 +149,14 @@ var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.61 );
 
 var dirLight = new THREE.DirectionalLight( 0xffffff, 0.54 );
     dirLight.position.set( -8, 12, 8 );
-    //dirLight.castShadow = true;
+    dirLight.castShadow = true;
     dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     // Add directional Light to scene    
     scene.add( dirLight );
 
-    // var pointLight = new THREE.PointLight(0xffffff,1);
-    // pointLight.position.set(50,50,50);
-    // scene.add(pointLight);
-
 
 // Floor
-var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, -2);
+var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: 0xeeeeee,
   shininess: 0
@@ -163,7 +165,7 @@ var floorMaterial = new THREE.MeshPhongMaterial({
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
 floor.rotation.x = -0.5 * Math.PI;
 floor.receiveShadow = true;
-floor.position.y = -1;
+floor.position.y = -2;
 scene.add(floor);
 
 // Add controls
@@ -238,9 +240,6 @@ function selectSwatch(color) {
         });
     
     setMaterial(theModel, 'frame', new_mtl);
-    setMaterial(theModel, 'fork', new_mtl);
-    //setMaterial(theModel, 'mudguard', new_mtl);
-    //setMaterial(theModel, 'rearwheel', new_mtl);
 }
 
 
