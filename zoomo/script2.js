@@ -32,7 +32,8 @@ render();
 
 function init() {
   const container = document.createElement('div');
-  document.body.appendChild(container);
+  container.id="c";
+  document.getElementsByClassName("model")[0].appendChild(container);
 
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
   camera.position.set(- 1.8, 0.6, 2.7);
@@ -114,7 +115,7 @@ function init() {
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(500, 500);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1;
   renderer.outputEncoding = THREE.sRGBEncoding;
@@ -138,7 +139,8 @@ function animate() {
   
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;
-    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    //camera.aspect = canvas.width / canvas.height;
+    camera.aspect = 1;
     camera.updateProjectionMatrix();
   }
 }
@@ -195,6 +197,8 @@ var picker = new jscolor("#color-picker",
     }
   });
 
+  document.getElementById("color-picker").jscolor.show();
+
   // Function - New resizing method
 function resizeRendererToDisplaySize(renderer) {
   const canvas = renderer.domElement;
@@ -206,7 +210,7 @@ function resizeRendererToDisplaySize(renderer) {
   const needResize = canvasPixelWidth !== width || canvasPixelHeight !== height;
   if (needResize) {
     
-    renderer.setSize(width, height, false);
+    renderer.setSize(canvas.width, canvas.height, false);
   }
   return needResize;
 }
