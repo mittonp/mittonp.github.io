@@ -10,27 +10,19 @@ let theModel, camera, scene, renderer;
 // Initial materials
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xc0c0c0, side: THREE.DoubleSide });
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.DoubleSide });
-const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xf00f0f, metalness: 1 });
-const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 0, metalness: 1 });
+const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xf00f0f, });
+const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
+const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, transparent: true });
+const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0, metalness: 1 });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1 });
 const WHITE_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 const BACKGROUND_COLOR = 0xf1f1f1;
-const imgTexture = new THREE.TextureLoader().load("Uber-Eats-Logo.png");
-imgTexture.wrapS = THREE.ClampToEdgeWrapping;
-imgTexture.wrapT = THREE.ClampToEdgeWrapping;
 
-
-const IMG_MTL = new THREE.MeshPhongMaterial({
-  side: THREE.DoubleSide,
-  map: imgTexture,
-  transparent: true
-  //shininess: 10
-
-});
 
 const INITIAL_MAP = [
   { childID: "", mtl: BLACK_MTL },
   { childID: "frame", mtl: FRAME_MTL },
+  { childID: "logosurface", mtl: FRAME_MTL },
   { childID: "M4", mtl: BLACK_MTL },
   { childID: "M6", mtl: BLACK_MTL },
   { childID: "brake", mtl: GOLD_MTL },
@@ -38,7 +30,9 @@ const INITIAL_MAP = [
   { childID: "shocks", mtl: SILVER_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
   { childID: "spring", mtl: GOLD_MTL },
-  { childID: "Plane", mtl: IMG_MTL },
+  { childID: "pedalcap", mtl: YELLOW_MTL },
+  { childID: "notframe", mtl: FRAME_MTL },
+  { childID: "frontwheelquickreleasecap", mtl: YELLOW_MTL },
 ];
 
 init();
@@ -119,7 +113,7 @@ function init() {
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(500, 500);
+  renderer.setSize(1000, 500);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1;
   renderer.outputEncoding = THREE.sRGBEncoding;
@@ -143,8 +137,8 @@ function animate() {
   
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;
-    //camera.aspect = canvas.width / canvas.height;
-    camera.aspect = 1;
+    camera.aspect = canvas.width / canvas.height;
+    //camera.aspect = 1;
     camera.updateProjectionMatrix();
   }
 }
@@ -176,10 +170,12 @@ function selectSwatch(color) {
       new_mtl = new THREE.MeshPhongMaterial({
           color: parseInt('0x' + color.substring(1)),
           shininess: 10,
-          side: THREE.DoubleSide
+          side: THREE.DoubleSide,
+          castShadow:true
         });
     
     setMaterial(theModel, 'frame', new_mtl);
+    setMaterial(theModel, 'notframe', new_mtl);
 }
 
 
@@ -218,3 +214,49 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
+
+const status = document.getElementById('status');
+        const output = document.getElementById('output');
+        if (window.FileList && window.File && window.FileReader) {
+          document.getElementById('file-selector').addEventListener('change', event => {
+            output.src = '';
+            status.textContent = '';
+            const file = event.target.files[0];
+            if (!file.type) {
+              status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+              return;
+            }
+            if (!file.type.match('image.*')) {
+              status.textContent = 'Error: The selected file does not appear to be an image.'
+              return;
+            }
+            const reader = new FileReader();
+            reader.addEventListener('load', event => {
+              var image = new Image();
+              image.src= event.target.result;
+              image.onload = function() {
+                let imgRatio = image.naturalWidth/image.naturalHeight;
+                let planeRatio = 91/13;
+
+
+                console.log(image.naturalWidth, image.naturalHeight);
+                var imgTexture = new THREE.TextureLoader().load(event.target.result);
+                imgTexture.repeat.x = planeRatio / imgRatio;
+                imgTexture.offset.x = -0.5 * ((planeRatio/imgRatio) -1);
+                let new_mtl;
+  
+                new_mtl =  new THREE.MeshPhongMaterial({
+                    side: THREE.DoubleSide,
+                    map: imgTexture,
+                    transparent: true
+                    //shininess: 10
+                  
+                  });
+  
+                setMaterial(theModel, 'logosurface', new_mtl);
+            }
+             
+            });
+            reader.readAsDataURL(file);
+          }); 
+        }
