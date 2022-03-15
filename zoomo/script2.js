@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from 'https://threejs.org/build/three.module.js';
 
 import { RGBELoader } from 'https://threejs.org/examples/jsm/loaders/RGBELoader.js';
 import { DRACOLoader } from 'https://threejs.org/examples/jsm/loaders/DRACOLoader.js';
@@ -55,6 +55,7 @@ function init() {
       texture.mapping = THREE.EquirectangularReflectionMapping;
 
       scene.background = new THREE.Color(BACKGROUND_COLOR );
+      //scene.background = texture;
       scene.environment = texture;
 
       render();
@@ -83,7 +84,8 @@ function init() {
         var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
         var floorMaterial = new THREE.MeshPhongMaterial({
           color: BACKGROUND_COLOR,
-          shininess: 0
+          shininess: 0,
+          receiveShadow: true,
         });
 
         var floor = new THREE.Mesh(floorGeometry, floorMaterial);
