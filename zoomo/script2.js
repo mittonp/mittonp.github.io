@@ -1,9 +1,9 @@
-import * as THREE from 'https://threejs.org/build/three.module.js';
+import * as THREE from './build/three.module.js';
 
-import { RGBELoader } from 'https://threejs.org/examples/jsm/loaders/RGBELoader.js';
-import { DRACOLoader } from 'https://threejs.org/examples/jsm/loaders/DRACOLoader.js';
-import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
+import { RGBELoader } from './examples/jsm/loaders/RGBELoader.js';
+import { DRACOLoader } from './examples/jsm/loaders/DRACOLoader.js';
+import { GLTFLoader } from './examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from './examples/jsm/controls/OrbitControls.js';
 
 let theModel, camera, scene, renderer;
 
