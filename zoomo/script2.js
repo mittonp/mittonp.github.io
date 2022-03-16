@@ -43,10 +43,6 @@ dracoLoader.setDecoderConfig({ type: 'js' });
 loader.setDRACOLoader(dracoLoader);
 
 
-
-
-
-
 scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
 camera.position.set(- 1.8, 0.6, 2.7);
@@ -83,6 +79,8 @@ loader.load("zoomo1.glb", function(gltf){
   }
   modelOne = gltf.scene;
   scene.add(modelOne);
+  render();
+  animate();
   $("#next-2").prop("disabled",false);
 });
 
@@ -283,8 +281,6 @@ if (window.FileList && window.File && window.FileReader) {
 $("#next-2").click(function () {
   $(".step-1").hide();
   $(".step-2").show();
-  render();
-  animate();
 });
 $("#next-3").click(function () {
   $(".step-2").hide();
@@ -332,23 +328,16 @@ $(".option").click(function (o) {
     modelZero.visible = true; 
     modelOne.visible = false; 
     modelSport.visible = false; 
-    render();
-    animate();
-    
   }
   if (selectedModel == "sport") {
     modelZero.visible = false; 
     modelOne.visible = false; 
     modelSport.visible = true; 
-    render();
-    animate();
   }
   if (selectedModel == "one") {
     modelZero.visible = false; 
     modelOne.visible = true; 
     modelSport.visible = false; 
-    render();
-    animate();
   }
   
 })
