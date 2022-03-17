@@ -71,7 +71,7 @@ loader.load("zoomosport.glb", function(gltf){
 });
 
 let modelOne;
-loader.load("zoomosport.glb", function(gltf){
+loader.load("zoomo1.glb", function(gltf){
   gltf.scene.position.y = -1;
   gltf.scene.rotation.y = Math.PI;
   for (let object of INITIAL_MAP) {
