@@ -96,12 +96,6 @@ loader.load("zoomozero.glb", function(gltf){
   scene.add(modelZero);
 });
 
-
-
-
-
-
-
 renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -127,8 +121,7 @@ controls.maxDistance = 4;
 var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: BACKGROUND_COLOR,
-  shininess: 0,
-  receiveShadow: true,
+  shininess: 0
 });
 
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
