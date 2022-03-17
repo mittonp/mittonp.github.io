@@ -6,17 +6,17 @@ import Stats from 'https://unpkg.com/three@0.126.1/examples/jsm/libs/stats.modul
 
 
 var stats = new Stats();
-stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
-document.body.appendChild( stats.dom );
+//stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+//document.body.appendChild( stats.dom );
 
 let modelSport, modelOne, modelZero, camera, scene, renderer;
 
 // Initial materials
-const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xc0c0c0, side: THREE.DoubleSide });
+const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.DoubleSide });
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xf00f0f, });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
-const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, transparent: true });
+const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
 const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0.01, metalness: 1 });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
@@ -26,6 +26,7 @@ const BACKGROUND_COLOR = 0xd1d1d1;
 const INITIAL_MAP = [
   { childID: "", mtl: BLACK_MTL },
   { childID: "frame", mtl: FRAME_MTL },
+  { childID: "framesleeve", mtl: FRAME_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
   { childID: "M4", mtl: BLACK_MTL },
   { childID: "M6", mtl: BLACK_MTL },
@@ -189,11 +190,10 @@ function selectSwatch(color) {
     color: parseInt('0x' + color.substring(1)),
     shininess: 10,
     side: THREE.DoubleSide,
-    castShadow: true
   });
 
-  setMaterial(modelOne, 'frame', new_mtl);
-  setMaterial(modelOne, 'notframe', new_mtl);
+  setMaterial(modelOne, 'framesleeve', new_mtl);
+  //setMaterial(modelOne, 'notframe', new_mtl);
 }
 
 
