@@ -15,7 +15,6 @@ const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
 const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, transparent: true });
 const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0, metalness: 1 });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1 });
-const WHITE_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 const BACKGROUND_COLOR = 0xd1d1d1;
 
 
