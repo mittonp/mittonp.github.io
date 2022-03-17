@@ -1,9 +1,13 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
-import { RGBELoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/RGBELoader.js';
 import { DRACOLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
+import Stats from 'https://unpkg.com/three@0.126.1/examples/jsm/libs/stats.module.js';
 
+
+var stats = new Stats();
+stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild( stats.dom );
 
 let modelSport, modelOne, modelZero, camera, scene, renderer;
 
@@ -143,6 +147,7 @@ scene.add(dirLight);
 
 
 function animate() {
+  //stats.begin();
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 
@@ -152,6 +157,7 @@ function animate() {
     //camera.aspect = 1;
     camera.updateProjectionMatrix();
   }
+  stats.update();
 }
 
 
