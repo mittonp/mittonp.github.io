@@ -5,7 +5,7 @@ import { DRACOLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loader
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
 
 
-let theModel, camera, scene, renderer;
+let modelSport, modelOne, modelZero, camera, scene, renderer;
 
 // Initial materials
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xc0c0c0, side: THREE.DoubleSide });
@@ -13,8 +13,9 @@ const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.Dou
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xf00f0f, });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
 const TRANSPARENT_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, transparent: true });
-const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0, metalness: 1 });
-const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1 });
+const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0.01, metalness: 1 });
+const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
+const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
 const BACKGROUND_COLOR = 0xd1d1d1;
 
 
@@ -25,7 +26,7 @@ const INITIAL_MAP = [
   { childID: "M4", mtl: BLACK_MTL },
   { childID: "M6", mtl: BLACK_MTL },
   { childID: "brake", mtl: GOLD_MTL },
-  { childID: "brakerotor", mtl: SILVER_MTL },
+  { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
   { childID: "shocks", mtl: SILVER_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
   { childID: "spring", mtl: GOLD_MTL },
@@ -49,15 +50,13 @@ const container = document.createElement('div');
 container.id = "c";
 document.getElementsByClassName("model")[0].appendChild(container);
 
-new RGBELoader()
-  .setPath('')
-  .load('park_parking_1k.hdr', function (texture) {
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = new THREE.Color(BACKGROUND_COLOR);
-    scene.environment = texture;
-  });
+const textureLoader = new THREE.CubeTextureLoader();
+const textureCube = textureLoader.load(['cube.jpg','cube.jpg','cube.jpg','cube.jpg','cube.jpg','cube.jpg'],function(texture){
+  texture.encoding = THREE.sRGBEncoding;
+  scene.environment = textureCube;
+  scene.background = new THREE.Color(BACKGROUND_COLOR);
+});
 
-let modelSport;
 loader.load("zoomosport.glb", function(gltf){
   gltf.scene.position.y = -1;
   gltf.scene.rotation.y = Math.PI;
@@ -69,7 +68,6 @@ loader.load("zoomosport.glb", function(gltf){
   scene.add(modelSport);
 });
 
-let modelOne;
 loader.load("zoomo1.glb", function(gltf){
   gltf.scene.position.y = -1;
   gltf.scene.rotation.y = Math.PI;
@@ -83,7 +81,6 @@ loader.load("zoomo1.glb", function(gltf){
   $("#next-2").prop("disabled",false);
 });
 
-let modelZero;
 loader.load("zoomozero.glb", function(gltf){
   gltf.scene.position.y = -1;
   gltf.scene.rotation.y = Math.PI;
