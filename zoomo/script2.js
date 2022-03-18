@@ -1,8 +1,8 @@
-import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
-import { DRACOLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/DRACOLoader.js';
-import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
-import Stats from 'https://unpkg.com/three@0.126.1/examples/jsm/libs/stats.module.js';
+import * as THREE from 'https://unpkg.com/three@0.137.0/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.137.0/examples/jsm/controls/OrbitControls.js';
+import { DRACOLoader } from 'https://unpkg.com/three@0.137.0/examples/jsm/loaders/DRACOLoader.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.137.0/examples/jsm/loaders/GLTFLoader.js';
+import Stats from 'https://unpkg.com/three@0.137.0/examples/jsm/libs/stats.module.js';
 
 
 var stats = new Stats();
