@@ -9,11 +9,9 @@
 }
 .controls{
   width:400px;
+  align-self: center;
 }
 
-.model{
-  width:1000px;
-}
 
 .colorPicker{
   display: flex;
@@ -42,4 +40,27 @@
 
 .selected{
   border:1px solid black;
+}
+
+#c canvas{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: -1;
+}
+
+#control-surface{
+  width:1000px;
+  height: 800px;
+}
+
+.customize-navigation{
+  position:fixed;
+  bottom:100px;
+  width:100%;
+  left:0;
+}
+.customize-navigation>div{
+  display: flex;
+  justify-content: center;
 }

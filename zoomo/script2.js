@@ -9,34 +9,33 @@ var stats = new Stats();
 //stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
 //document.body.appendChild( stats.dom );
 
-let modelSport, modelOne, modelZero, camera, scene, renderer;
+let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight;
 
 // Initial materials
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.DoubleSide });
-const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xf00f0f, });
+const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side:THREE.DoubleSide });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
 const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
 const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0.01, metalness: 1 });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
-const BACKGROUND_COLOR = 0xd1d1d1;
+//const BACKGROUND_COLOR = 0xcdcdcd;
+const BACKGROUND_COLOR = 0xffffff;
 
 
 const INITIAL_MAP = [
   { childID: "", mtl: BLACK_MTL },
   { childID: "frame", mtl: FRAME_MTL },
   { childID: "framesleeve", mtl: FRAME_MTL },
+  { childID: "notframe", mtl: FRAME_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
-  { childID: "M4", mtl: BLACK_MTL },
-  { childID: "M6", mtl: BLACK_MTL },
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
   { childID: "shocks", mtl: SILVER_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
   { childID: "spring", mtl: GOLD_MTL },
   { childID: "pedalcap", mtl: YELLOW_MTL },
-  { childID: "notframe", mtl: FRAME_MTL },
   { childID: "frontwheelquickreleasecap", mtl: YELLOW_MTL },
 ];
 
@@ -49,7 +48,7 @@ loader.setDRACOLoader(dracoLoader);
 
 
 scene = new THREE.Scene();
-camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
+camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 2000);
 camera.position.set(- 1.8, 0.6, 2.7);
 const container = document.createElement('div');
 container.id = "c";
@@ -60,6 +59,7 @@ const textureCube = textureLoader.load(['cube.jpg','cube.jpg','cube.jpg','cube.j
   texture.encoding = THREE.sRGBEncoding;
   scene.environment = textureCube;
   scene.background = new THREE.Color(BACKGROUND_COLOR);
+  scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
 });
 
 loader.load("zoomosport.glb", function(gltf){
@@ -100,26 +100,28 @@ loader.load("zoomozero.glb", function(gltf){
 renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(1000, 800);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1;
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.setSize(window.innerWidth * 1.3, window.innerHeight);
 container.appendChild(renderer.domElement);
 
 // Add controls
-var controls = new OrbitControls(camera, renderer.domElement);
+var controls = new OrbitControls(camera, document.getElementById("control-surface"));
 controls.maxPolarAngle = Math.PI / 2;
 controls.minPolarAngle = Math.PI / 3;
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.dampingFactor = 0.1;
-controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
-controls.autoRotateSpeed = 0.2; // 30
-controls.minDistance = 2;
-controls.maxDistance = 4;
+controls.minDistance = 4;
+controls.maxDistance = 6;
+
+controls.addEventListener( 'change', light_update );
+
+function light_update()
+{
+    dirLight.position.set( camera.position.x*2, 3, camera.position.z*2);
+}
 
 // Floor
-var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
+var floorGeometry = new THREE.CircleGeometry(2, 64);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: BACKGROUND_COLOR,
   shininess: 0
@@ -137,8 +139,9 @@ hemiLight.position.set(0, 50, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
-var dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
+dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
 dirLight.position.set(-8, 12, 8);
+//dirLight.position.copy(camera.position);
 dirLight.castShadow = true;
 dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
@@ -188,12 +191,15 @@ function selectSwatch(color) {
 
   new_mtl = new THREE.MeshPhongMaterial({
     color: parseInt('0x' + color.substring(1)),
-    shininess: 10,
-    side: THREE.DoubleSide,
+    side: THREE.DoubleSide
   });
 
   setMaterial(modelOne, 'framesleeve', new_mtl);
-  //setMaterial(modelOne, 'notframe', new_mtl);
+  setMaterial(modelOne, 'notframe', new_mtl);
+  setMaterial(modelOne, 'frame', new_mtl);
+  setMaterial(modelSport, '', new_mtl);
+  setMaterial(modelZero, '', new_mtl);
+  render();
 }
 
 
@@ -207,7 +213,7 @@ function setMaterial(parent, type, mtl) {
   });
 }
 
-const joe = colorjoe.rgb("color-picker", "red", ['currentColor', 'hex']);
+const joe = colorjoe.rgb("color-picker", "white", ['currentColor', 'hex']);
 joe.on("change", function (color) {
   selectSwatch(color.hex());
 })
