@@ -49,7 +49,7 @@ loader.setDRACOLoader(dracoLoader);
 
 scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 2000);
-camera.position.set(- 1.8, 0.6, 2.7);
+camera.position.set(- 1.8, 0.6, 30.7);
 const container = document.createElement('div');
 container.id = "c";
 document.getElementsByClassName("model")[0].appendChild(container);
@@ -59,7 +59,7 @@ const textureCube = textureLoader.load(['cube.jpg','cube.jpg','cube.jpg','cube.j
   texture.encoding = THREE.sRGBEncoding;
   scene.environment = textureCube;
   scene.background = new THREE.Color(BACKGROUND_COLOR);
-  scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
+  //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
 });
 
 loader.load("zoomosport.glb", function(gltf){
@@ -110,8 +110,8 @@ controls.minPolarAngle = Math.PI / 3;
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.dampingFactor = 0.1;
-controls.minDistance = 4;
-controls.maxDistance = 6;
+controls.minDistance = 20;
+controls.maxDistance = 60;
 
 controls.addEventListener( 'change', light_update );
 
@@ -121,7 +121,7 @@ function light_update()
 }
 
 // Floor
-var floorGeometry = new THREE.CircleGeometry(2, 64);
+var floorGeometry = new THREE.CircleGeometry(10, 64);
 var floorMaterial = new THREE.MeshPhongMaterial({
   color: BACKGROUND_COLOR,
   shininess: 0
