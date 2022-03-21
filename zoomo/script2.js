@@ -36,6 +36,7 @@ const INITIAL_MAP = [
   { childID: "cable", mtl: BLACK_MTL },
   { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
   { childID: "shocks", mtl: SILVER_MTL },
+  { childID: "screw", mtl: SILVER_MTL },
   { childID: "light", mtl: LIGHT_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
   { childID: "spring", mtl: GOLD_MTL },
