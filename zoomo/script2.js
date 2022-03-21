@@ -13,13 +13,14 @@ let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight;
 
 // Initial materials
 const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.DoubleSide });
+const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x202020, side: THREE.DoubleSide });
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side:THREE.DoubleSide });
 const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
 const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
 const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0.01, metalness: 1 });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
 const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
+const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, site: THREE.DoubleSide });
 //const BACKGROUND_COLOR = 0xcdcdcd;
 const BACKGROUND_COLOR = 0xffffff;
 
@@ -31,12 +32,14 @@ const INITIAL_MAP = [
   { childID: "notframe", mtl: FRAME_MTL },
   { childID: "logosurface", mtl: TRANSPARENT_MTL },
   { childID: "brake", mtl: GOLD_MTL },
+  { childID: "lever", mtl: BLACK_MTL },
+  { childID: "cable", mtl: BLACK_MTL },
   { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
   { childID: "shocks", mtl: SILVER_MTL },
+  { childID: "light", mtl: LIGHT_MTL },
   { childID: "racklightstrip", mtl: ORANGE_MTL },
   { childID: "spring", mtl: GOLD_MTL },
-  { childID: "pedalcap", mtl: YELLOW_MTL },
-  { childID: "frontwheelquickreleasecap", mtl: YELLOW_MTL },
+  { childID: "pedalcap", mtl: YELLOW_MTL }
 ];
 
 
@@ -63,7 +66,7 @@ const textureCube = textureLoader.load(['cube.jpg','cube.jpg','cube.jpg','cube.j
 });
 
 loader.load("zoomosport.glb", function(gltf){
-  gltf.scene.position.y = -1;
+  gltf.scene.position.y = -5;
   gltf.scene.rotation.y = Math.PI;
   for (let object of INITIAL_MAP) {
     initColor(gltf.scene, object.childID, object.mtl);
@@ -74,7 +77,7 @@ loader.load("zoomosport.glb", function(gltf){
 });
 
 loader.load("zoomo1.glb", function(gltf){
-  gltf.scene.position.y = -1;
+  gltf.scene.position.y = -5;
   gltf.scene.rotation.y = Math.PI;
   for (let object of INITIAL_MAP) {
     initColor(gltf.scene, object.childID, object.mtl);
@@ -87,7 +90,7 @@ loader.load("zoomo1.glb", function(gltf){
 });
 
 loader.load("zoomozero.glb", function(gltf){
-  gltf.scene.position.y = -1;
+  gltf.scene.position.y = -5;
   gltf.scene.rotation.y = Math.PI;
   for (let object of INITIAL_MAP) {
     initColor(gltf.scene, object.childID, object.mtl);
@@ -130,7 +133,7 @@ var floorMaterial = new THREE.MeshPhongMaterial({
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
 floor.rotation.x = -0.5 * Math.PI;
 floor.receiveShadow = true;
-floor.position.y = -1;
+floor.position.y = -5;
 scene.add(floor);
 
 // Add lights
