@@ -56,7 +56,7 @@ class App{
     document.getElementsByClassName("model")[0].appendChild(container);
     
     const textureLoader = new THREE.CubeTextureLoader();
-    const textureCube = textureLoader.load(['cube.jpg','cube.jpg','cube.jpg','cube.jpg','cube.jpg','cube.jpg'],function(texture){
+    const textureCube = textureLoader.load(['/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg'],function(texture){
       texture.encoding = THREE.sRGBEncoding;
       scene.environment = textureCube;
       scene.background = new THREE.Color(BACKGROUND_COLOR);
