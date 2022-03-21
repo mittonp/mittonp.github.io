@@ -63,7 +63,7 @@ class App{
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
-    loader.load("zoomosport.glb", function(gltf){
+    loader.load("/zoomo/zoomosport.glb", function(gltf){
       gltf.scene.position.y = -5;
       gltf.scene.rotation.y = Math.PI;
       for (let object of INITIAL_MAP) {
@@ -74,7 +74,7 @@ class App{
       scene.add(modelSport);
     });
     
-    loader.load("zoomo1.glb", function(gltf){
+    loader.load("/zoomo/zoomo1.glb", function(gltf){
       gltf.scene.position.y = -5;
       gltf.scene.rotation.y = Math.PI;
       for (let object of INITIAL_MAP) {
@@ -87,7 +87,7 @@ class App{
       $("#next-2").prop("disabled",false);
     });
     
-    loader.load("zoomozero.glb", function(gltf){
+    loader.load("/zoomo/zoomozero.glb", function(gltf){
       gltf.scene.position.y = -5;
       gltf.scene.rotation.y = Math.PI;
       for (let object of INITIAL_MAP) {
