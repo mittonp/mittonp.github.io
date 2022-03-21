@@ -50,7 +50,7 @@ class App{
     
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 2000);
-    camera.position.set(- 1.8, 0.6, 30.7);
+    camera.position.set(- 1.15, 3.49, 30.64);
     const container = document.createElement('div');
     container.id = "c";
     document.getElementsByClassName("model")[0].appendChild(container);
@@ -63,28 +63,36 @@ class App{
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
-    // loader.load("/zoomo/zoomosport.glb", function(gltf){
-    //   gltf.scene.position.y = -5;
-    //   gltf.scene.rotation.y = Math.PI;
-    //   for (let object of INITIAL_MAP) {
-    //     initColor(gltf.scene, object.childID, object.mtl);
-    //   }
-    //   modelSport = gltf.scene;
-    //   modelSport.visible = false;
-    //   scene.add(modelSport);
-    // });
+    loader.load("/zoomo/zoomosport.glb", function(gltf){
+      gltf.scene.position.y = -5;
+      gltf.scene.rotation.y = Math.PI;
+      for (let object of INITIAL_MAP) {
+        initColor(gltf.scene, object.childID, object.mtl);
+      }
+      modelSport = gltf.scene;
+      console.log("loaded sport");
+    });
   
     
-    // loader.load("/zoomo/zoomozero.glb", function(gltf){
-    //   gltf.scene.position.y = -5;
-    //   gltf.scene.rotation.y = Math.PI;
-    //   for (let object of INITIAL_MAP) {
-    //     initColor(gltf.scene, object.childID, object.mtl);
-    //   }
-    //   modelZero = gltf.scene;
-    //   modelZero.visible = false;
-    //   scene.add(modelZero);
-    // });
+    loader.load("/zoomo/zoomozero.glb", function(gltf){
+      gltf.scene.position.y = -5;
+      gltf.scene.rotation.y = Math.PI;
+      for (let object of INITIAL_MAP) {
+        initColor(gltf.scene, object.childID, object.mtl);
+      }
+      modelZero = gltf.scene;
+      console.log("loaded zero");
+    });
+
+    loader.load("/zoomo/zoomo1.glb", function(gltf){
+      gltf.scene.position.y = -5;
+      gltf.scene.rotation.y = Math.PI;
+      for (let object of INITIAL_MAP) {
+        initColor(gltf.scene, object.childID, object.mtl);
+      }
+      modelOne = gltf.scene;
+      console.log("loaded one");
+    });
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.shadowMap.enabled = true;
@@ -107,6 +115,8 @@ class App{
     function light_update()
     {
         dirLight.position.set( camera.position.x*2, 3, camera.position.z*2);
+        console.log(camera.position);
+        console.log(dirLight.position);
     }
     
     // Floor
@@ -129,14 +139,13 @@ class App{
     scene.add(hemiLight);
     
     dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
-    dirLight.position.set(-8, 12, 8);
+    dirLight.position.set(14.83, 3, 59.9);
     //dirLight.position.copy(camera.position);
     dirLight.castShadow = true;
     dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     // Add directional Light to scene    
     scene.add(dirLight);
-    
-    
+    animate();
     
     
     function animate() {
@@ -269,16 +278,7 @@ class App{
     $("#next-2").click(function () {
       $(".step-1").hide();
       $(".step-2").show();
-      loader.load("/zoomo/zoomo1.glb", function(gltf){
-        gltf.scene.position.y = -5;
-        gltf.scene.rotation.y = Math.PI;
-        for (let object of INITIAL_MAP) {
-          initColor(gltf.scene, object.childID, object.mtl);
-        }
-        modelOne = gltf.scene;
-        scene.add(modelOne);
-        animate();
-      });
+      scene.add(modelOne);
     });
     $("#next-3").click(function () {
       $(".step-2").hide();
@@ -300,6 +300,9 @@ class App{
     $("#prev-1").click(function () {
       $(".step-2").hide();
       $(".step-1").show();
+      scene.remove(modelOne);
+      scene.remove(modelZero);
+      scene.remove(modelSport);
     });
     $("#prev-2").click(function () {
       $(".step-3").hide();
@@ -323,20 +326,19 @@ class App{
       o.currentTarget.classList.add("selected");
       var selectedModel = o.currentTarget.getAttribute("data-model");
       if (selectedModel == "zero") {
-        currentModel = "zero"
-        //modelZero.visible = true; 
-        //modelOne.visible = false; 
-        //modelSport.visible = false; 
+        $(".step-1").hide();
+        $(".step-2").show();
+        scene.add(modelZero); 
       }
       if (selectedModel == "sport") {
-        //modelZero.visible = false; 
-        //modelOne.visible = false; 
-        //modelSport.visible = true; 
+        $(".step-1").hide();
+        $(".step-2").show();
+        scene.add(modelSport); 
       }
       if (selectedModel == "one") {
-        //modelZero.visible = false; 
-        //modelOne.visible = true; 
-        //modelSport.visible = false; 
+        $(".step-1").hide();
+        $(".step-2").show();
+        scene.add(modelOne); 
       }
       
     })
