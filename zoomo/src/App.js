@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 class App{
   init(){
     
-    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight;
+    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight, selectedModel;
     
     // Initial materials
     const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
@@ -63,40 +63,28 @@ class App{
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
-    loader.load("/zoomo/zoomosport.glb", function(gltf){
-      gltf.scene.position.y = -5;
-      gltf.scene.rotation.y = Math.PI;
-      for (let object of INITIAL_MAP) {
-        initColor(gltf.scene, object.childID, object.mtl);
-      }
-      modelSport = gltf.scene;
-      modelSport.visible = false;
-      scene.add(modelSport);
-    });
+    // loader.load("/zoomo/zoomosport.glb", function(gltf){
+    //   gltf.scene.position.y = -5;
+    //   gltf.scene.rotation.y = Math.PI;
+    //   for (let object of INITIAL_MAP) {
+    //     initColor(gltf.scene, object.childID, object.mtl);
+    //   }
+    //   modelSport = gltf.scene;
+    //   modelSport.visible = false;
+    //   scene.add(modelSport);
+    // });
+  
     
-    loader.load("/zoomo/zoomo1.glb", function(gltf){
-      gltf.scene.position.y = -5;
-      gltf.scene.rotation.y = Math.PI;
-      for (let object of INITIAL_MAP) {
-        initColor(gltf.scene, object.childID, object.mtl);
-      }
-      modelOne = gltf.scene;
-      scene.add(modelOne);
-      render();
-      animate();
-      $("#next-2").prop("disabled",false);
-    });
-    
-    loader.load("/zoomo/zoomozero.glb", function(gltf){
-      gltf.scene.position.y = -5;
-      gltf.scene.rotation.y = Math.PI;
-      for (let object of INITIAL_MAP) {
-        initColor(gltf.scene, object.childID, object.mtl);
-      }
-      modelZero = gltf.scene;
-      modelZero.visible = false;
-      scene.add(modelZero);
-    });
+    // loader.load("/zoomo/zoomozero.glb", function(gltf){
+    //   gltf.scene.position.y = -5;
+    //   gltf.scene.rotation.y = Math.PI;
+    //   for (let object of INITIAL_MAP) {
+    //     initColor(gltf.scene, object.childID, object.mtl);
+    //   }
+    //   modelZero = gltf.scene;
+    //   modelZero.visible = false;
+    //   scene.add(modelZero);
+    // });
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.shadowMap.enabled = true;
@@ -281,6 +269,16 @@ class App{
     $("#next-2").click(function () {
       $(".step-1").hide();
       $(".step-2").show();
+      loader.load("/zoomo/zoomo1.glb", function(gltf){
+        gltf.scene.position.y = -5;
+        gltf.scene.rotation.y = Math.PI;
+        for (let object of INITIAL_MAP) {
+          initColor(gltf.scene, object.childID, object.mtl);
+        }
+        modelOne = gltf.scene;
+        scene.add(modelOne);
+        animate();
+      });
     });
     $("#next-3").click(function () {
       $(".step-2").hide();
@@ -325,19 +323,20 @@ class App{
       o.currentTarget.classList.add("selected");
       var selectedModel = o.currentTarget.getAttribute("data-model");
       if (selectedModel == "zero") {
-        modelZero.visible = true; 
-        modelOne.visible = false; 
-        modelSport.visible = false; 
+        currentModel = "zero"
+        //modelZero.visible = true; 
+        //modelOne.visible = false; 
+        //modelSport.visible = false; 
       }
       if (selectedModel == "sport") {
-        modelZero.visible = false; 
-        modelOne.visible = false; 
-        modelSport.visible = true; 
+        //modelZero.visible = false; 
+        //modelOne.visible = false; 
+        //modelSport.visible = true; 
       }
       if (selectedModel == "one") {
-        modelZero.visible = false; 
-        modelOne.visible = true; 
-        modelSport.visible = false; 
+        //modelZero.visible = false; 
+        //modelOne.visible = true; 
+        //modelSport.visible = false; 
       }
       
     })
