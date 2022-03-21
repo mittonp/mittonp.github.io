@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@zemax/sass-svg": "^2.0.1",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.49.7",
-    "three": "^0.138.3"
-  }
-}
