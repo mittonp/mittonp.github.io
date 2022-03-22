@@ -344,11 +344,13 @@ class App{
 
     $("#frame-sleeve").click(function(){
       fullWrap = false;
+      stickerOnly = false;
       selectSwatch(joe.get().hex());
     });
 
     $("#full-wrap").click(function(){
       fullWrap = true;
+      stickerOnly = false;
       selectSwatch(joe.get().hex());
     });
 
