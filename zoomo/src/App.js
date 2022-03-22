@@ -208,7 +208,15 @@ class App{
 
       if (!fullWrap){
         setMaterial(modelOne, 'notframe', FRAME_MTL);
-      setMaterial(modelOne, 'frame', FRAME_MTL);
+        setMaterial(modelOne, 'frame', FRAME_MTL);
+      }
+
+      if (stickerOnly){
+        setMaterial(modelOne, 'sleeve', FRAME_MTL);
+        setMaterial(modelOne, 'notframe', FRAME_MTL);
+        setMaterial(modelOne, 'frame', FRAME_MTL);
+        setMaterial(modelSport, '', FRAME_MTL);
+        setMaterial(modelZero, '', FRAME_MTL);
       }
       render();
     }
