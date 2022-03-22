@@ -12,8 +12,8 @@ class App{
     stickerOnly = false;
     
     // Initial materials
-    const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x202020, side: THREE.DoubleSide });
+    const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide, shininess:80 });
+    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x202020, shininess: 80, side: THREE.DoubleSide });
     const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side:THREE.DoubleSide });
     const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
     const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
@@ -197,7 +197,8 @@ class App{
     
       new_mtl = new THREE.MeshPhongMaterial({
         color: parseInt('0x' + color.substring(1)),
-        side: THREE.DoubleSide
+        side: THREE.DoubleSide,
+        shininess: 80
       });
     
       setMaterial(modelOne, 'sleeve', new_mtl);
