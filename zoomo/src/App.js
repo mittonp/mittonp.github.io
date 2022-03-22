@@ -6,14 +6,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 class App{
   init(){
     
-    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight, currentModel, fullWrap, stickerOnly, joe;
+    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight, currentModel, fullWrap, stickerOnly, joe, light;
 
     fullWrap = true;
     stickerOnly = false;
     
     // Initial materials
-    const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide, shininess:80 });
-    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x202020, shininess: 80, side: THREE.DoubleSide });
+    const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x050505, side: THREE.DoubleSide });
     const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side:THREE.DoubleSide });
     const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
     const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
@@ -60,10 +60,11 @@ class App{
     document.getElementsByClassName("model")[0].appendChild(container);
     
     const textureLoader = new THREE.CubeTextureLoader();
-    const textureCube = textureLoader.load(['/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg','/zoomo/cube.jpg'],function(texture){
+    const textureCube = textureLoader.load(['/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg'],function(texture){
       texture.encoding = THREE.sRGBEncoding;
       scene.environment = textureCube;
-      scene.background = new THREE.Color(BACKGROUND_COLOR);
+      //scene.background = new THREE.Color(BACKGROUND_COLOR);
+      scene.background = textureCube;
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
@@ -120,7 +121,8 @@ class App{
     
     function light_update()
     {
-        dirLight.position.set( camera.position.x/2, 10, camera.position.z/2);
+        //dirLight.position.set( camera.position.x/2, 10, camera.position.z/2);
+        light.position.set( camera.position.x+10, camera.position.y+10, camera.position.z+10);
     }
     
     // Floor
@@ -138,8 +140,9 @@ class App{
     scene.add(floor);
     
     // Add lights
-    var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
-    hemiLight.position.set(0, 50, 0);
+    //var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
+    var hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 4);
+    //hemiLight.position.set(0, 50, 0);
     // Add hemisphere light to scene   
     scene.add(hemiLight);
     
@@ -153,8 +156,17 @@ class App{
     dirLight.shadow.camera.right = -10;
 
     // Add directional Light to scene    
-    scene.add(dirLight);
+    //scene.add(dirLight);
 
+    light = new THREE.SpotLight(0xffa95c,4);
+    light.position.set(-50,50,50);
+    light.castShadow = true;
+    light.shadow.bias = -0.0001;
+    light.shadow.mapSize.width = 1024*4;
+    light.shadow.mapSize.height = 1024*4;
+
+    scene.add( light );
+    
     animate();
     
     
@@ -186,6 +198,10 @@ class App{
             o.material = mtl;
             o.nameID = type; // Set a new property to identify this object
             o.castShadow = true;
+            o.receiveShadow = true;
+            if (o.material.map){
+              o.material.map.anisotropy = 10;
+            }
           }
         }
       });
@@ -198,7 +214,6 @@ class App{
       new_mtl = new THREE.MeshPhongMaterial({
         color: parseInt('0x' + color.substring(1)),
         side: THREE.DoubleSide,
-        shininess: 80
       });
     
       setMaterial(modelOne, 'sleeve', new_mtl);
@@ -287,8 +302,6 @@ class App{
               side: THREE.DoubleSide,
               map: canvasTexture,
               transparent: true,
-              shininess: 10
-    
             });
     
             setMaterial(modelOne, 'logosurface', new_mtl);
