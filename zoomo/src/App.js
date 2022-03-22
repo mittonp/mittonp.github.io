@@ -6,7 +6,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 class App{
   init(){
     
-    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight;
+    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight, currentModel, fullWrap, stickerOnly, joe;
+
+    fullWrap = true;
+    stickerOnly = false;
     
     // Initial materials
     const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
@@ -26,6 +29,7 @@ class App{
       { childID: "", mtl: BLACK_MTL },
       { childID: "frame", mtl: FRAME_MTL },
       { childID: "framesleeve", mtl: FRAME_MTL },
+      { childID: "sleeve", mtl: FRAME_MTL },
       { childID: "notframe", mtl: FRAME_MTL },
       { childID: "logosurface", mtl: TRANSPARENT_MTL },
       { childID: "brake", mtl: GOLD_MTL },
@@ -91,7 +95,9 @@ class App{
         initColor(gltf.scene, object.childID, object.mtl);
       }
       modelOne = gltf.scene;
+      currentModel = modelOne;
       console.log("loaded one");
+      $("#next-2").prop("disabled", false);
     });
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -194,11 +200,16 @@ class App{
         side: THREE.DoubleSide
       });
     
-      setMaterial(modelOne, 'framesleeve', new_mtl);
+      setMaterial(modelOne, 'sleeve', new_mtl);
       setMaterial(modelOne, 'notframe', new_mtl);
       setMaterial(modelOne, 'frame', new_mtl);
       setMaterial(modelSport, '', new_mtl);
       setMaterial(modelZero, '', new_mtl);
+
+      if (!fullWrap){
+        setMaterial(modelOne, 'notframe', FRAME_MTL);
+      setMaterial(modelOne, 'frame', FRAME_MTL);
+      }
       render();
     }
     
@@ -213,10 +224,10 @@ class App{
       });
     }
     
-    const joe = colorjoe.rgb("color-picker", "white", ['currentColor', 'hex']);
+    joe = colorjoe.rgb("color-picker", "white", ['currentColor', 'hex']);
     joe.on("change", function (color) {
       selectSwatch(color.hex());
-    })
+    });
     
     // Function - New resizing method
     function resizeRendererToDisplaySize(renderer) {
@@ -282,7 +293,7 @@ class App{
     $("#next-2").click(function () {
       $(".step-1").hide();
       $(".step-2").show();
-      scene.add(modelOne);
+      scene.add(currentModel);
     });
     $("#next-3").click(function () {
       $(".step-2").hide();
@@ -304,9 +315,7 @@ class App{
     $("#prev-1").click(function () {
       $(".step-2").hide();
       $(".step-1").show();
-      scene.remove(modelOne);
-      scene.remove(modelZero);
-      scene.remove(modelSport);
+      scene.remove(currentModel);
     });
     $("#prev-2").click(function () {
       $(".step-3").hide();
@@ -324,25 +333,35 @@ class App{
       $(".step-6").hide();
       $(".step-5").show();
     });
+
+    $("#frame-sleeve").click(function(){
+      fullWrap = false;
+      selectSwatch(joe.get().hex());
+    });
+
+    $("#full-wrap").click(function(){
+      fullWrap = true;
+      selectSwatch(joe.get().hex());
+    });
+
+    $("#sticker-only").click(function(){
+      fullWrap = false;
+      stickerOnly = true;
+      selectSwatch("#ffffff");
+    });
     
     $(".option").click(function (o) {
       $(".option").removeClass("selected");
       o.currentTarget.classList.add("selected");
       var selectedModel = o.currentTarget.getAttribute("data-model");
       if (selectedModel == "zero") {
-        $(".step-1").hide();
-        $(".step-2").show();
-        scene.add(modelZero); 
+        currentModel = modelZero; 
       }
       if (selectedModel == "sport") {
-        $(".step-1").hide();
-        $(".step-2").show();
-        scene.add(modelSport); 
+        currentModel = modelSport; 
       }
       if (selectedModel == "one") {
-        $(".step-1").hide();
-        $(".step-2").show();
-        scene.add(modelOne); 
+        currentModel = modelOne;
       }
       
     })
