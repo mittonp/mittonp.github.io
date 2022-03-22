@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 class App{
   init(){
     
-    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight, selectedModel;
+    let modelSport, modelOne, modelZero, camera, scene, renderer, dirLight;
     
     // Initial materials
     const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
@@ -49,7 +49,7 @@ class App{
     
     
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 2000);
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1.25, 2000);
     camera.position.set(- 1.15, 3.49, 30.64);
     const container = document.createElement('div');
     container.id = "c";
@@ -114,15 +114,14 @@ class App{
     
     function light_update()
     {
-        dirLight.position.set( camera.position.x*2, 3, camera.position.z*2);
-        console.log(camera.position);
-        console.log(dirLight.position);
+        dirLight.position.set( camera.position.x/2, 10, camera.position.z/2);
     }
     
     // Floor
     var floorGeometry = new THREE.CircleGeometry(10, 64);
+    //var floorGeometry = new THREE.PlaneGeometry(10000,10000,1,1);
     var floorMaterial = new THREE.MeshPhongMaterial({
-      color: BACKGROUND_COLOR,
+      color: 0xafafaf,
       shininess: 0
     });
     
@@ -138,13 +137,18 @@ class App{
     // Add hemisphere light to scene   
     scene.add(hemiLight);
     
-    dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
-    dirLight.position.set(14.83, 3, 59.9);
-    //dirLight.position.copy(camera.position);
+    dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    dirLight.position.set(0, 10, 0);
     dirLight.castShadow = true;
     dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
+    dirLight.shadow.camera.top = 10;
+    dirLight.shadow.camera.bottom = -10;
+    dirLight.shadow.camera.left = 10;
+    dirLight.shadow.camera.right = -10;
+
     // Add directional Light to scene    
     scene.add(dirLight);
+
     animate();
     
     
