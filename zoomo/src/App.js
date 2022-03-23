@@ -63,8 +63,8 @@ class App{
     const textureCube = textureLoader.load(['/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg','/zoomo/cube1.jpg'],function(texture){
       texture.encoding = THREE.sRGBEncoding;
       scene.environment = textureCube;
-      //scene.background = new THREE.Color(BACKGROUND_COLOR);
-      scene.background = textureCube;
+      scene.background = new THREE.Color(BACKGROUND_COLOR);
+      //scene.background = textureCube;
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
@@ -102,6 +102,7 @@ class App{
     });
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.toneMapping = THREE.LinearToneMapping;
     renderer.shadowMap.enabled = true;
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth * 1.3, window.innerHeight);
@@ -121,15 +122,14 @@ class App{
     
     function light_update()
     {
-        //dirLight.position.set( camera.position.x/2, 10, camera.position.z/2);
         light.position.set( camera.position.x+10, camera.position.y+10, camera.position.z+10);
     }
     
     // Floor
-    var floorGeometry = new THREE.CircleGeometry(10, 64);
-    //var floorGeometry = new THREE.PlaneGeometry(10000,10000,1,1);
+    var floorGeometry = new THREE.CircleGeometry(40, 64);
+    //var floorGeometry = new THREE.PlaneGeometry(1000,1000);
     var floorMaterial = new THREE.MeshPhongMaterial({
-      color: 0xafafaf,
+      color: 0xf0f0f0,
       shininess: 0
     });
     
@@ -140,32 +140,19 @@ class App{
     scene.add(floor);
     
     // Add lights
-    //var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
-    var hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 4);
-    //hemiLight.position.set(0, 50, 0);
+    //var hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 4);
+    var hemiLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
     // Add hemisphere light to scene   
     scene.add(hemiLight);
-    
-    dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    dirLight.position.set(0, 10, 0);
-    dirLight.castShadow = true;
-    dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
-    dirLight.shadow.camera.top = 10;
-    dirLight.shadow.camera.bottom = -10;
-    dirLight.shadow.camera.left = 10;
-    dirLight.shadow.camera.right = -10;
 
-    // Add directional Light to scene    
-    //scene.add(dirLight);
-
-    light = new THREE.SpotLight(0xffa95c,4);
+    //light = new THREE.SpotLight(0xffa95c,4);
+    light = new THREE.SpotLight(0xffffff,1);
     light.position.set(-50,50,50);
     light.castShadow = true;
     light.shadow.bias = -0.0001;
     light.shadow.mapSize.width = 1024*4;
     light.shadow.mapSize.height = 1024*4;
-
-    scene.add( light );
+    scene.add(light);
     
     animate();
     
