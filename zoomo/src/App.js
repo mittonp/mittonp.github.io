@@ -13,11 +13,12 @@ class App{
     
     // Initial materials
     const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x050505, side: THREE.DoubleSide });
+    const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x1f1f1f, side: THREE.DoubleSide, shininess: 100 });
+    const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x1f1f1f, side: THREE.DoubleSide });
     const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side:THREE.DoubleSide });
     const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
     const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
-    const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xff7700, roughness: 0.01, metalness: 1 });
+    const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 0.01, metalness: 1 });
     const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
     const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
     const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
@@ -38,10 +39,14 @@ class App{
       { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
       { childID: "shocks", mtl: SILVER_MTL },
       { childID: "screw", mtl: SILVER_MTL },
+      { childID: "wheelnut", mtl: SILVER_MTL },
       { childID: "light", mtl: LIGHT_MTL },
       { childID: "racklightstrip", mtl: ORANGE_MTL },
       { childID: "spring", mtl: GOLD_MTL },
-      { childID: "pedalcap", mtl: YELLOW_MTL }
+      { childID: "pedalcap", mtl: YELLOW_MTL },
+      { childID: "tyre", mtl: MAT_BLACK_MTL },
+      { childID: "mudguard", mtl: MAT_BLACK_MTL },
+      { childID: "saddle", mtl: MAT_BLACK_MTL }
     ];
     
     
@@ -122,7 +127,7 @@ class App{
     
     function light_update()
     {
-        light.position.set( camera.position.x+10, camera.position.y+10, camera.position.z+10);
+        light.position.set( camera.position.x, camera.position.y+10, camera.position.z);
     }
     
     // Floor
@@ -201,6 +206,7 @@ class App{
       new_mtl = new THREE.MeshPhongMaterial({
         color: parseInt('0x' + color.substring(1)),
         side: THREE.DoubleSide,
+        shininess: 100
       });
     
       setMaterial(modelOne, 'sleeve', new_mtl);
