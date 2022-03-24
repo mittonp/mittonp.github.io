@@ -6,6 +6,8 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
 import { SSAARenderPass } from 'three/examples/jsm/postprocessing/SSAARenderPass.js';
+import { SAOPass } from 'three/examples/jsm/postprocessing/SAOPass.js';
+import {GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
 class App{
   init(){
@@ -77,26 +79,26 @@ class App{
       //scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20,100);
     });
     
-    loader.load("/zoomo/zoomosport.glb", function(gltf){
-      gltf.scene.position.y = -5;
-      gltf.scene.rotation.y = Math.PI;
-      for (let object of INITIAL_MAP) {
-        initColor(gltf.scene, object.childID, object.mtl);
-      }
-      modelSport = gltf.scene;
-      console.log("loaded sport");
-    });
+    // loader.load("/zoomo/zoomosport.glb", function(gltf){
+    //   gltf.scene.position.y = -5;
+    //   gltf.scene.rotation.y = Math.PI;
+    //   for (let object of INITIAL_MAP) {
+    //     initColor(gltf.scene, object.childID, object.mtl);
+    //   }
+    //   modelSport = gltf.scene;
+    //   console.log("loaded sport");
+    // });
   
     
-    loader.load("/zoomo/zoomozero.glb", function(gltf){
-      gltf.scene.position.y = -5;
-      gltf.scene.rotation.y = Math.PI;
-      for (let object of INITIAL_MAP) {
-        initColor(gltf.scene, object.childID, object.mtl);
-      }
-      modelZero = gltf.scene;
-      console.log("loaded zero");
-    });
+    // loader.load("/zoomo/zoomozero.glb", function(gltf){
+    //   gltf.scene.position.y = -5;
+    //   gltf.scene.rotation.y = Math.PI;
+    //   for (let object of INITIAL_MAP) {
+    //     initColor(gltf.scene, object.childID, object.mtl);
+    //   }
+    //   modelZero = gltf.scene;
+    //   console.log("loaded zero");
+    // });
 
     loader.load("/zoomo/zoomo1.glb", function(gltf){
       gltf.scene.position.y = -5;
@@ -123,6 +125,10 @@ class App{
     composer.addPass (new RenderPass(scene, camera));
     //composer.addPass(new GlitchPass());
     //composer.addPass (new SSAARenderPass(scene, camera));
+    //const saoPass = new SAOPass(scene, camera, false, true);
+    //saoPass.params.output = SAOPass.OUTPUT.SAO;
+    //composer.addPass(saoPass);
+
 
     // Add controls
     var controls = new OrbitControls(camera, document.getElementById("control-surface"));
@@ -226,8 +232,6 @@ class App{
       setMaterial(modelOne, 'sleeve', new_mtl);
       setMaterial(modelOne, 'notframe', new_mtl);
       setMaterial(modelOne, 'frame', new_mtl);
-      setMaterial(modelSport, '', new_mtl);
-      setMaterial(modelZero, '', new_mtl);
 
       if (!fullWrap){
         setMaterial(modelOne, 'notframe', FRAME_MTL);
@@ -238,8 +242,6 @@ class App{
         setMaterial(modelOne, 'sleeve', FRAME_MTL);
         setMaterial(modelOne, 'notframe', FRAME_MTL);
         setMaterial(modelOne, 'frame', FRAME_MTL);
-        setMaterial(modelSport, '', FRAME_MTL);
-        setMaterial(modelZero, '', FRAME_MTL);
       }
       render();
     }
@@ -385,16 +387,7 @@ class App{
       $(".option").removeClass("selected");
       o.currentTarget.classList.add("selected");
       var selectedModel = o.currentTarget.getAttribute("data-model");
-      if (selectedModel == "zero") {
-        currentModel = modelZero; 
-      }
-      if (selectedModel == "sport") {
-        currentModel = modelSport; 
-      }
-      if (selectedModel == "one") {
-        currentModel = modelOne;
-      }
-      
+      currentModel = modelOne;
     })
   }
 }
