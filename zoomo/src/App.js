@@ -116,6 +116,7 @@ class App{
     renderer.shadowMap.enabled = true;
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth * 1.3, window.innerHeight);
+    console.log(window.innerWidth);
     container.appendChild(renderer.domElement);
 
     const composer = new EffectComposer(renderer);
