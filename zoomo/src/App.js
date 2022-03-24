@@ -63,7 +63,7 @@ class App{
     
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1.25, 2000);
-    camera.position.set(- 1.15, 3.49, 30.64);
+    camera.position.set(-15, 12, 21);
     const container = document.createElement('div');
     container.id = "c";
     document.getElementsByClassName("model")[0].appendChild(container);
