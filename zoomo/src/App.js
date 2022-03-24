@@ -2,6 +2,10 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
+import { SSAARenderPass } from 'three/examples/jsm/postprocessing/SSAARenderPass.js';
 
 class App{
   init(){
@@ -107,12 +111,18 @@ class App{
     });
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
+
     renderer.toneMapping = THREE.LinearToneMapping;
     renderer.shadowMap.enabled = true;
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth * 1.3, window.innerHeight);
     container.appendChild(renderer.domElement);
-    
+
+    const composer = new EffectComposer(renderer);
+    composer.addPass (new RenderPass(scene, camera));
+    //composer.addPass(new GlitchPass());
+    //composer.addPass (new SSAARenderPass(scene, camera));
+
     // Add controls
     var controls = new OrbitControls(camera, document.getElementById("control-surface"));
     controls.maxPolarAngle = Math.PI / 2;
@@ -128,6 +138,8 @@ class App{
     function light_update()
     {
         light.position.set( camera.position.x, camera.position.y+10, camera.position.z);
+        console.log(light.position);
+        //render();
     }
     
     // Floor
@@ -163,8 +175,9 @@ class App{
     
     
     function animate() {
-      renderer.render(scene, camera);
+      //renderer.render(scene, camera);
       requestAnimationFrame(animate);
+      composer.render();
     
       if (resizeRendererToDisplaySize(renderer)) {
         const canvas = renderer.domElement;
