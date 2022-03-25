@@ -824,4 +824,3 @@ https://bebraw.github.com/colorjoe - 2020-01-27 */
 	return colorjoe_1;
 
 })));
-//# sourceMappingURL=colorjoe.js.map

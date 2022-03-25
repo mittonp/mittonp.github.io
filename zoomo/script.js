@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './build/three.module.js';
 import { OrbitControls } from './examples/jsm/controls/OrbitControls.js';
 import { DRACOLoader } from './examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from './examples/jsm/loaders/GLTFLoader.js';
@@ -136,8 +136,8 @@ controls.minPolarAngle = Math.PI / 3;
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.dampingFactor = 0.1;
-controls.minDistance = 200;
-controls.maxDistance = 6000;
+controls.minDistance = 2;
+controls.maxDistance = 40;
 
 controls.addEventListener('change', light_update);
 
