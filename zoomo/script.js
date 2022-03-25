@@ -136,14 +136,14 @@ controls.minPolarAngle = Math.PI / 3;
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.dampingFactor = 0.1;
-controls.minDistance = 20;
-controls.maxDistance = 60;
+controls.minDistance = 200;
+controls.maxDistance = 6000;
 
 controls.addEventListener('change', light_update);
 
 function light_update() {
   light.position.set(camera.position.x, camera.position.y + 10, camera.position.z);
-  console.log(light.position);
+  //console.log(light.position);
   //render();
 }
 
