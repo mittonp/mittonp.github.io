@@ -21,11 +21,11 @@ const FRAME_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.Dou
 const BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x1f1f1f, side: THREE.DoubleSide, shininess: 100 });
 const MAT_BLACK_MTL = new THREE.MeshPhongMaterial({ color: 0x1f1f1f, side: THREE.DoubleSide });
 const ORANGE_MTL = new THREE.MeshPhongMaterial({ color: 0xff8700, side: THREE.DoubleSide });
-const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, });
+const YELLOW_MTL = new THREE.MeshPhongMaterial({ color: 0xffff00, side: THREE.DoubleSide});
 const TRANSPARENT_MTL = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true });
-const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 0.01, metalness: 1 });
+const GOLD_MTL = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 0.01, metalness: 1, side: THREE.DoubleSide });
 const SILVER_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0, metalness: 1, side: THREE.DoubleSide });
-const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1 });
+const BRAKEROTOR_MTL = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.1, metalness: 1, side: THREE.DoubleSide });
 const LIGHT_MTL = new THREE.MeshPhongMaterial({ color: 0xffffff, side: THREE.DoubleSide });
 //const BACKGROUND_COLOR = 0xcdcdcd;
 const BACKGROUND_COLOR = 0xffffff;
@@ -41,7 +41,7 @@ const INITIAL_MAP = [
   { childID: "brake", mtl: GOLD_MTL },
   { childID: "lever", mtl: BLACK_MTL },
   { childID: "cable", mtl: BLACK_MTL },
-  { childID: "brakerotor", mtl: BRAKEROTOR_MTL },
+  { childID: "rotor", mtl: BRAKEROTOR_MTL },
   { childID: "shocks", mtl: SILVER_MTL },
   { childID: "screw", mtl: SILVER_MTL },
   { childID: "wheelnut", mtl: SILVER_MTL },
@@ -70,7 +70,7 @@ container.id = "c";
 document.getElementsByClassName("model")[0].appendChild(container);
 
 const textureLoader = new THREE.CubeTextureLoader();
-const textureCube = textureLoader.load(['/zoomo/cube1.jpg', '/zoomo/cube1.jpg', '/zoomo/cube1.jpg', '/zoomo/cube1.jpg', '/zoomo/cube1.jpg', '/zoomo/cube1.jpg'], function (texture) {
+const textureCube = textureLoader.load(['./cube1.jpg', './cube1.jpg', './cube1.jpg', './cube1.jpg', './cube1.jpg', './cube1.jpg'], function (texture) {
   texture.encoding = THREE.sRGBEncoding;
   scene.environment = textureCube;
   scene.background = new THREE.Color(BACKGROUND_COLOR);
@@ -99,7 +99,7 @@ const textureCube = textureLoader.load(['/zoomo/cube1.jpg', '/zoomo/cube1.jpg', 
 //   console.log("loaded zero");
 // });
 
-loader.load("/zoomo/zoomo1.glb", function (gltf) {
+loader.load("./zoomo1-scaled.glb", function (gltf) {
   gltf.scene.position.y = -5;
   gltf.scene.rotation.y = Math.PI;
   for (let object of INITIAL_MAP) {
@@ -107,6 +107,7 @@ loader.load("/zoomo/zoomo1.glb", function (gltf) {
   }
   modelOne = gltf.scene;
   currentModel = modelOne;
+  scene.add(currentModel);
   console.log("loaded one");
   $("#next-2").prop("disabled", false);
 });
@@ -184,12 +185,12 @@ function animate() {
   requestAnimationFrame(animate);
   composer.render();
 
-  if (resizeRendererToDisplaySize(renderer)) {
-    const canvas = renderer.domElement;
-    camera.aspect = canvas.width / canvas.height;
-    //camera.aspect = 1;
-    camera.updateProjectionMatrix();
-  }
+  // if (resizeRendererToDisplaySize(renderer)) {
+  //   const canvas = renderer.domElement;
+  //   camera.aspect = canvas.width / canvas.height;
+  //   //camera.aspect = 1;
+  //   camera.updateProjectionMatrix();
+  // }
 }
 
 
@@ -322,7 +323,7 @@ if (window.FileList && window.File && window.FileReader) {
 $("#next-2").click(function () {
   $(".step-1").hide();
   $(".step-2").show();
-  scene.add(currentModel);
+  //scene.add(currentModel);
 });
 $("#next-3").click(function () {
   $(".step-2").hide();
