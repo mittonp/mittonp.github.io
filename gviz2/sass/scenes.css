@@ -44,14 +44,6 @@
   top: -120vh;
 }
 
-.article-details-page .container-fluid .article-body .text-block .scene-1 .neonsign {
-  top: 50%;
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-position: center;
-}
-
 .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-2, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-3, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-1, .article-details-page .container-fluid .article-body .text-block .scene-2 #stat-container-0 {
   top: 180vh;
   position: absolute;

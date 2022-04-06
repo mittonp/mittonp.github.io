@@ -1,0 +1,396 @@
+.background-static {
+  width: 1920px;
+  height: 610px;
+  background: url("css-sprites.png") -10px -643px;
+}
+
+.background-static-light-on {
+  width: 1920px;
+  height: 610px;
+  background: url("css-sprites.png") -10px -1273px;
+}
+
+.bar-bench {
+  width: 1920px;
+  height: 278px;
+  background: url("css-sprites.png") -680px -2349px;
+}
+
+.bubble-cheese-burger {
+  width: 200px;
+  height: 231px;
+  background: url("css-sprites.png") -5094px -2572px;
+}
+
+.bubble-garlic-bread {
+  width: 200px;
+  height: 230px;
+  background: url("css-sprites.png") -5094px -3074px;
+}
+
+.bubble-chilly-tacos {
+  width: 200px;
+  height: 230px;
+  background: url("css-sprites.png") -5094px -3324px;
+}
+
+.bubble-mint-choco {
+  width: 217px;
+  height: 231px;
+  background: url("css-sprites.png") -5523px -5082px;
+}
+
+.bubble-pizza {
+  width: 199px;
+  height: 231px;
+  background: url("css-sprites.png") -5094px -3574px;
+}
+
+.bubble-pink-lemonade {
+  width: 203px;
+  height: 230px;
+  background: url("css-sprites.png") -5094px -2322px;
+}
+
+.character-eating {
+  width: 560px;
+  height: 956px;
+  background: url("css-sprites.png") -1172px -3192px;
+}
+
+.character-distressed {
+  width: 561px;
+  height: 958px;
+  background: url("css-sprites.png") -591px -3192px;
+}
+
+.bubble-spaghetti {
+  width: 200px;
+  height: 231px;
+  background: url("css-sprites.png") -5094px -2823px;
+}
+
+.character-home-happy {
+  width: 409px;
+  height: 1136px;
+  background: url("css-sprites.png") -4635px -2489px;
+}
+
+.character-home-waiting {
+  width: 409px;
+  height: 1136px;
+  background: url("css-sprites.png") -5094px -10px;
+}
+
+.character-home-sad {
+  width: 409px;
+  height: 1136px;
+  background: url("css-sprites.png") -5094px -1166px;
+}
+
+.clock--08 {
+  width: 181px;
+  height: 181px;
+  background: url("css-sprites.png") -5317px -2322px;
+}
+
+.character-standing-distressed {
+  width: 439px;
+  height: 1219px;
+  background: url("css-sprites.png") -4635px -1250px;
+}
+
+.clock--07 {
+  width: 181px;
+  height: 181px;
+  background: url("css-sprites.png") -5314px -2572px;
+}
+
+.drinker--drink-down {
+  width: 710px;
+  height: 605px;
+  background: url("css-sprites.png") -1933px -4237px;
+}
+
+.character-leans-forward {
+  width: 560px;
+  height: 956px;
+  background: url("css-sprites.png") -1752px -3192px;
+}
+
+.character-home-hangs-head {
+  width: 412px;
+  height: 1116px;
+  background: url("css-sprites.png") -10px -4237px;
+}
+
+.flame {
+  width: 30px;
+  height: 30px;
+  background: url("css-sprites.png") -5861px -3283px;
+}
+
+.friend-distressed {
+  width: 477px;
+  height: 920px;
+  background: url("css-sprites.png") -442px -4237px;
+}
+
+.drinker--drink-up {
+  width: 547px;
+  height: 626px;
+  background: url("css-sprites.png") -4054px -2370px;
+}
+
+.dual-action-bottle {
+  width: 50px;
+  height: 122px;
+  background: url("css-sprites.png") -5855px -2930px;
+}
+
+.friend {
+  width: 477px;
+  height: 920px;
+  background: url("css-sprites.png") -939px -4237px;
+}
+
+.food-particles {
+  width: 42px;
+  height: 82px;
+  background: url("css-sprites.png") -5861px -3181px;
+}
+
+.character-served {
+  width: 560px;
+  height: 956px;
+  background: url("css-sprites.png") -2332px -3192px;
+}
+
+.character-home-taking-meds {
+  width: 412px;
+  height: 1016px;
+  background: url("css-sprites.png") -5523px -10px;
+}
+
+.friend-distressed-2 {
+  width: 477px;
+  height: 920px;
+  background: url("css-sprites.png") -1436px -4237px;
+}
+
+.get-up-4 {
+  width: 650px;
+  height: 1269px;
+  background: url("css-sprites.png") -10px -1903px;
+}
+
+.get-up-1 {
+  width: 561px;
+  height: 1025px;
+  background: url("css-sprites.png") -10px -3192px;
+}
+
+.get-up-5 {
+  width: 439px;
+  height: 1220px;
+  background: url("css-sprites.png") -4635px -10px;
+}
+
+.get-up-2 {
+  width: 560px;
+  height: 1120px;
+  background: url("css-sprites.png") -4054px -1230px;
+}
+
+.globe {
+  width: 486px;
+  height: 485px;
+  background: url("css-sprites.png") -680px -2647px;
+}
+
+.home-scene {
+  width: 1911px;
+  height: 426px;
+  background: url("css-sprites.png") -680px -1903px;
+}
+
+.get-up-3 {
+  width: 561px;
+  height: 1200px;
+  background: url("css-sprites.png") -4054px -10px;
+}
+
+.intestine-food-entering-stomach {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5692px -3181px;
+}
+
+.intestine-blue-red-bubbles {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5523px -3601px;
+}
+
+.intestine-food-in-throat {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5692px -3601px;
+}
+
+.intestine-glow-in-mouth {
+  width: 149px;
+  height: 400px;
+  background: url("css-sprites.png") -5523px -3181px;
+}
+
+.intestine-red-and-filling {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5523px -4011px;
+}
+
+.intestine-red {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5692px -4011px;
+}
+
+.intestine-with-glowing-flame {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5523px -4421px;
+}
+
+.neonsign {
+  width: 1216px;
+  height: 465px;
+  background: url("css-sprites.png") -2220px -1338px;
+}
+
+.intestine-with-flame {
+  width: 149px;
+  height: 390px;
+  background: url("css-sprites.png") -5692px -4421px;
+}
+
+.medicine-thought-bubble {
+  width: 237px;
+  height: 231px;
+  background: url("css-sprites.png") -5523px -4831px;
+}
+
+.perspective-level-3 {
+  width: 1814px;
+  height: 484px;
+  background: url("css-sprites.png") -2220px -10px;
+}
+
+.radiating-circle {
+  width: 25px;
+  height: 25px;
+  background: url("css-sprites.png") -5907px -1046px;
+}
+
+.pocket {
+  width: 67px;
+  height: 65px;
+  background: url("css-sprites.png") -5855px -3072px;
+}
+
+.red-stuff {
+  width: 162px;
+  height: 110px;
+  background: url("css-sprites.png") -5760px -5082px;
+}
+
+.speech-bubble-home {
+  width: 312px;
+  height: 231px;
+  background: url("css-sprites.png") -5523px -2930px;
+}
+
+.stat-1 {
+  width: 686px;
+  height: 750px;
+  background: url("css-sprites.png") -3287px -514px;
+}
+
+.perspective-level-2 {
+  width: 1047px;
+  height: 804px;
+  background: url("css-sprites.png") -2220px -514px;
+}
+
+.stat-2 {
+  width: 686px;
+  height: 750px;
+  background: url("css-sprites.png") -2912px -3192px;
+}
+
+.stat-3 {
+  width: 686px;
+  height: 750px;
+  background: url("css-sprites.png") -3618px -3192px;
+}
+
+.stomach-2 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5523px -1046px;
+}
+
+.stomach-1 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5715px -1046px;
+}
+
+.stomach-3 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5523px -1517px;
+}
+
+.stomach-7 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5715px -1517px;
+}
+
+.stomach-5 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5523px -1988px;
+}
+
+.stomach-6 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5715px -1988px;
+}
+
+.stomach-8 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5523px -2459px;
+}
+
+.stomach-4 {
+  width: 172px;
+  height: 451px;
+  background: url("css-sprites.png") -5715px -2459px;
+}
+
+.table-for-two {
+  width: 2190px;
+  height: 613px;
+  background: url("css-sprites.png") -10px -10px;
+}
+
+.window-lit {
+  width: 10px;
+  height: 13px;
+  background: url("css-sprites.png") -5907px -1091px;
+}
+/*# sourceMappingURL=sprites.css.map */
