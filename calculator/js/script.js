@@ -388,6 +388,9 @@ function showResults() {
     } else {
       principalRepaid[i] = 0;
     }
+    if (i == 1){
+      principalRepaid[i] = 0;
+    }
     principalRemainingEndOfYear[i] = principalRemainingStartOfYear[i] - principalRepaid[i];
     returnOnEquity[i] = cashFlow[i] / model.totalCashRequired;
     valueAtSameCapRate[i] = rentReceived[i] / yieldEachYear[1];
